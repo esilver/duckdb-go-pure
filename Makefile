@@ -6,12 +6,6 @@
 # NO SPECIAL FLAGS REQUIRED: plain 'go build ./...' compiles the engine
 # (measured: ~30s cold, ~3GB worst single compile process, 16 cores).
 # Add '-p 1' only if you are tight on RAM (serializes package compiles).
-#
-# Optional: profile-guided optimization. A profile from a representative
-# query/storage mix ships as default.pgo; building YOUR main package with
-# '-pgo=<path to default.pgo>' measured 1.3-1.8x further on aggregates,
-# strings, and storage round-trips (Go applies -pgo at the binary's main
-# package; copy or reference the profile from this module).
 ENGINE  := github.com/esilver/duckdb-go-pure/internal/duckdbcore
 
 .PHONY: build test example

@@ -33,11 +33,10 @@ CGO_ENABLED=0 go build ./...
 - Measured cold build: ~30s, ~3GB worst single compile process (16 cores);
   the engine is cached by the Go build cache after the first build. Add
   `-p 1` only if you are tight on RAM (it serializes package compiles).
-- Optional **PGO**: `default.pgo` (a representative query/storage profile)
-  ships in this module; building your main package with
-  `-pgo=$(go list -m -f '{{.Dir}}' github.com/esilver/duckdb-go-pure)/default.pgo`
-  measured a further 1.3–1.8× on aggregates, strings, and storage
-  round-trips.
+- PGO: measured no effect on the fully-inlined v0.3.x engine (interleaved
+  A/B on a quiet machine, 0.97-1.01x across aggregate/string/join/storage
+  shapes at 100k-2M rows) — no profile ships. An earlier 1.3-1.8x claim was
+  a measurement artifact (contended machine) and is retracted; see issue #2.
 - Everything else (your code, this driver) builds with default flags.
 - `go test` additionally needs `-vet=off` (vet cannot chew the generated
   packages).
