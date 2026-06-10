@@ -58,7 +58,7 @@ CGO_ENABLED=0 go build ./...
 | Connection pooling | Safe: `rows.Next`/`Close` take the shared engine lock (since v0.2.1), so pooled `database/sql` connections can interleave freely |
 | Bulk loading | `Appender` (DuckDB's native bulk-load path, ~100× faster than per-row `INSERT`) |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
-| DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,379 files PASS; 99.7% of 44,651 executed records** (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
+| DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,513 files PASS / 20 FAIL (99.2% of executed files; engine repo corpus campaign)** (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
 | Proven downstream | Drives a pure-Go `googlesqlite` stack passing **986/994 BigQuery-dialect conformance tests with zero failures** (exceeds the cgo baseline of 972), and a pure-Go bigquery-emulator that is acceptance-tested with the real `bq` CLI |
 | Performance | Engine compiles **fully optimized + inlined** since v0.3.0 (see above): 2.3–2.9× faster than v0.2.x, which was 2.0–2.6× faster than the v0.1.x monolith; still slower than native DuckDB (wasm2go has no SIMD), widest on SIMD-friendly scan/aggregate |
 | Platforms | Pure Go: anywhere Go runs, **including `GOOS=js GOARCH=wasm`** since v0.3.0 (64-bit recommended; the engine wants multi-GB compile-time and runtime memory) |
@@ -95,11 +95,10 @@ func main() {
 }
 ```
 
-Build it (the flags consumers need, verbatim):
+Build it (the command consumers need, verbatim):
 
 ```sh
-CGO_ENABLED=0 go build \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' .
+CGO_ENABLED=0 go build .
 ```
 
 ## Scalar UDFs
@@ -143,8 +142,8 @@ way through `RegisterAggregateConn` / `RegisterAggregateBandConn` (see
 ## Building and testing this repo
 
 ```sh
-make build   # CGO_ENABLED=0 go build -gcflags='.../duckdbcore/...=-c=1' ./...
-make test    # CGO_ENABLED=0 go test -vet=off -gcflags='...same...' ./...
+make build   # CGO_ENABLED=0 go build ./...
+make test    # CGO_ENABLED=0 go test -vet=off ./...
 make example # build + run examples/basic
 ```
 
