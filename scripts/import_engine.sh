@@ -57,14 +57,9 @@ package duckdb
 // scripts/split_giant_fns.py (oversized-function splitting) — whose ~30 small
 // packages the Go optimizer can compile fully optimized WITH inlining (the
 // pre-split layout needed '-l' on the shards; the pre-shard monolith OOMed
-// the optimizer at ~50GB and had to ship -N -l). Build flags are
-// load-bearing; see doc.go "Build flags (required)":
-//
-//	CGO_ENABLED=0 go build \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
-//
-// '-c=1' (serial function compilation) keeps per-package compiler memory
-// bounded (0.4-3.4GB peaks); since v0.3.0 no '-l' is needed anywhere.
+// the optimizer at ~50GB and had to ship -N -l). No build flags are
+// required — plain 'go build ./...' compiles the engine; see doc.go
+// "Build flags (none required)".
 
 import (
 	engine "github.com/esilver/duckdb-go-pure/internal/duckdbcore/core"

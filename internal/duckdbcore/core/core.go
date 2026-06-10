@@ -26,16 +26,16 @@ func New(v0 Xenv, v1 Xwasi_snapshot_preview1) *Module {
 	m := new(Module)
 	m.X_env = v0
 	m.X_wasi_snapshot_preview1 = v1
-	m.T0 = make([]any, 41781)
+	m.T0 = make([]any, 41790)
 	m.MaxMem = 0x8000
 	m.MemoryG1 = make([]byte, 0x15f0000)
-	m.Elements = [][]any{make([]any, 41780)}
+	m.Elements = [][]any{make([]any, 41789)}
 	m.FillElems()
 	copy(m.T0[I32(1):], m.Elements[0])
 	m.Elements[0] = nil
-	copy(m.MemoryG1[uint32(I32(1028)):], Data[0:559902])
-	copy(m.MemoryG1[uint32(I32(569136)):], Data[559902:6075684])
-	m.G0 = I32(6180752)
+	copy(m.MemoryG1[uint32(I32(1028)):], Data[0:559886])
+	copy(m.MemoryG1[uint32(I32(569120)):], Data[559886:6075668])
+	m.G0 = I32(6180736)
 	m.G1 = I32(0)
 	if i, ok := any(v0).(interface {
 		Init(any)
@@ -384,9 +384,9 @@ type Xenv = interface {
 	Xinvoke_iidiii(v0, v1 int32, v2 float64, v3, v4, v5 int32) int32
 	Xinvoke_diiidiiiid(v0, v1, v2, v3 int32, v4 float64, v5, v6, v7, v8 int32, v9 float64) float64
 	Xhost_open(v0, v1, v2 int32) int64
+	Xhost_size(v0 int32) int64
 	Xhost_pread(v0, v1 int32, v2, v3 int64) int64
 	Xhost_pwrite(v0, v1 int32, v2, v3 int64) int64
-	Xhost_size(v0 int32) int64
 	Xhost_mtime(v0 int32) int64
 	Xhost_trunc(v0 int32, v1 int64) int32
 	Xhost_isdir(v0, v1 int32) int32
@@ -539,57 +539,57 @@ func (m *Module) Xduckdb_create_config(v0 int32) int32 {
 	m.G0 = v4
 	if v0 != 0 {
 		Store32(m.MemoryG1[uint32(v0):], uint32(I32(0)))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(448), I32(688))
 		v2 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
 					{
 						{
 							if v1 != I32(1) {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t3 := TBL_Fn8(m, I32(1171), v2)
 								v3 = t3
-								t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t4
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 == I32(1) {
 									goto l0
 								}
 								Store32(m.MemoryG1[uint32(v0):], uint32(v3))
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-								t5 := TBL_Fn0(m, I32(1), v4+I32(52), I32(128345))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+								t5 := TBL_Fn0(m, I32(1), v4+I32(52), I32(128330))
 								v2 = t5
-								t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v0 = t6
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v0 == I32(1) {
 									goto l1
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-								t7 := TBL_Fn0(m, I32(1172), v4+I32(8), I32(128328))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+								t7 := TBL_Fn0(m, I32(1172), v4+I32(8), I32(128313))
 								v1 = t7
-								t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v0 = t8
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v0 == I32(1) {
 									goto l2
 								}
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								TBL_Fn2(m, I32(1173), v3, v2, v1)
-								t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v3 = t9
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v3 == I32(1) {
 									goto l3
 								}
 								_ = TBL_Fn516(m, v1)
-								_ = TBL_Fn42138(m, v2)
+								_ = TBL_Fn42141(m, v2)
 								goto l4
 							}
 							t12 := TBL_Fn6(m, I32(0))
@@ -618,7 +618,7 @@ func (m *Module) Xduckdb_create_config(v0 int32) int32 {
 			_ = TBL_Fn516(m, v1)
 		}
 	l6:
-		_ = TBL_Fn42138(m, v2)
+		_ = TBL_Fn42141(m, v2)
 	l5:
 		_ = TBL_Fn14(m, v0)
 		TBL_Fn16(m)
@@ -675,30 +675,30 @@ func (m *Module) Xduckdb_connect(v0, v1 int32) int32 {
 		p1 = 1
 	}
 	if p0|p1 == 0 {
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t2 := TBL_Fn8(m, I32(448), I32(16))
 		v3 = t2
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v2 != I32(1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t4 := TBL_Fn8(m, I32(1174), v0)
 					v0 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l0
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t6 := TBL_Fn0(m, I32(1175), v3, v0)
 					v0 = t6
-					t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t7
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l0
 					}
@@ -766,65 +766,65 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 		}
 		t6 := TBL_Fn1634(m)
 		v4 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v6))+44:], uint32(v4))
 		v4 = v6 + I32(44)
 		t7 := TBL_Fn8(m, I32(1181), v4)
 		v5 = t7
-		t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v8 = t8
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
 					if v8 == I32(1) {
 						goto l1
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t9 := TBL_Fn41(m, I32(1182))
 					v8 = t9
-					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v7 = t10
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v7 == I32(1) {
 						goto l1
 					}
 					t11 := int64(Load64(m.MemoryG1[uint32(v1):]))
 					v14 = t11
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn50(m, I32(1183), v14)
 					v14 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v7 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v7 == I32(1) {
 						goto l1
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn25(m, I32(1184), v5, v8, v2+I32(20), v14)
-					t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t14
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v5 == I32(1) {
 						goto l1
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t15 := TBL_Fn8(m, I32(1181), v4)
 					v4 = t15
-					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t16
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v5 == I32(1) {
 						goto l2
 					}
 					t17 := int64(Load64(m.MemoryG1[uint32(v1):]))
 					v14 = t17
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t18 := TBL_Fn50(m, I32(1183), v14)
 					v14 = t18
-					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t19
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v5 == I32(1) {
 						goto l2
 					}
@@ -832,13 +832,13 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 					v14 = I64(0)
 				l20:
 					{
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						Store64(m.MemoryG1[int64(uint32(v6))+32:], uint64(v14))
 						t20 := TBL_Fn8(m, I32(1181), v6+I32(44))
 						v4 = t20
-						t21 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t21 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t21
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t22 := int32(Load32(m.MemoryG1[int64(uint32(v4))+4:]))
@@ -860,14 +860,14 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 					l3:
 						t26 := int32(Load32(m.MemoryG1[int64(uint32(v1))+44:]))
 						v5 = t26
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t27 := int32(Load32(m.MemoryG1[int64(uint32(v6))+32:]))
 						v8 = t27
 						t28 := TBL_Fn0(m, I32(1185), v2, v6+I32(32))
 						v4 = t28
-						t29 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t29 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v7 = t29
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								{
@@ -890,12 +890,12 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 																			t33 := int32(Load32(m.MemoryG1[int64(uint32(v4))+4:]))
 																			Store32(m.MemoryG1[int64(uint32(v4))+4:], uint32(t33+I32(1)))
 																		}
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t34 := TBL_Fn8(m, I32(1186), v6+I32(24))
 																		v4 = t34
-																		t35 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t35 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v7 = t35
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v7 == I32(1) {
 																			goto l6
 																		}
@@ -903,61 +903,61 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 																		v7 = t36
 																		t37 := int32(m.MemoryG1[int64(uint32(v4))+24])
 																		v9 = t37
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t38 := TBL_Fn8(m, I32(1177), v0)
 																		v4 = t38
-																		t39 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t39 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v10 = t39
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v10 == I32(1) {
 																			goto l7
 																		}
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t40 := TBL_Fn8(m, I32(1187), v4)
 																		v4 = t40
-																		t41 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t41 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v10 = t41
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v10 == I32(1) {
 																			goto l7
 																		}
 																		Store32(m.MemoryG1[int64(uint32(v6))+20:], uint32(v4))
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		v4 = v6 + I32(12)
 																		TBL_Fn18(m, I32(1188), v4)
-																		t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v10 = t42
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v10 == I32(1) {
 																			goto l8
 																		}
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		v10 = v6 + I32(20)
 																		t43 := TBL_Fn8(m, I32(1189), v10)
 																		v12 = t43
-																		t44 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t44 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v13 = t44
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v13 == I32(1) {
 																			goto l9
 																		}
 																		TBL_Fn406(m, v12, v4)
 																		_ = TBL_Fn407(m, v4)
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t46 := TBL_Fn8(m, I32(1189), v10)
 																		v4 = t46
-																		t47 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t47 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v10 = t47
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v10 == I32(1) {
 																			goto l10
 																		}
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t48 := TBL_Fn8(m, I32(1190), v4)
 																		v10 = t48
-																		t49 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t49 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v4 = t49
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		if v4 == I32(1) {
 																			goto l10
 																		}
@@ -998,62 +998,62 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 														goto l15
 													}
 												l13:
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													v5 = v6 + I32(44)
 													t56 := TBL_Fn8(m, I32(1181), v5)
 													v8 = t56
-													t57 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t57 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v7 = t57
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													if v7 == I32(1) {
 														goto l16
 													}
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t58 := int32(Load32(m.MemoryG1[int64(uint32(v6))+32:]))
 													t59 := TBL_Fn0(m, I32(1191), v8, t58)
 													v8 = t59
-													t60 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t60 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v7 = t60
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													if v7 == I32(1) {
 														goto l16
 													}
 													t61 := int32(Load32(m.MemoryG1[uint32(v4):]))
 													v4 = t61
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t62 := TBL_Fn8(m, I32(1192), v6+I32(20))
 													v7 = t62
-													t63 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t63 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v9 = t63
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													if v9 == I32(1) {
 														goto l16
 													}
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t64 := TBL_Fn8(m, I32(1181), v5)
 													v5 = t64
-													t65 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t65 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v9 = t65
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													if v9 == I32(1) {
 														goto l16
 													}
 													t66 := int64(Load64(m.MemoryG1[int64(uint32(v5))+16:]))
 													v14 = t66
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t67 := TBL_Fn8(m, I32(1193), v6+I32(24))
 													v5 = t67
-													t68 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t68 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v9 = t68
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													if v9 == I32(1) {
 														goto l16
 													}
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													TBL_Fn51(m, I32(1194), v8, v4, I64(0), v7, v14, v5, I64(-1), I32(0), I64(0))
-													t69 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t69 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v5 = t69
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													v4 = I32(1)
 													if v5 != I32(1) {
 														goto l17
@@ -1061,62 +1061,62 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 													goto l16
 												}
 											l11:
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												v5 = v6 + I32(44)
 												t70 := TBL_Fn8(m, I32(1181), v5)
 												v8 = t70
-												t71 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t71 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v7 = t71
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												if v7 == I32(1) {
 													goto l16
 												}
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t72 := int32(Load32(m.MemoryG1[int64(uint32(v6))+32:]))
 												t73 := TBL_Fn0(m, I32(1191), v8, t72)
 												v8 = t73
-												t74 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t74 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v7 = t74
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												if v7 == I32(1) {
 													goto l16
 												}
 												t75 := int32(Load32(m.MemoryG1[uint32(v4):]))
 												v4 = t75
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t76 := TBL_Fn8(m, I32(1192), v6+I32(20))
 												v7 = t76
-												t77 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t77 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v9 = t77
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												if v9 == I32(1) {
 													goto l16
 												}
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t78 := TBL_Fn8(m, I32(1181), v5)
 												v5 = t78
-												t79 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t79 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v9 = t79
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												if v9 == I32(1) {
 													goto l16
 												}
 												t80 := int64(Load64(m.MemoryG1[int64(uint32(v5))+16:]))
 												v14 = t80
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t81 := TBL_Fn8(m, I32(1193), v6+I32(24))
 												v5 = t81
-												t82 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t82 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v9 = t82
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												if v9 == I32(1) {
 													goto l16
 												}
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												TBL_Fn51(m, I32(1195), v8, v4, I64(0), v7, v14, v5, I64(-1), v6, I64(0))
-												t83 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t83 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t83
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												v4 = I32(1)
 												if v5 == I32(1) {
 													goto l16
@@ -1124,34 +1124,34 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 												goto l17
 											}
 										l12:
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											v5 = v6 + I32(44)
 											t84 := TBL_Fn8(m, I32(1181), v5)
 											v8 = t84
-											t85 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t85 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v7 = t85
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v7 == I32(1) {
 												goto l16
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t86 := int32(Load32(m.MemoryG1[int64(uint32(v6))+32:]))
 											t87 := TBL_Fn0(m, I32(1191), v8, t86)
 											v8 = t87
-											t88 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t88 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v7 = t88
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v7 == I32(1) {
 												goto l16
 											}
 											t89 := int32(Load32(m.MemoryG1[uint32(v4):]))
 											v7 = t89
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t90 := TBL_Fn8(m, I32(1181), v5)
 											v9 = t90
-											t91 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t91 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v10 = t91
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v10 == I32(1) {
 												goto l16
 											}
@@ -1159,69 +1159,69 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 											v14 = t92
 											t93 := int64(Load64(m.MemoryG1[int64(uint32(v9))+16:]))
 											v15 = t93
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											TBL_Fn52(m, I32(1196), v8, v7, I64(0), v15, v14, I64(-1), I32(0))
-											t94 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t94 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v8 = t94
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v8 == I32(1) {
 												goto l16
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t95 := TBL_Fn8(m, I32(1181), v5)
 											v8 = t95
-											t96 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t96 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v7 = t96
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v7 == I32(1) {
 												goto l16
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t97 := int32(Load32(m.MemoryG1[int64(uint32(v6))+32:]))
 											t98 := TBL_Fn0(m, I32(1191), v8, t97)
 											v8 = t98
-											t99 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t99 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v7 = t99
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v7 == I32(1) {
 												goto l16
 											}
 											t100 := int32(Load32(m.MemoryG1[uint32(v4):]))
 											v4 = t100
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t101 := TBL_Fn8(m, I32(1192), v6+I32(20))
 											v7 = t101
-											t102 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t102 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v9 = t102
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v9 == I32(1) {
 												goto l16
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t103 := TBL_Fn8(m, I32(1181), v5)
 											v5 = t103
-											t104 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t104 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v9 = t104
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v9 == I32(1) {
 												goto l16
 											}
 											t105 := int64(Load64(m.MemoryG1[int64(uint32(v5))+16:]))
 											v14 = t105
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t106 := TBL_Fn8(m, I32(1193), v6+I32(24))
 											v5 = t106
-											t107 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t107 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v9 = t107
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v9 == I32(1) {
 												goto l16
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											TBL_Fn53(m, I32(1197), v8, v4, I64(0), v7, v14, v5, I64(-1), I32(0), I64(0), I32(0))
-											t108 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t108 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t108
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											v4 = I32(1)
 											if v5 == I32(1) {
 												goto l16
@@ -1234,11 +1234,11 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 										goto l15
 									}
 								l16:
-									t110 := TBL_Fn49(m, I32(416736), I32(6083688), I32(0))
+									t110 := TBL_Fn49(m, I32(416720), I32(6083672), I32(0))
 									v4 = t110
 									t111 := m.G1
 									v11 = t111
-									t112 := TBL_Fn21(m, I32(416736))
+									t112 := TBL_Fn21(m, I32(416720))
 									if v11 == t112 {
 										t113 := TBL_Fn14(m, v4)
 										v4 = t113
@@ -1246,21 +1246,21 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 										t115 := int32(Load32(m.MemoryG1[int64(uint32(t114))+8:]))
 										t116 := m.T0[uint(t115)].(func(int32) int32)(v4)
 										v4 = t116
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t117 := TBL_Fn0(m, I32(1180), I32(32), v4)
 										v11 = t117
-										t118 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t118 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t118
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										if v4 == I32(1) {
 											goto l18
 										}
 										v4 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										TBL_Fn17(m, I32(125))
-										t119 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t119 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t119
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										if v5 != I32(1) {
 											goto l17
 										}
@@ -1268,7 +1268,7 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 										v1 = t120
 										goto l15
 									}
-									t121 := TBL_Fn21(m, I32(6083688))
+									t121 := TBL_Fn21(m, I32(6083672))
 									v5 = t121
 									t122 := TBL_Fn14(m, v4)
 									v4 = t122
@@ -1277,21 +1277,21 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 										t124 := int32(Load32(m.MemoryG1[int64(uint32(t123))+8:]))
 										t125 := m.T0[uint(t124)].(func(int32) int32)(v4)
 										v4 = t125
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t126 := TBL_Fn0(m, I32(1180), I32(32), v4)
 										v11 = t126
-										t127 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t127 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t127
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										if v4 == I32(1) {
 											goto l19
 										}
 										v4 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										TBL_Fn17(m, I32(125))
-										t128 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t128 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t128
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										if v5 != I32(1) {
 											goto l17
 										}
@@ -1299,21 +1299,21 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 										v1 = t129
 										goto l15
 									}
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t130 := TBL_Fn0(m, I32(1180), I32(32), I32(112844))
 									v11 = t130
-									t131 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t131 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t131
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v4 == I32(1) {
 										goto l18
 									}
 									v4 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									TBL_Fn17(m, I32(125))
-									t132 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t132 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t132
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v5 != I32(1) {
 										goto l17
 									}
@@ -1338,11 +1338,11 @@ func (m *Module) Xduckdb_data_chunk_from_arrow(v0, v1, v2, v3 int32) int32 {
 				l18:
 					t136 := TBL_Fn3(m)
 					v1 = t136
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t137 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t137 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t137
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 != I32(1) {
 						goto l15
 					}
@@ -1446,14 +1446,14 @@ func (m *Module) Xduckdb_bind_value(v0 int32, v1 int64, v2 int32) int32 {
 							goto l1
 						}
 					}
-					t6 := TBL_Fn394(m, v4+I32(100), I32(317266))
+					t6 := TBL_Fn394(m, v4+I32(100), I32(317251))
 					v2 = t6
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t7 := TBL_Fn8(m, I32(1198), v5)
 					v3 = t7
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						{
 							{
@@ -1462,30 +1462,30 @@ func (m *Module) Xduckdb_bind_value(v0 int32, v1 int64, v2 int32) int32 {
 								}
 								t9 := int32(Load32(m.MemoryG1[int64(uint32(v3))+92:]))
 								v3 = t9
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								Store32(m.MemoryG1[int64(uint32(v4))+96:], uint32(v3))
 								t10 := TBL_Fn11(m, I32(1199), v4+I32(112), v2, v4+I32(120), v4+I32(96))
 								v5 = t10
-								t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v3 = t11
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v3 == I32(1) {
 									goto l2
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t12 := TBL_Fn0(m, I32(84), v4+I32(40), v5)
 								v6 = t12
-								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v7 = t13
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								v3 = I32(1)
 								if v7 == I32(1) {
 									goto l3
 								}
 								TBL_Fn610(m, v0+I32(28), v6)
 								_ = TBL_Fn434(m, v6)
-								_ = TBL_Fn42216(m, v5)
-								_ = TBL_Fn42138(m, v2)
+								_ = TBL_Fn42219(m, v5)
+								_ = TBL_Fn42141(m, v2)
 								m.MemoryG1[int64(uint32(v0))+24] = byte(I32(0))
 								goto l0
 							}
@@ -1497,10 +1497,10 @@ func (m *Module) Xduckdb_bind_value(v0 int32, v1 int64, v2 int32) int32 {
 					l3:
 						t18 := TBL_Fn3(m)
 						v0 = t18
-						_ = TBL_Fn42216(m, v5)
+						_ = TBL_Fn42219(m, v5)
 					}
 				l4:
-					_ = TBL_Fn42138(m, v2)
+					_ = TBL_Fn42141(m, v2)
 					goto l5
 				}
 			l1:
@@ -1508,28 +1508,28 @@ func (m *Module) Xduckdb_bind_value(v0 int32, v1 int64, v2 int32) int32 {
 				TBL_Fn1660(m, v5, v0, v1)
 				t21 := TBL_Fn1303(m, v4, v2)
 				v2 = t21
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t22 := TBL_Fn0(m, I32(1200), v4+I32(40), v2)
 				v3 = t22
-				t23 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t23 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v6 = t23
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v6 == I32(1) {
 					goto l6
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t24 := TBL_Fn0(m, I32(1201), v0, v5)
 				v0 = t24
-				t25 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t25 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v6 = t25
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v6 == I32(1) {
 					goto l7
 				}
 				TBL_Fn1663(m, v0, v3)
 				TBL_Fn1664(m, v3)
 				_ = TBL_Fn516(m, v2)
-				_ = TBL_Fn42138(m, v5)
+				_ = TBL_Fn42141(m, v5)
 				v3 = I32(0)
 			}
 		l0:
@@ -1547,7 +1547,7 @@ func (m *Module) Xduckdb_bind_value(v0 int32, v1 int64, v2 int32) int32 {
 	}
 l8:
 	_ = TBL_Fn516(m, v2)
-	_ = TBL_Fn42138(m, v4 + I32(100))
+	_ = TBL_Fn42141(m, v4 + I32(100))
 l5:
 	TBL_Fn4(m, v0)
 	panic("unreachable")
@@ -1682,31 +1682,31 @@ func (m *Module) Xduckdb_execute_prepared_streaming(v0, v1 int32) int32 {
 		if t2 != I32(1) {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(1198), v3)
 		v2 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v3 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t5 := TBL_Fn10(m, I32(1202), v2, v0, I32(1))
 			v0 = t5
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t7 := TBL_Fn0(m, I32(1203), v0, v1)
 			v2 = t7
-			t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t8
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 != I32(1) {
 				goto l0
 			}
@@ -1784,12 +1784,12 @@ func (m *Module) Xduckdb_rows_changed(v0 int32) int64 {
 		}
 		v1 = v2 + I32(8)
 		TBL_Fn1667(m, v1, v0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t9 := TBL_Fn23(m, I32(1204), v1)
 		v3 = t9
-		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t10
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v0 == I32(1) {
 			goto l1
 		}
@@ -1828,35 +1828,35 @@ func (m *Module) Xduckdb_prepare_extracted_statement(v0, v1 int32, v2 int64, v3 
 		if uint64(v2) >= uint64(uint32((t3-t4)>>2)) {
 			goto l0
 		}
-		t5 := TBL_Fn42127(m, I32(96))
+		t5 := TBL_Fn42130(m, I32(96))
 		v4 = t5
 		Memory_zero(m.MemoryG1, uint32(v4), uint32(I32(96)))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t6 := TBL_Fn1674(m, v4)
 		v5 = t6
-		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v7 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v7 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t8 := TBL_Fn0(m, I32(1036), v1, int32(v2))
 				v1 = t8
-				t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t9
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v4 == I32(1) {
 					goto l1
 				}
 				t10 := int32(Load32(m.MemoryG1[uint32(v1):]))
 				v4 = t10
 				Store32(m.MemoryG1[uint32(v1):], uint32(I32(0)))
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t11 := TBL_Fn0(m, I32(1207), v0, v4)
 				v0 = t11
-				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t12
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 == I32(1) {
 					goto l1
 				}
@@ -1865,12 +1865,12 @@ func (m *Module) Xduckdb_prepare_extracted_statement(v0, v1 int32, v2 int64, v3 
 				TBL_Fn1676(m, v1, v0)
 				TBL_Fn1677(m, v6 + I32(12))
 				Store32(m.MemoryG1[uint32(v3):], uint32(v5))
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t13 := TBL_Fn8(m, I32(1198), v1)
 				v0 = t13
-				t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t14
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 != I32(1) {
 					v4 = I32(1)
 					t15 := int32(m.MemoryG1[int64(uint32(v0))+28])
@@ -1878,11 +1878,11 @@ func (m *Module) Xduckdb_prepare_extracted_statement(v0, v1 int32, v2 int64, v3 
 						goto l0
 					}
 					v4 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn18(m, I32(1208), v5)
-					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t16
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 != I32(1) {
 						goto l0
 					}
@@ -1927,25 +1927,25 @@ func (m *Module) Xduckdb_execute_prepared_arrow(v0, v1 int32) int32 {
 		if t2&I32(1) == 0 {
 			goto l0
 		}
-		t3 := TBL_Fn42127(m, I32(8))
+		t3 := TBL_Fn42130(m, I32(8))
 		v2 = t3
 		Store64(m.MemoryG1[uint32(v2):], uint64(I64(0)))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t4 := TBL_Fn8(m, I32(1198), v3)
 		v3 = t4
-		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t5
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v4 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t6 := TBL_Fn10(m, I32(1202), v3, v0, I32(0))
 			v3 = t6
-			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t7
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l1
 			}
@@ -1958,12 +1958,12 @@ func (m *Module) Xduckdb_execute_prepared_arrow(v0, v1 int32) int32 {
 				m.T0[uint(t10)].(func(int32))(v0)
 			}
 			Store32(m.MemoryG1[uint32(v1):], uint32(v2))
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t11 := TBL_Fn8(m, I32(1209), v2)
 			v0 = t11
-			t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t12
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 == I32(1) {
 				goto l1
 			}
@@ -2008,12 +2008,12 @@ func (m *Module) Xduckdb_connection_get_arrow_options(v0, v1 int32) {
 		if p1|p2 != 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(1210), v0)
 		v2 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
@@ -2021,35 +2021,35 @@ func (m *Module) Xduckdb_connection_get_arrow_options(v0, v1 int32) {
 						if v0 == I32(1) {
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						v0 = v3 + I32(8)
 						TBL_Fn7(m, I32(1211), v0, v2)
-						t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v2 = t5
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v2 == I32(1) {
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t6 := TBL_Fn8(m, I32(448), I32(24))
 						v2 = t6
-						t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t7
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v4 == I32(1) {
 							goto l2
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t8 := TBL_Fn0(m, I32(1212), v2, v0)
 						v4 = t8
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v5 == I32(1) {
 							goto l3
 						}
 						Store32(m.MemoryG1[uint32(v1):], uint32(v4))
-						_ = TBL_Fn42138(m, v0)
+						_ = TBL_Fn42141(m, v0)
 						goto l0
 					}
 				l1:
@@ -2068,7 +2068,7 @@ func (m *Module) Xduckdb_connection_get_arrow_options(v0, v1 int32) {
 			m.Xfree(v2)
 		}
 	l5:
-		_ = TBL_Fn42138(m, v3 + I32(8))
+		_ = TBL_Fn42141(m, v3 + I32(8))
 	l4:
 		_ = TBL_Fn14(m, v0)
 		Store32(m.MemoryG1[uint32(v1):], uint32(I32(0)))
@@ -2098,20 +2098,20 @@ func (m *Module) Xduckdb_create_logical_type(v0 int32) int32 {
 	v0 = p3 - I32(1)
 	var p4 int32
 	if uint32(v0) <= uint32(I32(40)) {
-		t5 := int32(m.MemoryG1[int64(uint32(v0))+1668304])
+		t5 := int32(m.MemoryG1[int64(uint32(v0))+1668288])
 		p4 = t5
 	} else {
 		p4 = I32(0)
 	}
 	v1 = p4
-	t6 := TBL_Fn42127(m, I32(12))
+	t6 := TBL_Fn42130(m, I32(12))
 	v0 = t6
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t7 := TBL_Fn0(m, I32(488), v0, v1)
 	v1 = t7
-	t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t8
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		return v1
 	}
@@ -2138,7 +2138,7 @@ func (m *Module) Xduckdb_destroy_logical_type(v0 int32) {
 	}
 }
 func (m *Module) Xduckdb_library_version() int32 {
-	return I32(266107)
+	return I32(266092)
 }
 func (m *Module) Xduckdb_result_get_arrow_options(v0 int32) int32 {
 	var v1, v2 int32
@@ -2152,21 +2152,21 @@ func (m *Module) Xduckdb_result_get_arrow_options(v0 int32) int32 {
 		if t1 == 0 {
 			goto l0
 		}
-		t2 := TBL_Fn42127(m, I32(24))
+		t2 := TBL_Fn42130(m, I32(24))
 		v0 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(1241), v1)
 		v1 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t5 := TBL_Fn0(m, I32(1212), v0, v1+I32(148))
 			v2 = t5
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l0
 			}
@@ -2198,40 +2198,40 @@ func (m *Module) Xduckdb_fetch_chunk(v0 int32) int32 {
 		m.MemoryG1[int64(uint32(v0))+4] = byte(I32(2))
 		t3 := TBL_Fn391(m, v0)
 		v3 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t4 := TBL_Fn8(m, I32(1242), v3)
 		v2 = t4
-		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t5
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v0 != I32(1) {
 			Store32(m.MemoryG1[int64(uint32(v1))+48:], uint32(I32(0)))
 			_ = TBL_Fn1645(m, v1 + I32(48))
 			goto l0
 		}
-		t7 := TBL_Fn6(m, I32(6083688))
+		t7 := TBL_Fn6(m, I32(6083672))
 		v0 = t7
 		{
 			t8 := m.G1
-			t9 := TBL_Fn21(m, I32(6083688))
+			t9 := TBL_Fn21(m, I32(6083672))
 			if t8 == t9 {
 				t10 := TBL_Fn14(m, v0)
 				v0 = t10
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t11 := TBL_Fn0(m, I32(84), v1+I32(48), v0)
 				v2 = t11
-				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t12
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					{
 						if v0 != I32(1) {
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t13 := TBL_Fn0(m, I32(59), v1, v2)
 							v0 = t13
-							t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v4 = t14
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v4 == I32(1) {
 								goto l1
 							}
@@ -2252,11 +2252,11 @@ func (m *Module) Xduckdb_fetch_chunk(v0 int32) int32 {
 					_ = TBL_Fn434(m, v2)
 				}
 			l2:
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn17(m, I32(125))
-				t20 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t20 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t20
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 == I32(1) {
 					goto l3
 				}
@@ -2300,36 +2300,36 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 		v5 = t5
 		v4 = v3 + I32(32)
 		TBL_Fn1684(m, v4, v1)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		v6 = v3 + I32(44)
 		TBL_Fn2(m, I32(1243), v6, v5, v4)
-		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
 					if v5 != I32(1) {
 						_ = TBL_Fn1138(m, v4)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t8 := TBL_Fn0(m, I32(1212), v3+I32(8), v0)
 						v4 = t8
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l1
 						}
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn9(m, I32(1244), v1, v2, v4, v6)
-						t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t10
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l2
 						}
-						_ = TBL_Fn42138(m, v4)
+						_ = TBL_Fn42141(m, v4)
 						goto l3
 					}
 					t12 := TBL_Fn3(m)
@@ -2338,18 +2338,18 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 					goto l4
 				}
 			l1:
-				t14 := TBL_Fn49(m, I32(416736), I32(6083688), I32(0))
+				t14 := TBL_Fn49(m, I32(416720), I32(6083672), I32(0))
 				v1 = t14
 				t15 := m.G1
 				v0 = t15
 				goto l5
 			}
 		l2:
-			t16 := TBL_Fn49(m, I32(416736), I32(6083688), I32(0))
+			t16 := TBL_Fn49(m, I32(416720), I32(6083672), I32(0))
 			v1 = t16
 			t17 := m.G1
 			v0 = t17
-			_ = TBL_Fn42138(m, v4)
+			_ = TBL_Fn42141(m, v4)
 		}
 	l5:
 		{
@@ -2357,7 +2357,7 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 				{
 					{
 						{
-							t19 := TBL_Fn21(m, I32(416736))
+							t19 := TBL_Fn21(m, I32(416720))
 							if t19 == v0 {
 								t20 := TBL_Fn14(m, v1)
 								v0 = t20
@@ -2365,20 +2365,20 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 								t22 := int32(Load32(m.MemoryG1[int64(uint32(t21))+8:]))
 								t23 := m.T0[uint(t22)].(func(int32) int32)(v0)
 								v0 = t23
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t24 := TBL_Fn0(m, I32(1180), I32(32), v0)
 								v0 = t24
-								t25 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t25 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t25
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 == I32(1) {
 									goto l6
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								TBL_Fn17(m, I32(125))
-								t26 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t26 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t26
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 != I32(1) {
 									goto l3
 								}
@@ -2386,7 +2386,7 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 								v0 = t27
 								goto l7
 							}
-							t28 := TBL_Fn21(m, I32(6083688))
+							t28 := TBL_Fn21(m, I32(6083672))
 							v2 = t28
 							t29 := TBL_Fn14(m, v1)
 							v1 = t29
@@ -2395,20 +2395,20 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 								t31 := int32(Load32(m.MemoryG1[int64(uint32(t30))+8:]))
 								t32 := m.T0[uint(t31)].(func(int32) int32)(v1)
 								v0 = t32
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t33 := TBL_Fn0(m, I32(1180), I32(32), v0)
 								v0 = t33
-								t34 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t34 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t34
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 == I32(1) {
 									goto l8
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								TBL_Fn17(m, I32(125))
-								t35 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t35 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t35
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 != I32(1) {
 									goto l3
 								}
@@ -2416,20 +2416,20 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 								v0 = t36
 								goto l7
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t37 := TBL_Fn0(m, I32(1180), I32(32), I32(112844))
 							v0 = t37
-							t38 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t38 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v1 = t38
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v1 == I32(1) {
 								goto l9
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							TBL_Fn17(m, I32(125))
-							t39 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t39 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v1 = t39
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v1 != I32(1) {
 								goto l3
 							}
@@ -2440,11 +2440,11 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 					l6:
 						t41 := TBL_Fn3(m)
 						v0 = t41
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn17(m, I32(125))
-						t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t42
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 != I32(1) {
 							goto l7
 						}
@@ -2453,11 +2453,11 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 				l8:
 					t43 := TBL_Fn3(m)
 					v0 = t43
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t44 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t44 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t44
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l10
 					}
@@ -2466,11 +2466,11 @@ func (m *Module) Xduckdb_data_chunk_to_arrow(v0, v1, v2 int32) int32 {
 			l9:
 				t45 := TBL_Fn3(m)
 				v0 = t45
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn17(m, I32(125))
-				t46 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t46 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t46
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 != I32(1) {
 					goto l7
 				}
@@ -2513,31 +2513,31 @@ func (m *Module) Xduckdb_query(v0, v1, v2 int32) int32 {
 	T0 := m.G0
 	v4 = T0 - I32(16)
 	m.G0 = v4
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn0(m, I32(1), v4+I32(4), v1)
 	v1 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v3 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t3 := TBL_Fn0(m, I32(1247), v0, v1)
 				v0 = t3
-				t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v3 = t4
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v3 == I32(1) {
 					goto l0
 				}
-				_ = TBL_Fn42138(m, v1)
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				_ = TBL_Fn42141(m, v1)
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t6 := TBL_Fn0(m, I32(1203), v0, v2)
 				v1 = t6
-				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t7
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 != I32(1) {
 					goto l1
 				}
@@ -2552,7 +2552,7 @@ func (m *Module) Xduckdb_query(v0, v1, v2 int32) int32 {
 	l0:
 		t10 := TBL_Fn6(m, I32(0))
 		v0 = t10
-		_ = TBL_Fn42138(m, v1)
+		_ = TBL_Fn42141(m, v1)
 	}
 l2:
 	_ = TBL_Fn14(m, v0)
@@ -2600,55 +2600,55 @@ func (m *Module) Xduckdb_append_data_chunk(v0, v1 int32) int32 {
 							if t3 == 0 {
 								t4 := TBL_Fn394(m, v4+I32(4), I32(93483))
 								v1 = t4
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t5 := TBL_Fn0(m, I32(181), v4+I32(16), v1)
 								v3 = t5
-								t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t6
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v5 != I32(1) {
 									TBL_Fn610(m, v0+I32(4), v3)
 									_ = TBL_Fn434(m, v3)
-									_ = TBL_Fn42138(m, v1)
+									_ = TBL_Fn42141(m, v1)
 									goto l0
 								}
 								t9 := TBL_Fn3(m)
 								v0 = t9
-								_ = TBL_Fn42138(m, v1)
+								_ = TBL_Fn42141(m, v1)
 								goto l1
 							}
 							v2 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t11 := TBL_Fn8(m, I32(1248), v0)
 							v3 = t11
-							t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t12
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v5 != I32(1) {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								TBL_Fn7(m, I32(1249), v3, v1)
-								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v1 = t13
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v1 != I32(1) {
 									goto l0
 								}
 							}
-							t14 := TBL_Fn54(m, I32(6083688), I32(0))
+							t14 := TBL_Fn54(m, I32(6083672), I32(0))
 							v1 = t14
 							t15 := m.G1
 							v2 = t15
-							t16 := TBL_Fn21(m, I32(6083688))
+							t16 := TBL_Fn21(m, I32(6083672))
 							v3 = t16
 							t17 := TBL_Fn14(m, v1)
 							v1 = t17
 							if v2 == v3 {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t18 := TBL_Fn0(m, I32(84), v4+I32(16), v1)
 								v1 = t18
-								t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v3 = t19
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								v2 = I32(1)
 								if v3 == I32(1) {
 									goto l2
@@ -2658,27 +2658,27 @@ func (m *Module) Xduckdb_append_data_chunk(v0, v1 int32) int32 {
 								TBL_Fn16(m)
 								goto l0
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t21 := TBL_Fn0(m, I32(1), v4+I32(4), I32(87618))
 							v1 = t21
-							t22 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t22 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v2 = t22
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v2 == I32(1) {
 								goto l3
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t23 := TBL_Fn0(m, I32(181), v4+I32(16), v1)
 							v2 = t23
-							t24 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t24 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v3 = t24
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v3 == I32(1) {
 								goto l4
 							}
 							TBL_Fn610(m, v0+I32(4), v2)
 							_ = TBL_Fn434(m, v2)
-							_ = TBL_Fn42138(m, v1)
+							_ = TBL_Fn42141(m, v1)
 							TBL_Fn16(m)
 							v2 = I32(1)
 						}
@@ -2693,14 +2693,14 @@ func (m *Module) Xduckdb_append_data_chunk(v0, v1 int32) int32 {
 				l4:
 					t28 := TBL_Fn3(m)
 					v0 = t28
-					_ = TBL_Fn42138(m, v1)
+					_ = TBL_Fn42141(m, v1)
 				}
 			l5:
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn17(m, I32(125))
-				t30 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t30 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t30
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 == I32(1) {
 					goto l6
 				}
@@ -2709,11 +2709,11 @@ func (m *Module) Xduckdb_append_data_chunk(v0, v1 int32) int32 {
 		l2:
 			t31 := TBL_Fn3(m)
 			v0 = t31
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn17(m, I32(125))
-			t32 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t32 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t32
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l1
 			}
@@ -2735,13 +2735,13 @@ func (m *Module) Xduckdb_create_error_data(v0, v1 int32) int32 {
 	T0 := m.G0
 	v2 = T0 + I32(-64)
 	m.G0 = v2
-	t1 := TBL_Fn42127(m, I32(48))
+	t1 := TBL_Fn42130(m, I32(48))
 	v3 = t1
 	Memory_zero(m.MemoryG1, uint32(v3), uint32(I32(44)))
 	Store32(m.MemoryG1[int64(uint32(v3))+44:], uint32(I32(0x3f800000)))
 	t2 := TBL_Fn394(m, v2+I32(4), v1)
 	v1 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t4 := v2 + I32(16)
 	p3 := I32(0)
 	if uint32(v0-I32(1)) < uint32(I32(42)) {
@@ -2749,19 +2749,19 @@ func (m *Module) Xduckdb_create_error_data(v0, v1 int32) int32 {
 	}
 	t5 := TBL_Fn10(m, I32(246), t4, p3&I32(255), v1)
 	v0 = t5
-	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v4 = t6
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v4 != I32(1) {
 		TBL_Fn610(m, v3, v0)
 		_ = TBL_Fn434(m, v0)
-		_ = TBL_Fn42138(m, v1)
+		_ = TBL_Fn42141(m, v1)
 		m.G0 = v2 - I32(-64)
 		return v3
 	}
 	t9 := TBL_Fn3(m)
 	v0 = t9
-	_ = TBL_Fn42138(m, v1)
+	_ = TBL_Fn42141(m, v1)
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -2809,23 +2809,23 @@ func (m *Module) Xduckdb_column_logical_type(v0 int32, v1 int64) int32 {
 		}
 		t1 := int32(Load32(m.MemoryG1[int64(uint32(v0))+32:]))
 		v2 = t1
-		t2 := TBL_Fn42127(m, I32(12))
+		t2 := TBL_Fn42130(m, I32(12))
 		v0 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(1241), v2)
 		v2 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t5 := TBL_Fn0(m, I32(611), v2+I32(72), int32(v1))
 		v2 = t5
-		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -3534,15 +3534,15 @@ func (m *Module) Xduckdb_create_aggregate_function() int32 {
 	T0 := m.G0
 	v1 = T0 - I32(48)
 	m.G0 = v1
-	t1 := TBL_Fn42127(m, I32(168))
+	t1 := TBL_Fn42130(m, I32(168))
 	v5 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	v3 = v1 + I32(36)
-	t2 := TBL_Fn0(m, I32(1), v3, I32(416692))
+	t2 := TBL_Fn0(m, I32(1), v3, I32(416677))
 	v2 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			{
@@ -3550,35 +3550,35 @@ func (m *Module) Xduckdb_create_aggregate_function() int32 {
 					if v0 != I32(1) {
 						Store32(m.MemoryG1[int64(uint32(v1))+32:], uint32(I32(0)))
 						Store64(m.MemoryG1[int64(uint32(v1))+24:], uint64(I64(0)))
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t4 := TBL_Fn0(m, I32(488), v1+I32(12), I32(0))
 						v4 = t4
-						t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t5
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l0
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t6 := v5
 						t7 := v2
 						v6 = v1 + I32(24)
 						t8 := TBL_Fn155(m, I32(7008), t6, t7, v6, v4, I32(10005), I32(10006), I32(10007), I32(10008), I32(10009), I32(0), I32(10010), I32(0), I32(0), I32(0), I32(0), I32(0))
 						v0 = t8
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v7 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v7 == I32(1) {
 							goto l1
 						}
 						_ = TBL_Fn407(m, v4 + I32(4))
 						_ = TBL_Fn1138(m, v6)
-						_ = TBL_Fn42138(m, v2)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						_ = TBL_Fn42141(m, v2)
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn18(m, I32(10011), v3)
-						t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v2 = t13
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v2 == I32(1) {
 							goto l2
 						}
@@ -3602,7 +3602,7 @@ func (m *Module) Xduckdb_create_aggregate_function() int32 {
 		}
 	l5:
 		_ = TBL_Fn1138(m, v1 + I32(24))
-		_ = TBL_Fn42138(m, v2)
+		_ = TBL_Fn42141(m, v2)
 	l4:
 		m.Xfree(v5)
 		TBL_Fn4(m, v0)
@@ -3771,31 +3771,31 @@ func (m *Module) Xduckdb_register_aggregate_function(v0, v1 int32) int32 {
 					v2 = t3
 					t5 := TBL_Fn3296(m, t4, v2)
 					v4 = t5
-					_ = TBL_Fn42138(m, v2)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					_ = TBL_Fn42141(m, v2)
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t7 := TBL_Fn0(m, I32(5754), v3+I32(4), v1)
 					v1 = t7
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l0
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					_ = TBL_Fn0(m, I32(1119), v4+I32(12), v1)
-					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t10
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l1
 					}
 					_ = TBL_Fn1534(m, v1)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn0(m, I32(10013), v0, v4)
 					v2 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l0
 					}
@@ -3897,25 +3897,25 @@ func (m *Module) Xduckdb_register_aggregate_function_set(v0, v1 int32) int32 {
 				goto l2
 			}
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v3))+28:], uint32(v0))
 		t18 := TBL_Fn8(m, I32(1210), v0)
 		v0 = t18
-		t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t19
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v2 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v3))+8:], uint32(v1))
-					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1564228)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1564212)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v3))+16:], uint32(v3))
 					Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v3+I32(28)))
 					TBL_Fn2(m, I32(9934), v0, v3, I32(1))
-					t20 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t20 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t20
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l3
 					}
@@ -3983,27 +3983,27 @@ func (m *Module) Xduckdb_create_aggregate_function_set(v0 int32) int32 {
 		if t1 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t2 := TBL_Fn8(m, I32(448), I32(24))
 		v1 = t2
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v2 != I32(1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t4 := TBL_Fn0(m, I32(1), v3+I32(4), v0)
 					v0 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l1
 					}
 					t6 := TBL_Fn3296(m, v1, v0)
 					v1 = t6
-					_ = TBL_Fn42138(m, v0)
+					_ = TBL_Fn42141(m, v0)
 					goto l0
 				}
 				t8 := TBL_Fn6(m, I32(0))
@@ -4059,11 +4059,11 @@ func (m *Module) Xduckdb_add_aggregate_function_to_set(v0, v1 int32) int32 {
 			v3 = I32(0)
 			t3 := TBL_Fn6581(m, v2+I32(8), v1)
 			v1 = t3
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			_ = TBL_Fn0(m, I32(1119), v0+I32(12), v1)
-			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l0
 			}
@@ -4088,40 +4088,40 @@ func (m *Module) Xduckdb_append_default(v0 int32) int32 {
 		if v0 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(10017), v0)
 		v1 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 != I32(1) {
 			t3 := int32(Load32(m.MemoryG1[uint32(v1):]))
 			t4 := int32(Load32(m.MemoryG1[int64(uint32(t3))+8:]))
 			v2 = t4
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn18(m, v2, v1)
-			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l1
 			}
 		}
-		t6 := TBL_Fn54(m, I32(6083688), I32(0))
+		t6 := TBL_Fn54(m, I32(6083672), I32(0))
 		v1 = t6
 		t7 := m.G1
 		v4 = t7
-		t8 := TBL_Fn21(m, I32(6083688))
+		t8 := TBL_Fn21(m, I32(6083672))
 		v2 = t8
 		t9 := TBL_Fn14(m, v1)
 		v1 = t9
 		if v2 == v4 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t10 := TBL_Fn0(m, I32(84), v3, v1)
 			v1 = t10
-			t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t11
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v4 = I32(1)
 			if v2 == I32(1) {
 				goto l2
@@ -4136,11 +4136,11 @@ func (m *Module) Xduckdb_append_default(v0 int32) int32 {
 	l2:
 		t13 := TBL_Fn3(m)
 		v0 = t13
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t14
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4174,40 +4174,40 @@ func (m *Module) Xduckdb_append_default_to_chunk(v0, v1 int32, v2, v3 int64) int
 			goto l0
 		}
 		v4 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(10017), v0)
 		v5 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v6 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v6 != I32(1) {
 			t5 := int32(Load32(m.MemoryG1[uint32(v5):]))
 			t6 := int32(Load32(m.MemoryG1[int64(uint32(t5))+12:]))
 			v6 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn37(m, v6, v5, v1, v2, v3)
-			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t7
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l0
 			}
 		}
-		t8 := TBL_Fn54(m, I32(6083688), I32(0))
+		t8 := TBL_Fn54(m, I32(6083672), I32(0))
 		v1 = t8
 		t9 := m.G1
 		v4 = t9
-		t10 := TBL_Fn21(m, I32(6083688))
+		t10 := TBL_Fn21(m, I32(6083672))
 		v5 = t10
 		t11 := TBL_Fn14(m, v1)
 		v1 = t11
 		if v4 == v5 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t12 := TBL_Fn0(m, I32(84), v7, v1)
 			v1 = t12
-			t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t13
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v4 = I32(1)
 			if v5 != I32(1) {
 				TBL_Fn610(m, v0+I32(4), v1)
@@ -4217,11 +4217,11 @@ func (m *Module) Xduckdb_append_default_to_chunk(v0, v1 int32, v2, v3 int64) int
 			}
 			t15 := TBL_Fn3(m)
 			v0 = t15
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn17(m, I32(125))
-			t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t16
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 == I32(1) {
 				goto l1
 			}
@@ -4240,47 +4240,47 @@ l1:
 	panic("unreachable")
 }
 func (m *Module) Xduckdb_append_bool(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10018))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10018))
 	return T0
 }
 func (m *Module) Xduckdb_append_int8(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10019))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10019))
 	return T0
 }
 func (m *Module) Xduckdb_append_int16(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10020))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10020))
 	return T0
 }
 func (m *Module) Xduckdb_append_int32(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10021))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10021))
 	return T0
 }
 func (m *Module) Xduckdb_append_int64(v0 int32, v1 int64) int32 {
-	T0 := TBL_Fn42483(m, v0, v1, I32(10022))
+	T0 := TBL_Fn42486(m, v0, v1, I32(10022))
 	return T0
 }
 func (m *Module) Xduckdb_append_hugeint(v0, v1 int32) int32 {
-	T0 := TBL_Fn42484(m, v0, v1, I32(10023))
+	T0 := TBL_Fn42487(m, v0, v1, I32(10023))
 	return T0
 }
 func (m *Module) Xduckdb_append_uint8(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10024))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10024))
 	return T0
 }
 func (m *Module) Xduckdb_append_uint16(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10025))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10025))
 	return T0
 }
 func (m *Module) Xduckdb_append_uint32(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10026))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10026))
 	return T0
 }
 func (m *Module) Xduckdb_append_uint64(v0 int32, v1 int64) int32 {
-	T0 := TBL_Fn42483(m, v0, v1, I32(5413))
+	T0 := TBL_Fn42486(m, v0, v1, I32(5413))
 	return T0
 }
 func (m *Module) Xduckdb_append_uhugeint(v0, v1 int32) int32 {
-	T0 := TBL_Fn42484(m, v0, v1, I32(10027))
+	T0 := TBL_Fn42487(m, v0, v1, I32(10027))
 	return T0
 }
 func (m *Module) Xduckdb_append_float(v0 int32, v1 float32) int32 {
@@ -4292,37 +4292,37 @@ func (m *Module) Xduckdb_append_float(v0 int32, v1 float32) int32 {
 		if v0 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(10017), v0)
 		v2 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn74(m, I32(10028), v2, v1)
-			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t3
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 != I32(1) {
 				goto l1
 			}
 		}
-		t4 := TBL_Fn54(m, I32(6083688), I32(0))
+		t4 := TBL_Fn54(m, I32(6083672), I32(0))
 		v2 = t4
 		t5 := m.G1
 		v5 = t5
-		t6 := TBL_Fn21(m, I32(6083688))
+		t6 := TBL_Fn21(m, I32(6083672))
 		v3 = t6
 		t7 := TBL_Fn14(m, v2)
 		v2 = t7
 		if v3 == v5 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t8 := TBL_Fn0(m, I32(84), v4, v2)
 			v2 = t8
-			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v3 = t9
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v5 = I32(1)
 			if v3 == I32(1) {
 				goto l2
@@ -4337,11 +4337,11 @@ func (m *Module) Xduckdb_append_float(v0 int32, v1 float32) int32 {
 	l2:
 		t11 := TBL_Fn3(m)
 		v0 = t11
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t12
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v4 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4365,37 +4365,37 @@ func (m *Module) Xduckdb_append_double(v0 int32, v1 float64) int32 {
 		if v0 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(10017), v0)
 		v2 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn72(m, I32(10029), v2, v1)
-			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t3
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 != I32(1) {
 				goto l1
 			}
 		}
-		t4 := TBL_Fn54(m, I32(6083688), I32(0))
+		t4 := TBL_Fn54(m, I32(6083672), I32(0))
 		v2 = t4
 		t5 := m.G1
 		v5 = t5
-		t6 := TBL_Fn21(m, I32(6083688))
+		t6 := TBL_Fn21(m, I32(6083672))
 		v3 = t6
 		t7 := TBL_Fn14(m, v2)
 		v2 = t7
 		if v3 == v5 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t8 := TBL_Fn0(m, I32(84), v4, v2)
 			v2 = t8
-			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v3 = t9
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v5 = I32(1)
 			if v3 == I32(1) {
 				goto l2
@@ -4410,11 +4410,11 @@ func (m *Module) Xduckdb_append_double(v0 int32, v1 float64) int32 {
 	l2:
 		t11 := TBL_Fn3(m)
 		v0 = t11
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t12
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v4 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4430,15 +4430,15 @@ l1:
 	return v5
 }
 func (m *Module) Xduckdb_append_date(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10030))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10030))
 	return T0
 }
 func (m *Module) Xduckdb_append_time(v0 int32, v1 int64) int32 {
-	T0 := TBL_Fn42483(m, v0, v1, I32(10031))
+	T0 := TBL_Fn42486(m, v0, v1, I32(10031))
 	return T0
 }
 func (m *Module) Xduckdb_append_timestamp(v0 int32, v1 int64) int32 {
-	T0 := TBL_Fn42483(m, v0, v1, I32(10032))
+	T0 := TBL_Fn42486(m, v0, v1, I32(10032))
 	return T0
 }
 func (m *Module) Xduckdb_append_interval(v0, v1 int32) int32 {
@@ -4463,41 +4463,41 @@ func (m *Module) Xduckdb_append_interval(v0, v1 int32) int32 {
 		if v0 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t5 := TBL_Fn8(m, I32(10017), v0)
 		v2 = t5
-		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v4 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t7 := int64(Load64(m.MemoryG1[uint32(v3):]))
 			Store64(m.MemoryG1[uint32(v1):], uint64(t7))
 			t8 := int64(Load64(m.MemoryG1[int64(uint32(v3))+8:]))
 			Store64(m.MemoryG1[int64(uint32(v1))+8:], uint64(t8))
 			TBL_Fn7(m, I32(10033), v2, v1)
-			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t9
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 != I32(1) {
 				goto l1
 			}
 		}
-		t10 := TBL_Fn54(m, I32(6083688), I32(0))
+		t10 := TBL_Fn54(m, I32(6083672), I32(0))
 		v2 = t10
 		t11 := m.G1
 		v5 = t11
-		t12 := TBL_Fn21(m, I32(6083688))
+		t12 := TBL_Fn21(m, I32(6083672))
 		v4 = t12
 		t13 := TBL_Fn14(m, v2)
 		v2 = t13
 		if v4 == v5 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t14 := TBL_Fn0(m, I32(84), v1+I32(16), v2)
 			v2 = t14
-			t15 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t15 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v4 = t15
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v5 = I32(1)
 			if v4 == I32(1) {
 				goto l2
@@ -4512,11 +4512,11 @@ func (m *Module) Xduckdb_append_interval(v0, v1 int32) int32 {
 	l2:
 		t17 := TBL_Fn3(m)
 		v0 = t17
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t18 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t18 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t18
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v1 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4541,37 +4541,37 @@ func (m *Module) Xduckdb_append_null(v0 int32) int32 {
 		if v0 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(10017), v0)
 		v1 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn7(m, I32(10034), v1, v0)
-			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t3
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l1
 			}
 		}
-		t4 := TBL_Fn54(m, I32(6083688), I32(0))
+		t4 := TBL_Fn54(m, I32(6083672), I32(0))
 		v1 = t4
 		t5 := m.G1
 		v4 = t5
-		t6 := TBL_Fn21(m, I32(6083688))
+		t6 := TBL_Fn21(m, I32(6083672))
 		v2 = t6
 		t7 := TBL_Fn14(m, v1)
 		v1 = t7
 		if v2 == v4 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t8 := TBL_Fn0(m, I32(84), v3, v1)
 			v1 = t8
-			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t9
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v4 = I32(1)
 			if v2 == I32(1) {
 				goto l2
@@ -4586,11 +4586,11 @@ func (m *Module) Xduckdb_append_null(v0 int32) int32 {
 	l2:
 		t11 := TBL_Fn3(m)
 		v0 = t11
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t12
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4606,7 +4606,7 @@ l1:
 	return v4
 }
 func (m *Module) Xduckdb_append_varchar(v0, v1 int32) int32 {
-	T0 := TBL_Fn42482(m, v0, v1, I32(10035))
+	T0 := TBL_Fn42485(m, v0, v1, I32(10035))
 	return T0
 }
 func (m *Module) Xduckdb_append_varchar_length(v0, v1 int32, v2 int64) int32 {
@@ -4646,41 +4646,41 @@ l0:
 		if v0 == 0 {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t6 := TBL_Fn8(m, I32(10017), v0)
 		v5 = t6
-		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v6 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v6 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t8 := int64(Load64(m.MemoryG1[uint32(v4):]))
 			Store64(m.MemoryG1[uint32(v1):], uint64(t8))
 			t9 := int64(Load64(m.MemoryG1[int64(uint32(v4))+8:]))
 			Store64(m.MemoryG1[int64(uint32(v1))+8:], uint64(t9))
 			TBL_Fn7(m, I32(5415), v5, v1)
-			t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t10
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v5 != I32(1) {
 				goto l2
 			}
 		}
-		t11 := TBL_Fn54(m, I32(6083688), I32(0))
+		t11 := TBL_Fn54(m, I32(6083672), I32(0))
 		v3 = t11
 		t12 := m.G1
 		v5 = t12
-		t13 := TBL_Fn21(m, I32(6083688))
+		t13 := TBL_Fn21(m, I32(6083672))
 		v6 = t13
 		t14 := TBL_Fn14(m, v3)
 		v3 = t14
 		if v5 == v6 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t15 := TBL_Fn0(m, I32(84), v1+I32(16), v3)
 			v5 = t15
-			t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v6 = t16
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			v3 = I32(1)
 			if v6 == I32(1) {
 				goto l3
@@ -4695,11 +4695,11 @@ l0:
 	l3:
 		t18 := TBL_Fn3(m)
 		v0 = t18
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn17(m, I32(125))
-		t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t19
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v1 != I32(1) {
 			TBL_Fn4(m, v0)
 			panic("unreachable")
@@ -4724,12 +4724,12 @@ func (m *Module) Xduckdb_append_blob(v0, v1 int32, v2 int64) int32 {
 	TBL_Fn3012(m, v4, v1, v2)
 	t1 := TBL_Fn1303(m, v3, v4)
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t2 := TBL_Fn0(m, I32(10036), v0, v1)
 	v0 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v1)
 		_ = TBL_Fn516(m, v4)
@@ -4750,12 +4750,12 @@ func (m *Module) Xduckdb_append_value(v0, v1 int32) int32 {
 	m.G0 = v2
 	t1 := TBL_Fn1303(m, v2+I32(8), v1)
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t2 := TBL_Fn0(m, I32(10036), v0, v1)
 	v0 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v3 != I32(1) {
 		_ = TBL_Fn516(m, v1)
 		m.G0 = v2 + I32(48)
@@ -4772,27 +4772,27 @@ func (m *Module) Xduckdb_query_arrow(v0, v1, v2 int32) int32 {
 	T0 := m.G0
 	v5 = T0 - I32(16)
 	m.G0 = v5
-	t1 := TBL_Fn42127(m, I32(8))
+	t1 := TBL_Fn42130(m, I32(8))
 	v3 = t1
 	Store64(m.MemoryG1[uint32(v3):], uint64(I64(0)))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t2 := TBL_Fn0(m, I32(1), v5+I32(4), v1)
 	v1 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v4 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	var p4 int32
 	{
 		{
 			{
 				{
 					if v4 != I32(1) {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t5 := TBL_Fn0(m, I32(1247), v0, v1)
 						v4 = t5
-						t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t6
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l0
 						}
@@ -4804,14 +4804,14 @@ func (m *Module) Xduckdb_query_arrow(v0, v1, v2 int32) int32 {
 							t9 := int32(Load32(m.MemoryG1[int64(uint32(t8))+4:]))
 							m.T0[uint(t9)].(func(int32))(v0)
 						}
-						_ = TBL_Fn42138(m, v1)
+						_ = TBL_Fn42141(m, v1)
 						Store32(m.MemoryG1[uint32(v2):], uint32(v3))
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t11 := TBL_Fn8(m, I32(1209), v3)
 						v0 = t11
-						t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t12
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l1
 						}
@@ -4827,7 +4827,7 @@ func (m *Module) Xduckdb_query_arrow(v0, v1, v2 int32) int32 {
 			l0:
 				t16 := TBL_Fn6(m, I32(0))
 				v0 = t16
-				_ = TBL_Fn42138(m, v1)
+				_ = TBL_Fn42141(m, v1)
 				goto l3
 			}
 		l1:
@@ -4853,41 +4853,41 @@ func (m *Module) Xduckdb_query_arrow_schema(v0, v1 int32) int32 {
 	}
 	T0 := int32(Load32(m.MemoryG1[uint32(v1):]))
 	v2 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn8(m, I32(1209), v0)
 	v3 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v1 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v1 == I32(1) {
 				goto l0
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t3 := TBL_Fn8(m, I32(1209), v0)
 			v4 = t3
-			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t4
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 == I32(1) {
 				goto l0
 			}
 			v1 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t5 := TBL_Fn8(m, I32(1209), v0)
 			v0 = t5
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v5 == I32(1) {
 				goto l0
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn9(m, I32(1213), v2, v3+I32(72), v4+I32(84), v0+I32(148))
-			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t7
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 != I32(1) {
 				goto l1
 			}
@@ -4932,23 +4932,23 @@ func (m *Module) Xduckdb_prepared_arrow_schema(v0, v1 int32) int32 {
 				TBL_Fn1654(m, v2+I32(56), t5)
 				Store32(m.MemoryG1[int64(uint32(v2))+52:], uint32(I32(0)))
 				Store64(m.MemoryG1[int64(uint32(v2))+44:], uint64(I64(0)))
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				Store32(m.MemoryG1[int64(uint32(v2))+40:], uint32(I32(0)))
 				Store64(m.MemoryG1[int64(uint32(v2))+32:], uint64(I64(0)))
 				t6 := TBL_Fn8(m, I32(1198), v0)
 				v0 = t6
-				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v3 = t7
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v3 == I32(1) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t8 := TBL_Fn8(m, I32(6595), v0+I32(8))
 				v0 = t8
-				t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v3 = t9
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v3 == I32(1) {
 					goto l1
 				}
@@ -4971,41 +4971,41 @@ func (m *Module) Xduckdb_prepared_arrow_schema(v0, v1 int32) int32 {
 											v3 = I32(1)
 											goto l3
 										}
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										v0 = v2 + I32(20)
 										TBL_Fn30(m, I32(469), v0, v6)
-										t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t12
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										if v4 != I32(1) {
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t13 := TBL_Fn0(m, I32(488), v2+I32(8), I32(1))
 											v4 = t13
-											t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t14
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v5 == I32(1) {
 												goto l4
 											}
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											_ = TBL_Fn0(m, I32(1158), v2+I32(44), v4)
-											t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t16
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v4 == I32(1) {
 												goto l5
 											}
 											_ = TBL_Fn407(m, v3)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											_ = TBL_Fn0(m, I32(108), v2+I32(32), v0)
-											t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t19
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											if v4 == I32(1) {
 												goto l6
 											}
 											v6 = v6 + I64(1)
-											_ = TBL_Fn42138(m, v0)
+											_ = TBL_Fn42141(m, v0)
 											goto l7
 										}
 									}
@@ -5029,27 +5029,27 @@ func (m *Module) Xduckdb_prepared_arrow_schema(v0, v1 int32) int32 {
 						v0 = t25
 					}
 				l9:
-					_ = TBL_Fn42138(m, v2 + I32(20))
+					_ = TBL_Fn42141(m, v2 + I32(20))
 					goto l8
 				l2:
 					t27 := int32(Load32(m.MemoryG1[int64(uint32(v0))+40:]))
 					v1 = t27
 					if v1 != 0 {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn18(m, v1, v0)
-						t28 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t28 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t28
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l10
 						}
 					}
 					v3 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn9(m, I32(1213), v0, v2+I32(44), v2+I32(32), v2+I32(56))
-					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t29
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l10
 					}
@@ -5057,7 +5057,7 @@ func (m *Module) Xduckdb_prepared_arrow_schema(v0, v1 int32) int32 {
 			l3:
 				_ = TBL_Fn491(m, v2 + I32(32))
 				_ = TBL_Fn1138(m, v2 + I32(44))
-				_ = TBL_Fn42138(m, v2 + I32(56))
+				_ = TBL_Fn42141(m, v2 + I32(56))
 			}
 		l0:
 			m.G0 = v2 + I32(80)
@@ -5074,7 +5074,7 @@ func (m *Module) Xduckdb_prepared_arrow_schema(v0, v1 int32) int32 {
 l8:
 	_ = TBL_Fn491(m, v2 + I32(32))
 	_ = TBL_Fn1138(m, v2 + I32(44))
-	_ = TBL_Fn42138(m, v2 + I32(56))
+	_ = TBL_Fn42141(m, v2 + I32(56))
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -5096,12 +5096,12 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 		t4 := m.G0
 		v6 = t4 + I32(-64)
 		m.G0 = v6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t5 := TBL_Fn8(m, I32(1242), v2)
 		v4 = t5
-		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v3 != I32(1) {
 				Store32(m.MemoryG1[int64(uint32(v6))+16:], uint32(I32(0)))
@@ -5111,11 +5111,11 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 				v2 = t8
 				goto l1
 			}
-			t9 := TBL_Fn54(m, I32(6083688), I32(0))
+			t9 := TBL_Fn54(m, I32(6083672), I32(0))
 			v3 = t9
 			t10 := m.G1
 			v2 = t10
-			t11 := TBL_Fn21(m, I32(6083688))
+			t11 := TBL_Fn21(m, I32(6083672))
 			v4 = t11
 			t12 := TBL_Fn14(m, v3)
 			v3 = t12
@@ -5124,12 +5124,12 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 					{
 						if v2 == v4 {
 							v2 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t13 := TBL_Fn0(m, I32(84), v6+I32(16), v3)
 							v4 = t13
-							t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v3 = t14
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v3 == I32(1) {
 								goto l2
 							}
@@ -5138,27 +5138,27 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 							TBL_Fn16(m)
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-						t16 := TBL_Fn0(m, I32(1), v6+I32(4), I32(131458))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+						t16 := TBL_Fn0(m, I32(1), v6+I32(4), I32(131443))
 						v2 = t16
-						t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v3 = t17
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								if v3 != I32(1) {
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t18 := TBL_Fn0(m, I32(181), v6+I32(16), v2)
 									v4 = t18
-									t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v3 = t19
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v3 == I32(1) {
 										goto l3
 									}
 									TBL_Fn610(m, v5, v4)
 									_ = TBL_Fn434(m, v4)
-									_ = TBL_Fn42138(m, v2)
+									_ = TBL_Fn42141(m, v2)
 									TBL_Fn16(m)
 									v2 = I32(0)
 									goto l1
@@ -5170,14 +5170,14 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 						l3:
 							t23 := TBL_Fn3(m)
 							v0 = t23
-							_ = TBL_Fn42138(m, v2)
+							_ = TBL_Fn42141(m, v2)
 						}
 					l4:
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn17(m, I32(125))
-						t25 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t25 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t25
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l5
 						}
@@ -5186,11 +5186,11 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 				l2:
 					t26 := TBL_Fn3(m)
 					v0 = t26
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t27 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t27 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t27
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 != I32(1) {
 						goto l6
 					}
@@ -5225,12 +5225,12 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 		t33 := TBL_Fn399(m, t32 + I32(168))
 		t34 := TBL_Fn391(m, v0)
 		TBL_Fn1685(m, v2, t33, t34+I32(72))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t35 := TBL_Fn8(m, I32(1759), v8)
 		v4 = t35
-		t36 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t36 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t36
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
@@ -5239,33 +5239,33 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 					}
 					t37 := int32(Load32(m.MemoryG1[uint32(v1):]))
 					v3 = t37
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t38 := TBL_Fn8(m, I32(1209), v0)
 					v1 = t38
-					t39 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t39 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t39
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l8
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t40 := TBL_Fn0(m, I32(1212), v7+I32(4), v1+I32(148))
 					v5 = t40
-					t41 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t41 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t41
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l8
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn9(m, I32(1244), v4, v3, v5, v2)
-					t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t42
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l9
 					}
-					_ = TBL_Fn42138(m, v5)
+					_ = TBL_Fn42141(m, v5)
 					_ = TBL_Fn1687(m, v2)
 					goto l0
 				}
@@ -5277,7 +5277,7 @@ func (m *Module) Xduckdb_query_arrow_array(v0, v1 int32) int32 {
 		l9:
 			t46 := TBL_Fn3(m)
 			v1 = t46
-			_ = TBL_Fn42138(m, v5)
+			_ = TBL_Fn42141(m, v5)
 		}
 	l10:
 		_ = TBL_Fn1687(m, v7 + I32(28))
@@ -5309,33 +5309,33 @@ func (m *Module) Xduckdb_result_arrow_array(v0, v1, v2 int32) {
 				TBL_Fn1685(m, t2, t4, t5+I32(72))
 				t6 := int32(Load32(m.MemoryG1[uint32(v2):]))
 				v5 = t6
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t7 := TBL_Fn8(m, I32(1241), v0)
 				v0 = t7
-				t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t8
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l0
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t9 := TBL_Fn0(m, I32(1212), v3+I32(4), v0+I32(148))
 				v2 = t9
-				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t10
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 == I32(1) {
 					goto l0
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn9(m, I32(1244), v1, v5, v2, v4)
-				t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t11
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 == I32(1) {
 					goto l1
 				}
-				_ = TBL_Fn42138(m, v2)
+				_ = TBL_Fn42141(m, v2)
 				_ = TBL_Fn1687(m, v4)
 			}
 			m.G0 = v3 + I32(48)
@@ -5348,7 +5348,7 @@ func (m *Module) Xduckdb_result_arrow_array(v0, v1, v2 int32) {
 	l1:
 		t15 := TBL_Fn3(m)
 		v0 = t15
-		_ = TBL_Fn42138(m, v2)
+		_ = TBL_Fn42141(m, v2)
 	}
 l2:
 	_ = TBL_Fn1687(m, v3 + I32(28))
@@ -5542,7 +5542,7 @@ l3:
 }
 func (m *Module) Xduckdb_create_cast_function() int32 {
 	var v0 int32
-	T0 := TBL_Fn42127(m, I32(32))
+	T0 := TBL_Fn42130(m, I32(32))
 	v0 = T0
 	Store64(m.MemoryG1[int64(uint32(v0))+24:], uint64(I64(0)))
 	Store64(m.MemoryG1[int64(uint32(v0))+16:], uint64(I64(0)))
@@ -5601,38 +5601,38 @@ func (m *Module) Xduckdb_register_cast_function(v0, v1 int32) int32 {
 		if t11 != 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v2))+28:], uint32(v0))
 		t12 := TBL_Fn8(m, I32(1210), v0)
 		v6 = t12
-		t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t13
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
 					if v0 != I32(1) {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t14 := TBL_Fn8(m, I32(448), I32(20))
 						v0 = t14
-						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v3 = t15
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v3 == I32(1) {
 							goto l1
 						}
 						Store32(m.MemoryG1[int64(uint32(v0))+16:], uint32(v5))
 						Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(v4))
 						Store32(m.MemoryG1[int64(uint32(v0))+8:], uint32(v1))
-						Store32(m.MemoryG1[uint32(v0):], uint32(I32(1564420)))
+						Store32(m.MemoryG1[uint32(v0):], uint32(I32(1564404)))
 						Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(v2+I32(28)))
 						v3 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						Store32(m.MemoryG1[int64(uint32(v2))+16:], uint32(v0))
 						TBL_Fn2(m, I32(9934), v6, v2, I32(1))
-						t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t16
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l2
 						}
@@ -5670,24 +5670,24 @@ func (m *Module) Xduckdb_create_config_option() int32 {
 	T0 := m.G0
 	v1 = T0 - I32(16)
 	m.G0 = v1
-	t1 := TBL_Fn42127(m, I32(80))
+	t1 := TBL_Fn42130(m, I32(80))
 	v0 = t1
 	Memory_zero(m.MemoryG1, uint32(v0+I32(8)), uint32(I32(72)))
 	Store32(m.MemoryG1[int64(uint32(v0))+8:], uint32(I32(0)))
 	Store64(m.MemoryG1[uint32(v0):], uint64(I64(0)))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	_ = TBL_Fn8(m, I32(585), v0+I32(12))
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		if v2 != I32(1) {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t4 := TBL_Fn0(m, I32(488), v1+I32(4), I32(1))
 			v2 = t4
-			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v3 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v3 == I32(1) {
 				t6 := TBL_Fn3(m)
 				v1 = t6
@@ -5706,7 +5706,7 @@ func (m *Module) Xduckdb_create_config_option() int32 {
 		v1 = t10
 	}
 l0:
-	t11 := TBL_Fn42138(m, v0)
+	t11 := TBL_Fn42141(m, v0)
 	m.Xfree(t11)
 	TBL_Fn4(m, v1)
 	panic("unreachable")
@@ -5743,32 +5743,32 @@ func (m *Module) Xduckdb_register_config_option(v0, v1 int32) int32 {
 		if t6 == 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t7 := TBL_Fn8(m, I32(1210), v0)
 		v2 = t7
-		t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t8
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v3 == I32(1) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t9 := TBL_Fn8(m, I32(116), v2+I32(8))
 				v2 = t9
-				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v3 = t10
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v3 == I32(1) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t11 := TBL_Fn0(m, I32(10101), v2+I32(512), v1)
 				v3 = t11
-				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t12
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				v2 = I32(1)
 				if v5 == I32(1) {
 					goto l1
@@ -5776,30 +5776,30 @@ func (m *Module) Xduckdb_register_config_option(v0, v1 int32) int32 {
 				if v3 != 0 {
 					goto l0
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t13 := TBL_Fn8(m, I32(1210), v0)
 				v0 = t13
-				t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t14
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t15 := TBL_Fn8(m, I32(116), v0+I32(8))
 				v5 = t15
-				t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t16
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 == I32(1) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t17 := TBL_Fn0(m, I32(128), v4+I32(20), v1+I32(68))
 				v0 = t17
-				t18 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t18 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t18
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l1
 				}
@@ -5821,20 +5821,20 @@ func (m *Module) Xduckdb_register_config_option(v0, v1 int32) int32 {
 				t25 := int32(m.MemoryG1[int64(uint32(v1))+64])
 				v6 = t25
 				v2 = I32(0)
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn34(m, I32(10102), v5+I32(8), v1, v0, v4+I32(8), v1+I32(24), I32(0), v6)
-				t26 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t26 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t26
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 != I32(1) {
 					_ = TBL_Fn407(m, v3)
-					_ = TBL_Fn42138(m, v0)
+					_ = TBL_Fn42141(m, v0)
 					goto l0
 				}
 				t29 := TBL_Fn6(m, I32(0))
 				v1 = t29
 				_ = TBL_Fn407(m, v3)
-				_ = TBL_Fn42138(m, v0)
+				_ = TBL_Fn42141(m, v0)
 				goto l2
 			}
 		l1:
@@ -5855,33 +5855,33 @@ func (m *Module) Xduckdb_create_copy_function() int32 {
 	T0 := m.G0
 	v1 = T0 - I32(32)
 	m.G0 = v1
-	t1 := TBL_Fn42127(m, I32(412))
+	t1 := TBL_Fn42130(m, I32(412))
 	v3 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	v4 = v1 + I32(16)
-	t2 := TBL_Fn0(m, I32(1), v4, I32(416692))
+	t2 := TBL_Fn0(m, I32(1), v4, I32(416677))
 	v0 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v2 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t4 := TBL_Fn0(m, I32(1139), v3, v0)
 				v2 = t4
-				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t5
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v5 == I32(1) {
 					goto l0
 				}
-				_ = TBL_Fn42138(m, v0)
-				t7 := TBL_Fn42127(m, I32(40))
+				_ = TBL_Fn42141(m, v0)
+				t7 := TBL_Fn42130(m, I32(40))
 				v0 = t7
 				Store64(m.MemoryG1[int64(uint32(v0))+16:], uint64(I64(0)))
-				Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(I32(1564920)))
-				Store32(m.MemoryG1[uint32(v0):], uint32(I32(1564784)))
+				Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(I32(1564904)))
+				Store32(m.MemoryG1[uint32(v0):], uint32(I32(1564768)))
 				Store64(m.MemoryG1[int64(uint32(v0))+4:], uint64(I64(0)))
 				Store64(m.MemoryG1[int64(uint32(v0))+24:], uint64(I64(0)))
 				Store64(m.MemoryG1[int64(uint32(v0))+32:], uint64(I64(0)))
@@ -5911,7 +5911,7 @@ func (m *Module) Xduckdb_create_copy_function() int32 {
 	l0:
 		t16 := TBL_Fn3(m)
 		v1 = t16
-		_ = TBL_Fn42138(m, v0)
+		_ = TBL_Fn42141(m, v0)
 	}
 l1:
 	m.Xfree(v3)
@@ -5942,14 +5942,14 @@ func (m *Module) Xduckdb_table_function_bind_get_result_column_type(v0 int32, v1
 		if uint64(t1) >= uint64(uint32((t2-t3)/I32(12))) {
 			goto l0
 		}
-		t4 := TBL_Fn42127(m, I32(12))
+		t4 := TBL_Fn42130(m, I32(12))
 		v2 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t5 := TBL_Fn0(m, I32(611), v0, int32(v1))
 		v0 = t5
-		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t6
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -6038,26 +6038,26 @@ func (m *Module) Xduckdb_register_copy_function(v0, v1 int32) int32 {
 			}
 		}
 	l1:
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t9 := TBL_Fn8(m, I32(1210), v0)
 		v3 = t9
-		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t10
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v4 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v2))+16:], uint32(v1))
 					Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(v0))
-					Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(I32(1565028)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(I32(1565012)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t11 := v2
 					v0 = v2 + I32(8)
 					Store32(m.MemoryG1[int64(uint32(t11))+24:], uint32(v0))
 					TBL_Fn2(m, I32(9934), v3, v0, I32(1))
-					t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t12
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l2
 					}
@@ -6097,12 +6097,12 @@ func (m *Module) Xduckdb_create_data_chunk(v0 int32, v1 int64) int32 {
 			if v1 != v7 {
 				t1 := int32(Load32(m.MemoryG1[uint32(v0+int32(v7)<<2):]))
 				v4 = t1
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t2 := TBL_Fn0(m, I32(10126), v4, I32(0))
 				v5 = t2
-				t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l0
 				}
@@ -6110,55 +6110,55 @@ func (m *Module) Xduckdb_create_data_chunk(v0 int32, v1 int64) int32 {
 				if v5 != 0 {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t4 := TBL_Fn0(m, I32(10126), v4, I32(3))
 				v5 = t4
-				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v6 = t5
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v6 == I32(1) {
 					goto l0
 				}
 				if v5 != 0 {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				_ = TBL_Fn0(m, I32(685), v3+I32(4), v4)
-				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t7
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l0
 				}
 				v7 = v7 + I64(1)
 				goto l2
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t8 := TBL_Fn8(m, I32(448), I32(56))
 			v0 = t8
-			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t9
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 == I32(1) {
 				goto l0
 			}
 			t10 := TBL_Fn2204(m, v0)
 			v0 = t10
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t11 := TBL_Fn41(m, I32(1182))
 			v2 = t11
-			t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v4 = t12
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v4 == I32(1) {
 					goto l3
 				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn25(m, I32(1184), v0, v2, v3+I32(4), I64(2048))
-				t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t13
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l3
 				}
@@ -6171,11 +6171,11 @@ func (m *Module) Xduckdb_create_data_chunk(v0 int32, v1 int64) int32 {
 			_ = TBL_Fn14(m, t14)
 			t16 := TBL_Fn1688(m, v0)
 			m.Xfree(t16)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn17(m, I32(125))
-			t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t17
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l0
 			}
@@ -6202,12 +6202,12 @@ func (m *Module) Xduckdb_create_vector(v0 int32, v1 int64) int32 {
 	T0 := m.G0
 	v2 = T0 - I32(16)
 	m.G0 = v2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn8(m, I32(448), I32(64))
 	v4 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v3 != I32(1) {
@@ -6226,12 +6226,12 @@ func (m *Module) Xduckdb_create_vector(v0 int32, v1 int64) int32 {
 					Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(t8+I32(1)))
 				}
 				v3 = v2 + I32(8)
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t9 := TBL_Fn58(m, I32(1274), v4, v2+I32(4), v1)
 				v0 = t9
-				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t10
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v5 == I32(1) {
 					goto l0
 				}
@@ -6297,7 +6297,7 @@ func (m *Module) Xduckdb_vector_get_column_type(v0 int32) int32 {
 	if v0 == 0 {
 		return I32(0)
 	}
-	T0 := TBL_Fn42127(m, I32(12))
+	T0 := TBL_Fn42130(m, I32(12))
 	t1 := TBL_Fn1028(m, T0, v0+I32(4))
 	return t1
 }
@@ -6350,7 +6350,7 @@ func (m *Module) Xduckdb_vector_assign_string_element(v0 int32, v1 int64, v2 int
 		if v0 == 0 {
 			goto l0
 		}
-		t1 := TBL_Fn41567(m, v2)
+		t1 := TBL_Fn41570(m, v2)
 		t2 := v3
 		t3 := v2
 		v5 = int64(uint32(t1))
@@ -6467,14 +6467,14 @@ func (m *Module) Xduckdb_validity_set_row_valid(v0 int32, v1 int64) {
 }
 func (m *Module) Xduckdb_create_selection_vector(v0 int64) int32 {
 	var v1, v2, v3 int32
-	T0 := TBL_Fn42127(m, I32(12))
+	T0 := TBL_Fn42130(m, I32(12))
 	v2 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn24(m, I32(1358), v2, v0)
 	v1 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v3 != I32(1) {
 		return v1
 	}
@@ -6505,19 +6505,19 @@ func (m *Module) Xduckdb_create_instance_cache() int32 {
 	T0 := m.G0
 	v0 = T0 - I32(16)
 	m.G0 = v0
-	t1 := TBL_Fn42127(m, I32(4))
+	t1 := TBL_Fn42130(m, I32(4))
 	v2 = t1
 	Store32(m.MemoryG1[uint32(v2):], uint32(I32(0)))
 	var p2 int32
 	{
-		t3 := TBL_Fn42127(m, I32(52))
+		t3 := TBL_Fn42130(m, I32(52))
 		v1 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t4 := TBL_Fn8(m, I32(10127), v1)
 		v3 = t4
-		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t5
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t6 := v3
 		if v4 != I32(1) {
 			p2 = t6
@@ -6571,21 +6571,21 @@ func (m *Module) Xduckdb_connection_get_client_context(v0, v1 int32) {
 		p1 = 1
 	}
 	if p0|p1 == 0 {
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t2 := TBL_Fn8(m, I32(448), I32(4))
 		v2 = t2
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v3 != I32(1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t4 := TBL_Fn8(m, I32(1177), v0)
 					v0 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v3 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v3 == I32(1) {
 						goto l0
 					}
@@ -6628,12 +6628,12 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 				if p1|p2 == 0 {
 					Store32(m.MemoryG1[int64(uint32(v4))+76:], uint32(I32(0)))
 					Store64(m.MemoryG1[int64(uint32(v4))+68:], uint64(I64(0)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t3 := TBL_Fn0(m, I32(10126), v0, I32(0))
 					v5 = t3
-					t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v6 = t4
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v6 == I32(1) {
 						goto l0
 					}
@@ -6641,12 +6641,12 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 						if v5 != 0 {
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t5 := TBL_Fn0(m, I32(10126), v0, I32(3))
 						v5 = t5
-						t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v6 = t6
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v6 == I32(1) {
 							goto l0
 						}
@@ -6665,11 +6665,11 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 									v3 = I32(0)
 									goto l1
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								_ = TBL_Fn0(m, I32(2019), v4+I32(68), v3)
-								t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v3 = t9
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v3 != I32(1) {
 									v7 = v7 + I64(1)
 									goto l3
@@ -6680,28 +6680,28 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 							goto l4
 						}
 					l2:
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t11 := TBL_Fn8(m, I32(448), I32(40))
 						v1 = t11
-						t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v3 = t12
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v3 == I32(1) {
 							goto l5
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t13 := TBL_Fn0(m, I32(488), v4+I32(56), I32(1))
 						v3 = t13
-						t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t14
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t15 := TBL_Fn514(m, v1, v3)
 								v1 = t15
 								_ = TBL_Fn407(m, v3 + I32(4))
 								v3 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t17 := int32(Load32(m.MemoryG1[int64(uint32(v4))+68:]))
 								v5 = t17
 								Store32(m.MemoryG1[int64(uint32(v4))+68:], uint32(I32(0)))
@@ -6715,9 +6715,9 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 								t20 := v0
 								v0 = v4 + I32(4)
 								TBL_Fn2(m, I32(1708), t19, t20, v0)
-								t21 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t21 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v6 = t21
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v6 == I32(1) {
 									goto l6
 								}
@@ -6739,11 +6739,11 @@ func (m *Module) Xduckdb_create_list_value(v0, v1 int32, v2 int64) int32 {
 						_ = TBL_Fn14(m, v0)
 						t29 := TBL_Fn516(m, v1)
 						m.Xfree(t29)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn17(m, I32(125))
-						t30 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t30 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t30
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l5
 						}
@@ -6769,7 +6769,7 @@ l4:
 	panic("unreachable")
 }
 func (m *Module) Xduckdb_create_varchar(v0 int32) int32 {
-	T0 := TBL_Fn41567(m, v0)
+	T0 := TBL_Fn41570(m, v0)
 	t1 := m.Xduckdb_create_varchar_length(v0, int64(uint32(T0)))
 	return t1
 }
@@ -6778,35 +6778,35 @@ func (m *Module) Xduckdb_create_varchar_length(v0 int32, v1 int64) int32 {
 	T0 := m.G0
 	v3 = T0 - I32(16)
 	m.G0 = v3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn8(m, I32(448), I32(40))
 	v4 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			{
 				if v2 != I32(1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					v2 = v3 + I32(4)
 					TBL_Fn2(m, I32(1665), v2, v0, int32(v1))
-					t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t3
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l0
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t4 := TBL_Fn0(m, I32(590), v4, v2)
 					v0 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v5 == I32(1) {
 						goto l1
 					}
-					_ = TBL_Fn42138(m, v2)
+					_ = TBL_Fn42141(m, v2)
 					goto l2
 				}
 				t7 := TBL_Fn6(m, I32(0))
@@ -6821,7 +6821,7 @@ func (m *Module) Xduckdb_create_varchar_length(v0 int32, v1 int64) int32 {
 	l1:
 		t9 := TBL_Fn6(m, I32(0))
 		v0 = t9
-		_ = TBL_Fn42138(m, v3 + I32(4))
+		_ = TBL_Fn42141(m, v3 + I32(4))
 	}
 l4:
 	m.Xfree(v4)
@@ -6834,47 +6834,47 @@ l2:
 	return v0
 }
 func (m *Module) Xduckdb_create_bool(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2136))
+	T0 := TBL_Fn42491(m, v0, I32(2136))
 	return T0
 }
 func (m *Module) Xduckdb_create_int8(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2138))
+	T0 := TBL_Fn42491(m, v0, I32(2138))
 	return T0
 }
 func (m *Module) Xduckdb_create_uint8(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2143))
+	T0 := TBL_Fn42491(m, v0, I32(2143))
 	return T0
 }
 func (m *Module) Xduckdb_create_int16(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2139))
+	T0 := TBL_Fn42491(m, v0, I32(2139))
 	return T0
 }
 func (m *Module) Xduckdb_create_uint16(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2144))
+	T0 := TBL_Fn42491(m, v0, I32(2144))
 	return T0
 }
 func (m *Module) Xduckdb_create_int32(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2140))
+	T0 := TBL_Fn42491(m, v0, I32(2140))
 	return T0
 }
 func (m *Module) Xduckdb_create_uint32(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(2145))
+	T0 := TBL_Fn42491(m, v0, I32(2145))
 	return T0
 }
 func (m *Module) Xduckdb_create_uint64(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(1754))
+	T0 := TBL_Fn42492(m, v0, I32(1754))
 	return T0
 }
 func (m *Module) Xduckdb_create_int64(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(2141))
+	T0 := TBL_Fn42492(m, v0, I32(2141))
 	return T0
 }
 func (m *Module) Xduckdb_create_hugeint(v0 int32) int32 {
-	T0 := TBL_Fn42491(m, v0, I32(2142))
+	T0 := TBL_Fn42494(m, v0, I32(2142))
 	return T0
 }
 func (m *Module) Xduckdb_create_uhugeint(v0 int32) int32 {
-	T0 := TBL_Fn42491(m, v0, I32(2146))
+	T0 := TBL_Fn42494(m, v0, I32(2146))
 	return T0
 }
 func (m *Module) Xduckdb_create_bignum(v0 int32) int32 {
@@ -6883,7 +6883,7 @@ func (m *Module) Xduckdb_create_bignum(v0 int32) int32 {
 	T0 := m.G0
 	v2 = T0 - I32(16)
 	m.G0 = v2
-	t1 := TBL_Fn42127(m, I32(40))
+	t1 := TBL_Fn42130(m, I32(40))
 	v3 = t1
 	t2 := int32(m.MemoryG1[int64(uint32(v0))+16])
 	v1 = t2
@@ -6891,24 +6891,24 @@ func (m *Module) Xduckdb_create_bignum(v0 int32) int32 {
 	v5 = t3
 	t4 := int32(Load32(m.MemoryG1[uint32(v0):]))
 	v4 = t4
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	v0 = v2 + I32(4)
 	TBL_Fn56(m, I32(10151), v0, v4, v5, v1)
-	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v1 = t5
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v1 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn7(m, I32(3750), v3, v0)
-				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v1 = t6
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v1 == I32(1) {
 					goto l0
 				}
-				_ = TBL_Fn42138(m, v0)
+				_ = TBL_Fn42141(m, v0)
 				m.G0 = v2 + I32(16)
 				return v3
 			}
@@ -6919,7 +6919,7 @@ func (m *Module) Xduckdb_create_bignum(v0 int32) int32 {
 	l0:
 		t9 := TBL_Fn3(m)
 		v0 = t9
-		_ = TBL_Fn42138(m, v2 + I32(4))
+		_ = TBL_Fn42141(m, v2 + I32(4))
 	}
 l1:
 	m.Xfree(v3)
@@ -6954,7 +6954,7 @@ func (m *Module) Xduckdb_create_decimal(v0 int32) int32 {
 				}
 			}
 		l0:
-			t3 := TBL_Fn42127(m, I32(40))
+			t3 := TBL_Fn42130(m, I32(40))
 			v2 = t3
 			Store64(m.MemoryG1[int64(uint32(v1))+24:], uint64(v5))
 			Store64(m.MemoryG1[int64(uint32(v1))+16:], uint64(v4))
@@ -6962,26 +6962,26 @@ func (m *Module) Xduckdb_create_decimal(v0 int32) int32 {
 			v3 = t4
 			t5 := int32(m.MemoryG1[uint32(v0)])
 			v0 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			Store64(m.MemoryG1[uint32(v1):], uint64(v4))
 			Store64(m.MemoryG1[int64(uint32(v1))+8:], uint64(v5))
 			TBL_Fn9(m, I32(10152), v2, v1, v0, v3)
 			goto l2
 		}
 	l1:
-		t6 := TBL_Fn42127(m, I32(40))
+		t6 := TBL_Fn42130(m, I32(40))
 		v2 = t6
 		t7 := int32(m.MemoryG1[int64(uint32(v0))+1])
 		v3 = t7
 		t8 := int32(m.MemoryG1[uint32(v0)])
 		v0 = t8
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn29(m, I32(10153), v2, v4, v0, v3)
 	}
 l2:
-	t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t9
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 == I32(1) {
 		t10 := TBL_Fn3(m)
 		v0 = t10
@@ -6994,13 +6994,13 @@ l2:
 }
 func (m *Module) Xduckdb_create_float(v0 float32) int32 {
 	var v1, v2 int32
-	T0 := TBL_Fn42127(m, I32(40))
+	T0 := TBL_Fn42130(m, I32(40))
 	v1 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn74(m, I32(2147), v1, v0)
-	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 == I32(1) {
 		t2 := TBL_Fn3(m)
 		v2 = t2
@@ -7012,13 +7012,13 @@ func (m *Module) Xduckdb_create_float(v0 float32) int32 {
 }
 func (m *Module) Xduckdb_create_double(v0 float64) int32 {
 	var v1, v2 int32
-	T0 := TBL_Fn42127(m, I32(40))
+	T0 := TBL_Fn42130(m, I32(40))
 	v1 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn72(m, I32(2148), v1, v0)
-	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 == I32(1) {
 		t2 := TBL_Fn3(m)
 		v2 = t2
@@ -7029,45 +7029,45 @@ func (m *Module) Xduckdb_create_double(v0 float64) int32 {
 	return v1
 }
 func (m *Module) Xduckdb_create_date(v0 int32) int32 {
-	T0 := TBL_Fn42488(m, v0, I32(9443))
+	T0 := TBL_Fn42491(m, v0, I32(9443))
 	return T0
 }
 func (m *Module) Xduckdb_create_time(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10154))
+	T0 := TBL_Fn42492(m, v0, I32(10154))
 	return T0
 }
 func (m *Module) Xduckdb_create_time_tz_value(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10155))
+	T0 := TBL_Fn42492(m, v0, I32(10155))
 	return T0
 }
 func (m *Module) Xduckdb_create_time_ns(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10156))
+	T0 := TBL_Fn42492(m, v0, I32(10156))
 	return T0
 }
 func (m *Module) Xduckdb_create_timestamp(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(2208))
+	T0 := TBL_Fn42492(m, v0, I32(2208))
 	return T0
 }
 func (m *Module) Xduckdb_create_timestamp_tz(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(9448))
+	T0 := TBL_Fn42492(m, v0, I32(9448))
 	return T0
 }
 func (m *Module) Xduckdb_create_timestamp_s(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10157))
+	T0 := TBL_Fn42492(m, v0, I32(10157))
 	return T0
 }
 func (m *Module) Xduckdb_create_timestamp_ms(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10158))
+	T0 := TBL_Fn42492(m, v0, I32(10158))
 	return T0
 }
 func (m *Module) Xduckdb_create_timestamp_ns(v0 int64) int32 {
-	T0 := TBL_Fn42489(m, v0, I32(10159))
+	T0 := TBL_Fn42492(m, v0, I32(10159))
 	return T0
 }
 func (m *Module) Xduckdb_create_interval(v0 int32) int32 {
 	var v1, v2 int32
 	var v3 int64
-	T0 := TBL_Fn42127(m, I32(40))
+	T0 := TBL_Fn42130(m, I32(40))
 	v1 = T0
 	t1 := int64(Load64(m.MemoryG1[int64(uint32(v0))+8:]))
 	v3 = t1
@@ -7075,11 +7075,11 @@ func (m *Module) Xduckdb_create_interval(v0 int32) int32 {
 	v2 = t2
 	t3 := int32(Load32(m.MemoryG1[uint32(v0):]))
 	v0 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn25(m, I32(2149), v1, v0, v2, v3)
-	t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t4
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		return v1
 	}
@@ -7091,13 +7091,13 @@ func (m *Module) Xduckdb_create_interval(v0 int32) int32 {
 }
 func (m *Module) Xduckdb_create_blob(v0 int32, v1 int64) int32 {
 	var v2 int32
-	T0 := TBL_Fn42127(m, I32(40))
+	T0 := TBL_Fn42130(m, I32(40))
 	v2 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn22(m, I32(10160), v2, v0, v1)
-	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		return v2
 	}
@@ -7110,17 +7110,17 @@ func (m *Module) Xduckdb_create_blob(v0 int32, v1 int64) int32 {
 func (m *Module) Xduckdb_create_bit(v0 int32) int32 {
 	var v1 int32
 	var v2 int64
-	T0 := TBL_Fn42127(m, I32(40))
+	T0 := TBL_Fn42130(m, I32(40))
 	v1 = T0
 	t1 := int64(Load64(m.MemoryG1[int64(uint32(v0))+8:]))
 	v2 = t1
 	t2 := int32(Load32(m.MemoryG1[uint32(v0):]))
 	v0 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn22(m, I32(10161), v1, v0, v2)
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		return v1
 	}
@@ -7136,7 +7136,7 @@ func (m *Module) Xduckdb_create_uuid(v0 int32) int32 {
 	T0 := m.G0
 	v1 = T0 - I32(32)
 	m.G0 = v1
-	t1 := TBL_Fn42127(m, I32(40))
+	t1 := TBL_Fn42130(m, I32(40))
 	v2 = t1
 	t2 := int64(Load64(m.MemoryG1[int64(uint32(v0))+8:]))
 	v3 = t2
@@ -7144,16 +7144,16 @@ func (m *Module) Xduckdb_create_uuid(v0 int32) int32 {
 	t4 := v1
 	v4 = t3
 	Store64(m.MemoryG1[int64(uint32(t4))+16:], uint64(v4))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	Store64(m.MemoryG1[uint32(v1):], uint64(v4))
 	t5 := v1
 	v3 = v3 ^ I64(-0x8000000000000000)
 	Store64(m.MemoryG1[int64(uint32(t5))+24:], uint64(v3))
 	Store64(m.MemoryG1[int64(uint32(v1))+8:], uint64(v3))
 	TBL_Fn7(m, I32(10162), v2, v1)
-	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t6
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		m.G0 = v1 + I32(32)
 		return v2
@@ -7209,39 +7209,39 @@ func (m *Module) Xduckdb_create_struct_value(v0, v1 int32) int32 {
 							v3 = I32(0)
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						_ = TBL_Fn0(m, I32(10163), v2+I32(68), v3)
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v3 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v3 == I32(1) {
 							goto l2
 						}
 						v6 = v6 + I64(1)
 						goto l3
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t10 := TBL_Fn8(m, I32(448), I32(40))
 					v1 = t10
-					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v3 = t11
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v3 == I32(1) {
 						goto l4
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn0(m, I32(488), v2+I32(56), I32(1))
 					v3 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v4 != I32(1) {
 							t14 := TBL_Fn514(m, v1, v3)
 							v1 = t14
 							_ = TBL_Fn407(m, v3 + I32(4))
 							v3 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t16 := int32(Load32(m.MemoryG1[int64(uint32(v2))+68:]))
 							v4 = t16
 							Store32(m.MemoryG1[int64(uint32(v2))+68:], uint32(I32(0)))
@@ -7255,9 +7255,9 @@ func (m *Module) Xduckdb_create_struct_value(v0, v1 int32) int32 {
 							t19 := v0
 							v0 = v2 + I32(4)
 							TBL_Fn2(m, I32(720), t18, t19, v0)
-							t20 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t20 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t20
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v5 == I32(1) {
 								goto l5
 							}
@@ -7279,11 +7279,11 @@ func (m *Module) Xduckdb_create_struct_value(v0, v1 int32) int32 {
 					_ = TBL_Fn14(m, v0)
 					t28 := TBL_Fn516(m, v1)
 					m.Xfree(t28)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t29
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l4
 					}
@@ -7352,39 +7352,39 @@ func (m *Module) Xduckdb_create_array_value(v0, v1 int32, v2 int64) int32 {
 							v4 = I32(0)
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						_ = TBL_Fn0(m, I32(2019), v3+I32(68), v4)
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v4 == I32(1) {
 							goto l2
 						}
 						v7 = v7 + I64(1)
 						goto l3
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t10 := TBL_Fn8(m, I32(448), I32(40))
 					v1 = t10
-					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t11
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v4 == I32(1) {
 						goto l4
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn0(m, I32(488), v3+I32(56), I32(1))
 					v4 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v5 != I32(1) {
 							t14 := TBL_Fn514(m, v1, v4)
 							v1 = t14
 							_ = TBL_Fn407(m, v4 + I32(4))
 							v4 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t16 := int32(Load32(m.MemoryG1[int64(uint32(v3))+68:]))
 							v5 = t16
 							Store32(m.MemoryG1[int64(uint32(v3))+68:], uint32(I32(0)))
@@ -7398,9 +7398,9 @@ func (m *Module) Xduckdb_create_array_value(v0, v1 int32, v2 int64) int32 {
 							t19 := v0
 							v0 = v3 + I32(4)
 							TBL_Fn2(m, I32(3987), t18, t19, v0)
-							t20 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t20 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v6 = t20
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v6 == I32(1) {
 								goto l5
 							}
@@ -7422,11 +7422,11 @@ func (m *Module) Xduckdb_create_array_value(v0, v1 int32, v2 int64) int32 {
 					_ = TBL_Fn14(m, v0)
 					t28 := TBL_Fn516(m, v1)
 					m.Xfree(t28)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t29
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l4
 					}
@@ -7511,47 +7511,47 @@ func (m *Module) Xduckdb_create_map_value(v0, v1, v2 int32, v3 int64) int32 {
 						if v0 == 0 {
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						_ = TBL_Fn0(m, I32(10163), v4+I32(100), v8)
-						t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t13
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v5 == I32(1) {
 							goto l2
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						_ = TBL_Fn0(m, I32(10163), v4+I32(88), v0)
-						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v0 = t15
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v0 == I32(1) {
 							goto l2
 						}
 						v9 = v9 + I64(1)
 						goto l3
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t16 := TBL_Fn8(m, I32(448), I32(40))
 					v0 = t16
-					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t17
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l4
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t18 := TBL_Fn0(m, I32(488), v4+I32(76), I32(1))
 					v1 = t18
-					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t19
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v2 != I32(1) {
 							t20 := TBL_Fn514(m, v0, v1)
 							v0 = t20
 							_ = TBL_Fn407(m, v1 + I32(4))
 							v5 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t22 := int32(Load32(m.MemoryG1[int64(uint32(v4))+100:]))
 							v1 = t22
 							Store32(m.MemoryG1[int64(uint32(v4))+100:], uint32(I32(0)))
@@ -7576,9 +7576,9 @@ func (m *Module) Xduckdb_create_map_value(v0, v1, v2 int32, v3 int64) int32 {
 							t29 := v2
 							v6 = v4 + I32(8)
 							TBL_Fn20(m, I32(3767), t26, t27, t28, t29, v6)
-							t30 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t30 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v7 = t30
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v7 == I32(1) {
 								goto l5
 							}
@@ -7602,11 +7602,11 @@ func (m *Module) Xduckdb_create_map_value(v0, v1, v2 int32, v3 int64) int32 {
 					_ = TBL_Fn14(m, v1)
 					t40 := TBL_Fn516(m, v0)
 					m.Xfree(t40)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t41 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t41 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t41
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l4
 					}
@@ -7666,21 +7666,21 @@ func (m *Module) Xduckdb_create_union_value(v0 int32, v1 int64, v2 int32) int32 
 			}
 			v6 = v3 + I32(116)
 			TBL_Fn1022(m, v6, v0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t7 := TBL_Fn8(m, I32(448), I32(40))
 			v5 = t7
-			t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t8
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t9 := TBL_Fn0(m, I32(488), v3+I32(104), I32(1))
 			v0 = t9
-			t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v4 = t10
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				{
 					{
@@ -7690,32 +7690,32 @@ func (m *Module) Xduckdb_create_union_value(v0 int32, v1 int64, v2 int32) int32 
 									t11 := TBL_Fn514(m, v5, v0)
 									v4 = t11
 									_ = TBL_Fn407(m, v0 + I32(4))
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t13 := TBL_Fn0(m, I32(599), v3+I32(52), v6)
 									v5 = t13
-									t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v0 = t14
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v0 == I32(1) {
 										goto l2
 									}
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t15 := TBL_Fn60(m, I32(1513), v1)
 									v6 = t15
-									t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v0 = t16
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v0 == I32(1) {
 										goto l3
 									}
 									t17 := TBL_Fn1303(m, v3+I32(8), v2)
 									v2 = t17
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									v0 = v3 - I32(-64)
 									TBL_Fn9(m, I32(1286), v0, v5, v6, v2)
-									t18 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t18 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v6 = t18
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									if v6 == I32(1) {
 										goto l4
 									}
@@ -7753,11 +7753,11 @@ func (m *Module) Xduckdb_create_union_value(v0 int32, v1 int64, v2 int32) int32 
 				t30 := TBL_Fn516(m, v4)
 				m.Xfree(t30)
 				v4 = I32(0)
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn17(m, I32(125))
-				t31 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t31 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t31
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 == I32(1) {
 					goto l1
 				}
@@ -7782,14 +7782,14 @@ func (m *Module) Xduckdb_create_null_value() int32 {
 	T0 := m.G0
 	v0 = T0 - I32(16)
 	m.G0 = v0
-	t1 := TBL_Fn42127(m, I32(40))
+	t1 := TBL_Fn42130(m, I32(40))
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t2 := TBL_Fn0(m, I32(488), v0+I32(4), I32(1))
 	v2 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v3 != I32(1) {
 		t4 := TBL_Fn514(m, v1, v2)
 		v1 = t4
@@ -7817,13 +7817,13 @@ func (m *Module) Xduckdb_create_enum_value(v0 int32, v1 int64) int32 {
 		if uint64(t1) <= uint64(v1) {
 			goto l0
 		}
-		t2 := TBL_Fn42127(m, I32(40))
+		t2 := TBL_Fn42130(m, I32(40))
 		v2 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn55(m, I32(10164), v2, v1, v0)
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v0 != I32(1) {
 			goto l0
 		}
@@ -7848,12 +7848,12 @@ func (m *Module) Xduckdb_value_to_string(v0 int32) int32 {
 		}
 		t1 := TBL_Fn1303(m, v1+I32(24), v0)
 		v2 = t1
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		v4 = v1 + I32(12)
 		TBL_Fn7(m, I32(3913), v4, v2)
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v0 == I32(1) {
 			goto l1
 		}
@@ -7883,7 +7883,7 @@ func (m *Module) Xduckdb_value_to_string(v0 int32) int32 {
 			Memory_copy(m.MemoryG1, uint32(t11), uint32(p10), uint32(v3))
 		}
 		m.MemoryG1[uint32(v0+v3)] = byte(I32(0))
-		_ = TBL_Fn42138(m, v1 + I32(12))
+		_ = TBL_Fn42141(m, v1 + I32(12))
 		_ = TBL_Fn516(m, v2)
 	}
 l0:
@@ -7898,7 +7898,7 @@ l1:
 }
 func (m *Module) Xduckdb_create_file_open_options() int32 {
 	var v0 int32
-	T0 := TBL_Fn42127(m, I32(16))
+	T0 := TBL_Fn42130(m, I32(16))
 	v0 = T0
 	Store64(m.MemoryG1[int64(uint32(v0))+8:], uint64(I64(0)))
 	Store64(m.MemoryG1[uint32(v0):], uint64(I64(0)))
@@ -7943,7 +7943,7 @@ func (m *Module) Xduckdb_decimal_to_double(v0 int32) float64 {
 }
 func (m *Module) Xduckdb_create_log_storage() int32 {
 	var v0 int32
-	T0 := TBL_Fn42127(m, I32(24))
+	T0 := TBL_Fn42130(m, I32(24))
 	v0 = T0
 	Store64(m.MemoryG1[int64(uint32(v0))+16:], uint64(I64(0)))
 	Store64(m.MemoryG1[int64(uint32(v0))+8:], uint64(I64(0)))
@@ -7997,11 +7997,11 @@ func (m *Module) Xduckdb_register_log_storage(v0, v1 int32) int32 {
 		v2 = t11
 		t12 := int32(Load32(m.MemoryG1[int64(uint32(v2))+8:]))
 		v5 = t12
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		_ = TBL_Fn5(m, I32(19956), v5, v1, v1+I32(12), v1+I32(16), v1+I32(20))
-		t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t14
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t15 := int32(Load32(m.MemoryG1[int64(uint32(v2))+8:]))
@@ -8035,30 +8035,30 @@ func (m *Module) Xduckdb_register_log_storage(v0, v1 int32) int32 {
 			t21 := int32(Load32(m.MemoryG1[int64(uint32(v0))+4:]))
 			Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(t21+I32(1)))
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t22 := TBL_Fn8(m, I32(116), v6)
 		v0 = t22
-		t23 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t23 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t23
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 == I32(1) {
 			goto l2
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t24 := TBL_Fn8(m, I32(9387), v0+I32(776))
 		v0 = t24
-		t25 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t25 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t25
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 == I32(1) {
 			goto l2
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t26 := TBL_Fn10(m, I32(10172), v0, v1, v3)
 		v0 = t26
-		t27 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t27 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t27
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		v2 = I32(1)
 		if v4 == I32(1) {
 			goto l2
@@ -8085,19 +8085,19 @@ l2:
 func (m *Module) Xduckdb_create_list_type(v0 int32) int32 {
 	var v1, v2 int32
 	if v0 != 0 {
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		T0 := TBL_Fn8(m, I32(448), I32(12))
 		v1 = T0
-		t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t1
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v2 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				TBL_Fn7(m, I32(604), v1, v0)
-				t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t2
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 != I32(1) {
 					goto l0
 				}
@@ -8134,28 +8134,28 @@ func (m *Module) Xduckdb_create_array_type(v0 int32, v1 int64) int32 {
 		if p1|p2 != 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(448), I32(12))
 		v2 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v3 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t5 := TBL_Fn24(m, I32(193), v4+I32(8), v1)
 				v3 = t5
-				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t6
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v5 != I32(1) {
 					t7 := int64(Load64(m.MemoryG1[uint32(v3):]))
 					v1 = t7
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn22(m, I32(606), v2, v0, v1)
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 != I32(1) {
 						goto l0
 					}
@@ -8205,12 +8205,12 @@ func (m *Module) Xduckdb_create_union_type(v0, v1 int32, v2 int64) int32 {
 					l5:
 						{
 							if v2 == v7 {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t3 := TBL_Fn8(m, I32(448), I32(12))
 								v3 = t3
-								t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v0 = t4
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v0 != I32(1) {
 									goto l1
 								}
@@ -8222,27 +8222,27 @@ func (m *Module) Xduckdb_create_union_type(v0, v1 int32, v2 int64) int32 {
 							v3 = int32(v7) << 2
 							t7 := int32(Load32(m.MemoryG1[uint32(t6+v3):]))
 							v5 = t7
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t8 := TBL_Fn12137(m, v4+I32(12), v1+v3, v5)
 							v3 = t8
-							t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t9
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v5 != I32(1) {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t10 := TBL_Fn0(m, I32(3770), v4+I32(28), v3)
 								v3 = t10
-								t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t11
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v5 == I32(1) {
 									goto l3
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								_ = TBL_Fn0(m, I32(718), v4+I32(52), v3)
-								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t13
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v5 == I32(1) {
 									goto l4
 								}
@@ -8270,22 +8270,22 @@ func (m *Module) Xduckdb_create_union_type(v0, v1 int32, v2 int64) int32 {
 			_ = TBL_Fn407(m, v6)
 			goto l2
 		l1:
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t21 := v4
 			v0 = v4 + I32(52)
 			t22 := TBL_Fn0(m, I32(599), t21, v0)
 			v1 = t22
-			t23 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t23 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v6 = t23
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				{
 					if v6 != I32(1) {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn7(m, I32(603), v3, v1)
-						t24 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t24 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v6 = t24
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v6 == I32(1) {
 							goto l7
 						}
@@ -8359,12 +8359,12 @@ func (m *Module) Xduckdb_create_struct_type(v0, v1 int32, v2 int64) int32 {
 					l6:
 						{
 							if v2 == v7 {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t6 := TBL_Fn8(m, I32(448), I32(12))
 								v3 = t6
-								t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v0 = t7
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v0 != I32(1) {
 									goto l2
 								}
@@ -8376,27 +8376,27 @@ func (m *Module) Xduckdb_create_struct_type(v0, v1 int32, v2 int64) int32 {
 							v3 = int32(v7) << 2
 							t10 := int32(Load32(m.MemoryG1[uint32(t9+v3):]))
 							v6 = t10
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t11 := TBL_Fn12137(m, v4+I32(12), v1+v3, v6)
 							v3 = t11
-							t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v6 = t12
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v6 != I32(1) {
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t13 := TBL_Fn0(m, I32(3770), v4+I32(28), v3)
 								v3 = t13
-								t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v6 = t14
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v6 == I32(1) {
 									goto l4
 								}
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								_ = TBL_Fn0(m, I32(718), v4+I32(52), v3)
-								t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v6 = t16
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								if v6 == I32(1) {
 									goto l5
 								}
@@ -8424,22 +8424,22 @@ func (m *Module) Xduckdb_create_struct_type(v0, v1 int32, v2 int64) int32 {
 			_ = TBL_Fn407(m, v5)
 			goto l3
 		l2:
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t24 := v4
 			v0 = v4 + I32(52)
 			t25 := TBL_Fn0(m, I32(599), t24, v0)
 			v1 = t25
-			t26 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t26 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t26
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				{
 					if v5 != I32(1) {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						TBL_Fn7(m, I32(601), v3, v1)
-						t27 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t27 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t27
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v5 == I32(1) {
 							goto l8
 						}
@@ -8484,22 +8484,22 @@ func (m *Module) Xduckdb_create_enum_type(v0 int32, v1 int64) int32 {
 				}
 				t1 := TBL_Fn513(m, v3+I32(52), I32(25))
 				v2 = t1
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t2 := TBL_Fn58(m, I32(1274), v3-I32(-64), v2, v1)
 				v4 = t2
-				t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v5 == I32(1) {
 					goto l1
 				}
 				_ = TBL_Fn407(m, v2 + I32(4))
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t5 := TBL_Fn8(m, I32(1682), v4)
 				v5 = t5
-				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v2 = t6
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v2 == I32(1) {
 					goto l2
 				}
@@ -8517,25 +8517,25 @@ func (m *Module) Xduckdb_create_enum_type(v0 int32, v1 int64) int32 {
 							v0 = I32(0)
 							goto l4
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t9 := TBL_Fn4826(m, v3+I32(20), v2)
 						v2 = t9
-						t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v7 = t10
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v7 == I32(1) {
 								goto l5
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t11 := int64(Load64(m.MemoryG1[uint32(v2):]))
 							Store64(m.MemoryG1[uint32(v3):], uint64(t11))
 							t12 := int64(Load64(m.MemoryG1[int64(uint32(v2))+8:]))
 							Store64(m.MemoryG1[int64(uint32(v3))+8:], uint64(t12))
 							TBL_Fn2(m, I32(2535), v3+I32(36), v4, v3)
-							t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v2 = t13
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v2 == I32(1) {
 								goto l5
 							}
@@ -8551,19 +8551,19 @@ func (m *Module) Xduckdb_create_enum_type(v0 int32, v1 int64) int32 {
 					}
 					goto l2
 				l3:
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t16 := TBL_Fn8(m, I32(448), I32(12))
 					v0 = t16
-					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t17
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v2 != I32(1) {
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							TBL_Fn22(m, I32(5380), v0, v4, v1)
-							t18 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t18 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v2 = t18
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v2 != I32(1) {
 								goto l4
 							}
@@ -8578,11 +8578,11 @@ func (m *Module) Xduckdb_create_enum_type(v0 int32, v1 int64) int32 {
 				l7:
 					_ = TBL_Fn14(m, v2)
 					v0 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn17(m, I32(125))
-					t22 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t22 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t22
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l2
 					}
@@ -8625,12 +8625,12 @@ func (m *Module) Xduckdb_create_map_type(v0, v1 int32) int32 {
 		if p1|p2 != 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(448), I32(12))
 		v3 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v4 != I32(1) {
@@ -8664,11 +8664,11 @@ func (m *Module) Xduckdb_create_map_type(v0, v1 int32) int32 {
 					}
 					v1 = v2 + I32(24)
 					v4 = v2 + I32(12)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					TBL_Fn2(m, I32(607), v3, v2+I32(20), v2+I32(8))
-					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t17
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l1
 					}
@@ -8698,13 +8698,13 @@ l0:
 }
 func (m *Module) Xduckdb_create_decimal_type(v0, v1 int32) int32 {
 	var v2 int32
-	T0 := TBL_Fn42127(m, I32(12))
+	T0 := TBL_Fn42130(m, I32(12))
 	v2 = T0
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn2(m, I32(1620), v2, v0, v1)
-	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		return v2
 	}
@@ -8812,7 +8812,7 @@ func (m *Module) Xduckdb_enum_internal_type(v0 int32) int32 {
 		if uint32(v0) > uint32(I32(4)) {
 			goto l0
 		}
-		t2 := int32(Load32(m.MemoryG1[int64(uint32(v0<<2))+1668772:]))
+		t2 := int32(Load32(m.MemoryG1[int64(uint32(v0<<2))+1668756:]))
 		v1 = t2
 	}
 l0:
@@ -8851,12 +8851,12 @@ func (m *Module) Xduckdb_enum_dictionary_value(v0 int32, v1 int64) int32 {
 		v4 = v2 + I32(8)
 		t2 := TBL_Fn904(m, v0)
 		TBL_Fn1658(m, v4, t2, v1)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(127), v4)
 		v0 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -8866,7 +8866,7 @@ func (m *Module) Xduckdb_enum_dictionary_value(v0 int32, v1 int64) int32 {
 		if t6 < I32(0) {
 			p7 = t5
 		}
-		t8 := TBL_Fn41564(m, p7)
+		t8 := TBL_Fn41567(m, p7)
 		v3 = t8
 		_ = TBL_Fn516(m, v4)
 	}
@@ -8890,14 +8890,14 @@ func (m *Module) Xduckdb_list_type_child_type(v0 int32) int32 {
 		if uint32((T0-I32(101))&I32(255)) > uint32(I32(1)) {
 			goto l0
 		}
-		t1 := TBL_Fn42127(m, I32(12))
+		t1 := TBL_Fn42130(m, I32(12))
 		v1 = t1
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t2 := TBL_Fn8(m, I32(709), v0)
 		v0 = t2
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 == I32(1) {
 			goto l1
 		}
@@ -8914,7 +8914,7 @@ l1:
 	panic("unreachable")
 }
 func (m *Module) Xduckdb_array_type_child_type(v0 int32) int32 {
-	T0 := TBL_Fn42498(m, v0, I32(2501), I32(108))
+	T0 := TBL_Fn42501(m, v0, I32(2501), I32(108))
 	return T0
 }
 func (m *Module) Xduckdb_array_type_array_size(v0 int32) int64 {
@@ -8934,11 +8934,11 @@ l0:
 	return v1
 }
 func (m *Module) Xduckdb_map_type_key_type(v0 int32) int32 {
-	T0 := TBL_Fn42498(m, v0, I32(711), I32(102))
+	T0 := TBL_Fn42501(m, v0, I32(711), I32(102))
 	return T0
 }
 func (m *Module) Xduckdb_map_type_value_type(v0 int32) int32 {
-	T0 := TBL_Fn42498(m, v0, I32(713), I32(102))
+	T0 := TBL_Fn42501(m, v0, I32(713), I32(102))
 	return T0
 }
 func (m *Module) Xduckdb_struct_type_child_count(v0 int32) int64 {
@@ -9001,7 +9001,7 @@ func (m *Module) Xduckdb_union_type_member_name(v0 int32, v1 int64) int32 {
 		if t4 < I32(0) {
 			p5 = t3
 		}
-		t6 := TBL_Fn41564(m, p5)
+		t6 := TBL_Fn41567(m, p5)
 		v2 = t6
 	}
 l0:
@@ -9021,14 +9021,14 @@ func (m *Module) Xduckdb_union_type_member_type(v0 int32, v1 int64) int32 {
 		if t1 != I32(107) {
 			goto l0
 		}
-		t2 := TBL_Fn42127(m, I32(12))
+		t2 := TBL_Fn42130(m, I32(12))
 		v2 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn24(m, I32(677), v0, v1)
 		v0 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -9062,7 +9062,7 @@ func (m *Module) Xduckdb_struct_type_child_name(v0 int32, v1 int64) int32 {
 		if t3 < I32(0) {
 			p4 = t2
 		}
-		t5 := TBL_Fn41564(m, p4)
+		t5 := TBL_Fn41567(m, p4)
 		v2 = t5
 	}
 l0:
@@ -9083,9 +9083,9 @@ func (m *Module) Xduckdb_logical_type_get_alias(v0 int32) int32 {
 		if t3 < I32(0) {
 			p4 = t2
 		}
-		t5 := TBL_Fn41564(m, p4)
+		t5 := TBL_Fn41567(m, p4)
 		v2 = t5
-		_ = TBL_Fn42138(m, v3)
+		_ = TBL_Fn42141(m, v3)
 	}
 	m.G0 = v1 + I32(16)
 	return v2
@@ -9097,19 +9097,19 @@ func (m *Module) Xduckdb_logical_type_set_alias(v0, v1 int32) {
 	m.G0 = v2
 	t1 := TBL_Fn394(m, v2+I32(4), v1)
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn7(m, I32(917), v0, v1)
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
-		_ = TBL_Fn42138(m, v1)
+		_ = TBL_Fn42141(m, v1)
 		m.G0 = v2 + I32(16)
 		return
 	}
 	t4 := TBL_Fn3(m)
 	v0 = t4
-	_ = TBL_Fn42138(m, v1)
+	_ = TBL_Fn42141(m, v1)
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -9123,14 +9123,14 @@ func (m *Module) Xduckdb_struct_type_child_type(v0 int32, v1 int64) int32 {
 		if T0 != I32(24) {
 			goto l0
 		}
-		t1 := TBL_Fn42127(m, I32(12))
+		t1 := TBL_Fn42130(m, I32(12))
 		v2 = t1
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t2 := TBL_Fn24(m, I32(1600), v0, v1)
 		v0 = t2
-		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -9176,25 +9176,25 @@ func (m *Module) Xduckdb_register_logical_type(v0, v1, v2 int32) int32 {
 		if t5 != 0 {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v2))+28:], uint32(v0))
 		t6 := TBL_Fn8(m, I32(1210), v0)
 		v0 = t6
-		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v3 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(v1))
-					Store32(m.MemoryG1[uint32(v2):], uint32(I32(1565440)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(v2):], uint32(I32(1565424)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v2))+16:], uint32(v2))
 					Store32(m.MemoryG1[int64(uint32(v2))+4:], uint32(v2+I32(28)))
 					TBL_Fn2(m, I32(9934), v0, v2, I32(1))
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l1
 					}
@@ -9250,34 +9250,34 @@ func (m *Module) Xduckdb_prepare(v0, v1, v2 int32) int32 {
 			p1 = I32(1)
 			goto l0
 		}
-		t5 := TBL_Fn42127(m, I32(96))
+		t5 := TBL_Fn42130(m, I32(96))
 		v3 = t5
 		Memory_zero(m.MemoryG1, uint32(v3), uint32(I32(96)))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t6 := TBL_Fn1674(m, v3)
 		v5 = t6
-		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v6 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				{
 					if v6 != I32(1) {
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t8 := TBL_Fn0(m, I32(1), v4, v1)
 						v3 = t8
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t9
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l1
 						}
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t10 := TBL_Fn0(m, I32(10185), v0, v3)
 						v0 = t10
-						t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t11
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 == I32(1) {
 							goto l2
 						}
@@ -9285,25 +9285,25 @@ func (m *Module) Xduckdb_prepare(v0, v1, v2 int32) int32 {
 						v1 = v5 + I32(20)
 						TBL_Fn1676(m, v1, v0)
 						TBL_Fn1677(m, v4 + I32(12))
-						_ = TBL_Fn42138(m, v3)
+						_ = TBL_Fn42141(m, v3)
 						Store32(m.MemoryG1[uint32(v2):], uint32(v5))
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t13 := TBL_Fn8(m, I32(1198), v1)
 						v0 = t13
-						t14 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t14 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v1 = t14
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						if v1 != I32(1) {
 							t15 := int32(m.MemoryG1[int64(uint32(v0))+28])
 							if t15 == 0 {
 								p1 = I32(1)
 								goto l0
 							}
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							TBL_Fn18(m, I32(1208), v5)
-							t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v0 = t16
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							if v0 != I32(1) {
 								p1 = I32(0)
 								goto l0
@@ -9327,7 +9327,7 @@ func (m *Module) Xduckdb_prepare(v0, v1, v2 int32) int32 {
 		l2:
 			t20 := TBL_Fn6(m, I32(0))
 			v1 = t20
-			_ = TBL_Fn42138(m, v3)
+			_ = TBL_Fn42141(m, v3)
 		}
 	l3:
 		_ = TBL_Fn14(m, v1)
@@ -9378,7 +9378,7 @@ func (m *Module) Xduckdb_parameter_name(v0 int32, v1 int64) int32 {
 	v4 = v2 + I32(8)
 	t2 := TBL_Fn505(m, t1, v4)
 	v5 = t2
-	_ = TBL_Fn42138(m, v4)
+	_ = TBL_Fn42141(m, v4)
 	if v5 == 0 {
 		t4 := int32(Load32(m.MemoryG1[int64(uint32(v2))+20:]))
 		t5 := int32(int8(m.MemoryG1[int64(uint32(v2))+31]))
@@ -9386,10 +9386,10 @@ func (m *Module) Xduckdb_parameter_name(v0 int32, v1 int64) int32 {
 		if t5 < I32(0) {
 			p6 = t4
 		}
-		t7 := TBL_Fn41564(m, p6)
+		t7 := TBL_Fn41567(m, p6)
 		v0 = t7
 	}
-	_ = TBL_Fn42138(m, v2 + I32(20))
+	_ = TBL_Fn42141(m, v2 + I32(20))
 	m.G0 = v2 + I32(32)
 	return v0
 }
@@ -9452,7 +9452,7 @@ func (m *Module) Xduckdb_prepared_statement_column_name(v0 int32, v1 int64) int3
 		if t10 < I32(0) {
 			p11 = t9
 		}
-		t12 := TBL_Fn41564(m, p11)
+		t12 := TBL_Fn41567(m, p11)
 		v2 = t12
 	}
 l0:
@@ -9486,21 +9486,21 @@ func (m *Module) Xduckdb_prepared_statement_column_logical_type(v0 int32, v1 int
 				t7 := int32(Load32(m.MemoryG1[int64(uint32(v0))+4:]))
 				t8 := int32(Load32(m.MemoryG1[uint32(v0):]))
 				if uint64(uint32((t7-t8)/I32(12))) > uint64(v1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t9 := TBL_Fn8(m, I32(448), I32(12))
 					v4 = t9
-					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t10
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l1
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t11 := TBL_Fn0(m, I32(611), v0, int32(v1))
 					v2 = t11
-					t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t12
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v5 == I32(1) {
 						goto l2
 					}
@@ -9583,12 +9583,12 @@ func (m *Module) Xduckdb_bind_parameter_index(v0, v1, v2 int32) int32 {
 		}
 		t7 := TBL_Fn394(m, v4+I32(4), v2)
 		v2 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t8 := TBL_Fn8(m, I32(1198), v0)
 		v0 = t8
-		t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t9
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -9610,7 +9610,7 @@ func (m *Module) Xduckdb_bind_parameter_index(v0, v1, v2 int32) int32 {
 			Store64(m.MemoryG1[uint32(v1):], uint64(t12))
 		}
 	l2:
-		_ = TBL_Fn42138(m, v2)
+		_ = TBL_Fn42141(m, v2)
 		var p14 int32
 		if v0 == 0 {
 			p14 = 1
@@ -9623,7 +9623,7 @@ l0:
 l1:
 	t15 := TBL_Fn3(m)
 	v0 = t15
-	_ = TBL_Fn42138(m, v2)
+	_ = TBL_Fn42141(m, v2)
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -9634,12 +9634,12 @@ func (m *Module) Xduckdb_bind_boolean(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2913(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9658,12 +9658,12 @@ func (m *Module) Xduckdb_bind_int8(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2916(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9682,12 +9682,12 @@ func (m *Module) Xduckdb_bind_int16(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2918(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9706,12 +9706,12 @@ func (m *Module) Xduckdb_bind_int32(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2920(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9730,12 +9730,12 @@ func (m *Module) Xduckdb_bind_int64(v0 int32, v1, v2 int64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2922(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9764,12 +9764,12 @@ func (m *Module) Xduckdb_bind_hugeint(v0 int32, v1 int64, v2 int32) int32 {
 	Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(v6))
 	v2 = v3 + I32(40)
 	TBL_Fn2924(m, v2, v3+I32(8))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t4 := TBL_Fn15(m, I32(10189), v0, v1, v2)
 	v0 = t4
-	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v4 = t5
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v4 != I32(1) {
 		_ = TBL_Fn516(m, v2)
 		m.G0 = v3 + I32(80)
@@ -9798,12 +9798,12 @@ func (m *Module) Xduckdb_bind_uhugeint(v0 int32, v1 int64, v2 int32) int32 {
 	Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(v6))
 	v2 = v3 + I32(40)
 	TBL_Fn2933(m, v2, v3+I32(8))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t4 := TBL_Fn15(m, I32(10189), v0, v1, v2)
 	v0 = t4
-	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v4 = t5
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v4 != I32(1) {
 		_ = TBL_Fn516(m, v2)
 		m.G0 = v3 + I32(80)
@@ -9822,12 +9822,12 @@ func (m *Module) Xduckdb_bind_uint8(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2926(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9846,12 +9846,12 @@ func (m *Module) Xduckdb_bind_uint16(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2928(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9870,12 +9870,12 @@ func (m *Module) Xduckdb_bind_uint32(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2930(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9894,12 +9894,12 @@ func (m *Module) Xduckdb_bind_uint64(v0 int32, v1, v2 int64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2137(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9918,12 +9918,12 @@ func (m *Module) Xduckdb_bind_float(v0 int32, v1 int64, v2 float32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2935(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9942,12 +9942,12 @@ func (m *Module) Xduckdb_bind_double(v0 int32, v1 int64, v2 float64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn2937(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9966,12 +9966,12 @@ func (m *Module) Xduckdb_bind_date(v0 int32, v1 int64, v2 int32) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn5330(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -9990,12 +9990,12 @@ func (m *Module) Xduckdb_bind_time(v0 int32, v1, v2 int64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn5331(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -10014,12 +10014,12 @@ func (m *Module) Xduckdb_bind_timestamp(v0 int32, v1, v2 int64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn3006(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -10038,12 +10038,12 @@ func (m *Module) Xduckdb_bind_timestamp_tz(v0 int32, v1, v2 int64) int32 {
 	m.G0 = v3
 	v4 = v3 + I32(8)
 	TBL_Fn5339(m, v4, v2)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v5 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v5 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -10065,12 +10065,12 @@ func (m *Module) Xduckdb_bind_interval(v0 int32, v1 int64, v2 int32) int32 {
 	t2 := int32(Load32(m.MemoryG1[int64(uint32(v2))+4:]))
 	t3 := int64(Load64(m.MemoryG1[int64(uint32(v2))+8:]))
 	TBL_Fn2939(m, v4, t1, t2, t3)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t4 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t4
-	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t5
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(48)
@@ -10087,21 +10087,21 @@ func (m *Module) Xduckdb_bind_varchar(v0 int32, v1 int64, v2 int32) int32 {
 	T0 := m.G0
 	v4 = T0 - I32(48)
 	m.G0 = v4
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn0(m, I32(1172), v4+I32(8), v2)
 	v3 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v2 != I32(1) {
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t3 := TBL_Fn15(m, I32(10189), v0, v1, v3)
 				v2 = t3
-				t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v0 = t4
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v0 == I32(1) {
 					goto l0
 				}
@@ -10130,32 +10130,32 @@ func (m *Module) Xduckdb_bind_varchar_length(v0 int32, v1 int64, v2 int32, v3 in
 	T0 := m.G0
 	v4 = T0 + I32(-64)
 	m.G0 = v4
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	v6 = v4 + I32(12)
 	TBL_Fn2(m, I32(1665), v6, v2, int32(v3))
-	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t1 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			{
 				if v2 != I32(1) {
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t2 := TBL_Fn0(m, I32(590), v4+I32(24), v6)
 					v5 = t2
-					t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t3
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l0
 					}
-					_ = TBL_Fn42138(m, v6)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					_ = TBL_Fn42141(m, v6)
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t5 := TBL_Fn15(m, I32(10189), v0, v1, v5)
 					v2 = t5
-					t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t6
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l1
 					}
@@ -10169,7 +10169,7 @@ func (m *Module) Xduckdb_bind_varchar_length(v0 int32, v1 int64, v2 int32, v3 in
 		l0:
 			t9 := TBL_Fn6(m, I32(0))
 			v2 = t9
-			_ = TBL_Fn42138(m, v4 + I32(12))
+			_ = TBL_Fn42141(m, v4 + I32(12))
 			goto l3
 		}
 	l1:
@@ -10215,12 +10215,12 @@ func (m *Module) Xduckdb_bind_decimal(v0 int32, v1 int64, v2 int32) int32 {
 		TBL_Fn5341(m, v4, v6, v5, t6)
 	}
 l0:
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t7 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v2 = t7
-	t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v0 = t8
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v0 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v3 + I32(80)
@@ -10239,12 +10239,12 @@ func (m *Module) Xduckdb_bind_blob(v0 int32, v1 int64, v2 int32, v3 int64) int32
 	m.G0 = v4
 	v5 = v4 + I32(8)
 	TBL_Fn3012(m, v5, v2, v3)
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t1 := TBL_Fn15(m, I32(10189), v0, v1, v5)
 	v0 = t1
-	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t2
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v2 != I32(1) {
 		_ = TBL_Fn516(m, v5)
 		m.G0 = v4 + I32(48)
@@ -10267,12 +10267,12 @@ func (m *Module) Xduckdb_bind_null(v0 int32, v1 int64) int32 {
 	t3 := TBL_Fn514(m, t2, v3)
 	v4 = t3
 	_ = TBL_Fn407(m, v3 + I32(4))
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	t5 := TBL_Fn15(m, I32(10189), v0, v1, v4)
 	v0 = t5
-	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v3 = t6
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	if v3 != I32(1) {
 		_ = TBL_Fn516(m, v4)
 		m.G0 = v2 - I32(-64)
@@ -10300,22 +10300,22 @@ func (m *Module) Xduckdb_execute_prepared(v0, v1 int32) int32 {
 		if t2 != I32(1) {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn8(m, I32(1198), v2)
 		v2 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v3 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t5 := TBL_Fn10(m, I32(1202), v2, v0, I32(0))
 			v0 = t5
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v2 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v2 == I32(1) {
 				goto l1
 			}
@@ -10360,58 +10360,58 @@ func (m *Module) Xduckdb_add_replacement_scan(v0, v1, v2, v3 int32) {
 					if p1|p2 != 0 {
 						goto l0
 					}
-					t3 := TBL_Fn42127(m, I32(16))
+					t3 := TBL_Fn42130(m, I32(16))
 					v5 = t3
 					Store64(m.MemoryG1[uint32(v5):], uint64(I64(0)))
 					Store64(m.MemoryG1[int64(uint32(v5))+8:], uint64(I64(0)))
-					Store32(m.MemoryG1[uint32(v5):], uint32(I32(1565616)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(v5):], uint32(I32(1565600)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v4))+12:], uint32(v5))
 					v5 = v4 + I32(12)
 					t4 := TBL_Fn8(m, I32(10194), v5)
 					v6 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v7 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v7 == I32(1) {
 						goto l1
 					}
 					Store32(m.MemoryG1[int64(uint32(v6))+4:], uint32(v1))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t6 := TBL_Fn8(m, I32(10194), v5)
 					v1 = t6
-					t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v6 = t7
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v6 == I32(1) {
 						goto l1
 					}
 					Store32(m.MemoryG1[int64(uint32(v1))+8:], uint32(v2))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t8 := TBL_Fn8(m, I32(10194), v5)
 					v1 = t8
-					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t9
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l1
 					}
 					Store32(m.MemoryG1[int64(uint32(v1))+12:], uint32(v3))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t10 := TBL_Fn8(m, I32(10137), v0)
 					v0 = t10
-					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t11 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t11
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l2
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn8(m, I32(236), v0)
 					v0 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l2
 					}
@@ -10420,11 +10420,11 @@ func (m *Module) Xduckdb_add_replacement_scan(v0, v1, v2, v3 int32) {
 					Store32(m.MemoryG1[int64(uint32(v4))+12:], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v4))+8:], uint32(v1))
 					Store32(m.MemoryG1[int64(uint32(v4))+4:], uint32(I32(10195)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					_ = TBL_Fn0(m, I32(10196), v0+I32(8), v4+I32(4))
-					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t16
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l3
 					}
@@ -10628,48 +10628,48 @@ func (m *Module) Xduckdb_result_get_chunk(v0 int32, v1 int64) int32 {
 		}
 		t8 := TBL_Fn1634(m)
 		v5 = t8
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v3))+12:], uint32(v5))
 		v5 = v3 + I32(12)
 		t9 := TBL_Fn8(m, I32(1181), v5)
 		v2 = t9
-		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t10
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v4 == I32(1) {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t11 := TBL_Fn41(m, I32(1182))
 		v4 = t11
-		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t12 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v6 = t12
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v6 == I32(1) {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn25(m, I32(1184), v2, v4, v0+I32(8), I64(2048))
-		t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t13
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v2 == I32(1) {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t14 := TBL_Fn8(m, I32(1759), v5)
 		v2 = t14
-		t15 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t15 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t15
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v4 == I32(1) {
 			goto l1
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn55(m, I32(1775), v0, v1, v2)
-		t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v0 = t16
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v0 == I32(1) {
 			goto l1
 		}
@@ -10729,7 +10729,7 @@ func (m *Module) Xduckdb_result_return_type(v0 int32) int32 {
 		if uint32(v0) > uint32(I32(2)) {
 			goto l0
 		}
-		t4 := int32(Load32(m.MemoryG1[int64(uint32(v0<<2))+1668836:]))
+		t4 := int32(Load32(m.MemoryG1[int64(uint32(v0<<2))+1668820:]))
 		v1 = t4
 	}
 l0:
@@ -10760,40 +10760,40 @@ func (m *Module) Xduckdb_create_scalar_function() int32 {
 	T0 := m.G0
 	v0 = T0 - I32(96)
 	m.G0 = v0
-	t1 := TBL_Fn42127(m, I32(176))
+	t1 := TBL_Fn42130(m, I32(176))
 	v3 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-	t2 := TBL_Fn0(m, I32(1), v0+I32(68), I32(416692))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+	t2 := TBL_Fn0(m, I32(1), v0+I32(68), I32(416677))
 	v2 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v1 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			{
 				if v1 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v0))+64:], uint32(I32(0)))
 					Store64(m.MemoryG1[int64(uint32(v0))+56:], uint64(I64(0)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t4 := TBL_Fn0(m, I32(488), v0+I32(44), I32(0))
 					v4 = t4
-					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l0
 					}
 					Store32(m.MemoryG1[int64(uint32(v0))+20:], uint32(I32(10204)))
-					Store32(m.MemoryG1[int64(uint32(v0))+16:], uint32(I32(1550176)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[int64(uint32(v0))+16:], uint32(I32(1550160)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t6 := v0
 					v5 = v0 + I32(16)
 					Store32(m.MemoryG1[int64(uint32(t6))+32:], uint32(v5))
 					t7 := TBL_Fn0(m, I32(488), v0+I32(4), I32(0))
 					v6 = t7
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v1 == I32(1) {
 						goto l1
 					}
@@ -10806,13 +10806,13 @@ func (m *Module) Xduckdb_create_scalar_function() int32 {
 					TBL_Fn411(m, v5)
 					_ = TBL_Fn407(m, v4 + I32(4))
 					_ = TBL_Fn1138(m, v3)
-					_ = TBL_Fn42138(m, v2)
+					_ = TBL_Fn42141(m, v2)
 					Store32(m.MemoryG1[int64(uint32(v1))+136:], uint32(I32(10206)))
-					t16 := TBL_Fn42127(m, I32(36))
+					t16 := TBL_Fn42130(m, I32(36))
 					v2 = t16
 					Store64(m.MemoryG1[int64(uint32(v2))+16:], uint64(I64(0)))
-					Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(1565856)))
-					Store32(m.MemoryG1[uint32(v2):], uint32(I32(1565720)))
+					Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(1565840)))
+					Store32(m.MemoryG1[uint32(v2):], uint32(I32(1565704)))
 					Store64(m.MemoryG1[int64(uint32(v2))+4:], uint64(I64(0)))
 					Store64(m.MemoryG1[int64(uint32(v2))+24:], uint64(I64(0)))
 					Store32(m.MemoryG1[int64(uint32(v2))+32:], uint32(I32(0)))
@@ -10853,7 +10853,7 @@ func (m *Module) Xduckdb_create_scalar_function() int32 {
 	}
 l3:
 	_ = TBL_Fn1138(m, v0 + I32(56))
-	_ = TBL_Fn42138(m, v2)
+	_ = TBL_Fn42141(m, v2)
 l2:
 	m.Xfree(v3)
 	TBL_Fn4(m, v1)
@@ -10914,7 +10914,7 @@ func (m *Module) Xduckdb_table_function_get_client_context(v0, v1 int32) {
 		p1 = 1
 	}
 	if p0|p1 == 0 {
-		t2 := TBL_Fn42127(m, I32(4))
+		t2 := TBL_Fn42130(m, I32(4))
 		v2 = t2
 		t3 := int32(Load32(m.MemoryG1[uint32(v0):]))
 		Store32(m.MemoryG1[uint32(v2):], uint32(t3))
@@ -10973,7 +10973,7 @@ func (m *Module) Xduckdb_scalar_function_bind_get_argument(v0 int32, v1 int64) i
 		if uint64(t1) >= uint64(uint32((t2-t3)>>2)) {
 			goto l0
 		}
-		t4 := TBL_Fn42127(m, I32(4))
+		t4 := TBL_Fn42130(m, I32(4))
 		v2 = t4
 		t5 := TBL_Fn739(m, v0, int32(v1))
 		t6 := TBL_Fn391(m, t5)
@@ -11102,7 +11102,7 @@ func (m *Module) Xduckdb_scalar_function_init_get_client_context(v0, v1 int32) {
 	if p0|p1 == 0 {
 		t2 := int32(Load32(m.MemoryG1[uint32(v0):]))
 		v0 = t2
-		t3 := TBL_Fn42127(m, I32(4))
+		t3 := TBL_Fn42130(m, I32(4))
 		v2 = t3
 		Store32(m.MemoryG1[uint32(v2):], uint32(v0))
 		Store32(m.MemoryG1[uint32(v1):], uint32(v2))
@@ -11148,31 +11148,31 @@ func (m *Module) Xduckdb_register_scalar_function(v0, v1 int32) int32 {
 					v2 = t3
 					t5 := TBL_Fn3296(m, t4, v2)
 					v4 = t5
-					_ = TBL_Fn42138(m, v2)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					_ = TBL_Fn42141(m, v2)
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t7 := TBL_Fn0(m, I32(419), v3+I32(8), v1)
 					v1 = t7
-					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t8 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t8
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l0
 					}
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					_ = TBL_Fn0(m, I32(1116), v4+I32(12), v1)
-					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t10 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v2 = t10
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v2 == I32(1) {
 						goto l1
 					}
 					_ = TBL_Fn1524(m, v1)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t12 := TBL_Fn0(m, I32(10209), v0, v4)
 					v2 = t12
-					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t13 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t13
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l0
 					}
@@ -11266,25 +11266,25 @@ func (m *Module) Xduckdb_register_scalar_function_set(v0, v1 int32) int32 {
 				goto l2
 			}
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		Store32(m.MemoryG1[int64(uint32(v3))+28:], uint32(v0))
 		t16 := TBL_Fn8(m, I32(1210), v0)
 		v0 = t16
-		t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t17
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v2 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v3))+8:], uint32(v1))
-					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1565932)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1565916)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v3))+16:], uint32(v3))
 					Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v3+I32(28)))
 					TBL_Fn2(m, I32(9934), v0, v3, I32(1))
-					t18 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t18 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t18
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l3
 					}
@@ -11322,20 +11322,20 @@ func (m *Module) Xduckdb_create_scalar_function_set(v0 int32) int32 {
 		if t1 == 0 {
 			goto l0
 		}
-		t2 := TBL_Fn42127(m, I32(24))
+		t2 := TBL_Fn42130(m, I32(24))
 		v1 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn0(m, I32(1), v2+I32(4), v0)
 		v0 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
 		t5 := TBL_Fn3296(m, v1, v0)
 		v1 = t5
-		_ = TBL_Fn42138(m, v0)
+		_ = TBL_Fn42141(m, v0)
 	}
 l0:
 	m.G0 = v2 + I32(16)
@@ -11382,11 +11382,11 @@ func (m *Module) Xduckdb_add_scalar_function_to_set(v0, v1 int32) int32 {
 			v3 = I32(0)
 			t3 := TBL_Fn8978(m, v2, v1)
 			v1 = t3
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			_ = TBL_Fn0(m, I32(1116), v0+I32(12), v1)
-			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l0
 			}
@@ -11416,7 +11416,7 @@ func (m *Module) Xduckdb_column_has_default(v0 int32, v1 int64, v2 int32) int32 
 			goto l0
 		}
 		if v2 == 0 {
-			_ = TBL_Fn571(m, v0+I32(4), I32(168939))
+			_ = TBL_Fn571(m, v0+I32(4), I32(168924))
 			goto l0
 		}
 		v4 = I32(0)
@@ -11445,33 +11445,33 @@ func (m *Module) Xduckdb_create_table_function() int32 {
 	T0 := m.G0
 	v3 = T0 - I32(32)
 	m.G0 = v3
-	t1 := TBL_Fn42127(m, I32(260))
+	t1 := TBL_Fn42130(m, I32(260))
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-	t2 := TBL_Fn0(m, I32(1), v3+I32(20), I32(416692))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+	t2 := TBL_Fn0(m, I32(1), v3+I32(20), I32(416677))
 	v0 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v2 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		{
 			if v2 != I32(1) {
 				Store32(m.MemoryG1[int64(uint32(v3))+16:], uint32(I32(0)))
 				Store64(m.MemoryG1[int64(uint32(v3))+8:], uint64(I64(0)))
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t4 := v1
 				t5 := v0
 				v2 = v3 + I32(8)
 				t6 := TBL_Fn32(m, I32(777), t4, t5, v2, I32(10211), I32(10212), I32(10213), I32(10214))
 				v5 = t6
-				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t7 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t7
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				if v4 == I32(1) {
 					goto l0
 				}
 				_ = TBL_Fn1138(m, v2)
-				_ = TBL_Fn42138(m, v0)
+				_ = TBL_Fn42141(m, v0)
 				t10 := m.G0
 				v1 = t10 - I32(16)
 				m.G0 = v1
@@ -11486,8 +11486,8 @@ func (m *Module) Xduckdb_create_table_function() int32 {
 				t14 := int32(Load32(m.MemoryG1[int64(uint32(v6))+8:]))
 				v0 = t14
 				Store64(m.MemoryG1[int64(uint32(v0))+16:], uint64(I64(0)))
-				Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(I32(1566244)))
-				Store32(m.MemoryG1[uint32(v0):], uint32(I32(1566120)))
+				Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(I32(1566228)))
+				Store32(m.MemoryG1[uint32(v0):], uint32(I32(1566104)))
 				Store64(m.MemoryG1[int64(uint32(v0))+4:], uint64(I64(0)))
 				Store64(m.MemoryG1[int64(uint32(v0))+24:], uint64(I64(0)))
 				Store64(m.MemoryG1[int64(uint32(v0))+32:], uint64(I64(0)))
@@ -11515,7 +11515,7 @@ func (m *Module) Xduckdb_create_table_function() int32 {
 		t18 := TBL_Fn3(m)
 		v2 = t18
 		_ = TBL_Fn1138(m, v3 + I32(8))
-		_ = TBL_Fn42138(m, v0)
+		_ = TBL_Fn42141(m, v0)
 	}
 l1:
 	m.Xfree(v1)
@@ -11542,11 +11542,11 @@ func (m *Module) Xduckdb_table_function_add_named_parameter(v0, v1, v2 int32) {
 			t4 := TBL_Fn394(m, v3+I32(20), t3)
 			v1 = t4
 			_ = TBL_Fn1028(m, v1+I32(12), v2)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			TBL_Fn2(m, I32(10216), v3+I32(12), v0+I32(88), v1)
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v0 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v0 == I32(1) {
 				goto l0
 			}
@@ -11701,24 +11701,24 @@ func (m *Module) Xduckdb_register_table_function(v0, v1 int32) int32 {
 			}
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t15 := TBL_Fn8(m, I32(1210), v0)
 		v0 = t15
-		t16 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t16 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v2 = t16
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			{
 				if v2 != I32(1) {
 					Store32(m.MemoryG1[int64(uint32(v3))+8:], uint32(v1))
-					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1566304)))
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(v3):], uint32(I32(1566288)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					Store32(m.MemoryG1[int64(uint32(v3))+16:], uint32(v3))
 					Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v3+I32(28)))
 					TBL_Fn2(m, I32(9934), v0, v3, I32(1))
-					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t17 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v0 = t17
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					if v0 == I32(1) {
 						goto l3
 					}
@@ -11784,15 +11784,15 @@ func (m *Module) Xduckdb_bind_add_result_column(v0, v1, v2 int32) {
 		v3 = t6
 		t7 := TBL_Fn394(m, v4+I32(4), v1)
 		v1 = t7
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		_ = TBL_Fn0(m, I32(107), v3, v1)
-		t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t9
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
-		_ = TBL_Fn42138(m, v1)
+		_ = TBL_Fn42141(m, v1)
 		t11 := int32(Load32(m.MemoryG1[int64(uint32(v0))+36:]))
 		_ = TBL_Fn1223(m, t11, v2)
 	}
@@ -11802,7 +11802,7 @@ l0:
 l1:
 	t13 := TBL_Fn3(m)
 	v0 = t13
-	_ = TBL_Fn42138(m, v1)
+	_ = TBL_Fn42141(m, v1)
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -11825,14 +11825,14 @@ func (m *Module) Xduckdb_bind_get_parameter(v0 int32, v1 int64) int32 {
 		if uint64(v1) >= uint64(uint32((T0-t1)/I32(40))) {
 			goto l0
 		}
-		t2 := TBL_Fn42127(m, I32(40))
+		t2 := TBL_Fn42130(m, I32(40))
 		v2 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t3 := TBL_Fn0(m, I32(723), v0+I32(4), int32(v1))
 		v0 = t3
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
@@ -11867,20 +11867,20 @@ func (m *Module) Xduckdb_bind_get_named_parameter(v0, v1 int32) int32 {
 		}
 		t3 := TBL_Fn394(m, v2+I32(4), v1)
 		v1 = t3
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t4 := TBL_Fn676(m, v0+I32(16), v1)
 		v0 = t4
-		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v3 = t5
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v3 == I32(1) {
 			goto l1
 		}
-		_ = TBL_Fn42138(m, v1)
+		_ = TBL_Fn42141(m, v1)
 		if v0 == 0 {
 			goto l0
 		}
-		t7 := TBL_Fn42127(m, I32(40))
+		t7 := TBL_Fn42130(m, I32(40))
 		t8 := TBL_Fn1303(m, t7, v0+I32(24))
 		v4 = t8
 	}
@@ -11890,7 +11890,7 @@ l0:
 l1:
 	t9 := TBL_Fn3(m)
 	v0 = t9
-	_ = TBL_Fn42138(m, v1)
+	_ = TBL_Fn42141(m, v1)
 	TBL_Fn4(m, v0)
 	panic("unreachable")
 }
@@ -12033,33 +12033,33 @@ func (m *Module) Xduckdb_create_task_state(v0 int32) int32 {
 			v0 = I32(0)
 			goto l0
 		}
-		T0 := TBL_Fn42127(m, I32(16))
+		T0 := TBL_Fn42130(m, I32(16))
 		v2 = T0
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t1 := TBL_Fn8(m, I32(10137), v0)
 		v0 = t1
-		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t2 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t2
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v1 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t3 := TBL_Fn8(m, I32(236), v0)
 			v0 = t3
-			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t4
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 == I32(1) {
 				goto l1
 			}
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t5 := TBL_Fn0(m, I32(10217), v2, v0)
 			v0 = t5
-			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t6 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t6
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 != I32(1) {
 				goto l0
 			}
@@ -12264,12 +12264,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 										t38 := int32(Load32(m.MemoryG1[uint32(t37+int32(v2)<<2):]))
 										v4 = t38
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t39 := TBL_Fn10(m, I32(10218), v4, v3+I32(15), I32(0))
 										v4 = t39
-										t40 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t40 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t40
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												if v4 == 0 {
@@ -12297,12 +12297,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 									t47 := int64(Load64(m.MemoryG1[uint32(t46+int32(v2)<<3):]))
 									v1 = t47
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t48 := TBL_Fn276(m, I32(10219), v1, v3+I32(15), I32(0))
 									v4 = t48
-									t49 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t49 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t49
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											if v4 == 0 {
@@ -12330,12 +12330,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 								t56 := int64(Load64(m.MemoryG1[uint32(t55+int32(v2)<<3):]))
 								v1 = t56
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t57 := TBL_Fn276(m, I32(10220), v1, v3+I32(15), I32(0))
 								v4 = t57
-								t58 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t58 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t58
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										if v4 == 0 {
@@ -12363,12 +12363,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 							t65 := int64(Load64(m.MemoryG1[uint32(t64+int32(v2)<<3):]))
 							v1 = t65
 							v0 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t66 := TBL_Fn276(m, I32(10221), v1, v3+I32(15), I32(0))
 							v4 = t66
-							t67 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t67 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t67
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									if v4 == 0 {
@@ -12416,12 +12416,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 				t79 := m.G0
 				v3 = t79 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t80 := TBL_Fn119(m, I32(10222), v0, v3+I32(15), v1, v2)
 				v0 = t80
-				t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t81
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						if v0 == 0 {
@@ -12448,7 +12448,7 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 			t87 := int32(Load32(m.MemoryG1[uint32(t86+int32(v1)*I32(20)):]))
 			v4 = t87
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t88 := v3
 			v4 = v4 + int32(v2)<<4
 			t89 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -12457,9 +12457,9 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t90))
 			t91 := TBL_Fn10(m, I32(10223), v3+I32(8), v3+I32(31), I32(0))
 			v4 = t91
-			t92 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t92 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t92
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					if v4 == 0 {
@@ -12487,12 +12487,12 @@ func (m *Module) Xduckdb_value_boolean(v0 int32, v1, v2 int64) int32 {
 		t99 := int32(Load32(m.MemoryG1[uint32(t98+int32(v2)<<2):]))
 		v4 = t99
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t100 := TBL_Fn28627(m, v4, v3+I32(15))
 		v4 = t100
-		t101 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t101 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t101
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				if v4 == 0 {
@@ -12687,12 +12687,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 											t31 := math.Float32frombits(Load32(m.MemoryG1[uint32(t30+int32(v2)<<2):]))
 											v6 = t31
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t32 := TBL_Fn3388(m, v6, v3+I32(15), I32(0))
 											v4 = t32
-											t33 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t33 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t33
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t34 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12721,12 +12721,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 										t41 := math.Float64frombits(Load64(m.MemoryG1[uint32(t40+int32(v2)<<3):]))
 										v7 = t41
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t42 := TBL_Fn3396(m, v7, v3+I32(15))
 										v4 = t42
-										t43 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t43 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t43
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t44 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12755,12 +12755,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 									t51 := int32(Load32(m.MemoryG1[uint32(t50+int32(v2)<<2):]))
 									v4 = t51
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t52 := TBL_Fn10(m, I32(10227), v4, v3+I32(15), I32(0))
 									v4 = t52
-									t53 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t53 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t53
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t54 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12789,12 +12789,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 								t61 := int64(Load64(m.MemoryG1[uint32(t60+int32(v2)<<3):]))
 								v1 = t61
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t62 := TBL_Fn276(m, I32(10228), v1, v3+I32(15), I32(0))
 								v4 = t62
-								t63 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t63 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t63
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										t64 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12823,12 +12823,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 							t71 := int64(Load64(m.MemoryG1[uint32(t70+int32(v2)<<3):]))
 							v1 = t71
 							v0 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t72 := TBL_Fn276(m, I32(10229), v1, v3+I32(15), I32(0))
 							v4 = t72
-							t73 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t73 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t73
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									t74 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12857,12 +12857,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 						t81 := int64(Load64(m.MemoryG1[uint32(t80+int32(v2)<<3):]))
 						v1 = t81
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t82 := TBL_Fn276(m, I32(10230), v1, v3+I32(15), I32(0))
 						v4 = t82
-						t83 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t83 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t83
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t84 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12932,12 +12932,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 				t98 := m.G0
 				v3 = t98 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t99 := TBL_Fn119(m, I32(10231), v0, v3+I32(15), v1, v2)
 				v0 = t99
-				t100 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t100 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t100
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t101 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -12965,7 +12965,7 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 			t107 := int32(Load32(m.MemoryG1[uint32(t106+int32(v1)*I32(20)):]))
 			v4 = t107
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t108 := v3
 			v4 = v4 + int32(v2)<<4
 			t109 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -12974,9 +12974,9 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t110))
 			t111 := TBL_Fn10(m, I32(10232), v3+I32(8), v3+I32(31), I32(0))
 			v4 = t111
-			t112 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t112 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t112
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					t113 := int32(m.MemoryG1[int64(uint32(v3))+31])
@@ -13005,12 +13005,12 @@ func (m *Module) Xduckdb_value_int8(v0 int32, v1, v2 int64) int32 {
 		t120 := int32(Load32(m.MemoryG1[uint32(t119+int32(v2)<<2):]))
 		v4 = t120
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t121 := TBL_Fn28629(m, v4, v3+I32(15))
 		v4 = t121
-		t122 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t122 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t122
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t123 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -13196,12 +13196,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 											t29 := math.Float32frombits(Load32(m.MemoryG1[uint32(t28+int32(v2)<<2):]))
 											v6 = t29
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t30 := TBL_Fn3389(m, v6, v3+I32(14), I32(0))
 											v4 = t30
-											t31 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t31 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t31
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t32 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13230,12 +13230,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 										t39 := math.Float64frombits(Load64(m.MemoryG1[uint32(t38+int32(v2)<<3):]))
 										v7 = t39
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t40 := TBL_Fn3398(m, v7, v3+I32(14))
 										v4 = t40
-										t41 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t41 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t41
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t42 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13264,12 +13264,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 									t49 := int32(Load32(m.MemoryG1[uint32(t48+int32(v2)<<2):]))
 									v4 = t49
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t50 := TBL_Fn10(m, I32(10236), v4, v3+I32(14), I32(0))
 									v4 = t50
-									t51 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t51 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t51
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t52 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13298,12 +13298,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 								t59 := int64(Load64(m.MemoryG1[uint32(t58+int32(v2)<<3):]))
 								v1 = t59
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t60 := TBL_Fn276(m, I32(10237), v1, v3+I32(14), I32(0))
 								v4 = t60
-								t61 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t61 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t61
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										t62 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13332,12 +13332,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 							t69 := int64(Load64(m.MemoryG1[uint32(t68+int32(v2)<<3):]))
 							v1 = t69
 							v0 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t70 := TBL_Fn276(m, I32(10238), v1, v3+I32(14), I32(0))
 							v4 = t70
-							t71 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t71 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t71
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									t72 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13366,12 +13366,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 						t79 := int64(Load64(m.MemoryG1[uint32(t78+int32(v2)<<3):]))
 						v1 = t79
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t80 := TBL_Fn276(m, I32(10239), v1, v3+I32(14), I32(0))
 						v4 = t80
-						t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t81
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t82 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13441,12 +13441,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 				t96 := m.G0
 				v3 = t96 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t97 := TBL_Fn119(m, I32(10240), v0, v3+I32(14), v1, v2)
 				v0 = t97
-				t98 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t98 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t98
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t99 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13474,7 +13474,7 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 			t105 := int32(Load32(m.MemoryG1[uint32(t104+int32(v1)*I32(20)):]))
 			v4 = t105
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t106 := v3
 			v4 = v4 + int32(v2)<<4
 			t107 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -13483,9 +13483,9 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t108))
 			t109 := TBL_Fn10(m, I32(10241), v3+I32(8), v3+I32(30), I32(0))
 			v4 = t109
-			t110 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t110 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t110
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					t111 := int32(Load16(m.MemoryG1[int64(uint32(v3))+30:]))
@@ -13514,12 +13514,12 @@ func (m *Module) Xduckdb_value_int16(v0 int32, v1, v2 int64) int32 {
 		t118 := int32(Load32(m.MemoryG1[uint32(t117+int32(v2)<<2):]))
 		v4 = t118
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t119 := TBL_Fn28631(m, v4, v3+I32(14))
 		v4 = t119
-		t120 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t120 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t120
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t121 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -13737,12 +13737,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 												t40 := int32(Load32(m.MemoryG1[uint32(t39+int32(v2)<<2):]))
 												v4 = t40
 												v0 = I32(0)
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t41 := TBL_Fn10(m, I32(10243), v4, v3+I32(12), I32(0))
 												v4 = t41
-												t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t42
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													if v5 != I32(1) {
 														t43 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -13772,12 +13772,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 											t51 := int64(Load64(m.MemoryG1[uint32(t50+int32(v2)<<3):]))
 											v1 = t51
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t52 := TBL_Fn276(m, I32(10244), v1, v3+I32(12), I32(0))
 											v4 = t52
-											t53 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t53 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t53
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t54 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -13807,12 +13807,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 										t62 := int64(Load64(m.MemoryG1[uint32(t61+int32(v2)<<3):]))
 										v1 = t62
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t63 := TBL_Fn276(m, I32(10245), v1, v3+I32(12), I32(0))
 										v4 = t63
-										t64 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t64 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t64
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t65 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -13842,12 +13842,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 									t73 := int64(Load64(m.MemoryG1[uint32(t72+int32(v2)<<3):]))
 									v1 = t73
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t74 := TBL_Fn276(m, I32(10246), v1, v3+I32(12), I32(0))
 									v4 = t74
-									t75 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t75 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t75
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t76 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -13920,12 +13920,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 						t92 := m.G0
 						v3 = t92 - I32(16)
 						m.G0 = v3
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t93 := TBL_Fn119(m, I32(10247), v0, v3+I32(12), v1, v2)
 						v0 = t93
-						t94 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t94 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t94
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t95 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -13954,7 +13954,7 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 					t102 := int32(Load32(m.MemoryG1[uint32(t101+int32(v1)*I32(20)):]))
 					v4 = t102
 					v0 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t103 := v3
 					v4 = v4 + int32(v2)<<4
 					t104 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -13963,9 +13963,9 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t105))
 					t106 := TBL_Fn10(m, I32(10248), v3+I32(8), v3+I32(28), I32(0))
 					v4 = t106
-					t107 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t107 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t107
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v5 != I32(1) {
 							t108 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
@@ -13995,12 +13995,12 @@ func (m *Module) Xduckdb_value_int32(v0 int32, v1, v2 int64) int32 {
 				t116 := int32(Load32(m.MemoryG1[uint32(t115+int32(v2)<<2):]))
 				v4 = t116
 				v0 = I32(0)
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t117 := TBL_Fn28633(m, v4, v3+I32(12))
 				v4 = t117
-				t118 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t118 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t118
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t119 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -14218,12 +14218,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 												t37 := int32(Load32(m.MemoryG1[uint32(t36+int32(v1)*I32(20)):]))
 												t38 := int32(Load32(m.MemoryG1[uint32(t37+int32(v2)<<2):]))
 												v0 = t38
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t39 := TBL_Fn10(m, I32(10250), v0, v3+I32(8), I32(0))
 												v0 = t39
-												t40 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t40 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v4 = t40
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												var p41 int64
 												{
 													if v4 != I32(1) {
@@ -14255,12 +14255,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 											t49 := int32(Load32(m.MemoryG1[uint32(t48+int32(v1)*I32(20)):]))
 											t50 := int64(Load64(m.MemoryG1[uint32(t49+int32(v2)<<3):]))
 											v1 = t50
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t51 := TBL_Fn276(m, I32(10251), v1, v3+I32(8), I32(0))
 											v0 = t51
-											t52 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t52 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t52
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p53 int64
 											{
 												if v4 != I32(1) {
@@ -14292,12 +14292,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 										t61 := int32(Load32(m.MemoryG1[uint32(t60+int32(v1)*I32(20)):]))
 										t62 := int64(Load64(m.MemoryG1[uint32(t61+int32(v2)<<3):]))
 										v1 = t62
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t63 := TBL_Fn276(m, I32(10252), v1, v3+I32(8), I32(0))
 										v0 = t63
-										t64 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t64 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t64
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										var p65 int64
 										{
 											if v4 != I32(1) {
@@ -14329,12 +14329,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 									t73 := int32(Load32(m.MemoryG1[uint32(t72+int32(v1)*I32(20)):]))
 									t74 := int64(Load64(m.MemoryG1[uint32(t73+int32(v2)<<3):]))
 									v1 = t74
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t75 := TBL_Fn276(m, I32(10253), v1, v3+I32(8), I32(0))
 									v0 = t75
-									t76 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t76 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t76
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									var p77 int64
 									{
 										if v4 != I32(1) {
@@ -14409,12 +14409,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 						t94 := m.G0
 						v3 = t94 - I32(16)
 						m.G0 = v3
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t95 := TBL_Fn119(m, I32(10254), v0, v3+I32(8), v1, v2)
 						v0 = t95
-						t96 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t96 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t96
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p97 int64
 						{
 							if v4 != I32(1) {
@@ -14445,7 +14445,7 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 					t104 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 					t105 := int32(Load32(m.MemoryG1[uint32(t104+int32(v1)*I32(20)):]))
 					v0 = t105
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t106 := v3
 					v0 = v0 + int32(v2)<<4
 					t107 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -14454,9 +14454,9 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t108))
 					t109 := TBL_Fn10(m, I32(10255), v3+I32(8), v3+I32(24), I32(0))
 					v0 = t109
-					t110 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t110 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t110
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p111 int64
 					{
 						if v4 != I32(1) {
@@ -14488,12 +14488,12 @@ func (m *Module) Xduckdb_value_int64(v0 int32, v1, v2 int64) int64 {
 				t119 := int32(Load32(m.MemoryG1[uint32(t118+int32(v1)*I32(20)):]))
 				t120 := int32(Load32(m.MemoryG1[uint32(t119+int32(v2)<<2):]))
 				v0 = t120
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t121 := TBL_Fn28635(m, v0, v3+I32(8))
 				v0 = t121
-				t122 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t122 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t122
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				var p123 int64
 				{
 					if v4 != I32(1) {
@@ -14646,12 +14646,12 @@ l1:
 																						t12 := int32(Load32(m.MemoryG1[uint32(t11+int32(v2)*I32(20)):]))
 																						t13 := int32(m.MemoryG1[uint32(t12+int32(v3))])
 																						v1 = t13
-																						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																						t14 := TBL_Fn10(m, I32(10257), v1, v4+I32(8), I32(0))
 																						v1 = t14
-																						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																						t15 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																						v5 = t15
-																						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																						{
 																							{
 																								if v5 != I32(1) {
@@ -14691,12 +14691,12 @@ l1:
 																					t23 := int32(Load32(m.MemoryG1[uint32(t22+int32(v2)*I32(20)):]))
 																					t24 := int32(int8(m.MemoryG1[uint32(t23+int32(v3))]))
 																					v1 = t24
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					t25 := TBL_Fn10(m, I32(10258), v1, v4+I32(8), I32(0))
 																					v1 = t25
-																					t26 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																					t26 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																					v5 = t26
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					{
 																						{
 																							if v5 != I32(1) {
@@ -14736,12 +14736,12 @@ l1:
 																				t34 := int32(Load32(m.MemoryG1[uint32(t33+int32(v2)*I32(20)):]))
 																				t35 := int32(int16(Load16(m.MemoryG1[uint32(t34+int32(v3)<<1):])))
 																				v1 = t35
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				t36 := TBL_Fn10(m, I32(10259), v1, v4+I32(8), I32(0))
 																				v1 = t36
-																				t37 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																				t37 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																				v5 = t37
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				{
 																					{
 																						if v5 != I32(1) {
@@ -14781,12 +14781,12 @@ l1:
 																			t45 := int32(Load32(m.MemoryG1[uint32(t44+int32(v2)*I32(20)):]))
 																			t46 := int32(Load32(m.MemoryG1[uint32(t45+int32(v3)<<2):]))
 																			v1 = t46
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			t47 := TBL_Fn10(m, I32(10260), v1, v4+I32(8), I32(0))
 																			v1 = t47
-																			t48 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																			t48 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																			v5 = t48
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			{
 																				{
 																					if v5 != I32(1) {
@@ -14826,12 +14826,12 @@ l1:
 																		t56 := int32(Load32(m.MemoryG1[uint32(t55+int32(v2)*I32(20)):]))
 																		t57 := int64(Load64(m.MemoryG1[uint32(t56+int32(v3)<<3):]))
 																		v2 = t57
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t58 := TBL_Fn276(m, I32(10261), v2, v4+I32(8), I32(0))
 																		v1 = t58
-																		t59 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t59 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v5 = t59
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		{
 																			{
 																				if v5 != I32(1) {
@@ -14871,12 +14871,12 @@ l1:
 																	t67 := int32(Load32(m.MemoryG1[uint32(t66+int32(v2)*I32(20)):]))
 																	t68 := int32(m.MemoryG1[uint32(t67+int32(v3))])
 																	v1 = t68
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	t69 := TBL_Fn10(m, I32(10262), v1, v4+I32(8), I32(0))
 																	v1 = t69
-																	t70 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																	t70 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																	v5 = t70
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	{
 																		{
 																			if v5 != I32(1) {
@@ -14916,12 +14916,12 @@ l1:
 																t78 := int32(Load32(m.MemoryG1[uint32(t77+int32(v2)*I32(20)):]))
 																t79 := int32(Load16(m.MemoryG1[uint32(t78+int32(v3)<<1):]))
 																v1 = t79
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																t80 := TBL_Fn10(m, I32(10263), v1, v4+I32(8), I32(0))
 																v1 = t80
-																t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																v5 = t81
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																{
 																	{
 																		if v5 != I32(1) {
@@ -14961,12 +14961,12 @@ l1:
 															t89 := int32(Load32(m.MemoryG1[uint32(t88+int32(v2)*I32(20)):]))
 															t90 := int32(Load32(m.MemoryG1[uint32(t89+int32(v3)<<2):]))
 															v1 = t90
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															t91 := TBL_Fn10(m, I32(10264), v1, v4+I32(8), I32(0))
 															v1 = t91
-															t92 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+															t92 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 															v5 = t92
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															{
 																{
 																	if v5 != I32(1) {
@@ -15006,12 +15006,12 @@ l1:
 														t100 := int32(Load32(m.MemoryG1[uint32(t99+int32(v2)*I32(20)):]))
 														t101 := int64(Load64(m.MemoryG1[uint32(t100+int32(v3)<<3):]))
 														v2 = t101
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t102 := TBL_Fn276(m, I32(10265), v2, v4+I32(8), I32(0))
 														v1 = t102
-														t103 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t103 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v5 = t103
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														{
 															{
 																if v5 != I32(1) {
@@ -15051,12 +15051,12 @@ l1:
 													t111 := int32(Load32(m.MemoryG1[uint32(t110+int32(v2)*I32(20)):]))
 													t112 := math.Float32frombits(Load32(m.MemoryG1[uint32(t111+int32(v3)<<2):]))
 													v6 = t112
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t113 := TBL_Fn277(m, I32(10266), v6, v4+I32(8), I32(0))
 													v1 = t113
-													t114 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t114 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v5 = t114
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													{
 														{
 															if v5 != I32(1) {
@@ -15096,12 +15096,12 @@ l1:
 												t122 := int32(Load32(m.MemoryG1[uint32(t121+int32(v2)*I32(20)):]))
 												t123 := math.Float64frombits(Load64(m.MemoryG1[uint32(t122+int32(v3)<<3):]))
 												v7 = t123
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t124 := TBL_Fn278(m, I32(10267), v7, v4+I32(8), I32(0))
 												v1 = t124
-												t125 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t125 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t125
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													{
 														if v5 != I32(1) {
@@ -15141,12 +15141,12 @@ l1:
 											t133 := int32(Load32(m.MemoryG1[uint32(t132+int32(v2)*I32(20)):]))
 											t134 := int32(Load32(m.MemoryG1[uint32(t133+int32(v3)<<2):]))
 											v1 = t134
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t135 := TBL_Fn10(m, I32(10268), v1, v4+I32(8), I32(0))
 											v1 = t135
-											t136 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t136 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t136
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												{
 													if v5 != I32(1) {
@@ -15186,12 +15186,12 @@ l1:
 										t144 := int32(Load32(m.MemoryG1[uint32(t143+int32(v2)*I32(20)):]))
 										t145 := int64(Load64(m.MemoryG1[uint32(t144+int32(v3)<<3):]))
 										v2 = t145
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t146 := TBL_Fn276(m, I32(10269), v2, v4+I32(8), I32(0))
 										v1 = t146
-										t147 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t147 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t147
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											{
 												if v5 != I32(1) {
@@ -15231,12 +15231,12 @@ l1:
 									t155 := int32(Load32(m.MemoryG1[uint32(t154+int32(v2)*I32(20)):]))
 									t156 := int64(Load64(m.MemoryG1[uint32(t155+int32(v3)<<3):]))
 									v2 = t156
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t157 := TBL_Fn276(m, I32(10270), v2, v4+I32(8), I32(0))
 									v1 = t157
-									t158 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t158 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t158
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										{
 											if v5 != I32(1) {
@@ -15276,12 +15276,12 @@ l1:
 								t166 := int32(Load32(m.MemoryG1[uint32(t165+int32(v2)*I32(20)):]))
 								t167 := int64(Load64(m.MemoryG1[uint32(t166+int32(v3)<<3):]))
 								v2 = t167
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t168 := TBL_Fn276(m, I32(10271), v2, v4+I32(8), I32(0))
 								v1 = t168
-								t169 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t169 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t169
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									{
 										if v5 != I32(1) {
@@ -15320,7 +15320,7 @@ l1:
 							t176 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 							t177 := int32(Load32(m.MemoryG1[uint32(t176+int32(v2)*I32(20)):]))
 							v1 = t177
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t178 := v4
 							v1 = v1 + int32(v3)<<4
 							t179 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -15329,9 +15329,9 @@ l1:
 							Store64(m.MemoryG1[int64(uint32(v4))+16:], uint64(t180))
 							t181 := TBL_Fn10(m, I32(10272), v4+I32(8), v4+I32(24), I32(0))
 							v1 = t181
-							t182 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t182 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t182
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								{
 									if v5 != I32(1) {
@@ -15370,7 +15370,7 @@ l1:
 						t189 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 						t190 := int32(Load32(m.MemoryG1[uint32(t189+int32(v2)*I32(20)):]))
 						v1 = t190
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t191 := v4
 						v1 = v1 + int32(v3)<<4
 						t192 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -15379,9 +15379,9 @@ l1:
 						Store64(m.MemoryG1[int64(uint32(v4))+16:], uint64(t193))
 						t194 := TBL_Fn10(m, I32(10273), v4+I32(8), v4+I32(24), I32(0))
 						v1 = t194
-						t195 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t195 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t195
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								if v5 != I32(1) {
@@ -15417,11 +15417,11 @@ l1:
 					t201 := m.G0
 					v4 = t201 - I32(32)
 					m.G0 = v4
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					_ = TBL_Fn119(m, I32(10274), v1, v4+I32(8), v2, v3)
-					t203 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t203 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v1 = t203
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v1 == I32(1) {
 							t204 := TBL_Fn6(m, I32(0))
@@ -15450,7 +15450,7 @@ l1:
 				t210 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 				t211 := int32(Load32(m.MemoryG1[uint32(t210+int32(v2)*I32(20)):]))
 				v1 = t211
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t212 := v4
 				v1 = v1 + int32(v3)<<4
 				t213 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -15459,9 +15459,9 @@ l1:
 				Store64(m.MemoryG1[int64(uint32(v4))+16:], uint64(t214))
 				t215 := TBL_Fn10(m, I32(10275), v4+I32(8), v4+I32(24), I32(0))
 				v1 = t215
-				t216 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t216 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t216
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					{
 						if v5 != I32(1) {
@@ -15501,12 +15501,12 @@ l1:
 			t224 := int32(Load32(m.MemoryG1[uint32(t223+int32(v2)*I32(20)):]))
 			t225 := int32(Load32(m.MemoryG1[uint32(t224+int32(v3)<<2):]))
 			v1 = t225
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t226 := TBL_Fn0(m, I32(10276), v1, v4+I32(8))
 			v1 = t226
-			t227 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t227 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t227
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				{
 					if v5 != I32(1) {
@@ -15692,12 +15692,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 														t25 := int32(Load32(m.MemoryG1[uint32(t24+int32(v2)*I32(20)):]))
 														t26 := math.Float32frombits(Load32(m.MemoryG1[uint32(t25+int32(v3)<<2):]))
 														v7 = t26
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t27 := TBL_Fn279(m, I32(10277), float32(math.RoundToEven(float64(v7))), v5)
 														v1 = t27
-														t28 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t28 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v6 = t28
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														{
 															{
 																if v6 != I32(1) {
@@ -15733,12 +15733,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 													t35 := int32(Load32(m.MemoryG1[uint32(t34+int32(v2)*I32(20)):]))
 													t36 := math.Float64frombits(Load64(m.MemoryG1[uint32(t35+int32(v3)<<3):]))
 													v8 = t36
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t37 := TBL_Fn280(m, I32(10278), math.RoundToEven(v8), v5)
 													v1 = t37
-													t38 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t38 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v6 = t38
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													{
 														{
 															if v6 != I32(1) {
@@ -15774,12 +15774,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 												t45 := int32(Load32(m.MemoryG1[uint32(t44+int32(v2)*I32(20)):]))
 												t46 := int32(Load32(m.MemoryG1[uint32(t45+int32(v3)<<2):]))
 												v1 = t46
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t47 := TBL_Fn10(m, I32(10279), v1, v5, I32(0))
 												v1 = t47
-												t48 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t48 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v6 = t48
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													{
 														if v6 != I32(1) {
@@ -15815,12 +15815,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 											t55 := int32(Load32(m.MemoryG1[uint32(t54+int32(v2)*I32(20)):]))
 											t56 := int64(Load64(m.MemoryG1[uint32(t55+int32(v3)<<3):]))
 											v2 = t56
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t57 := TBL_Fn276(m, I32(10280), v2, v5, I32(0))
 											v1 = t57
-											t58 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t58 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v6 = t58
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												{
 													if v6 != I32(1) {
@@ -15856,12 +15856,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 										t65 := int32(Load32(m.MemoryG1[uint32(t64+int32(v2)*I32(20)):]))
 										t66 := int64(Load64(m.MemoryG1[uint32(t65+int32(v3)<<3):]))
 										v2 = t66
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t67 := TBL_Fn276(m, I32(10281), v2, v5, I32(0))
 										v1 = t67
-										t68 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t68 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v6 = t68
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											{
 												if v6 != I32(1) {
@@ -15897,12 +15897,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 									t75 := int32(Load32(m.MemoryG1[uint32(t74+int32(v2)*I32(20)):]))
 									t76 := int64(Load64(m.MemoryG1[uint32(t75+int32(v3)<<3):]))
 									v2 = t76
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t77 := TBL_Fn276(m, I32(10282), v2, v5, I32(0))
 									v1 = t77
-									t78 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t78 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v6 = t78
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										{
 											if v6 != I32(1) {
@@ -15947,12 +15947,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 							t87 := m.G0
 							v5 = t87 - I32(16)
 							m.G0 = v5
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t88 := TBL_Fn119(m, I32(10283), v1, v5, v2, v3)
 							v1 = t88
-							t89 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t89 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v6 = t89
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								{
 									if v6 != I32(1) {
@@ -15987,7 +15987,7 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 						t95 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 						t96 := int32(Load32(m.MemoryG1[uint32(t95+int32(v2)*I32(20)):]))
 						v1 = t96
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t97 := v5
 						v1 = v1 + int32(v3)<<4
 						t98 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -15996,9 +15996,9 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 						Store64(m.MemoryG1[int64(uint32(v5))+8:], uint64(t99))
 						t100 := TBL_Fn10(m, I32(10284), v5, v5+I32(16), I32(0))
 						v1 = t100
-						t101 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t101 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v6 = t101
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								if v6 != I32(1) {
@@ -16034,12 +16034,12 @@ func (m *Module) Xduckdb_value_hugeint(v0, v1 int32, v2, v3 int64) {
 					t108 := int32(Load32(m.MemoryG1[uint32(t107+int32(v2)*I32(20)):]))
 					t109 := int32(Load32(m.MemoryG1[uint32(t108+int32(v3)<<2):]))
 					v1 = t109
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t110 := TBL_Fn28653(m, v1, v5)
 					v1 = t110
-					t111 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t111 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v6 = t111
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						{
 							if v6 != I32(1) {
@@ -16280,12 +16280,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 											t34 := int32(Load32(m.MemoryG1[uint32(t33+int32(v2)*I32(20)):]))
 											t35 := int32(Load32(m.MemoryG1[uint32(t34+int32(v3)<<2):]))
 											v1 = t35
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t36 := TBL_Fn10(m, I32(10286), v1, v5, I32(0))
 											v1 = t36
-											t37 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t37 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v6 = t37
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												{
 													if v6 != I32(1) {
@@ -16321,12 +16321,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 										t44 := int32(Load32(m.MemoryG1[uint32(t43+int32(v2)*I32(20)):]))
 										t45 := int64(Load64(m.MemoryG1[uint32(t44+int32(v3)<<3):]))
 										v2 = t45
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t46 := TBL_Fn276(m, I32(10287), v2, v5, I32(0))
 										v1 = t46
-										t47 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t47 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v6 = t47
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											{
 												if v6 != I32(1) {
@@ -16362,12 +16362,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 									t54 := int32(Load32(m.MemoryG1[uint32(t53+int32(v2)*I32(20)):]))
 									t55 := int64(Load64(m.MemoryG1[uint32(t54+int32(v3)<<3):]))
 									v2 = t55
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t56 := TBL_Fn276(m, I32(10288), v2, v5, I32(0))
 									v1 = t56
-									t57 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t57 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v6 = t57
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										{
 											if v6 != I32(1) {
@@ -16403,12 +16403,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 								t64 := int32(Load32(m.MemoryG1[uint32(t63+int32(v2)*I32(20)):]))
 								t65 := int64(Load64(m.MemoryG1[uint32(t64+int32(v3)<<3):]))
 								v2 = t65
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t66 := TBL_Fn276(m, I32(10289), v2, v5, I32(0))
 								v1 = t66
-								t67 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t67 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v6 = t67
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									{
 										if v6 != I32(1) {
@@ -16453,12 +16453,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 						t76 := m.G0
 						v5 = t76 - I32(16)
 						m.G0 = v5
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t77 := TBL_Fn119(m, I32(10290), v1, v5, v2, v3)
 						v1 = t77
-						t78 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t78 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v6 = t78
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								if v6 != I32(1) {
@@ -16493,7 +16493,7 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 					t84 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 					t85 := int32(Load32(m.MemoryG1[uint32(t84+int32(v2)*I32(20)):]))
 					v1 = t85
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t86 := v5
 					v1 = v1 + int32(v3)<<4
 					t87 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -16502,9 +16502,9 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 					Store64(m.MemoryG1[int64(uint32(v5))+8:], uint64(t88))
 					t89 := TBL_Fn10(m, I32(10291), v5, v5+I32(16), I32(0))
 					v1 = t89
-					t90 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t90 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v6 = t90
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						{
 							if v6 != I32(1) {
@@ -16540,12 +16540,12 @@ func (m *Module) Xduckdb_value_uhugeint(v0, v1 int32, v2, v3 int64) {
 				t97 := int32(Load32(m.MemoryG1[uint32(t96+int32(v2)*I32(20)):]))
 				t98 := int32(Load32(m.MemoryG1[uint32(t97+int32(v3)<<2):]))
 				v1 = t98
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t99 := TBL_Fn28655(m, v1, v5)
 				v1 = t99
-				t100 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t100 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v6 = t100
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					{
 						if v6 != I32(1) {
@@ -16772,12 +16772,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 												t31 := math.Float32frombits(Load32(m.MemoryG1[uint32(t30+int32(v2)<<2):]))
 												v6 = t31
 												v0 = I32(0)
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t32 := TBL_Fn3392(m, v6, v3+I32(15), I32(0))
 												v4 = t32
-												t33 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t33 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t33
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													if v5 != I32(1) {
 														t34 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16806,12 +16806,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 											t41 := math.Float64frombits(Load64(m.MemoryG1[uint32(t40+int32(v2)<<3):]))
 											v7 = t41
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t42 := TBL_Fn3407(m, v7, v3+I32(15))
 											v4 = t42
-											t43 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t43 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t43
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t44 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16840,12 +16840,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 										t51 := int32(Load32(m.MemoryG1[uint32(t50+int32(v2)<<2):]))
 										v4 = t51
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t52 := TBL_Fn10(m, I32(10295), v4, v3+I32(15), I32(0))
 										v4 = t52
-										t53 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t53 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t53
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t54 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16874,12 +16874,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 									t61 := int64(Load64(m.MemoryG1[uint32(t60+int32(v2)<<3):]))
 									v1 = t61
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t62 := TBL_Fn276(m, I32(10296), v1, v3+I32(15), I32(0))
 									v4 = t62
-									t63 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t63 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t63
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t64 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16908,12 +16908,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 								t71 := int64(Load64(m.MemoryG1[uint32(t70+int32(v2)<<3):]))
 								v1 = t71
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t72 := TBL_Fn276(m, I32(10297), v1, v3+I32(15), I32(0))
 								v4 = t72
-								t73 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t73 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t73
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										t74 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16942,12 +16942,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 							t81 := int64(Load64(m.MemoryG1[uint32(t80+int32(v2)<<3):]))
 							v1 = t81
 							v0 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t82 := TBL_Fn276(m, I32(10298), v1, v3+I32(15), I32(0))
 							v4 = t82
-							t83 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t83 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t83
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									t84 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -16982,12 +16982,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 				t90 := m.G0
 				v3 = t90 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t91 := TBL_Fn119(m, I32(10299), v0, v3+I32(15), v1, v2)
 				v0 = t91
-				t92 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t92 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t92
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t93 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -17015,7 +17015,7 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 			t99 := int32(Load32(m.MemoryG1[uint32(t98+int32(v1)*I32(20)):]))
 			v4 = t99
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t100 := v3
 			v4 = v4 + int32(v2)<<4
 			t101 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -17024,9 +17024,9 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t102))
 			t103 := TBL_Fn10(m, I32(10300), v3+I32(8), v3+I32(31), I32(0))
 			v4 = t103
-			t104 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t104 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t104
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					t105 := int32(m.MemoryG1[int64(uint32(v3))+31])
@@ -17055,12 +17055,12 @@ func (m *Module) Xduckdb_value_uint8(v0 int32, v1, v2 int64) int32 {
 		t112 := int32(Load32(m.MemoryG1[uint32(t111+int32(v2)<<2):]))
 		v4 = t112
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t113 := TBL_Fn28657(m, v4, v3+I32(15))
 		v4 = t113
-		t114 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t114 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t114
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t115 := int32(m.MemoryG1[int64(uint32(v3))+15])
@@ -17252,12 +17252,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 												t30 := math.Float32frombits(Load32(m.MemoryG1[uint32(t29+int32(v2)<<2):]))
 												v6 = t30
 												v0 = I32(0)
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t31 := TBL_Fn3393(m, v6, v3+I32(14), I32(0))
 												v4 = t31
-												t32 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t32 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t32
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													if v5 != I32(1) {
 														t33 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17286,12 +17286,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 											t40 := math.Float64frombits(Load64(m.MemoryG1[uint32(t39+int32(v2)<<3):]))
 											v7 = t40
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t41 := TBL_Fn3409(m, v7, v3+I32(14))
 											v4 = t41
-											t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t42
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t43 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17320,12 +17320,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 										t50 := int32(Load32(m.MemoryG1[uint32(t49+int32(v2)<<2):]))
 										v4 = t50
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t51 := TBL_Fn10(m, I32(10304), v4, v3+I32(14), I32(0))
 										v4 = t51
-										t52 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t52 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t52
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t53 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17354,12 +17354,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 									t60 := int64(Load64(m.MemoryG1[uint32(t59+int32(v2)<<3):]))
 									v1 = t60
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t61 := TBL_Fn276(m, I32(10305), v1, v3+I32(14), I32(0))
 									v4 = t61
-									t62 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t62 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t62
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t63 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17388,12 +17388,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 								t70 := int64(Load64(m.MemoryG1[uint32(t69+int32(v2)<<3):]))
 								v1 = t70
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t71 := TBL_Fn276(m, I32(10306), v1, v3+I32(14), I32(0))
 								v4 = t71
-								t72 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t72 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t72
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										t73 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17422,12 +17422,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 							t80 := int64(Load64(m.MemoryG1[uint32(t79+int32(v2)<<3):]))
 							v1 = t80
 							v0 = I32(0)
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t81 := TBL_Fn276(m, I32(10307), v1, v3+I32(14), I32(0))
 							v4 = t81
-							t82 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t82 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t82
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									t83 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17462,12 +17462,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 				t89 := m.G0
 				v3 = t89 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t90 := TBL_Fn119(m, I32(10308), v0, v3+I32(14), v1, v2)
 				v0 = t90
-				t91 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t91 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t91
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t92 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17495,7 +17495,7 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 			t98 := int32(Load32(m.MemoryG1[uint32(t97+int32(v1)*I32(20)):]))
 			v4 = t98
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t99 := v3
 			v4 = v4 + int32(v2)<<4
 			t100 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -17504,9 +17504,9 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t101))
 			t102 := TBL_Fn10(m, I32(10309), v3+I32(8), v3+I32(30), I32(0))
 			v4 = t102
-			t103 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t103 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t103
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					t104 := int32(Load16(m.MemoryG1[int64(uint32(v3))+30:]))
@@ -17535,12 +17535,12 @@ func (m *Module) Xduckdb_value_uint16(v0 int32, v1, v2 int64) int32 {
 		t111 := int32(Load32(m.MemoryG1[uint32(t110+int32(v2)<<2):]))
 		v4 = t111
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t112 := TBL_Fn28659(m, v4, v3+I32(14))
 		v4 = t112
-		t113 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t113 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t113
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t114 := int32(Load16(m.MemoryG1[int64(uint32(v3))+14:]))
@@ -17743,12 +17743,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 													t36 := int32(Load32(m.MemoryG1[uint32(t35+int32(v2)<<2):]))
 													v4 = t36
 													v0 = I32(0)
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t37 := TBL_Fn10(m, I32(10311), v4, v3+I32(12), I32(0))
 													v4 = t37
-													t38 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t38 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v5 = t38
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													{
 														if v5 != I32(1) {
 															t39 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -17778,12 +17778,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 												t47 := int64(Load64(m.MemoryG1[uint32(t46+int32(v2)<<3):]))
 												v1 = t47
 												v0 = I32(0)
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t48 := TBL_Fn276(m, I32(10312), v1, v3+I32(12), I32(0))
 												v4 = t48
-												t49 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t49 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t49
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													if v5 != I32(1) {
 														t50 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -17813,12 +17813,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 											t58 := int64(Load64(m.MemoryG1[uint32(t57+int32(v2)<<3):]))
 											v1 = t58
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t59 := TBL_Fn276(m, I32(10313), v1, v3+I32(12), I32(0))
 											v4 = t59
-											t60 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t60 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t60
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t61 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -17848,12 +17848,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 										t69 := int64(Load64(m.MemoryG1[uint32(t68+int32(v2)<<3):]))
 										v1 = t69
 										v0 = I32(0)
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t70 := TBL_Fn276(m, I32(10314), v1, v3+I32(12), I32(0))
 										v4 = t70
-										t71 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t71 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v5 = t71
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											if v5 != I32(1) {
 												t72 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -17888,12 +17888,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 							t79 := m.G0
 							v3 = t79 - I32(16)
 							m.G0 = v3
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t80 := TBL_Fn119(m, I32(10315), v0, v3+I32(12), v1, v2)
 							v0 = t80
-							t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v5 = t81
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								if v5 != I32(1) {
 									t82 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -17922,7 +17922,7 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 						t89 := int32(Load32(m.MemoryG1[uint32(t88+int32(v1)*I32(20)):]))
 						v4 = t89
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t90 := v3
 						v4 = v4 + int32(v2)<<4
 						t91 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -17931,9 +17931,9 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 						Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t92))
 						t93 := TBL_Fn10(m, I32(10316), v3+I32(8), v3+I32(28), I32(0))
 						v4 = t93
-						t94 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t94 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t94
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t95 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
@@ -17963,12 +17963,12 @@ func (m *Module) Xduckdb_value_uint32(v0 int32, v1, v2 int64) int32 {
 					t103 := int32(Load32(m.MemoryG1[uint32(t102+int32(v2)<<2):]))
 					v4 = t103
 					v0 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t104 := TBL_Fn28661(m, v4, v3+I32(12))
 					v4 = t104
-					t105 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t105 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t105
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v5 != I32(1) {
 							t106 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -18212,12 +18212,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 											t43 := int32(Load32(m.MemoryG1[uint32(t42+int32(v1)*I32(20)):]))
 											t44 := int32(Load32(m.MemoryG1[uint32(t43+int32(v2)<<2):]))
 											v0 = t44
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t45 := TBL_Fn10(m, I32(10318), v0, v3+I32(8), I32(0))
 											v0 = t45
-											t46 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t46 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t46
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p47 int64
 											{
 												if v4 != I32(1) {
@@ -18249,12 +18249,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 										t55 := int32(Load32(m.MemoryG1[uint32(t54+int32(v1)*I32(20)):]))
 										t56 := int64(Load64(m.MemoryG1[uint32(t55+int32(v2)<<3):]))
 										v1 = t56
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t57 := TBL_Fn276(m, I32(10319), v1, v3+I32(8), I32(0))
 										v0 = t57
-										t58 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t58 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t58
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										var p59 int64
 										{
 											if v4 != I32(1) {
@@ -18286,12 +18286,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 									t67 := int32(Load32(m.MemoryG1[uint32(t66+int32(v1)*I32(20)):]))
 									t68 := int64(Load64(m.MemoryG1[uint32(t67+int32(v2)<<3):]))
 									v1 = t68
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t69 := TBL_Fn276(m, I32(10320), v1, v3+I32(8), I32(0))
 									v0 = t69
-									t70 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t70 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t70
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									var p71 int64
 									{
 										if v4 != I32(1) {
@@ -18323,12 +18323,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 								t79 := int32(Load32(m.MemoryG1[uint32(t78+int32(v1)*I32(20)):]))
 								t80 := int64(Load64(m.MemoryG1[uint32(t79+int32(v2)<<3):]))
 								v1 = t80
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t81 := TBL_Fn276(m, I32(10321), v1, v3+I32(8), I32(0))
 								v0 = t81
-								t82 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t82 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v4 = t82
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								var p83 int64
 								{
 									if v4 != I32(1) {
@@ -18356,12 +18356,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 							t89 := m.G0
 							v3 = t89 - I32(16)
 							m.G0 = v3
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t90 := TBL_Fn119(m, I32(10322), v0, v3+I32(8), v1, v2)
 							v0 = t90
-							t91 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t91 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v4 = t91
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							var p92 int64
 							{
 								if v4 != I32(1) {
@@ -18392,7 +18392,7 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 						t99 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 						t100 := int32(Load32(m.MemoryG1[uint32(t99+int32(v1)*I32(20)):]))
 						v0 = t100
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t101 := v3
 						v0 = v0 + int32(v2)<<4
 						t102 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -18401,9 +18401,9 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 						Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t103))
 						t104 := TBL_Fn10(m, I32(10323), v3+I32(8), v3+I32(24), I32(0))
 						v0 = t104
-						t105 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t105 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t105
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p106 int64
 						{
 							if v4 != I32(1) {
@@ -18435,12 +18435,12 @@ func (m *Module) Xduckdb_value_uint64(v0 int32, v1, v2 int64) int64 {
 					t114 := int32(Load32(m.MemoryG1[uint32(t113+int32(v1)*I32(20)):]))
 					t115 := int32(Load32(m.MemoryG1[uint32(t114+int32(v2)<<2):]))
 					v0 = t115
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t116 := TBL_Fn28663(m, v0, v3+I32(8))
 					v0 = t116
-					t117 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t117 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t117
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p118 int64
 					{
 						if v4 != I32(1) {
@@ -18643,12 +18643,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 												t34 := int32(Load32(m.MemoryG1[uint32(t33+int32(v1)*I32(20)):]))
 												t35 := int32(Load32(m.MemoryG1[uint32(t34+int32(v2)<<2):]))
 												v0 = t35
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t36 := TBL_Fn10(m, I32(10325), v0, v3+I32(12), I32(0))
 												v0 = t36
-												t37 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t37 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v4 = t37
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												var p38 float32
 												{
 													if v4 != I32(1) {
@@ -18680,12 +18680,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 											t46 := int32(Load32(m.MemoryG1[uint32(t45+int32(v1)*I32(20)):]))
 											t47 := int64(Load64(m.MemoryG1[uint32(t46+int32(v2)<<3):]))
 											v1 = t47
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t48 := TBL_Fn276(m, I32(10326), v1, v3+I32(12), I32(0))
 											v0 = t48
-											t49 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t49 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t49
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p50 float32
 											{
 												if v4 != I32(1) {
@@ -18717,12 +18717,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 										t58 := int32(Load32(m.MemoryG1[uint32(t57+int32(v1)*I32(20)):]))
 										t59 := int64(Load64(m.MemoryG1[uint32(t58+int32(v2)<<3):]))
 										v1 = t59
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t60 := TBL_Fn276(m, I32(10327), v1, v3+I32(12), I32(0))
 										v0 = t60
-										t61 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t61 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t61
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										var p62 float32
 										{
 											if v4 != I32(1) {
@@ -18754,12 +18754,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 									t70 := int32(Load32(m.MemoryG1[uint32(t69+int32(v1)*I32(20)):]))
 									t71 := int64(Load64(m.MemoryG1[uint32(t70+int32(v2)<<3):]))
 									v1 = t71
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t72 := TBL_Fn276(m, I32(10328), v1, v3+I32(12), I32(0))
 									v0 = t72
-									t73 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t73 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t73
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									var p74 float32
 									{
 										if v4 != I32(1) {
@@ -18815,12 +18815,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 						t91 := m.G0
 						v3 = t91 - I32(16)
 						m.G0 = v3
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t92 := TBL_Fn119(m, I32(10329), v0, v3+I32(12), v1, v2)
 						v0 = t92
-						t93 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t93 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t93
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p94 float32
 						{
 							if v4 != I32(1) {
@@ -18851,7 +18851,7 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 					t101 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 					t102 := int32(Load32(m.MemoryG1[uint32(t101+int32(v1)*I32(20)):]))
 					v0 = t102
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t103 := v3
 					v0 = v0 + int32(v2)<<4
 					t104 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -18860,9 +18860,9 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t105))
 					t106 := TBL_Fn10(m, I32(10330), v3+I32(8), v3+I32(28), I32(0))
 					v0 = t106
-					t107 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t107 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t107
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p108 float32
 					{
 						if v4 != I32(1) {
@@ -18894,12 +18894,12 @@ func (m *Module) Xduckdb_value_float(v0 int32, v1, v2 int64) float32 {
 				t116 := int32(Load32(m.MemoryG1[uint32(t115+int32(v1)*I32(20)):]))
 				t117 := int32(Load32(m.MemoryG1[uint32(t116+int32(v2)<<2):]))
 				v0 = t117
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t118 := TBL_Fn0(m, I32(10331), v0, v3+I32(12))
 				v0 = t118
-				t119 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t119 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t119
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				var p120 float32
 				{
 					if v4 != I32(1) {
@@ -19078,12 +19078,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 												t32 := int32(Load32(m.MemoryG1[uint32(t31+int32(v1)*I32(20)):]))
 												t33 := int32(Load32(m.MemoryG1[uint32(t32+int32(v2)<<2):]))
 												v0 = t33
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t34 := TBL_Fn10(m, I32(10332), v0, v3+I32(8), I32(0))
 												v0 = t34
-												t35 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t35 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v4 = t35
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												var p36 float64
 												{
 													if v4 != I32(1) {
@@ -19115,12 +19115,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 											t44 := int32(Load32(m.MemoryG1[uint32(t43+int32(v1)*I32(20)):]))
 											t45 := int64(Load64(m.MemoryG1[uint32(t44+int32(v2)<<3):]))
 											v1 = t45
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t46 := TBL_Fn276(m, I32(10333), v1, v3+I32(8), I32(0))
 											v0 = t46
-											t47 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t47 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t47
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p48 float64
 											{
 												if v4 != I32(1) {
@@ -19152,12 +19152,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 										t56 := int32(Load32(m.MemoryG1[uint32(t55+int32(v1)*I32(20)):]))
 										t57 := int64(Load64(m.MemoryG1[uint32(t56+int32(v2)<<3):]))
 										v1 = t57
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t58 := TBL_Fn276(m, I32(10334), v1, v3+I32(8), I32(0))
 										v0 = t58
-										t59 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t59 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t59
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										var p60 float64
 										{
 											if v4 != I32(1) {
@@ -19189,12 +19189,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 									t68 := int32(Load32(m.MemoryG1[uint32(t67+int32(v1)*I32(20)):]))
 									t69 := int64(Load64(m.MemoryG1[uint32(t68+int32(v2)<<3):]))
 									v1 = t69
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t70 := TBL_Fn276(m, I32(10335), v1, v3+I32(8), I32(0))
 									v0 = t70
-									t71 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t71 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t71
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									var p72 float64
 									{
 										if v4 != I32(1) {
@@ -19253,12 +19253,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 						t88 := m.G0
 						v3 = t88 - I32(16)
 						m.G0 = v3
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t89 := TBL_Fn119(m, I32(10336), v0, v3+I32(8), v1, v2)
 						v0 = t89
-						t90 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t90 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t90
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p91 float64
 						{
 							if v4 != I32(1) {
@@ -19289,7 +19289,7 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 					t98 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 					t99 := int32(Load32(m.MemoryG1[uint32(t98+int32(v1)*I32(20)):]))
 					v0 = t99
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t100 := v3
 					v0 = v0 + int32(v2)<<4
 					t101 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -19298,9 +19298,9 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t102))
 					t103 := TBL_Fn10(m, I32(10337), v3+I32(8), v3+I32(24), I32(0))
 					v0 = t103
-					t104 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t104 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t104
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p105 float64
 					{
 						if v4 != I32(1) {
@@ -19332,12 +19332,12 @@ func (m *Module) Xduckdb_value_double(v0 int32, v1, v2 int64) float64 {
 				t113 := int32(Load32(m.MemoryG1[uint32(t112+int32(v1)*I32(20)):]))
 				t114 := int32(Load32(m.MemoryG1[uint32(t113+int32(v2)<<2):]))
 				v0 = t114
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t115 := TBL_Fn0(m, I32(10338), v0, v3+I32(8))
 				v0 = t115
-				t116 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t116 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t116
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				var p117 float64
 				{
 					if v4 != I32(1) {
@@ -19458,12 +19458,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																					t7 := int32(m.MemoryG1[uint32(t6+int32(v2))])
 																					v4 = t7
 																					v0 = I32(0)
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					t8 := TBL_Fn10(m, I32(10339), v4, v3+I32(12), I32(0))
 																					v4 = t8
-																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																					v5 = t9
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					{
 																						if v5 != I32(1) {
 																							t10 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19493,12 +19493,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																				t18 := int32(int8(m.MemoryG1[uint32(t17+int32(v2))]))
 																				v4 = t18
 																				v0 = I32(0)
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				t19 := TBL_Fn10(m, I32(10340), v4, v3+I32(12), I32(0))
 																				v4 = t19
-																				t20 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																				t20 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																				v5 = t20
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				{
 																					if v5 != I32(1) {
 																						t21 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19528,12 +19528,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																			t29 := int32(int16(Load16(m.MemoryG1[uint32(t28+int32(v2)<<1):])))
 																			v4 = t29
 																			v0 = I32(0)
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			t30 := TBL_Fn10(m, I32(10341), v4, v3+I32(12), I32(0))
 																			v4 = t30
-																			t31 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																			t31 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																			v5 = t31
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			{
 																				if v5 != I32(1) {
 																					t32 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19563,12 +19563,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																		t40 := int32(Load32(m.MemoryG1[uint32(t39+int32(v2)<<2):]))
 																		v4 = t40
 																		v0 = I32(0)
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t41 := TBL_Fn10(m, I32(10342), v4, v3+I32(12), I32(0))
 																		v4 = t41
-																		t42 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t42 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v5 = t42
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		{
 																			if v5 != I32(1) {
 																				t43 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19598,12 +19598,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																	t51 := int64(Load64(m.MemoryG1[uint32(t50+int32(v2)<<3):]))
 																	v1 = t51
 																	v0 = I32(0)
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	t52 := TBL_Fn276(m, I32(10343), v1, v3+I32(12), I32(0))
 																	v4 = t52
-																	t53 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																	t53 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																	v5 = t53
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	{
 																		if v5 != I32(1) {
 																			t54 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19633,12 +19633,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 																t62 := int32(m.MemoryG1[uint32(t61+int32(v2))])
 																v4 = t62
 																v0 = I32(0)
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																t63 := TBL_Fn10(m, I32(10344), v4, v3+I32(12), I32(0))
 																v4 = t63
-																t64 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																t64 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																v5 = t64
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																{
 																	if v5 != I32(1) {
 																		t65 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19668,12 +19668,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 															t73 := int32(Load16(m.MemoryG1[uint32(t72+int32(v2)<<1):]))
 															v4 = t73
 															v0 = I32(0)
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															t74 := TBL_Fn10(m, I32(10345), v4, v3+I32(12), I32(0))
 															v4 = t74
-															t75 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+															t75 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 															v5 = t75
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															{
 																if v5 != I32(1) {
 																	t76 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19703,12 +19703,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 														t84 := int32(Load32(m.MemoryG1[uint32(t83+int32(v2)<<2):]))
 														v4 = t84
 														v0 = I32(0)
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t85 := TBL_Fn10(m, I32(10346), v4, v3+I32(12), I32(0))
 														v4 = t85
-														t86 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t86 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v5 = t86
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														{
 															if v5 != I32(1) {
 																t87 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19738,12 +19738,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 													t95 := int64(Load64(m.MemoryG1[uint32(t94+int32(v2)<<3):]))
 													v1 = t95
 													v0 = I32(0)
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t96 := TBL_Fn276(m, I32(10347), v1, v3+I32(12), I32(0))
 													v4 = t96
-													t97 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t97 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v5 = t97
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													{
 														if v5 != I32(1) {
 															t98 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19773,12 +19773,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 												t106 := math.Float32frombits(Load32(m.MemoryG1[uint32(t105+int32(v2)<<2):]))
 												v6 = t106
 												v0 = I32(0)
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t107 := TBL_Fn277(m, I32(10348), v6, v3+I32(12), I32(0))
 												v4 = t107
-												t108 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t108 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v5 = t108
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													if v5 != I32(1) {
 														t109 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19808,12 +19808,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 											t117 := math.Float64frombits(Load64(m.MemoryG1[uint32(t116+int32(v2)<<3):]))
 											v7 = t117
 											v0 = I32(0)
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t118 := TBL_Fn278(m, I32(10349), v7, v3+I32(12), I32(0))
 											v4 = t118
-											t119 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t119 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v5 = t119
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												if v5 != I32(1) {
 													t120 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19849,12 +19849,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 									t130 := int64(Load64(m.MemoryG1[uint32(t129+int32(v2)<<3):]))
 									v1 = t130
 									v0 = I32(0)
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t131 := TBL_Fn276(m, I32(10350), v1, v3+I32(12), I32(0))
 									v4 = t131
-									t132 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t132 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v5 = t132
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										if v5 != I32(1) {
 											t133 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19884,12 +19884,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 								t141 := int64(Load64(m.MemoryG1[uint32(t140+int32(v2)<<3):]))
 								v1 = t141
 								v0 = I32(0)
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t142 := TBL_Fn276(m, I32(10351), v1, v3+I32(12), I32(0))
 								v4 = t142
-								t143 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t143 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v5 = t143
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									if v5 != I32(1) {
 										t144 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -19926,7 +19926,7 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 						t155 := int32(Load32(m.MemoryG1[uint32(t154+int32(v1)*I32(20)):]))
 						v4 = t155
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t156 := v3
 						v4 = v4 + int32(v2)<<4
 						t157 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -19935,9 +19935,9 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 						Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t158))
 						t159 := TBL_Fn10(m, I32(10352), v3+I32(8), v3+I32(28), I32(0))
 						v4 = t159
-						t160 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t160 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v5 = t160
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							if v5 != I32(1) {
 								t161 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
@@ -19966,7 +19966,7 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 					t168 := int32(Load32(m.MemoryG1[uint32(t167+int32(v1)*I32(20)):]))
 					v4 = t168
 					v0 = I32(0)
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t169 := v3
 					v4 = v4 + int32(v2)<<4
 					t170 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -19975,9 +19975,9 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t171))
 					t172 := TBL_Fn10(m, I32(10353), v3+I32(8), v3+I32(28), I32(0))
 					v4 = t172
-					t173 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t173 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v5 = t173
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						if v5 != I32(1) {
 							t174 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
@@ -20002,12 +20002,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 				t179 := m.G0
 				v3 = t179 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t180 := TBL_Fn119(m, I32(10354), v0, v3+I32(12), v1, v2)
 				v0 = t180
-				t181 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t181 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v5 = t181
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				{
 					if v5 != I32(1) {
 						t182 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -20036,7 +20036,7 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 			t189 := int32(Load32(m.MemoryG1[uint32(t188+int32(v1)*I32(20)):]))
 			v4 = t189
 			v0 = I32(0)
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t190 := v3
 			v4 = v4 + int32(v2)<<4
 			t191 := int64(Load64(m.MemoryG1[uint32(v4):]))
@@ -20045,9 +20045,9 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t192))
 			t193 := TBL_Fn10(m, I32(10355), v3+I32(8), v3+I32(28), I32(0))
 			v4 = t193
-			t194 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t194 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v5 = t194
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				if v5 != I32(1) {
 					t195 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
@@ -20077,12 +20077,12 @@ func (m *Module) Xduckdb_value_date(v0 int32, v1, v2 int64) int32 {
 		t203 := int32(Load32(m.MemoryG1[uint32(t202+int32(v2)<<2):]))
 		v4 = t203
 		v0 = I32(0)
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t204 := TBL_Fn28669(m, v4, v3+I32(12))
 		v4 = t204
-		t205 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t205 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v5 = t205
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		{
 			if v5 != I32(1) {
 				t206 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
@@ -20193,12 +20193,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																					t6 := int32(Load32(m.MemoryG1[uint32(t5+int32(v1)*I32(20)):]))
 																					t7 := int32(m.MemoryG1[uint32(t6+int32(v2))])
 																					v0 = t7
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					t8 := TBL_Fn10(m, I32(10357), v0, v3+I32(8), I32(0))
 																					v0 = t8
-																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																					v4 = t9
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					var p10 int64
 																					{
 																						if v4 != I32(1) {
@@ -20230,12 +20230,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																				t18 := int32(Load32(m.MemoryG1[uint32(t17+int32(v1)*I32(20)):]))
 																				t19 := int32(int8(m.MemoryG1[uint32(t18+int32(v2))]))
 																				v0 = t19
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				t20 := TBL_Fn10(m, I32(10358), v0, v3+I32(8), I32(0))
 																				v0 = t20
-																				t21 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																				t21 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																				v4 = t21
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				var p22 int64
 																				{
 																					if v4 != I32(1) {
@@ -20267,12 +20267,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																			t30 := int32(Load32(m.MemoryG1[uint32(t29+int32(v1)*I32(20)):]))
 																			t31 := int32(int16(Load16(m.MemoryG1[uint32(t30+int32(v2)<<1):])))
 																			v0 = t31
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			t32 := TBL_Fn10(m, I32(10359), v0, v3+I32(8), I32(0))
 																			v0 = t32
-																			t33 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																			t33 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																			v4 = t33
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			var p34 int64
 																			{
 																				if v4 != I32(1) {
@@ -20304,12 +20304,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																		t42 := int32(Load32(m.MemoryG1[uint32(t41+int32(v1)*I32(20)):]))
 																		t43 := int32(Load32(m.MemoryG1[uint32(t42+int32(v2)<<2):]))
 																		v0 = t43
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t44 := TBL_Fn10(m, I32(10360), v0, v3+I32(8), I32(0))
 																		v0 = t44
-																		t45 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t45 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v4 = t45
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		var p46 int64
 																		{
 																			if v4 != I32(1) {
@@ -20341,12 +20341,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																	t54 := int32(Load32(m.MemoryG1[uint32(t53+int32(v1)*I32(20)):]))
 																	t55 := int64(Load64(m.MemoryG1[uint32(t54+int32(v2)<<3):]))
 																	v1 = t55
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	t56 := TBL_Fn276(m, I32(10361), v1, v3+I32(8), I32(0))
 																	v0 = t56
-																	t57 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																	t57 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																	v4 = t57
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	var p58 int64
 																	{
 																		if v4 != I32(1) {
@@ -20378,12 +20378,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 																t66 := int32(Load32(m.MemoryG1[uint32(t65+int32(v1)*I32(20)):]))
 																t67 := int32(m.MemoryG1[uint32(t66+int32(v2))])
 																v0 = t67
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																t68 := TBL_Fn10(m, I32(10362), v0, v3+I32(8), I32(0))
 																v0 = t68
-																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																v4 = t69
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																var p70 int64
 																{
 																	if v4 != I32(1) {
@@ -20415,12 +20415,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 															t78 := int32(Load32(m.MemoryG1[uint32(t77+int32(v1)*I32(20)):]))
 															t79 := int32(Load16(m.MemoryG1[uint32(t78+int32(v2)<<1):]))
 															v0 = t79
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															t80 := TBL_Fn10(m, I32(10363), v0, v3+I32(8), I32(0))
 															v0 = t80
-															t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+															t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 															v4 = t81
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															var p82 int64
 															{
 																if v4 != I32(1) {
@@ -20452,12 +20452,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 														t90 := int32(Load32(m.MemoryG1[uint32(t89+int32(v1)*I32(20)):]))
 														t91 := int32(Load32(m.MemoryG1[uint32(t90+int32(v2)<<2):]))
 														v0 = t91
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t92 := TBL_Fn10(m, I32(10364), v0, v3+I32(8), I32(0))
 														v0 = t92
-														t93 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t93 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v4 = t93
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														var p94 int64
 														{
 															if v4 != I32(1) {
@@ -20489,12 +20489,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 													t102 := int32(Load32(m.MemoryG1[uint32(t101+int32(v1)*I32(20)):]))
 													t103 := int64(Load64(m.MemoryG1[uint32(t102+int32(v2)<<3):]))
 													v1 = t103
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t104 := TBL_Fn276(m, I32(10365), v1, v3+I32(8), I32(0))
 													v0 = t104
-													t105 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t105 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v4 = t105
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													var p106 int64
 													{
 														if v4 != I32(1) {
@@ -20526,12 +20526,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 												t114 := int32(Load32(m.MemoryG1[uint32(t113+int32(v1)*I32(20)):]))
 												t115 := math.Float32frombits(Load32(m.MemoryG1[uint32(t114+int32(v2)<<2):]))
 												v5 = t115
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t116 := TBL_Fn277(m, I32(10366), v5, v3+I32(8), I32(0))
 												v0 = t116
-												t117 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t117 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v4 = t117
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												var p118 int64
 												{
 													if v4 != I32(1) {
@@ -20563,12 +20563,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 											t126 := int32(Load32(m.MemoryG1[uint32(t125+int32(v1)*I32(20)):]))
 											t127 := math.Float64frombits(Load64(m.MemoryG1[uint32(t126+int32(v2)<<3):]))
 											v6 = t127
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t128 := TBL_Fn278(m, I32(10367), v6, v3+I32(8), I32(0))
 											v0 = t128
-											t129 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t129 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t129
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p130 int64
 											{
 												if v4 != I32(1) {
@@ -20600,12 +20600,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 										t138 := int32(Load32(m.MemoryG1[uint32(t137+int32(v1)*I32(20)):]))
 										t139 := int32(Load32(m.MemoryG1[uint32(t138+int32(v2)<<2):]))
 										v0 = t139
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t140 := TBL_Fn10(m, I32(10368), v0, v3+I32(8), I32(0))
 										v0 = t140
-										t141 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t141 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v4 = t141
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										var p142 int64
 										{
 											if v4 != I32(1) {
@@ -20650,12 +20650,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 							t155 := int32(Load32(m.MemoryG1[uint32(t154+int32(v1)*I32(20)):]))
 							t156 := int64(Load64(m.MemoryG1[uint32(t155+int32(v2)<<3):]))
 							v1 = t156
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t157 := TBL_Fn276(m, I32(10369), v1, v3+I32(8), v3)
 							v0 = t157
-							t158 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t158 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v4 = t158
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							var p159 int64
 							{
 								if v4 != I32(1) {
@@ -20686,7 +20686,7 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 						t166 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 						t167 := int32(Load32(m.MemoryG1[uint32(t166+int32(v1)*I32(20)):]))
 						v0 = t167
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t168 := v3
 						v0 = v0 + int32(v2)<<4
 						t169 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -20695,9 +20695,9 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 						Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t170))
 						t171 := TBL_Fn10(m, I32(10370), v3+I32(8), v3+I32(24), I32(0))
 						v0 = t171
-						t172 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t172 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t172
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p173 int64
 						{
 							if v4 != I32(1) {
@@ -20728,7 +20728,7 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 					t180 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 					t181 := int32(Load32(m.MemoryG1[uint32(t180+int32(v1)*I32(20)):]))
 					v0 = t181
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t182 := v3
 					v0 = v0 + int32(v2)<<4
 					t183 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -20737,9 +20737,9 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t184))
 					t185 := TBL_Fn10(m, I32(10371), v3+I32(8), v3+I32(24), I32(0))
 					v0 = t185
-					t186 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t186 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t186
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p187 int64
 					{
 						if v4 != I32(1) {
@@ -20767,12 +20767,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 				t193 := m.G0
 				v3 = t193 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t194 := TBL_Fn119(m, I32(10372), v0, v3+I32(8), v1, v2)
 				v0 = t194
-				t195 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t195 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t195
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				var p196 int64
 				{
 					if v4 != I32(1) {
@@ -20803,7 +20803,7 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 			t203 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 			t204 := int32(Load32(m.MemoryG1[uint32(t203+int32(v1)*I32(20)):]))
 			v0 = t204
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t205 := v3
 			v0 = v0 + int32(v2)<<4
 			t206 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -20812,9 +20812,9 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t207))
 			t208 := TBL_Fn10(m, I32(10373), v3+I32(8), v3+I32(24), I32(0))
 			v0 = t208
-			t209 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t209 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v4 = t209
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			var p210 int64
 			{
 				if v4 != I32(1) {
@@ -20846,12 +20846,12 @@ func (m *Module) Xduckdb_value_time(v0 int32, v1, v2 int64) int64 {
 		t218 := int32(Load32(m.MemoryG1[uint32(t217+int32(v1)*I32(20)):]))
 		t219 := int32(Load32(m.MemoryG1[uint32(t218+int32(v2)<<2):]))
 		v0 = t219
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t220 := TBL_Fn0(m, I32(10374), v0, v3+I32(8))
 		v0 = t220
-		t221 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t221 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t221
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		var p222 int64
 		{
 			if v4 != I32(1) {
@@ -20965,12 +20965,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																					t6 := int32(Load32(m.MemoryG1[uint32(t5+int32(v1)*I32(20)):]))
 																					t7 := int32(m.MemoryG1[uint32(t6+int32(v2))])
 																					v0 = t7
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					t8 := TBL_Fn10(m, I32(10375), v0, v3+I32(8), I32(0))
 																					v0 = t8
-																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																					t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																					v4 = t9
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					var p10 int64
 																					{
 																						if v4 != I32(1) {
@@ -21002,12 +21002,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																				t18 := int32(Load32(m.MemoryG1[uint32(t17+int32(v1)*I32(20)):]))
 																				t19 := int32(int8(m.MemoryG1[uint32(t18+int32(v2))]))
 																				v0 = t19
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				t20 := TBL_Fn10(m, I32(0x2888), v0, v3+I32(8), I32(0))
 																				v0 = t20
-																				t21 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																				t21 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																				v4 = t21
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				var p22 int64
 																				{
 																					if v4 != I32(1) {
@@ -21039,12 +21039,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																			t30 := int32(Load32(m.MemoryG1[uint32(t29+int32(v1)*I32(20)):]))
 																			t31 := int32(int16(Load16(m.MemoryG1[uint32(t30+int32(v2)<<1):])))
 																			v0 = t31
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			t32 := TBL_Fn10(m, I32(10377), v0, v3+I32(8), I32(0))
 																			v0 = t32
-																			t33 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																			t33 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																			v4 = t33
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			var p34 int64
 																			{
 																				if v4 != I32(1) {
@@ -21076,12 +21076,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																		t42 := int32(Load32(m.MemoryG1[uint32(t41+int32(v1)*I32(20)):]))
 																		t43 := int32(Load32(m.MemoryG1[uint32(t42+int32(v2)<<2):]))
 																		v0 = t43
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t44 := TBL_Fn10(m, I32(10378), v0, v3+I32(8), I32(0))
 																		v0 = t44
-																		t45 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t45 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v4 = t45
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		var p46 int64
 																		{
 																			if v4 != I32(1) {
@@ -21113,12 +21113,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																	t54 := int32(Load32(m.MemoryG1[uint32(t53+int32(v1)*I32(20)):]))
 																	t55 := int64(Load64(m.MemoryG1[uint32(t54+int32(v2)<<3):]))
 																	v1 = t55
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	t56 := TBL_Fn276(m, I32(10379), v1, v3+I32(8), I32(0))
 																	v0 = t56
-																	t57 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																	t57 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																	v4 = t57
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	var p58 int64
 																	{
 																		if v4 != I32(1) {
@@ -21150,12 +21150,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 																t66 := int32(Load32(m.MemoryG1[uint32(t65+int32(v1)*I32(20)):]))
 																t67 := int32(m.MemoryG1[uint32(t66+int32(v2))])
 																v0 = t67
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																t68 := TBL_Fn10(m, I32(10380), v0, v3+I32(8), I32(0))
 																v0 = t68
-																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																v4 = t69
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																var p70 int64
 																{
 																	if v4 != I32(1) {
@@ -21187,12 +21187,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 															t78 := int32(Load32(m.MemoryG1[uint32(t77+int32(v1)*I32(20)):]))
 															t79 := int32(Load16(m.MemoryG1[uint32(t78+int32(v2)<<1):]))
 															v0 = t79
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															t80 := TBL_Fn10(m, I32(10381), v0, v3+I32(8), I32(0))
 															v0 = t80
-															t81 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+															t81 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 															v4 = t81
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															var p82 int64
 															{
 																if v4 != I32(1) {
@@ -21224,12 +21224,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 														t90 := int32(Load32(m.MemoryG1[uint32(t89+int32(v1)*I32(20)):]))
 														t91 := int32(Load32(m.MemoryG1[uint32(t90+int32(v2)<<2):]))
 														v0 = t91
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t92 := TBL_Fn10(m, I32(10382), v0, v3+I32(8), I32(0))
 														v0 = t92
-														t93 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t93 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v4 = t93
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														var p94 int64
 														{
 															if v4 != I32(1) {
@@ -21261,12 +21261,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 													t102 := int32(Load32(m.MemoryG1[uint32(t101+int32(v1)*I32(20)):]))
 													t103 := int64(Load64(m.MemoryG1[uint32(t102+int32(v2)<<3):]))
 													v1 = t103
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t104 := TBL_Fn276(m, I32(10383), v1, v3+I32(8), I32(0))
 													v0 = t104
-													t105 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t105 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v4 = t105
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													var p106 int64
 													{
 														if v4 != I32(1) {
@@ -21298,12 +21298,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 												t114 := int32(Load32(m.MemoryG1[uint32(t113+int32(v1)*I32(20)):]))
 												t115 := math.Float32frombits(Load32(m.MemoryG1[uint32(t114+int32(v2)<<2):]))
 												v5 = t115
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t116 := TBL_Fn277(m, I32(10384), v5, v3+I32(8), I32(0))
 												v0 = t116
-												t117 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t117 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v4 = t117
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												var p118 int64
 												{
 													if v4 != I32(1) {
@@ -21335,12 +21335,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 											t126 := int32(Load32(m.MemoryG1[uint32(t125+int32(v1)*I32(20)):]))
 											t127 := math.Float64frombits(Load64(m.MemoryG1[uint32(t126+int32(v2)<<3):]))
 											v6 = t127
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t128 := TBL_Fn278(m, I32(10385), v6, v3+I32(8), I32(0))
 											v0 = t128
-											t129 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t129 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v4 = t129
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											var p130 int64
 											{
 												if v4 != I32(1) {
@@ -21391,12 +21391,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 									t145 := int32(Load32(m.MemoryG1[uint32(t144+int32(v1)*I32(20)):]))
 									t146 := int64(Load64(m.MemoryG1[uint32(t145+int32(v2)<<3):]))
 									v1 = t146
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t147 := TBL_Fn276(m, I32(10386), v1, v3+I32(8), I32(0))
 									v0 = t147
-									t148 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t148 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v4 = t148
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									var p149 int64
 									{
 										if v4 != I32(1) {
@@ -21428,12 +21428,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 								t157 := int32(Load32(m.MemoryG1[uint32(t156+int32(v1)*I32(20)):]))
 								t158 := int64(Load64(m.MemoryG1[uint32(t157+int32(v2)<<3):]))
 								v1 = t158
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t159 := TBL_Fn276(m, I32(10387), v1, v3+I32(8), I32(0))
 								v0 = t159
-								t160 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t160 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v4 = t160
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								var p161 int64
 								{
 									if v4 != I32(1) {
@@ -21470,7 +21470,7 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 						t170 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 						t171 := int32(Load32(m.MemoryG1[uint32(t170+int32(v1)*I32(20)):]))
 						v0 = t171
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t172 := v3
 						v0 = v0 + int32(v2)<<4
 						t173 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -21479,9 +21479,9 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 						Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t174))
 						t175 := TBL_Fn10(m, I32(10388), v3+I32(8), v3+I32(24), I32(0))
 						v0 = t175
-						t176 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t176 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v4 = t176
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						var p177 int64
 						{
 							if v4 != I32(1) {
@@ -21512,7 +21512,7 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 					t184 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 					t185 := int32(Load32(m.MemoryG1[uint32(t184+int32(v1)*I32(20)):]))
 					v0 = t185
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t186 := v3
 					v0 = v0 + int32(v2)<<4
 					t187 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -21521,9 +21521,9 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t188))
 					t189 := TBL_Fn10(m, I32(10389), v3+I32(8), v3+I32(24), I32(0))
 					v0 = t189
-					t190 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t190 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v4 = t190
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					var p191 int64
 					{
 						if v4 != I32(1) {
@@ -21551,12 +21551,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 				t197 := m.G0
 				v3 = t197 - I32(16)
 				m.G0 = v3
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				t198 := TBL_Fn119(m, I32(10390), v0, v3+I32(8), v1, v2)
 				v0 = t198
-				t199 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+				t199 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 				v4 = t199
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 				var p200 int64
 				{
 					if v4 != I32(1) {
@@ -21587,7 +21587,7 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 			t207 := int32(Load32(m.MemoryG1[int64(uint32(v0))+24:]))
 			t208 := int32(Load32(m.MemoryG1[uint32(t207+int32(v1)*I32(20)):]))
 			v0 = t208
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t209 := v3
 			v0 = v0 + int32(v2)<<4
 			t210 := int64(Load64(m.MemoryG1[uint32(v0):]))
@@ -21596,9 +21596,9 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(t211))
 			t212 := TBL_Fn10(m, I32(10391), v3+I32(8), v3+I32(24), I32(0))
 			v0 = t212
-			t213 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t213 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v4 = t213
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			var p214 int64
 			{
 				if v4 != I32(1) {
@@ -21630,12 +21630,12 @@ func (m *Module) Xduckdb_value_timestamp(v0 int32, v1, v2 int64) int64 {
 		t222 := int32(Load32(m.MemoryG1[uint32(t221+int32(v1)*I32(20)):]))
 		t223 := int32(Load32(m.MemoryG1[uint32(t222+int32(v2)<<2):]))
 		v0 = t223
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		t224 := TBL_Fn0(m, I32(10392), v0, v3+I32(8))
 		v0 = t224
-		t225 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t225 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v4 = t225
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		var p226 int64
 		{
 			if v4 != I32(1) {
@@ -21753,12 +21753,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																						t6 := int32(Load32(m.MemoryG1[uint32(t5+int32(v2)*I32(20)):]))
 																						t7 := int32(m.MemoryG1[uint32(t6+int32(v3))])
 																						v1 = t7
-																						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																						t8 := TBL_Fn10(m, I32(10393), v1, v5, I32(0))
 																						v1 = t8
-																						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																						v6 = t9
-																						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																						{
 																							{
 																								if v6 != I32(1) {
@@ -21794,12 +21794,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																					t16 := int32(Load32(m.MemoryG1[uint32(t15+int32(v2)*I32(20)):]))
 																					t17 := int32(int8(m.MemoryG1[uint32(t16+int32(v3))]))
 																					v1 = t17
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					t18 := TBL_Fn10(m, I32(10394), v1, v5, I32(0))
 																					v1 = t18
-																					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																					t19 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																					v6 = t19
-																					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																					{
 																						{
 																							if v6 != I32(1) {
@@ -21835,12 +21835,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																				t26 := int32(Load32(m.MemoryG1[uint32(t25+int32(v2)*I32(20)):]))
 																				t27 := int32(int16(Load16(m.MemoryG1[uint32(t26+int32(v3)<<1):])))
 																				v1 = t27
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				t28 := TBL_Fn10(m, I32(10395), v1, v5, I32(0))
 																				v1 = t28
-																				t29 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																				t29 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																				v6 = t29
-																				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																				Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																				{
 																					{
 																						if v6 != I32(1) {
@@ -21876,12 +21876,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																			t36 := int32(Load32(m.MemoryG1[uint32(t35+int32(v2)*I32(20)):]))
 																			t37 := int32(Load32(m.MemoryG1[uint32(t36+int32(v3)<<2):]))
 																			v1 = t37
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			t38 := TBL_Fn10(m, I32(10396), v1, v5, I32(0))
 																			v1 = t38
-																			t39 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																			t39 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																			v6 = t39
-																			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																			{
 																				{
 																					if v6 != I32(1) {
@@ -21917,12 +21917,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																		t46 := int32(Load32(m.MemoryG1[uint32(t45+int32(v2)*I32(20)):]))
 																		t47 := int64(Load64(m.MemoryG1[uint32(t46+int32(v3)<<3):]))
 																		v2 = t47
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		t48 := TBL_Fn276(m, I32(10397), v2, v5, I32(0))
 																		v1 = t48
-																		t49 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																		t49 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																		v6 = t49
-																		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																		{
 																			{
 																				if v6 != I32(1) {
@@ -21958,12 +21958,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																	t56 := int32(Load32(m.MemoryG1[uint32(t55+int32(v2)*I32(20)):]))
 																	t57 := int32(m.MemoryG1[uint32(t56+int32(v3))])
 																	v1 = t57
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	t58 := TBL_Fn10(m, I32(10398), v1, v5, I32(0))
 																	v1 = t58
-																	t59 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																	t59 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																	v6 = t59
-																	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																	{
 																		{
 																			if v6 != I32(1) {
@@ -21999,12 +21999,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 																t66 := int32(Load32(m.MemoryG1[uint32(t65+int32(v2)*I32(20)):]))
 																t67 := int32(Load16(m.MemoryG1[uint32(t66+int32(v3)<<1):]))
 																v1 = t67
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																t68 := TBL_Fn10(m, I32(10399), v1, v5, I32(0))
 																v1 = t68
-																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+																t69 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 																v6 = t69
-																Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+																Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 																{
 																	{
 																		if v6 != I32(1) {
@@ -22040,12 +22040,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 															t76 := int32(Load32(m.MemoryG1[uint32(t75+int32(v2)*I32(20)):]))
 															t77 := int32(Load32(m.MemoryG1[uint32(t76+int32(v3)<<2):]))
 															v1 = t77
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															t78 := TBL_Fn10(m, I32(10400), v1, v5, I32(0))
 															v1 = t78
-															t79 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+															t79 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 															v6 = t79
-															Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+															Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 															{
 																{
 																	if v6 != I32(1) {
@@ -22081,12 +22081,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 														t86 := int32(Load32(m.MemoryG1[uint32(t85+int32(v2)*I32(20)):]))
 														t87 := int64(Load64(m.MemoryG1[uint32(t86+int32(v3)<<3):]))
 														v2 = t87
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														t88 := TBL_Fn276(m, I32(10401), v2, v5, I32(0))
 														v1 = t88
-														t89 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+														t89 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 														v6 = t89
-														Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+														Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 														{
 															{
 																if v6 != I32(1) {
@@ -22122,12 +22122,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 													t96 := int32(Load32(m.MemoryG1[uint32(t95+int32(v2)*I32(20)):]))
 													t97 := math.Float32frombits(Load32(m.MemoryG1[uint32(t96+int32(v3)<<2):]))
 													v7 = t97
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													t98 := TBL_Fn277(m, I32(10402), v7, v5, I32(0))
 													v1 = t98
-													t99 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+													t99 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 													v6 = t99
-													Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+													Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 													{
 														{
 															if v6 != I32(1) {
@@ -22163,12 +22163,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 												t106 := int32(Load32(m.MemoryG1[uint32(t105+int32(v2)*I32(20)):]))
 												t107 := math.Float64frombits(Load64(m.MemoryG1[uint32(t106+int32(v3)<<3):]))
 												v8 = t107
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												t108 := TBL_Fn278(m, I32(10403), v8, v5, I32(0))
 												v1 = t108
-												t109 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+												t109 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 												v6 = t109
-												Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+												Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 												{
 													{
 														if v6 != I32(1) {
@@ -22204,12 +22204,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 											t116 := int32(Load32(m.MemoryG1[uint32(t115+int32(v2)*I32(20)):]))
 											t117 := int32(Load32(m.MemoryG1[uint32(t116+int32(v3)<<2):]))
 											v1 = t117
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											t118 := TBL_Fn10(m, I32(10404), v1, v5, I32(0))
 											v1 = t118
-											t119 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+											t119 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 											v6 = t119
-											Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+											Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 											{
 												{
 													if v6 != I32(1) {
@@ -22245,12 +22245,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 										t126 := int32(Load32(m.MemoryG1[uint32(t125+int32(v2)*I32(20)):]))
 										t127 := int64(Load64(m.MemoryG1[uint32(t126+int32(v3)<<3):]))
 										v2 = t127
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										t128 := TBL_Fn276(m, I32(10405), v2, v5, I32(0))
 										v1 = t128
-										t129 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+										t129 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 										v6 = t129
-										Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+										Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 										{
 											{
 												if v6 != I32(1) {
@@ -22286,12 +22286,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 									t136 := int32(Load32(m.MemoryG1[uint32(t135+int32(v2)*I32(20)):]))
 									t137 := int64(Load64(m.MemoryG1[uint32(t136+int32(v3)<<3):]))
 									v2 = t137
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									t138 := TBL_Fn276(m, I32(10406), v2, v5, I32(0))
 									v1 = t138
-									t139 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+									t139 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 									v6 = t139
-									Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+									Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 									{
 										{
 											if v6 != I32(1) {
@@ -22327,12 +22327,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 								t146 := int32(Load32(m.MemoryG1[uint32(t145+int32(v2)*I32(20)):]))
 								t147 := int64(Load64(m.MemoryG1[uint32(t146+int32(v3)<<3):]))
 								v2 = t147
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								t148 := TBL_Fn276(m, I32(10407), v2, v5, I32(0))
 								v1 = t148
-								t149 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+								t149 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 								v6 = t149
-								Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+								Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 								{
 									{
 										if v6 != I32(1) {
@@ -22367,7 +22367,7 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 							t155 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 							t156 := int32(Load32(m.MemoryG1[uint32(t155+int32(v2)*I32(20)):]))
 							v1 = t156
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							t157 := v5
 							v1 = v1 + int32(v3)<<4
 							t158 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -22376,9 +22376,9 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 							Store64(m.MemoryG1[int64(uint32(v5))+8:], uint64(t159))
 							t160 := TBL_Fn10(m, I32(10408), v5, v5+I32(16), I32(0))
 							v1 = t160
-							t161 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+							t161 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 							v6 = t161
-							Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+							Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 							{
 								{
 									if v6 != I32(1) {
@@ -22413,7 +22413,7 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 						t167 := int32(Load32(m.MemoryG1[int64(uint32(v1))+24:]))
 						t168 := int32(Load32(m.MemoryG1[uint32(t167+int32(v2)*I32(20)):]))
 						v1 = t168
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						t169 := v5
 						v1 = v1 + int32(v3)<<4
 						t170 := int64(Load64(m.MemoryG1[uint32(v1):]))
@@ -22422,9 +22422,9 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 						Store64(m.MemoryG1[int64(uint32(v5))+8:], uint64(t171))
 						t172 := TBL_Fn10(m, I32(10409), v5, v5+I32(16), I32(0))
 						v1 = t172
-						t173 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+						t173 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 						v6 = t173
-						Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 						{
 							{
 								if v6 != I32(1) {
@@ -22456,12 +22456,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 					t178 := m.G0
 					v5 = t178 - I32(16)
 					m.G0 = v5
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					t179 := TBL_Fn119(m, I32(10410), v1, v5, v2, v3)
 					v1 = t179
-					t180 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+					t180 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 					v6 = t180
-					Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 					{
 						{
 							if v6 != I32(1) {
@@ -22507,12 +22507,12 @@ func (m *Module) Xduckdb_value_interval(v0, v1 int32, v2, v3 int64) {
 			t191 := int32(Load32(m.MemoryG1[uint32(t190+int32(v2)*I32(20)):]))
 			t192 := int32(Load32(m.MemoryG1[uint32(t191+int32(v3)<<2):]))
 			v1 = t192
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			t193 := TBL_Fn0(m, I32(10411), v1, v5)
 			v1 = t193
-			t194 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t194 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v6 = t194
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			{
 				{
 					if v6 != I32(1) {
@@ -22593,7 +22593,7 @@ func (m *Module) Xduckdb_value_string_internal(v0, v1 int32, v2, v3 int64) {
 		t7 := v0
 		v1 = t6
 		Store32(m.MemoryG1[uint32(t7):], uint32(v1))
-		t8 := TBL_Fn41567(m, v1)
+		t8 := TBL_Fn41570(m, v1)
 		p0 = int64(uint32(t8))
 	}
 l0:
@@ -23074,7 +23074,7 @@ l26:
 		goto l33
 	}
 l33:
-	v1 = I32(193276)
+	v1 = I32(193261)
 	switch v0 {
 	case 0:
 		goto l34
@@ -23093,22 +23093,22 @@ l36:
 		goto l1
 	}
 l35:
-	p0 = I32(325641)
+	p0 = I32(325626)
 	goto l39
 l0:
 	p0 = I32(86012)
 	goto l39
 l2:
-	p0 = I32(189262)
+	p0 = I32(189247)
 	goto l39
 l3:
 	p0 = I32(90436)
 	goto l39
 l4:
-	p0 = I32(139336)
+	p0 = I32(139321)
 	goto l39
 l5:
-	p0 = I32(193294)
+	p0 = I32(193279)
 	goto l39
 l6:
 	p0 = I32(120329)
@@ -23123,7 +23123,7 @@ l12:
 	p0 = I32(50810)
 	goto l39
 l13:
-	p0 = I32(179428)
+	p0 = I32(179413)
 	goto l39
 l20:
 	p0 = I32(22172)
@@ -23132,34 +23132,34 @@ l21:
 	p0 = I32(8172)
 	goto l39
 l22:
-	p0 = I32(130848)
+	p0 = I32(130833)
 	goto l39
 l19:
-	p0 = I32(172279)
+	p0 = I32(172264)
 	goto l39
 l14:
-	p0 = I32(186997)
+	p0 = I32(186982)
 	goto l39
 l15:
-	p0 = I32(170066)
+	p0 = I32(170051)
 	goto l39
 l16:
-	p0 = I32(123204)
+	p0 = I32(123189)
 	goto l39
 l17:
-	p0 = I32(193417)
+	p0 = I32(193402)
 	goto l39
 l8:
-	p0 = I32(191248)
+	p0 = I32(191233)
 	goto l39
 l9:
-	p0 = I32(131547)
+	p0 = I32(131532)
 	goto l39
 l10:
 	p0 = I32(64895)
 	goto l39
 l23:
-	p0 = I32(123172)
+	p0 = I32(123157)
 	goto l39
 l24:
 	p0 = I32(42155)
@@ -23168,31 +23168,31 @@ l25:
 	p0 = I32(92884)
 	goto l39
 l37:
-	p0 = I32(122935)
+	p0 = I32(122920)
 	goto l39
 l38:
 	p0 = I32(5288)
 	goto l39
 l27:
-	p0 = I32(169861)
+	p0 = I32(169846)
 	goto l39
 l28:
-	p0 = I32(138825)
+	p0 = I32(138810)
 	goto l39
 l29:
-	p0 = I32(134490)
+	p0 = I32(134475)
 	goto l39
 l30:
-	p0 = I32(134518)
+	p0 = I32(134503)
 	goto l39
 l31:
-	p0 = I32(175097)
+	p0 = I32(175082)
 	goto l39
 l32:
-	p0 = I32(183593)
+	p0 = I32(183578)
 	goto l39
 l1:
-	v1 = I32(175159)
+	v1 = I32(175144)
 l34:
 	p0 = v1
 l39:
@@ -23286,145 +23286,145 @@ func Fn21063(v0, v1, v2, v3 int32) int32 {
 	return v2
 }
 func Fn21238(v0 int32) int32 {
-	return I32(1117972)
+	return I32(1117956)
 }
 func Fn21458(v0 int32) int32 {
-	return I32(1119584)
+	return I32(1119568)
 }
 func Fn21464(v0 int32) int32 {
-	return I32(1120284)
+	return I32(1120268)
 }
 func Fn21479(v0 int32) int32 {
-	return I32(1120832)
+	return I32(1120816)
 }
 func Fn22329(v0 int32) int32 {
-	return I32(1134820)
+	return I32(1134804)
 }
 func Fn22877(v0 int32) int32 {
-	return I32(1138568)
+	return I32(1138552)
 }
 func Fn22883(v0 int32) int32 {
-	return I32(1138944)
+	return I32(1138928)
 }
 func Fn22889(v0 int32) int32 {
-	return I32(1139276)
+	return I32(1139260)
 }
 func Fn22893(v0 int32) int32 {
-	return I32(1139628)
+	return I32(1139612)
 }
 func Fn22897(v0 int32) int32 {
-	return I32(1139980)
+	return I32(1139964)
 }
 func Fn22955(v0 int32) int64 {
 	return I64(999999999)
 }
 func Fn23096(v0 int32) int32 {
-	return I32(1143168)
+	return I32(1143152)
 }
 func Fn23101(v0 int32) int32 {
-	return I32(1142960)
+	return I32(1142944)
 }
 func Fn23107(v0 int32) int32 {
-	return I32(1144128)
+	return I32(1144112)
 }
 func Fn23112(v0 int32) int32 {
-	return I32(1143920)
+	return I32(1143904)
 }
 func Fn23175(v0 int32) int32 {
-	return I32(1144588)
+	return I32(1144572)
 }
 func Fn23182(v0 int32) int32 {
-	return I32(1144964)
+	return I32(1144948)
 }
 func Fn23187(v0 int32) int32 {
-	return I32(1145308)
+	return I32(1145292)
 }
 func Fn23192(v0 int32) int32 {
-	return I32(1145800)
+	return I32(1145784)
 }
 func Fn23197(v0 int32) int32 {
-	return I32(1146240)
+	return I32(1146224)
 }
 func Fn23208(v0 int32) int32 {
-	return I32(1146628)
+	return I32(1146612)
 }
 func Fn23213(v0 int32) int32 {
-	return I32(1146968)
+	return I32(1146952)
 }
 func Fn23223(v0 int32) int32 {
-	return I32(1147472)
+	return I32(1147456)
 }
 func Fn23228(v0 int32) int32 {
-	return I32(1148092)
+	return I32(1148076)
 }
 func Fn23233(v0 int32) int32 {
-	return I32(1148620)
+	return I32(1148604)
 }
 func Fn23238(v0 int32) int32 {
-	return I32(1149140)
+	return I32(1149124)
 }
 func Fn23243(v0 int32) int32 {
-	return I32(1149480)
+	return I32(1149464)
 }
 func Fn23248(v0 int32) int32 {
-	return I32(1149968)
+	return I32(1149952)
 }
 func Fn23268(v0 int32) int32 {
-	return I32(1150460)
+	return I32(1150444)
 }
 func Fn23273(v0 int32) int32 {
-	return I32(1150800)
+	return I32(1150784)
 }
 func Fn23280(v0 int32) int32 {
-	return I32(1151072)
+	return I32(1151056)
 }
 func Fn23294(v0 int32) int32 {
-	return I32(1151832)
+	return I32(1151816)
 }
 func Fn23317(v0 int32) int32 {
-	return I32(1152464)
+	return I32(1152448)
 }
 func Fn23322(v0 int32) int32 {
-	return I32(1152884)
+	return I32(1152868)
 }
 func Fn23327(v0 int32) int32 {
-	return I32(1153252)
+	return I32(1153236)
 }
 func Fn23356(v0 int32) int32 {
-	return I32(1153732)
+	return I32(1153716)
 }
 func Fn23368(v0 int32) int32 {
-	return I32(1154400)
+	return I32(1154384)
 }
 func Fn23381(v0 int32) int32 {
-	return I32(1155400)
+	return I32(1155384)
 }
 func Fn23393(v0 int32) int32 {
-	return I32(1155868)
+	return I32(1155852)
 }
 func Fn23417(v0 int32) int32 {
-	return I32(1156588)
+	return I32(1156572)
 }
 func Fn23423(v0 int32) int32 {
-	return I32(1157008)
+	return I32(1156992)
 }
 func Fn23436(v0 int32) int32 {
-	return I32(1157408)
+	return I32(1157392)
 }
 func Fn23440(v0 int32) int32 {
-	return I32(1157776)
+	return I32(1157760)
 }
 func Fn23445(v0 int32) int32 {
-	return I32(1158144)
+	return I32(1158128)
 }
 func Fn23450(v0 int32) int32 {
-	return I32(1158512)
+	return I32(1158496)
 }
 func Fn23455(v0 int32) int32 {
-	return I32(1158880)
+	return I32(1158864)
 }
 func Fn23459(v0 int32) int32 {
-	return I32(1159248)
+	return I32(1159232)
 }
 func Fn23624(v0, v1, v2, v3, v4, v5 int32) int32 {
 	return v3
@@ -23443,73 +23443,73 @@ func Fn23670(v0, v1, v2, v3 int32) int64 {
 	return int64(uint32(t1|p0)) * I64(0x100000001)
 }
 func Fn23719(v0 int32) int32 {
-	return I32(1505172)
+	return I32(1505156)
 }
 func Fn23758(v0 int32) int32 {
-	return I32(1506048)
+	return I32(1506032)
 }
 func Fn23791(v0 int32) int32 {
-	return I32(1506556)
+	return I32(1506540)
 }
 func Fn23830(v0 int32) int32 {
-	return I32(1507064)
+	return I32(1507048)
 }
 func Fn23843(v0 int32) int32 {
-	return I32(0x16fff4)
+	return I32(1507300)
 }
 func Fn23848(v0 int32) int32 {
-	return I32(1507692)
+	return I32(1507676)
 }
 func Fn23854(v0 int32) int32 {
-	return I32(1508128)
+	return I32(1508112)
 }
 func Fn23866(v0 int32) int32 {
-	return I32(1508448)
+	return I32(1508432)
 }
 func Fn23871(v0 int32) int32 {
-	return I32(1508916)
+	return I32(1508900)
 }
 func Fn23876(v0 int32) int32 {
-	return I32(1509384)
+	return I32(1509368)
 }
 func Fn23881(v0 int32) int32 {
-	return I32(1509704)
+	return I32(1509688)
 }
 func Fn23886(v0 int32) int32 {
-	return I32(1510028)
+	return I32(1510012)
 }
 func Fn23891(v0 int32) int32 {
-	return I32(1510356)
+	return I32(1510340)
 }
 func Fn23895(v0 int32) int32 {
-	return I32(1510828)
+	return I32(1510812)
 }
 func Fn23901(v0 int32) int32 {
-	return I32(1511308)
+	return I32(1511292)
 }
 func Fn23906(v0 int32) int32 {
-	return I32(1511652)
+	return I32(1511636)
 }
 func Fn23911(v0 int32) int32 {
-	return I32(1512000)
+	return I32(1511984)
 }
 func Fn23916(v0 int32) int32 {
-	return I32(1512396)
+	return I32(1512380)
 }
 func Fn23922(v0 int32) int32 {
-	return I32(1512752)
+	return I32(1512736)
 }
 func Fn23927(v0 int32) int32 {
-	return I32(1513064)
+	return I32(1513048)
 }
 func Fn23932(v0 int32) int32 {
-	return I32(1513376)
+	return I32(1513360)
 }
 func Fn23937(v0 int32) int32 {
-	return I32(1513696)
+	return I32(1513680)
 }
 func Fn23941(v0 int32) int32 {
-	return I32(1514012)
+	return I32(1513996)
 }
 func Fn23944(v0, v1 int32) int32 {
 	var p0 int32
@@ -23519,19 +23519,19 @@ func Fn23944(v0, v1 int32) int32 {
 	return p0
 }
 func Fn24253(v0 int32) int32 {
-	return I32(1517500)
+	return I32(1517484)
 }
 func Fn24263(v0 int32) int32 {
-	return I32(1518156)
+	return I32(1518140)
 }
 func Fn24308(v0 int32) int32 {
-	return I32(1518828)
+	return I32(1518812)
 }
 func Fn24341(v0 int32) int32 {
-	return I32(1519392)
+	return I32(1519376)
 }
 func Fn24346(v0 int32) int32 {
-	return I32(1519816)
+	return I32(1519800)
 }
 func Fn24466(v0 int32) int32 {
 	var v1 int32
@@ -23548,28 +23548,28 @@ func Fn24467(v0 int64) int32 {
 	return t1 - int32(v1)
 }
 func Fn24555(v0 int32) int32 {
-	return I32(1520896)
+	return I32(1520880)
 }
 func Fn24562(v0 int32) int32 {
-	return I32(1521164)
+	return I32(1521148)
 }
 func Fn24570(v0 int32) int32 {
-	return I32(1521504)
+	return I32(1521488)
 }
 func Fn24575(v0 int32) int32 {
-	return I32(1521772)
+	return I32(1521756)
 }
 func Fn24583(v0 int32) int32 {
-	return I32(1522108)
+	return I32(1522092)
 }
 func Fn24589(v0 int32) int32 {
-	return I32(1522376)
+	return I32(1522360)
 }
 func Fn24595(v0 int32) int32 {
-	return I32(1522716)
+	return I32(1522700)
 }
 func Fn24600(v0 int32) int32 {
-	return I32(1522992)
+	return I32(1522976)
 }
 func Fn24936(v0 int32) int32 {
 	var v1, v2 int32
@@ -23595,16 +23595,16 @@ func Fn25044(v0, v1, v2 int64, v3 float64) int32 {
 	return p1
 }
 func Fn25146(v0 int32) int32 {
-	return I32(1525412)
+	return I32(1525396)
 }
 func Fn25152(v0 int32) int32 {
-	return I32(1525604)
+	return I32(1525588)
 }
 func Fn25157(v0 int32) int32 {
-	return I32(1525888)
+	return I32(1525872)
 }
 func Fn25162(v0 int32) int32 {
-	return I32(1526160)
+	return I32(1526144)
 }
 func Fn25654(v0, v1, v2 float32) int32 {
 	var _ int32
@@ -23763,40 +23763,40 @@ func Fn25802(v0, v1 int32) int32 {
 	return T0 & p1
 }
 func Fn25818(v0 int32) int32 {
-	return I32(1530900)
+	return I32(1530884)
 }
 func Fn25823(v0 int32) int32 {
-	return I32(1531336)
+	return I32(1531320)
 }
 func Fn26390(v0 int32) int32 {
-	return I32(1542892)
+	return I32(1542876)
 }
 func Fn26400(v0 int32) int32 {
-	return I32(1543464)
+	return I32(1543448)
 }
 func Fn26405(v0 int32) int32 {
-	return I32(1543792)
+	return I32(1543776)
 }
 func Fn26428(v0 int32) int32 {
-	return I32(1544508)
+	return I32(1544492)
 }
 func Fn26433(v0 int32) int32 {
-	return I32(1544984)
+	return I32(1544968)
 }
 func Fn26438(v0 int32) int32 {
-	return I32(1545460)
+	return I32(1545444)
 }
 func Fn26443(v0 int32) int32 {
-	return I32(1545936)
+	return I32(1545920)
 }
 func Fn26448(v0 int32) int32 {
-	return I32(1546412)
+	return I32(1546396)
 }
 func Fn26453(v0 int32) int32 {
-	return I32(1546888)
+	return I32(1546872)
 }
 func Fn26566(v0 int32) int32 {
-	return I32(1549064)
+	return I32(1549048)
 }
 func Fn26714(v0 int32) int64 {
 	return I64(2)
@@ -23805,16 +23805,16 @@ func Fn26835(v0 int32) int64 {
 	return I64(32)
 }
 func Fn27749(v0 int32) int32 {
-	return I32(1550420)
+	return I32(1550404)
 }
 func Fn28058(v0 int32) int32 {
-	return I32(1551264)
+	return I32(1551248)
 }
 func Fn28134(v0 int32) int32 {
-	return I32(1553380)
+	return I32(1553364)
 }
 func Fn28139(v0 int32) int32 {
-	return I32(1553216)
+	return I32(1553200)
 }
 func Fn28159(v0, v1, v2, v3, v4, v5, v6 int32) int32 {
 	return I32(1)
@@ -23826,607 +23826,607 @@ func Fn28163(v0, v1, v2, v3 int32) int64 {
 	return I64(1)
 }
 func Fn28208(v0 int32) int32 {
-	return I32(1555732)
+	return I32(1555716)
 }
 func Fn28222(v0 int32) int32 {
-	return I32(1556132)
+	return I32(1556116)
 }
 func Fn28227(v0 int32) int32 {
-	return I32(1556556)
+	return I32(1556540)
 }
 func Fn28237(v0 int32) int32 {
-	return I32(1557196)
+	return I32(1557180)
 }
 func Fn28249(v0 int32) int32 {
-	return I32(1557600)
+	return I32(1557584)
 }
 func Fn28267(v0 int32) int32 {
-	return I32(1558092)
+	return I32(1558076)
 }
 func Fn28293(v0 int32) int32 {
-	return I32(1559024)
+	return I32(1559008)
 }
 func Fn28320(v0 int32) int32 {
-	return I32(1559440)
+	return I32(1559424)
 }
 func Fn28328(v0 int32) int32 {
-	return I32(1559852)
+	return I32(1559836)
 }
 func Fn28338(v0 int32) int32 {
-	return I32(1560260)
+	return I32(1560244)
 }
 func Fn28345(v0 int32) int32 {
-	return I32(1560680)
+	return I32(1560664)
 }
 func Fn28398(v0 int32) int32 {
-	return I32(1561996)
+	return I32(1561980)
 }
 func Fn28545(v0 int32) int32 {
-	return I32(1563716)
+	return I32(1563700)
 }
 func Fn28562(v0 int32) int32 {
-	return I32(1564356)
+	return I32(1564340)
 }
 func Fn28569(v0 int32) int32 {
-	return I32(1564728)
+	return I32(1564712)
 }
 func Fn28585(v0 int32) int32 {
-	return I32(1565148)
+	return I32(1565132)
 }
 func Fn28600(v0 int32) int32 {
-	return I32(1565560)
+	return I32(1565544)
 }
 func Fn28615(v0 int32) int32 {
-	return I32(1566060)
+	return I32(1566044)
 }
 func Fn28625(v0 int32) int32 {
-	return I32(1566424)
+	return I32(1566408)
 }
 func Fn28702(v0 int32) int32 {
-	return I32(1566888)
+	return I32(1566872)
 }
 func Fn28707(v0 int32) int32 {
-	return I32(1567472)
+	return I32(1567456)
 }
 func Fn28712(v0 int32) int32 {
-	return I32(1567992)
+	return I32(1567976)
 }
 func Fn28721(v0 int32) int32 {
-	return I32(1568340)
+	return I32(0x17ee44)
 }
 func Fn28727(v0 int32) int32 {
-	return I32(1568680)
+	return I32(1568664)
 }
 func Fn28732(v0 int32) int32 {
-	return I32(1569012)
+	return I32(1568996)
 }
 func Fn28788(v0 int32) int32 {
-	return I32(1570788)
+	return I32(1570772)
 }
 func Fn28792(v0 int32) int32 {
-	return I32(1571556)
+	return I32(1571540)
 }
 func Fn28796(v0 int32) int32 {
-	return I32(1572324)
+	return I32(1572308)
 }
 func Fn28800(v0 int32) int32 {
-	return I32(1573092)
+	return I32(1573076)
 }
 func Fn28862(v0 int32) int32 {
-	return I32(1575432)
+	return I32(1575416)
 }
 func Fn28937(v0 int32) int32 {
-	return I32(1576384)
+	return I32(1576368)
 }
 func Fn28953(v0 int32) int32 {
-	return I32(1576992)
+	return I32(1576976)
 }
 func Fn28958(v0 int32) int32 {
-	return I32(1577308)
+	return I32(1577292)
 }
 func Fn28963(v0 int32) int32 {
-	return I32(1577768)
+	return I32(1577752)
 }
 func Fn28998(v0 int32) int32 {
-	return I32(1578588)
+	return I32(1578572)
 }
 func Fn29013(v0 int32) int32 {
-	return I32(1578828)
+	return I32(1578812)
 }
 func Fn29018(v0 int32) int32 {
-	return I32(1587860)
+	return I32(1587844)
 }
 func Fn29090(v0 int32) int32 {
-	return I32(1580172)
+	return I32(1580156)
 }
 func Fn29097(v0 int32) int32 {
-	return I32(1579952)
+	return I32(1579936)
 }
 func Fn29116(v0 int32) int32 {
-	return I32(0x182200)
+	return I32(1581552)
 }
 func Fn29123(v0 int32) int32 {
-	return I32(1581316)
+	return I32(1581300)
 }
 func Fn29128(v0 int32) int32 {
-	return I32(1582112)
+	return I32(1582096)
 }
 func Fn29133(v0 int32) int32 {
-	return I32(1583540)
+	return I32(1583524)
 }
 func Fn29138(v0 int32) int32 {
-	return I32(1583136)
+	return I32(1583120)
 }
 func Fn29143(v0 int32) int32 {
-	return I32(1584448)
+	return I32(1584432)
 }
 func Fn29148(v0 int32) int32 {
-	return I32(1585148)
+	return I32(1585132)
 }
 func Fn29152(v0 int32) int32 {
-	return I32(1585692)
+	return I32(1585676)
 }
 func Fn29159(v0 int32) int32 {
-	return I32(1586180)
+	return I32(1586164)
 }
 func Fn29165(v0 int32) int32 {
-	return I32(1586512)
+	return I32(1586496)
 }
 func Fn29183(v0 int32) int32 {
-	return I32(1586868)
+	return I32(1586852)
 }
 func Fn29189(v0 int32) int32 {
-	return I32(1587296)
+	return I32(1587280)
 }
 func Fn29194(v0 int32) int32 {
-	return I32(1587744)
+	return I32(1587728)
 }
 func Fn29216(v0 int32) int32 {
-	return I32(1588328)
+	return I32(1588312)
 }
 func Fn29221(v0 int32) int32 {
-	return I32(1588864)
+	return I32(1588848)
 }
 func Fn29226(v0 int32) int32 {
-	return I32(1589116)
+	return I32(1589100)
 }
 func Fn29231(v0 int32) int32 {
-	return I32(1589548)
+	return I32(1589532)
 }
 func Fn29236(v0 int32) int32 {
-	return I32(1589892)
+	return I32(1589876)
 }
 func Fn29245(v0 int32) int32 {
-	return I32(1590256)
+	return I32(1590240)
 }
 func Fn29251(v0 int32) int32 {
-	return I32(1590584)
+	return I32(1590568)
 }
 func Fn29255(v0 int32) int32 {
-	return I32(1590856)
+	return I32(1590840)
 }
 func Fn29260(v0 int32) int32 {
-	return I32(1591120)
+	return I32(1591104)
 }
 func Fn29265(v0 int32) int32 {
-	return I32(1591384)
+	return I32(1591368)
 }
 func Fn29276(v0 int32) int32 {
-	return I32(1591748)
+	return I32(1591732)
 }
 func Fn29323(v0 int32) int32 {
-	return I32(1592392)
+	return I32(1592376)
 }
 func Fn29328(v0 int32) int32 {
-	return I32(1592780)
+	return I32(1592764)
 }
 func Fn29333(v0 int32) int32 {
-	return I32(1593204)
+	return I32(1593188)
 }
 func Fn29340(v0 int32) int32 {
-	return I32(1593916)
+	return I32(1593900)
 }
 func Fn29345(v0 int32) int32 {
-	return I32(1594728)
+	return I32(0x185558)
 }
 func Fn29350(v0 int32) int32 {
-	return I32(1595540)
+	return I32(1595524)
 }
 func Fn29363(v0 int32) int32 {
-	return I32(1596192)
+	return I32(1596176)
 }
 func Fn29368(v0 int32) int32 {
-	return I32(1596600)
+	return I32(1596584)
 }
 func Fn29382(v0 int32) int32 {
-	return I32(1597080)
+	return I32(1597064)
 }
 func Fn29394(v0 int32) int32 {
-	return I32(1597496)
+	return I32(1597480)
 }
 func Fn29399(v0 int32) int32 {
-	return I32(1597812)
+	return I32(1597796)
 }
 func Fn29404(v0 int32) int32 {
-	return I32(1598184)
+	return I32(1598168)
 }
 func Fn29409(v0 int32) int32 {
-	return I32(1598608)
+	return I32(1598592)
 }
 func Fn29414(v0 int32) int32 {
-	return I32(1598964)
+	return I32(1598948)
 }
 func Fn29443(v0 int32) int32 {
-	return I32(1599376)
+	return I32(1599360)
 }
 func Fn29463(v0 int32) int32 {
-	return I32(1599944)
+	return I32(1599928)
 }
 func Fn29468(v0 int32) int32 {
-	return I32(1600312)
+	return I32(1600296)
 }
 func Fn29474(v0 int32) int32 {
-	return I32(1600716)
+	return I32(1600700)
 }
 func Fn29478(v0 int32) int32 {
-	return I32(1601120)
+	return I32(1601104)
 }
 func Fn29488(v0 int32) int32 {
-	return I32(1601480)
+	return I32(1601464)
 }
 func Fn29523(v0 int32) int32 {
-	return I32(1601896)
+	return I32(1601880)
 }
 func Fn29555(v0 int32) int32 {
-	return I32(1602344)
+	return I32(1602328)
 }
 func Fn29562(v0 int32) int32 {
-	return I32(1602684)
+	return I32(1602668)
 }
 func Fn29567(v0 int32) int32 {
-	return I32(1602984)
+	return I32(1602968)
 }
 func Fn29580(v0 int32) int32 {
-	return I32(1603272)
+	return I32(1603256)
 }
 func Fn29585(v0 int32) int32 {
-	return I32(1603572)
+	return I32(1603556)
 }
 func Fn29592(v0 int32) int32 {
-	return I32(1603976)
+	return I32(1603960)
 }
 func Fn29597(v0 int32) int32 {
-	return I32(1604396)
+	return I32(1604380)
 }
 func Fn29607(v0 int32) int32 {
-	return I32(1604700)
+	return I32(1604684)
 }
 func Fn29612(v0 int32) int32 {
-	return I32(1604900)
+	return I32(1604884)
 }
 func Fn29617(v0 int32) int32 {
-	return I32(1605100)
+	return I32(1605084)
 }
 func Fn29622(v0 int32) int32 {
-	return I32(1605300)
+	return I32(1605284)
 }
 func Fn29627(v0 int32) int32 {
-	return I32(1605500)
+	return I32(1605484)
 }
 func Fn29632(v0 int32) int32 {
-	return I32(1605700)
+	return I32(1605684)
 }
 func Fn29637(v0 int32) int32 {
-	return I32(1605900)
+	return I32(1605884)
 }
 func Fn29642(v0 int32) int32 {
-	return I32(1606100)
+	return I32(1606084)
 }
 func Fn29647(v0 int32) int32 {
-	return I32(1606300)
+	return I32(1606284)
 }
 func Fn29651(v0 int32) int32 {
-	return I32(1606500)
+	return I32(1606484)
 }
 func Fn29656(v0 int32) int32 {
-	return I32(1606700)
+	return I32(1606684)
 }
 func Fn29661(v0 int32) int32 {
-	return I32(1606900)
+	return I32(1606884)
 }
 func Fn29666(v0 int32) int32 {
-	return I32(1607100)
+	return I32(1607084)
 }
 func Fn29671(v0 int32) int32 {
-	return I32(1607300)
+	return I32(1607284)
 }
 func Fn29677(v0 int32) int32 {
-	return I32(1607500)
+	return I32(1607484)
 }
 func Fn29682(v0 int32) int32 {
-	return I32(1607700)
+	return I32(0x188804)
 }
 func Fn29687(v0 int32) int32 {
-	return I32(1607900)
+	return I32(0x1888cc)
 }
 func Fn29692(v0 int32) int32 {
-	return I32(1608100)
+	return I32(0x188994)
 }
 func Fn29697(v0 int32) int32 {
-	return I32(1608300)
+	return I32(1608284)
 }
 func Fn29702(v0 int32) int32 {
-	return I32(1608500)
+	return I32(1608484)
 }
 func Fn29707(v0 int32) int32 {
-	return I32(1608700)
+	return I32(1608684)
 }
 func Fn29712(v0 int32) int32 {
-	return I32(1608900)
+	return I32(1608884)
 }
 func Fn29717(v0 int32) int32 {
-	return I32(1609100)
+	return I32(1609084)
 }
 func Fn29722(v0 int32) int32 {
-	return I32(1609300)
+	return I32(0x188e44)
 }
 func Fn29727(v0 int32) int32 {
-	return I32(1609500)
+	return I32(1609484)
 }
 func Fn29732(v0 int32) int32 {
-	return I32(1609700)
+	return I32(1609684)
 }
 func Fn29739(v0 int32) int32 {
-	return I32(1609900)
+	return I32(1609884)
 }
 func Fn29744(v0 int32) int32 {
-	return I32(1610100)
+	return I32(1610084)
 }
 func Fn29749(v0 int32) int32 {
-	return I32(1610300)
+	return I32(1610284)
 }
 func Fn29753(v0 int32) int32 {
-	return I32(1610500)
+	return I32(1610484)
 }
 func Fn29758(v0 int32) int32 {
-	return I32(1610700)
+	return I32(1610684)
 }
 func Fn29763(v0 int32) int32 {
-	return I32(1610900)
+	return I32(1610884)
 }
 func Fn29768(v0 int32) int32 {
-	return I32(1611156)
+	return I32(1611140)
 }
 func Fn29773(v0 int32) int32 {
-	return I32(1611468)
+	return I32(1611452)
 }
 func Fn29777(v0 int32) int32 {
-	return I32(1611840)
+	return I32(1611824)
 }
 func Fn29782(v0 int32) int32 {
-	return I32(1612304)
+	return I32(1612288)
 }
 func Fn29788(v0 int32) int32 {
-	return I32(1612832)
+	return I32(1612816)
 }
 func Fn29792(v0 int32) int32 {
-	return I32(1613360)
+	return I32(1613344)
 }
 func Fn29821(v0 int32) int32 {
-	return I32(1613916)
+	return I32(1613900)
 }
 func Fn29829(v0 int32) int32 {
-	return I32(1614244)
+	return I32(1614228)
 }
 func Fn29874(v0 int32) int32 {
-	return I32(1615112)
+	return I32(1615096)
 }
 func Fn29979(v0 int32) int32 {
-	return I32(1617968)
+	return I32(1617952)
 }
 func Fn29984(v0 int32) int32 {
-	return I32(1618168)
+	return I32(1618152)
 }
 func Fn29989(v0 int32) int32 {
-	return I32(1618364)
+	return I32(1618348)
 }
 func Fn29994(v0 int32) int32 {
-	return I32(1618564)
+	return I32(1618548)
 }
 func Fn29999(v0 int32) int32 {
-	return I32(1618768)
+	return I32(1618752)
 }
 func Fn30004(v0 int32) int32 {
-	return I32(1618964)
+	return I32(1618948)
 }
 func Fn30009(v0 int32) int32 {
-	return I32(1619388)
+	return I32(1619372)
 }
 func Fn30013(v0 int32) int32 {
-	return I32(1619756)
+	return I32(1619740)
 }
 func Fn30018(v0 int32) int32 {
-	return I32(1620100)
+	return I32(1620084)
 }
 func Fn30023(v0 int32) int32 {
-	return I32(1620472)
+	return I32(1620456)
 }
 func Fn30055(v0 int32) int32 {
-	return I32(1620864)
+	return I32(1620848)
 }
 func Fn30079(v0 int32) int32 {
-	return I32(1621368)
+	return I32(1621352)
 }
 func Fn30095(v0 int32) int32 {
-	return I32(1622016)
+	return I32(1622000)
 }
 func Fn30100(v0 int32) int32 {
-	return I32(1622660)
+	return I32(1622644)
 }
 func Fn30105(v0 int32) int32 {
-	return I32(1623128)
+	return I32(1623112)
 }
 func Fn30109(v0 int32) int32 {
-	return I32(1623572)
+	return I32(1623556)
 }
 func Fn30114(v0 int32) int32 {
-	return I32(1624100)
+	return I32(1624084)
 }
 func Fn30119(v0 int32) int32 {
-	return I32(1624464)
+	return I32(1624448)
 }
 func Fn30130(v0 int32) int32 {
-	return I32(1624996)
+	return I32(1624980)
 }
 func Fn30153(v0 int32) int32 {
-	return I32(1625608)
+	return I32(1625592)
 }
 func Fn30158(v0 int32) int32 {
-	return I32(1625952)
+	return I32(1625936)
 }
 func Fn30169(v0 int32) int32 {
-	return I32(1626492)
+	return I32(1626476)
 }
 func Fn30174(v0 int32) int32 {
-	return I32(1627000)
+	return I32(1626984)
 }
 func Fn30180(v0 int32) int32 {
-	return I32(1627248)
+	return I32(1627232)
 }
 func Fn30185(v0 int32) int32 {
-	return I32(1627548)
+	return I32(1627532)
 }
 func Fn30189(v0 int32) int32 {
-	return I32(1627780)
+	return I32(1627764)
 }
 func Fn30201(v0 int32) int32 {
-	return I32(1628300)
+	return I32(1628284)
 }
 func Fn30210(v0 int32) int32 {
-	return I32(1628792)
+	return I32(1628776)
 }
 func Fn30222(v0 int32) int32 {
-	return I32(1629240)
+	return I32(1629224)
 }
 func Fn30226(v0 int32) int32 {
-	return I32(1629868)
+	return I32(1629852)
 }
 func Fn30230(v0 int32) int32 {
-	return I32(1630496)
+	return I32(1630480)
 }
 func Fn30234(v0 int32) int32 {
-	return I32(1631092)
+	return I32(1631076)
 }
 func Fn30239(v0 int32) int32 {
-	return I32(1631660)
+	return I32(1631644)
 }
 func Fn30244(v0 int32) int32 {
-	return I32(1632112)
+	return I32(1632096)
 }
 func Fn30257(v0 int32) int32 {
-	return I32(1632528)
+	return I32(1632512)
 }
 func Fn30262(v0 int32) int32 {
-	return I32(1633012)
+	return I32(1632996)
 }
 func Fn30267(v0 int32) int32 {
-	return I32(1633452)
+	return I32(1633436)
 }
 func Fn30278(v0 int32) int32 {
-	return I32(1633840)
+	return I32(1633824)
 }
 func Fn30302(v0 int32) int32 {
-	return I32(1634672)
+	return I32(1634656)
 }
 func Fn30314(v0 int32) int32 {
-	return I32(1635020)
+	return I32(1635004)
 }
 func Fn30321(v0 int32) int32 {
-	return I32(1635248)
+	return I32(1635232)
 }
 func Fn30326(v0 int32) int32 {
-	return I32(1635472)
+	return I32(1635456)
 }
 func Fn30330(v0 int32) int32 {
-	return I32(1635656)
+	return I32(1635640)
 }
 func Fn30334(v0 int32) int32 {
-	return I32(1635836)
+	return I32(1635820)
 }
 func Fn30339(v0 int32) int32 {
-	return I32(1636020)
+	return I32(1636004)
 }
 func Fn30344(v0 int32) int32 {
-	return I32(1636212)
+	return I32(1636196)
 }
 func Fn30348(v0 int32) int32 {
-	return I32(1636396)
+	return I32(1636380)
 }
 func Fn30353(v0 int32) int32 {
-	return I32(1636592)
+	return I32(1636576)
 }
 func Fn30358(v0 int32) int32 {
-	return I32(1636788)
+	return I32(1636772)
 }
 func Fn30362(v0 int32) int32 {
-	return I32(1636980)
+	return I32(1636964)
 }
 func Fn30366(v0 int32) int32 {
-	return I32(1637168)
+	return I32(1637152)
 }
 func Fn30370(v0 int32) int32 {
-	return I32(1637348)
+	return I32(1637332)
 }
 func Fn30374(v0 int32) int32 {
-	return I32(1637748)
+	return I32(1637732)
 }
 func Fn30379(v0 int32) int32 {
-	return I32(1638172)
+	return I32(1638156)
 }
 func Fn30384(v0 int32) int32 {
-	return I32(1638444)
+	return I32(1638428)
 }
 func Fn30389(v0 int32) int32 {
-	return I32(1638836)
+	return I32(1638820)
 }
 func Fn30393(v0 int32) int32 {
-	return I32(1639236)
+	return I32(1639220)
 }
 func Fn30397(v0 int32) int32 {
-	return I32(1639580)
+	return I32(1639564)
 }
 func Fn30402(v0 int32) int32 {
-	return I32(1639928)
+	return I32(1639912)
 }
 func Fn30407(v0 int32) int32 {
-	return I32(1640324)
+	return I32(1640308)
 }
 func Fn30412(v0 int32) int32 {
-	return I32(1640696)
+	return I32(1640680)
 }
 func Fn30417(v0 int32) int32 {
-	return I32(1641092)
+	return I32(1641076)
 }
 func Fn30427(v0 int32) int32 {
-	return I32(1641528)
+	return I32(1641512)
 }
 func Fn30433(v0 int32) int32 {
-	return I32(1641984)
+	return I32(1641968)
 }
 func Fn30438(v0 int32) int32 {
-	return I32(1642372)
+	return I32(1642356)
 }
 func Fn30443(v0 int32) int32 {
-	return I32(1642692)
+	return I32(1642676)
 }
 func Fn30449(v0 int32) int32 {
-	return I32(1643044)
+	return I32(1643028)
 }
 func Fn30458(v0 int32) int32 {
-	return I32(1643500)
+	return I32(1643484)
 }
 func Fn30512(v0 int32) int32 {
-	return I32(1644632)
+	return I32(1644616)
 }
 func Fn30630(v0 int32) int32 {
 	var v1 int32
@@ -24689,22 +24689,22 @@ func Fn30753(v0 int32) int32 {
 	return p0 & I32(255)
 }
 func Fn31092(v0 int32) int32 {
-	return I32(1652096)
+	return I32(1652080)
 }
 func Fn31096(v0 int32) int32 {
-	return I32(1652476)
+	return I32(1652460)
 }
 func Fn31100(v0 int32) int32 {
-	return I32(1652856)
+	return I32(1652840)
 }
 func Fn31105(v0 int32) int32 {
-	return I32(1653168)
+	return I32(1653152)
 }
 func Fn31242(v0 int32) int32 {
-	return I32(1656984)
+	return I32(0x194888)
 }
 func Fn31248(v0 int32) int32 {
-	return I32(1657272)
+	return I32(1657256)
 }
 func Fn31259(v0, v1, v2 float32) int32 {
 	var v3 int32
@@ -24839,43 +24839,43 @@ func Fn31262(v0, v1, v2 float64) int32 {
 	return t5 & p9
 }
 func Fn31284(v0 int32) int32 {
-	return I32(1658012)
+	return I32(1657996)
 }
 func Fn31289(v0 int32) int32 {
-	return I32(1658232)
+	return I32(1658216)
 }
 func Fn31379(v0 int32) int32 {
-	return I32(1659844)
+	return I32(1659828)
 }
 func Fn31391(v0 int32) int32 {
-	return I32(1660080)
+	return I32(1660064)
 }
 func Fn31404(v0 int32) int32 {
-	return I32(1660408)
+	return I32(1660392)
 }
 func Fn31408(v0 int32) int32 {
-	return I32(1660644)
+	return I32(1660628)
 }
 func Fn31494(v0 int32) int32 {
-	return I32(1662276)
+	return I32(1662260)
 }
 func Fn31499(v0 int32) int32 {
-	return I32(1662556)
+	return I32(1662540)
 }
 func Fn31522(v0 int32) int32 {
-	return I32(1663156)
+	return I32(1663140)
 }
 func Fn31527(v0 int32) int32 {
-	return I32(1663460)
+	return I32(1663444)
 }
 func Fn31549(v0 int32) int32 {
-	return I32(1663844)
+	return I32(1663828)
 }
 func Fn31576(v0 int32) int32 {
-	return I32(1664232)
+	return I32(1664216)
 }
 func Fn31580(v0 int32) int32 {
-	return I32(1664516)
+	return I32(1664500)
 }
 func Fn31598(v0, v1, v2 int64) int32 {
 	var p0 int32
@@ -25109,7 +25109,7 @@ l0:
 	return v1
 }
 func Fn37376(v0 int32) int32 {
-	return I32(1697560)
+	return I32(1697544)
 }
 func Fn37397(v0 int32) int32 {
 	T0 := int32(I64_shr_u(I64(0x4000080804000), int64(uint32(v0))))
@@ -25120,10 +25120,10 @@ func Fn37397(v0 int32) int32 {
 	return T0 & p1
 }
 func Fn37438(v0 int32) int32 {
-	return I32(1698100)
+	return I32(1698084)
 }
 func Fn37636(v0 int32) int32 {
-	return I32(1699384)
+	return I32(1699368)
 }
 func Fn37700(v0, v1, v2, v3 int32, v4 int64) int32 {
 	var p0 int32
@@ -25133,10 +25133,10 @@ func Fn37700(v0, v1, v2, v3 int32, v4 int64) int32 {
 	return p0
 }
 func Fn37717(v0 int32) int32 {
-	return I32(1700288)
+	return I32(1700272)
 }
 func Fn37962(v0 int32) int32 {
-	return I32(6105225)
+	return I32(6105209)
 }
 func Fn37979(v0 int32) int32 {
 	if v0 <= I32(24) {
@@ -25153,7 +25153,7 @@ func Fn37979(v0 int32) int32 {
 	return p0
 }
 func Fn38110(v0 int32) int32 {
-	return I32(6105226)
+	return I32(6105210)
 }
 func Fn38164(v0 int32) int32 {
 	var p0 int32
@@ -25184,7 +25184,7 @@ func Fn38169(v0 int32) int32 {
 	return p0
 }
 func Fn38214(v0 int32) int32 {
-	return I32(6105236)
+	return I32(6105220)
 }
 func Fn38251(v0, v1 int32) int32 {
 	var p0 int32
@@ -25246,7 +25246,7 @@ l0:
 	return p0
 }
 func Fn38269(v0 int32) int32 {
-	return I32(6105340)
+	return I32(6105324)
 }
 func Fn38391(v0 int32) int32 {
 	return I32(5)
@@ -25261,7 +25261,7 @@ func Fn38470(v0 int32) int32 {
 	return I32(-1)
 }
 func Fn38484(v0 int32) int32 {
-	return I32(6105740)
+	return I32(6105724)
 }
 func Fn38529(v0, v1, v2 int32) int32 {
 	var p0 int32
@@ -25302,7 +25302,7 @@ l4:
 	return p0
 }
 func Fn38554(v0 int32) int32 {
-	return I32(6105780)
+	return I32(6105764)
 }
 func Fn38629(v0, v1 int32) int32 {
 	p0 := v1
@@ -25319,10 +25319,10 @@ func Fn38630(v0, v1 int32) int32 {
 	return p0
 }
 func Fn38648(v0 int32) int32 {
-	return I32(6105928)
+	return I32(6105912)
 }
 func Fn38695(v0 int32) int32 {
-	return I32(6106128)
+	return I32(6106112)
 }
 func Fn38764(v0, v1, v2 int32) int32 {
 	return I32(-1)
@@ -25342,28 +25342,28 @@ func Fn38933(v0, v1 int32) int32 {
 	return v1 & I32(-0x80000000)
 }
 func Fn39042(v0 int32) int32 {
-	return I32(6107204)
+	return I32(6107188)
 }
 func Fn39059(v0 int32) int32 {
-	return I32(6107205)
+	return I32(6107189)
 }
 func Fn39066(v0 int32) int32 {
-	return I32(6107206)
+	return I32(6107190)
 }
 func Fn39075(v0 int32) int32 {
-	return I32(153146)
+	return I32(153131)
 }
 func Fn39081(v0 int32) float64 {
 	return float64(0)
 }
 func Fn39084(v0 int32) int32 {
-	return I32(6107224)
+	return I32(6107208)
 }
 func Fn39192(v0 int32) int32 {
-	return I32(6107225)
+	return I32(6107209)
 }
 func Fn39196(v0 int32) int32 {
-	return I32(208923)
+	return I32(0x3300c)
 }
 func Fn39222(v0, v1, v2 int32) int32 {
 	T0 := v0
@@ -25486,28 +25486,28 @@ func Fn39403(v0 int32) int32 {
 	return v0 - I32(4)
 }
 func Fn39405(v0 int32) int32 {
-	return I32(6107984)
+	return I32(6107968)
 }
 func Fn39412(v0 int32) int32 {
 	return I32(118494)
 }
 func Fn39427(v0 int32) int32 {
-	return I32(6107985)
+	return I32(6107969)
 }
 func Fn39448(v0 int32) int32 {
-	return I32(6107996)
+	return I32(6107980)
 }
 func Fn39495(v0 int32) int32 {
-	return I32(6107997)
+	return I32(6107981)
 }
 func Fn39502(v0 int32, v1 float64, v2, v3, v4, v5 int32) int32 {
 	return I32(0)
 }
 func Fn39503(v0 int32) int32 {
-	return I32(6107998)
+	return I32(6107982)
 }
 func Fn39518(v0 int32) int32 {
-	return I32(6107999)
+	return I32(6107983)
 }
 func Fn39574(v0, v1 int32) int32 {
 	var v2 int32
@@ -25698,13 +25698,13 @@ l0:
 	return p0
 }
 func Fn39582(v0 int32) int32 {
-	return I32(6108000)
+	return I32(6107984)
 }
 func Fn39607(v0 int32) int32 {
 	return I32(118514)
 }
 func Fn39618(v0 int32) int32 {
-	return I32(6108012)
+	return I32(6107996)
 }
 func Fn39663(v0 float64) int64 {
 	var v1 float64
@@ -25789,22 +25789,22 @@ func Fn39694(v0, v1 int64) int64 {
 	return t1 - I64(1)
 }
 func Fn39728(v0 int32) int32 {
-	return I32(6108013)
+	return I32(6107997)
 }
 func Fn39758(v0 int32) int32 {
-	return I32(6108014)
+	return I32(6107998)
 }
 func Fn39785(v0 int32) int32 {
-	return I32(153120)
+	return I32(153105)
 }
 func Fn39791(v0 int32) int32 {
-	return I32(6033520)
+	return I32(6033504)
 }
 func Fn39810(v0 int32) int32 {
-	return I32(6108032)
+	return I32(6108016)
 }
 func Fn39811(v0 int32) int32 {
-	return I32(6108084)
+	return I32(6108068)
 }
 func Fn39837(v0 int64) int32 {
 	var v1 int32
@@ -25832,13 +25832,13 @@ func Fn39840(v0 int64) int32 {
 	return int32(int64(uint64(v0)>>43))&I32(0xfe000) | int32(int64(uint64(v0)>>42))&I32(8128) | int32(uint32(int32(v0))>>24)&I32(63)
 }
 func Fn39864(v0 int32) int32 {
-	return I32(6108085)
+	return I32(6108069)
 }
 func Fn39875(v0 int32) int32 {
 	return I32(1723856)
 }
 func Fn39876(v0 int32) int32 {
-	return I32(6108096)
+	return I32(6108080)
 }
 func Fn39930(v0 float64) float64 {
 	return float64(v0 - float64(math.Floor(float64(v0/float64(6.283185307179586)))*float64(6.283185307179586)))
@@ -25850,7 +25850,7 @@ func Fn39988(v0 int32) int32 {
 	return I32(7)
 }
 func Fn40028(v0 int32) int32 {
-	return I32(6108452)
+	return I32(6108436)
 }
 func Fn40052(v0, v1, v2, v3 int32) int32 {
 	if v1 <= I32(-32769) {
@@ -25879,13 +25879,13 @@ func Fn40052(v0, v1, v2, v3 int32) int32 {
 	return p2 - p3
 }
 func Fn40053(v0 int32) int32 {
-	return I32(6108588)
+	return I32(6108572)
 }
 func Fn40122(v0 int32) int32 {
-	return I32(6039840)
+	return I32(6039824)
 }
 func Fn40173(v0 int32) int32 {
-	return I32(6108589)
+	return I32(6108573)
 }
 func Fn40249(v0, v1, v2 int32) int32 {
 	return v0 + v2*I32(96) + I32(8)
@@ -25897,28 +25897,28 @@ func Fn40272(v0 int32) int32 {
 	return I32(4097)
 }
 func Fn40316(v0 int32) int32 {
-	return I32(6108748)
+	return I32(6108732)
 }
 func Fn40323(v0 int32) int32 {
-	return I32(6108749)
+	return I32(6108733)
 }
 func Fn40324(v0 int32) int32 {
-	return I32(6108750)
+	return I32(6108734)
 }
 func Fn40326(v0 int32) int32 {
-	return I32(6108751)
+	return I32(6108735)
 }
 func Fn40332(v0 int32) int32 {
-	return I32(6108752)
+	return I32(6108736)
 }
 func Fn40337(v0 int32) int32 {
-	return I32(6108753)
+	return I32(6108737)
 }
 func Fn40338(v0 int32) int32 {
-	return I32(6108754)
+	return I32(6108738)
 }
 func Fn40342(v0 int32) int32 {
-	return I32(6108755)
+	return I32(6108739)
 }
 func Fn40343(v0 int32, v1 float64) float64 {
 	return v1
@@ -25971,13 +25971,13 @@ func Fn40368(v0 int32, v1, v2 float64) float64 {
 	return float64(v1 / v2)
 }
 func Fn40408(v0 int32) int32 {
-	return I32(6108756)
+	return I32(6108740)
 }
 func Fn40415(v0 int32) int32 {
 	return v0 + I32(73)
 }
 func Fn40417(v0 int32) int32 {
-	return I32(6108757)
+	return I32(6108741)
 }
 func Fn40433(v0 int32) int32 {
 	return v0 + I32(20)
@@ -25995,19 +25995,19 @@ func Fn40471(v0 int32) int32 {
 	return I32(16988)
 }
 func Fn40488(v0 int32) int32 {
-	return I32(6108764)
+	return I32(6108748)
 }
 func Fn40553(v0 int32) int32 {
-	return I32(6108904)
+	return I32(6108888)
 }
 func Fn40566(v0 int32) int32 {
-	return I32(128565)
+	return I32(128550)
 }
 func Fn40568(v0 int32) int32 {
-	return I32(6108920)
+	return I32(6108904)
 }
 func Fn40579(v0 int32) int32 {
-	return I32(6108932)
+	return I32(6108916)
 }
 func Fn40611(v0 int32) {
 	if v0 >= I32(129) {
@@ -26015,10 +26015,10 @@ func Fn40611(v0 int32) {
 	}
 }
 func Fn40620(v0 int32) int32 {
-	return I32(6108948)
+	return I32(6108932)
 }
 func Fn40624(v0 int32) int32 {
-	return I32(209066)
+	return I32(209051)
 }
 func Fn40630(v0 int32) int32 {
 	return I32(1824665)
@@ -26035,7 +26035,7 @@ func Fn40637(v0, v1 int32) int32 {
 	return p1
 }
 func Fn40644(v0 int32) int32 {
-	return I32(6108960)
+	return I32(6108944)
 }
 func Fn40650(v0, v1 int32) int32 {
 	t1 := v0
@@ -26054,13 +26054,13 @@ func Fn40650(v0, v1 int32) int32 {
 	return t1 + p3
 }
 func Fn40706(v0 int32) int32 {
-	return I32(6108988)
+	return I32(6108972)
 }
 func Fn40765(v0 int32) int32 {
-	return I32(6108989)
+	return I32(6108973)
 }
 func Fn40766(v0 int32) int32 {
-	return I32(6108990)
+	return I32(6108974)
 }
 func Fn40792(v0 int32) int32 {
 	var v1 int32
@@ -26198,7 +26198,7 @@ func Fn40818(v0 int32) int32 {
 	panic("unreachable")
 }
 func Fn40834(v0 int32) int32 {
-	return I32(6108991)
+	return I32(6108975)
 }
 func Fn40847(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32 {
 	v5 = v5 + v6
@@ -26328,19 +26328,19 @@ l7:
 	return p0
 }
 func Fn40908(v0 int32) int32 {
-	return I32(6109024)
+	return I32(6109008)
 }
 func Fn40909(v0 int32) int32 {
-	return I32(6109025)
+	return I32(6109009)
 }
 func Fn40920(v0 int32) int32 {
-	return I32(6109026)
+	return I32(6109010)
 }
 func Fn40924(v0 int32) int32 {
 	return I32(24699)
 }
 func Fn40932(v0 int32) int32 {
-	return I32(6109036)
+	return I32(6109020)
 }
 func Fn40973(v0 int64) int32 {
 	var v1, v2 int32
@@ -26421,7 +26421,7 @@ l0:
 	return v3
 }
 func Fn41034(v0 int32) int32 {
-	return I32(6109037)
+	return I32(6109021)
 }
 func Fn41054(v0, v1, v2, v3, v4, v5 int32) int32 {
 	var v6, v7 int32
@@ -26535,28 +26535,28 @@ func (m *Module) Xregister_core_functions(v0 int32) {
 	t2 := TBL_Fn386(m, t1)
 	TBL_Fn12800(m, v1, t2)
 	v0 = v1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	TBL_Fn18(m, I32(41208), v0)
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	v1 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 	{
 		if v1 == I32(1) {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn18(m, I32(41209), v0)
-		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t4 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t4
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v1 == I32(1) {
 			goto l0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		TBL_Fn18(m, I32(41210), v0)
-		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+		t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 		v1 = t5
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 		if v1 == I32(1) {
 			goto l0
 		}
@@ -26572,115 +26572,50 @@ l0:
 	panic("unreachable")
 }
 func (m *Module) Xhost_fs_attach_to_config(v0 int32) {
-	var v1, v2, v3, v4 int32
+	var v1, v2, v3 int32
 	T0 := m.G0
 	v2 = T0 - I32(16)
 	m.G0 = v2
-	t1 := TBL_Fn3048(m)
+	t1 := TBL_Fn41392(m)
 	v1 = t1
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-	Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(v1))
-	t2 := TBL_Fn8(m, I32(10746), v2+I32(8))
-	v1 = t2
-	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
-	v3 = t3
-	Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-	{
-		{
-			if v3 != I32(1) {
-				Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(v1))
-				t4 := int32(Load32(m.MemoryG1[int64(uint32(v2))+8:]))
-				v1 = t4
-				Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(I32(0)))
-				if v1 != 0 {
-					t5 := int32(Load32(m.MemoryG1[uint32(v1):]))
-					t6 := int32(Load32(m.MemoryG1[int64(uint32(t5))+4:]))
-					m.T0[uint(t6)].(func(int32))(v1)
-				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				t7 := TBL_Fn8(m, I32(41213), v2+I32(12))
-				v1 = t7
-				t8 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
-				v3 = t8
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				if v3 == I32(1) {
-					goto l0
-				}
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				t9 := TBL_Fn41(m, I32(41214))
-				v3 = t9
-				t10 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
-				v4 = t10
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				if v4 == I32(1) {
-					goto l0
-				}
-				t11 := int32(Load32(m.MemoryG1[uint32(v1):]))
-				t12 := int32(Load32(m.MemoryG1[int64(uint32(t11))+124:]))
-				v4 = t12
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				TBL_Fn7(m, v4, v1, v3)
-				t13 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
-				v1 = t13
-				Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
-				if v1 == I32(1) {
-					goto l0
-				}
-				t14 := int32(Load32(m.MemoryG1[int64(uint32(v2))+12:]))
-				v3 = t14
-				Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(0)))
-				t15 := int32(Load32(m.MemoryG1[int64(uint32(v0))+12:]))
-				v1 = t15
-				Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(v3))
-				{
-					if v1 == 0 {
-						goto l1
-					}
-					t16 := int32(Load32(m.MemoryG1[uint32(v1):]))
-					t17 := int32(Load32(m.MemoryG1[int64(uint32(t16))+4:]))
-					m.T0[uint(t17)].(func(int32))(v1)
-					t18 := int32(Load32(m.MemoryG1[int64(uint32(v2))+12:]))
-					v0 = t18
-					Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(0)))
-					if v0 == 0 {
-						goto l1
-					}
-					t19 := int32(Load32(m.MemoryG1[uint32(v0):]))
-					t20 := int32(Load32(m.MemoryG1[int64(uint32(t19))+4:]))
-					m.T0[uint(t20)].(func(int32))(v0)
-				}
-			l1:
-				m.G0 = v2 + I32(16)
-				return
-			}
-			t21 := TBL_Fn3(m)
-			v0 = t21
-			t22 := int32(Load32(m.MemoryG1[int64(uint32(v2))+8:]))
-			v1 = t22
-			Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(I32(0)))
-			if v1 == 0 {
-				goto l2
-			}
-			t23 := int32(Load32(m.MemoryG1[uint32(v1):]))
-			t24 := int32(Load32(m.MemoryG1[int64(uint32(t23))+4:]))
-			m.T0[uint(t24)].(func(int32))(v1)
-			goto l2
-		}
-	l0:
-		t25 := TBL_Fn3(m)
-		v0 = t25
-		t26 := int32(Load32(m.MemoryG1[int64(uint32(v2))+12:]))
-		v1 = t26
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+	Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(v1))
+	t2 := TBL_Fn8(m, I32(41213), v2+I32(12))
+	v3 = t2
+	t3 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
+	v1 = t3
+	Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
+	if v1 != I32(1) {
+		t4 := int32(Load32(m.MemoryG1[int64(uint32(v2))+12:]))
+		v1 = t4
 		Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(0)))
-		if v1 == 0 {
-			goto l2
+		if v1 != 0 {
+			t5 := int32(Load32(m.MemoryG1[uint32(v1):]))
+			t6 := int32(Load32(m.MemoryG1[int64(uint32(t5))+4:]))
+			m.T0[uint(t6)].(func(int32))(v1)
 		}
-		t27 := int32(Load32(m.MemoryG1[uint32(v1):]))
-		t28 := int32(Load32(m.MemoryG1[int64(uint32(t27))+4:]))
-		m.T0[uint(t28)].(func(int32))(v1)
+		t7 := int32(Load32(m.MemoryG1[int64(uint32(v0))+12:]))
+		v1 = t7
+		Store32(m.MemoryG1[int64(uint32(v0))+12:], uint32(v3))
+		if v1 != 0 {
+			t8 := int32(Load32(m.MemoryG1[uint32(v1):]))
+			t9 := int32(Load32(m.MemoryG1[int64(uint32(t8))+4:]))
+			m.T0[uint(t9)].(func(int32))(v1)
+		}
+		m.G0 = v2 + I32(16)
+		return
 	}
-l2:
-	TBL_Fn4(m, v0)
+	t10 := TBL_Fn3(m)
+	v1 = t10
+	t11 := int32(Load32(m.MemoryG1[int64(uint32(v2))+12:]))
+	v0 = t11
+	Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(I32(0)))
+	if v0 != 0 {
+		t12 := int32(Load32(m.MemoryG1[uint32(v0):]))
+		t13 := int32(Load32(m.MemoryG1[int64(uint32(t12))+4:]))
+		m.T0[uint(t13)].(func(int32))(v0)
+	}
+	TBL_Fn4(m, v1)
 	panic("unreachable")
 }
 func (m *Module) Xregister_host_fs(v0 int32) {
@@ -26693,16 +26628,16 @@ func (m *Module) Xregister_host_fs(v0 int32) {
 	t5 := int32(Load32(m.MemoryG1[int64(uint32(t4))+124:]))
 	m.T0[uint(t5)].(func(int32, int32))(v0, t3)
 }
-func Fn41437(v0 int32) int32 {
-	return I32(6062016)
+func Fn41440(v0 int32) int32 {
+	return I32(6062000)
 }
-func Fn41442(v0 int32) int32 {
-	return I32(6062360)
+func Fn41445(v0 int32) int32 {
+	return I32(6062344)
 }
 func (m *Module) X_initialize() {
 	TBL_Fn382(m)
 }
-func Fn41445(v0 float64) float64 {
+func Fn41448(v0 float64) float64 {
 	var v1, v2, v3, v4, v5 float64
 	var v6, v7 int64
 	var v8, v9 int32
@@ -26762,7 +26697,7 @@ func Fn41445(v0 float64) float64 {
 l1:
 	return v0
 }
-func Fn41446(v0 float64) float64 {
+func Fn41449(v0 float64) float64 {
 	var v1, v2 int64
 	var v3, v4, v5 float64
 	var v6, v7 int32
@@ -26814,13 +26749,13 @@ func Fn41446(v0 float64) float64 {
 l1:
 	return v0
 }
-func Fn41462() {
+func Fn41465() {
 	panic("unreachable")
 }
-func Fn41464(v0 float64) float64 {
+func Fn41467(v0 float64) float64 {
 	return float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(3.479331075960212e-05))+float64(0.0007915349942898145)))+float64(-0.04005553450067941)))+float64(0x1.9c1550e884455p-03)))+float64(-0.3255658186224009)))+float64(0.16666666666666666))) / float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(float64(v0*float64(0.07703815055590194))+float64(-0.6882839716054533)))+float64(2.0209457602335057)))+float64(-2.403394911734414)))+float64(1)))
 }
-func Fn41466(v0 float64) float64 {
+func Fn41469(v0 float64) float64 {
 	var v1 int32
 	var v2, v3, v4 float64
 	var v5 int64
@@ -26837,12 +26772,12 @@ func Fn41466(v0 float64) float64 {
 			if uint32(v1+I32(-0x100000)) < uint32(I32(0x3e400000)) {
 				goto l0
 			}
-			T0 := Fn41464(float64(v0 * v0))
+			T0 := Fn41467(float64(v0 * v0))
 			return float64(float64(v0*T0) + v0)
 		}
 		v3 = float64(float64(float64(1)-math.Abs(v0)) * float64(0.5))
 		v0 = math.Sqrt(v3)
-		t1 := Fn41464(v3)
+		t1 := Fn41467(v3)
 		v4 = t1
 		var p2 float64
 		{
@@ -26869,7 +26804,7 @@ func Fn41466(v0 float64) float64 {
 l0:
 	return v0
 }
-func Fn41471(v0 int32) int32 {
+func Fn41474(v0 int32) int32 {
 	var p0 int32
 	if v0 == I32(32) {
 		p0 = 1
@@ -26880,7 +26815,7 @@ func Fn41471(v0 int32) int32 {
 	}
 	return p0 | p1
 }
-func Fn41472(v0 float64) float64 {
+func Fn41475(v0 float64) float64 {
 	var v1 float64
 	var v2 int32
 	v2 = int32(int64(uint64(int64(math.Float64bits(v0)))>>32)) & I32(0x7fffffff)
@@ -26913,7 +26848,7 @@ func Fn41472(v0 float64) float64 {
 l1:
 	return v0
 }
-func Fn41476(v0, v1 float64) float64 {
+func Fn41479(v0, v1 float64) float64 {
 	var v2, v3, v4 float64
 	v2 = float64(v0 * v0)
 	v3 = float64(v2 * float64(0.5))
@@ -26925,7 +26860,7 @@ func Fn41476(v0, v1 float64) float64 {
 	v3 = float64(v2 * v2)
 	return float64(T0 + float64(t1+float64(float64(t2*float64(t3+float64(float64(v3*v3)*float64(float64(v2*float64(float64(v2*float64(-1.1359647557788195e-11))+float64(0x1.1ee9ebdb4b1c4p-29)))+float64(-2.7557314351390663e-07)))))-float64(v0*v1))))
 }
-func Fn41478(v0, v1 float64, v2 int32) float64 {
+func Fn41481(v0, v1 float64, v2 int32) float64 {
 	var v3, v4, v5 float64
 	v3 = float64(v0 * v0)
 	v5 = float64(float64(float64(v3*float64(v3*v3))*float64(float64(v3*float64(1.58969099521155e-10))+float64(-0x1.ae5e68a2b9cebp-26))) + float64(float64(v3*float64(float64(v3*float64(2.7557313707070068e-06))+float64(-0.0001984126982985795)))+float64(0.00833333333332249)))
@@ -26935,10 +26870,10 @@ func Fn41478(v0, v1 float64, v2 int32) float64 {
 	}
 	return float64(v0 - float64(float64(float64(v3*float64(float64(v1*float64(0.5))-float64(v4*v5)))-v1)+float64(v4*float64(0.16666666666666632))))
 }
-func Fn41487(v0 float64) int32 {
+func Fn41490(v0 float64) int32 {
 	return int32(int64(uint64(int64(math.Float64bits(v0))) >> 52))
 }
-func Fn41490(v0 float64) float64 {
+func Fn41493(v0 float64) float64 {
 	var v1 int32
 	var v2, v3, v4, v5 float64
 	var v6 int64
@@ -27045,7 +26980,7 @@ func Fn41490(v0 float64) float64 {
 l0:
 	return v0
 }
-func Fn41496(v0, v1 float64) float64 {
+func Fn41499(v0, v1 float64) float64 {
 	var v2, v3, v4, v5 int64
 	var v6, v7 int32
 	{
@@ -27163,7 +27098,7 @@ l7:
 	}
 	return math.Float64frombits(uint64(t9 | p8))
 }
-func Fn41497(v0, v1 float32) float32 {
+func Fn41500(v0, v1 float32) float32 {
 	var v2, v3, v4, v5, v6, v7 int32
 	v6 = int32(math.Float32bits(v1))
 	v4 = v6 << 1
@@ -27276,7 +27211,7 @@ l8:
 	}
 	return math.Float32frombits(uint32(t7 | p6))
 }
-func Fn41516(v0 int32) int32 {
+func Fn41519(v0 int32) int32 {
 	var p0 int32
 	if uint32(v0-I32(48)) < uint32(I32(10)) {
 		p0 = 1
@@ -27287,14 +27222,14 @@ func Fn41516(v0 int32) int32 {
 	}
 	return p0 | p1
 }
-func Fn41517(v0 int32) int32 {
+func Fn41520(v0 int32) int32 {
 	var p0 int32
 	if uint32(v0|I32(32)-I32(97)) < uint32(I32(26)) {
 		p0 = 1
 	}
 	return p0
 }
-func Fn41518(v0 int32) int32 {
+func Fn41521(v0 int32) int32 {
 	var p0 int32
 	if uint32(v0-I32(48)) < uint32(I32(10)) {
 		p0 = 1
@@ -27305,11 +27240,11 @@ func Fn41518(v0 int32) int32 {
 	}
 	return p0 | p1
 }
-func Fn41519(v0, v1 int32) int32 {
-	T0 := Fn41518(v0)
+func Fn41522(v0, v1 int32) int32 {
+	T0 := Fn41521(v0)
 	return T0
 }
-func Fn41524(v0 float64) float64 {
+func Fn41527(v0 float64) float64 {
 	var v1, v2, v3 float64
 	var v4 int64
 	var v5, v6 int32
@@ -27373,7 +27308,7 @@ func Fn41524(v0 float64) float64 {
 l1:
 	return v0
 }
-func Fn41532(v0, v1 float64) float64 {
+func Fn41535(v0, v1 float64) float64 {
 	var v2, v3, v4, v5 int64
 	var p0 int32
 	if uint64(int64(math.Float64bits(v1))&I64(0x7fffffffffffffff)) < uint64(I64(0x7ff0000000000001)) {
@@ -27417,7 +27352,7 @@ func Fn41532(v0, v1 float64) float64 {
 	}
 	return p3
 }
-func Fn41533(v0, v1 float32) float32 {
+func Fn41536(v0, v1 float32) float32 {
 	var v2, v3, v4, v5 int32
 	var p0 int32
 	if uint32(int32(math.Float32bits(v1))&I32(0x7fffffff)) < uint32(I32(0x7f800001)) {
@@ -27462,20 +27397,20 @@ func Fn41533(v0, v1 float32) float32 {
 	return p3
 }
 func (m *Module) Xhtons(v0 int32) int32 {
-	T0 := Fn41535(v0)
+	T0 := Fn41538(v0)
 	return T0
 }
-func Fn41535(v0 int32) int32 {
+func Fn41538(v0 int32) int32 {
 	return (v0<<8 | int32(uint32(v0)>>8)) & I32(0xffff)
 }
-func Fn41544(v0 int32) int32 {
+func Fn41547(v0 int32) int32 {
 	p0 := I32(0)
 	if v0 != 0 {
 		p0 = int32(bits.TrailingZeros32(uint32(v0)))
 	}
 	return p0
 }
-func Fn41548(v0 float64) float64 {
+func Fn41551(v0 float64) float64 {
 	var v1 float64
 	var v2 int64
 	var v3 int32
@@ -27515,7 +27450,7 @@ func Fn41548(v0 float64) float64 {
 	}
 	return p0
 }
-func Fn41549(v0 float32) float32 {
+func Fn41552(v0 float32) float32 {
 	var v1 float32
 	var v2, v3 int32
 	v2 = int32(math.Float32bits(v0))
@@ -27554,7 +27489,7 @@ func Fn41549(v0 float32) float32 {
 	}
 	return p0
 }
-func Fn41550(v0 float64, v1 int32) float64 {
+func Fn41553(v0 float64, v1 int32) float64 {
 	{
 		if v1 >= I32(1024) {
 			v0 = float64(v0 * float64(0x1p+1023))
@@ -27588,10 +27523,10 @@ func Fn41550(v0 float64, v1 int32) float64 {
 l0:
 	return float64(v0 * math.Float64frombits(uint64(int64(uint32(v1+I32(1023)))<<52)))
 }
-func Fn41557(v0 int32, v1 int64, v2 int32) int64 {
+func Fn41560(v0 int32, v1 int64, v2 int32) int64 {
 	return I64(0)
 }
-func Fn41588(v0, v1 float64, v2 int32) float64 {
+func Fn41591(v0, v1 float64, v2 int32) float64 {
 	var v3, v4 float64
 	var v5 int64
 	var v6, v7 int32
@@ -27652,7 +27587,7 @@ func Fn41588(v0, v1 float64, v2 int32) float64 {
 	}
 	return p13
 }
-func Fn41590(v0 float64) float64 {
+func Fn41593(v0 float64) float64 {
 	var v1 float64
 	var v2 int64
 	{
@@ -27663,12 +27598,12 @@ func Fn41590(v0 float64) float64 {
 				v1 = float64(float64(math.Float64frombits(0x8000000000000000)/v1) + float64(1))
 				goto l0
 			}
-			T0 := Fn41490(float64(v1 + v1))
+			T0 := Fn41493(float64(v1 + v1))
 			v1 = float64(float64(1) - float64(float64(2)/float64(T0+float64(2))))
 			goto l0
 		}
 		if uint64(v2) >= uint64(I64(0x3fd058af00000000)) {
-			t1 := Fn41490(float64(v1 + v1))
+			t1 := Fn41493(float64(v1 + v1))
 			v1 = t1
 			v1 = float64(v1 / float64(v1+float64(2)))
 			goto l0
@@ -27676,7 +27611,7 @@ func Fn41590(v0 float64) float64 {
 		if uint64(v2) < uint64(I64(0x10000000000000)) {
 			goto l0
 		}
-		t2 := Fn41490(float64(v1 * float64(-2)))
+		t2 := Fn41493(float64(v1 * float64(-2)))
 		v1 = t2
 		v1 = float64(-v1 / float64(v1+float64(2)))
 	}
@@ -27687,14 +27622,14 @@ l0:
 	}
 	return p3
 }
-func Fn41591(v0 int32) int32 {
+func Fn41594(v0 int32) int32 {
 	p0 := v0
 	if uint32(v0-I32(65)) < uint32(I32(26)) {
 		p0 = v0 | I32(32)
 	}
 	return p0
 }
-func Fn41592(v0 int32) int32 {
+func Fn41595(v0 int32) int32 {
 	p0 := v0
 	if uint32(v0-I32(97)) < uint32(I32(26)) {
 		p0 = v0 & I32(95)
@@ -27712,7 +27647,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				{
 					{
 						if uint32(v0) <= uint32(I32(244)) {
-							t1 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
+							t1 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
 							v4 = t1
 							t3 := v4
 							p2 := (v0 + I32(11)) & I32(504)
@@ -27726,14 +27661,14 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 								{
 									v3 = (v1^I32(-1))&I32(1) + v0
 									v1 = v3 << 3
-									v0 = v1 + I32(6111408)
-									t4 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111416:]))
+									v0 = v1 + I32(6111392)
+									t4 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111400:]))
 									t5 := v0
 									v2 = t4
 									t6 := int32(Load32(m.MemoryG1[int64(uint32(v2))+8:]))
 									v5 = t6
 									if t5 == v5 {
-										Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v4&I32_rotl(I32(-2), v3)))
+										Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v4&I32_rotl(I32(-2), v3)))
 										goto l0
 									}
 									Store32(m.MemoryG1[int64(uint32(v5))+12:], uint32(v0))
@@ -27747,7 +27682,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 								Store32(m.MemoryG1[int64(uint32(v1))+4:], uint32(t7|I32(1)))
 								goto l1
 							}
-							t8 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
+							t8 := int32(Load32(m.MemoryG1[uint32(I32(6111360)):]))
 							t9 := v6
 							v8 = t8
 							if uint32(t9) <= uint32(v8) {
@@ -27758,15 +27693,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 									v2 = I32_shl(I32(2), v0)
 									v3 = int32(bits.TrailingZeros32(uint32((v2 | (I32(0) - v2)) & I32_shl(v1, v0))))
 									v1 = v3 << 3
-									v2 = v1 + I32(6111408)
-									t10 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111416:]))
+									v2 = v1 + I32(6111392)
+									t10 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111400:]))
 									t11 := v2
 									v0 = t10
 									t12 := int32(Load32(m.MemoryG1[int64(uint32(v0))+8:]))
 									v5 = t12
 									if t11 == v5 {
 										v4 = v4 & I32_rotl(I32(-2), v3)
-										Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v4))
+										Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v4))
 										goto l3
 									}
 									Store32(m.MemoryG1[int64(uint32(v5))+12:], uint32(v2))
@@ -27780,15 +27715,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 								Store32(m.MemoryG1[int64(uint32(t13))+4:], uint32(v5|I32(1)))
 								Store32(m.MemoryG1[uint32(v0+v1):], uint32(v5))
 								if v8 != 0 {
-									v1 = v8&I32(-8) + I32(6111408)
-									t14 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+									v1 = v8&I32(-8) + I32(6111392)
+									t14 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 									v2 = t14
 									var p15 int32
 									{
 										t16 := v4
 										v3 = I32_shl(I32(1), int32(uint32(v8)>>3))
 										if t16&v3 == 0 {
-											Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v3|v4))
+											Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v3|v4))
 											t17 := v1
 											p15 = t17
 											goto l4
@@ -27804,16 +27739,16 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 									Store32(m.MemoryG1[int64(uint32(v2))+8:], uint32(v3))
 								}
 								v0 = v0 + I32(8)
-								Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(v7))
-								Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v5))
+								Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v7))
+								Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v5))
 								goto l1
 							}
-							t19 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
+							t19 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
 							v11 = t19
 							if v11 == 0 {
 								goto l2
 							}
-							t20 := int32(Load32(m.MemoryG1[int64(uint32(int32(bits.TrailingZeros32(uint32(v11)))<<2))+6111672:]))
+							t20 := int32(Load32(m.MemoryG1[int64(uint32(int32(bits.TrailingZeros32(uint32(v11)))<<2))+6111656:]))
 							v1 = t20
 							t21 := int32(Load32(m.MemoryG1[int64(uint32(v1))+4:]))
 							v3 = t21&I32(-8) - v6
@@ -27904,7 +27839,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						}
 						v1 = v0 + I32(11)
 						v6 = v1 & I32(-8)
-						t39 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
+						t39 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
 						v7 = t39
 						if v7 == 0 {
 							goto l2
@@ -27917,7 +27852,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 							v8 = I32_shr_u(t40, I32(38)-v0)&I32(1) - v0<<1 + I32(62)
 						}
 						{
-							t41 := int32(Load32(m.MemoryG1[int64(uint32(v8<<2))+6111672:]))
+							t41 := int32(Load32(m.MemoryG1[int64(uint32(v8<<2))+6111656:]))
 							v1 = t41
 							if v1 == 0 {
 								v0 = I32(0)
@@ -27978,7 +27913,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 							if v0 == 0 {
 								goto l2
 							}
-							t52 := int32(Load32(m.MemoryG1[int64(uint32(int32(bits.TrailingZeros32(uint32(v0)))<<2))+6111672:]))
+							t52 := int32(Load32(m.MemoryG1[int64(uint32(int32(bits.TrailingZeros32(uint32(v0)))<<2))+6111656:]))
 							v0 = t52
 						}
 						if v0 == 0 {
@@ -28021,7 +27956,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						if v5 == 0 {
 							goto l2
 						}
-						t60 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
+						t60 := int32(Load32(m.MemoryG1[uint32(I32(6111360)):]))
 						if uint32(v3) >= uint32(t60-v6) {
 							goto l2
 						}
@@ -28072,11 +28007,11 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						goto l16
 					}
 				l2:
-					t70 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
+					t70 := int32(Load32(m.MemoryG1[uint32(I32(6111360)):]))
 					t71 := v6
 					v5 = t70
 					if uint32(t71) <= uint32(v5) {
-						t72 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+						t72 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 						v0 = t72
 						{
 							v1 = v5 - v6
@@ -28095,21 +28030,21 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 							v2 = I32(0)
 						}
 					l19:
-						Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v1))
-						Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(v2))
+						Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v1))
+						Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v2))
 						v0 = v0 + I32(8)
 						goto l1
 					}
-					t74 := int32(Load32(m.MemoryG1[uint32(I32(6111380)):]))
+					t74 := int32(Load32(m.MemoryG1[uint32(I32(6111364)):]))
 					t75 := v6
 					v2 = t74
 					if uint32(t75) < uint32(v2) {
 						v1 = v2 - v6
-						Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v1))
-						t76 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+						Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v1))
+						t76 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 						v0 = t76
 						v2 = v0 + v6
-						Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v2))
+						Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v2))
 						Store32(m.MemoryG1[int64(uint32(v2))+4:], uint32(v1|I32(1)))
 						Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(v6|I32(3)))
 						v0 = v0 + I32(8)
@@ -28120,17 +28055,17 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 					t78 := v3
 					var p77 int32
 					{
-						t79 := int32(Load32(m.MemoryG1[uint32(I32(6111840)):]))
+						t79 := int32(Load32(m.MemoryG1[uint32(I32(6111824)):]))
 						if t79 != 0 {
-							t80 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
+							t80 := int32(Load32(m.MemoryG1[uint32(I32(6111832)):]))
 							p77 = t80
 							goto l20
 						}
-						Store64(m.MemoryG1[uint32(I32(6111852)):], uint64(I64(-1)))
-						Store64(m.MemoryG1[uint32(I32(6111844)):], uint64(I64(0x100000001000)))
-						Store32(m.MemoryG1[uint32(I32(6111840)):], uint32((v10+I32(12))&I32(-16)^I32(0x55555558)))
-						Store32(m.MemoryG1[uint32(I32(6111860)):], uint32(I32(0)))
-						Store32(m.MemoryG1[uint32(I32(6111812)):], uint32(I32(0)))
+						Store64(m.MemoryG1[uint32(I32(6111836)):], uint64(I64(-1)))
+						Store64(m.MemoryG1[uint32(I32(6111828)):], uint64(I64(0x100000001000)))
+						Store32(m.MemoryG1[uint32(I32(6111824)):], uint32((v10+I32(12))&I32(-16)^I32(0x55555558)))
+						Store32(m.MemoryG1[uint32(I32(6111844)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111796)):], uint32(I32(0)))
 						p77 = I32(4096)
 					}
 				l20:
@@ -28142,10 +28077,10 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 					if uint32(v1) <= uint32(v6) {
 						goto l1
 					}
-					t82 := int32(Load32(m.MemoryG1[uint32(I32(6111808)):]))
+					t82 := int32(Load32(m.MemoryG1[uint32(I32(6111792)):]))
 					v5 = t82
 					if v5 != 0 {
-						t83 := int32(Load32(m.MemoryG1[uint32(I32(6111800)):]))
+						t83 := int32(Load32(m.MemoryG1[uint32(I32(6111784)):]))
 						v8 = t83
 						v9 = v8 + v1
 						var p84 int32
@@ -28161,15 +28096,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						}
 					}
 					{
-						t86 := int32(m.MemoryG1[uint32(I32(6111812))])
+						t86 := int32(m.MemoryG1[uint32(I32(6111796))])
 						if t86&I32(4) == 0 {
 							{
 								{
 									{
-										t87 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+										t87 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 										v5 = t87
 										if v5 != 0 {
-											v0 = I32(6111816)
+											v0 = I32(6111800)
 										l22:
 											{
 												t88 := int32(Load32(m.MemoryG1[uint32(v0):]))
@@ -28187,13 +28122,13 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 												}
 											}
 										}
-										t91 := TBL_Fn41615(m, I32(0))
+										t91 := TBL_Fn41618(m, I32(0))
 										v2 = t91
 										if v2 == I32(-1) {
 											goto l23
 										}
 										v4 = v1
-										t92 := int32(Load32(m.MemoryG1[uint32(I32(6111844)):]))
+										t92 := int32(Load32(m.MemoryG1[uint32(I32(6111828)):]))
 										v0 = t92
 										v5 = v0 - I32(1)
 										if v5&v2 != 0 {
@@ -28202,10 +28137,10 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 										if uint32(v4) <= uint32(v6) {
 											goto l23
 										}
-										t93 := int32(Load32(m.MemoryG1[uint32(I32(6111808)):]))
+										t93 := int32(Load32(m.MemoryG1[uint32(I32(6111792)):]))
 										v0 = t93
 										if v0 != 0 {
-											t94 := int32(Load32(m.MemoryG1[uint32(I32(6111800)):]))
+											t94 := int32(Load32(m.MemoryG1[uint32(I32(6111784)):]))
 											v5 = t94
 											v7 = v5 + v4
 											var p95 int32
@@ -28220,7 +28155,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 												goto l23
 											}
 										}
-										t97 := TBL_Fn41615(m, v4)
+										t97 := TBL_Fn41618(m, v4)
 										v0 = t97
 										if v0 != v2 {
 											goto l24
@@ -28229,7 +28164,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 									}
 								l21:
 									v4 = (v4 - v2) & v7
-									t98 := TBL_Fn41615(m, v4)
+									t98 := TBL_Fn41618(m, v4)
 									v2 = t98
 									t99 := int32(Load32(m.MemoryG1[uint32(v0):]))
 									t100 := int32(Load32(m.MemoryG1[int64(uint32(v0))+4:]))
@@ -28246,10 +28181,10 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 									v2 = v0
 									goto l25
 								}
-								t101 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
+								t101 := int32(Load32(m.MemoryG1[uint32(I32(6111832)):]))
 								v2 = t101
 								v2 = (v2 + (v3 - v4)) & (I32(0) - v2)
-								t102 := TBL_Fn41615(m, v2)
+								t102 := TBL_Fn41618(m, v2)
 								if t102 == I32(-1) {
 									goto l23
 								}
@@ -28262,12 +28197,12 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 								goto l25
 							}
 						l23:
-							t103 := int32(Load32(m.MemoryG1[uint32(I32(6111812)):]))
-							Store32(m.MemoryG1[uint32(I32(6111812)):], uint32(t103|I32(4)))
+							t103 := int32(Load32(m.MemoryG1[uint32(I32(6111796)):]))
+							Store32(m.MemoryG1[uint32(I32(6111796)):], uint32(t103|I32(4)))
 						}
-						t104 := TBL_Fn41615(m, v1)
+						t104 := TBL_Fn41618(m, v1)
 						v2 = t104
-						t105 := TBL_Fn41615(m, I32(0))
+						t105 := TBL_Fn41618(m, I32(0))
 						var p106 int32
 						if v2 == I32(-1) {
 							p106 = 1
@@ -28291,18 +28226,18 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						}
 					}
 				l25:
-					t110 := int32(Load32(m.MemoryG1[uint32(I32(6111800)):]))
+					t110 := int32(Load32(m.MemoryG1[uint32(I32(6111784)):]))
 					v0 = t110 + v4
-					Store32(m.MemoryG1[uint32(I32(6111800)):], uint32(v0))
-					t111 := int32(Load32(m.MemoryG1[uint32(I32(6111804)):]))
+					Store32(m.MemoryG1[uint32(I32(6111784)):], uint32(v0))
+					t111 := int32(Load32(m.MemoryG1[uint32(I32(6111788)):]))
 					if uint32(t111) < uint32(v0) {
-						Store32(m.MemoryG1[uint32(I32(6111804)):], uint32(v0))
+						Store32(m.MemoryG1[uint32(I32(6111788)):], uint32(v0))
 					}
 					{
-						t112 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+						t112 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 						v3 = t112
 						if v3 != 0 {
-							v0 = I32(6111816)
+							v0 = I32(6111800)
 						l29:
 							{
 								t113 := int32(Load32(m.MemoryG1[uint32(v0):]))
@@ -28322,29 +28257,29 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 							}
 							goto l30
 						}
-						t118 := int32(Load32(m.MemoryG1[uint32(I32(6111384)):]))
+						t118 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
 						v0 = t118
 						p119 := I32(0)
 						if uint32(v0) <= uint32(v2) {
 							p119 = v0
 						}
 						if p119 == 0 {
-							Store32(m.MemoryG1[uint32(I32(6111384)):], uint32(v2))
+							Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v2))
 						}
 						v0 = I32(0)
-						Store32(m.MemoryG1[uint32(I32(6111820)):], uint32(v4))
-						Store32(m.MemoryG1[uint32(I32(6111816)):], uint32(v2))
-						Store32(m.MemoryG1[uint32(I32(6111400)):], uint32(I32(-1)))
-						t120 := int32(Load32(m.MemoryG1[uint32(I32(6111840)):]))
-						Store32(m.MemoryG1[uint32(I32(6111404)):], uint32(t120))
-						Store32(m.MemoryG1[uint32(I32(6111828)):], uint32(I32(0)))
+						Store32(m.MemoryG1[uint32(I32(6111804)):], uint32(v4))
+						Store32(m.MemoryG1[uint32(I32(6111800)):], uint32(v2))
+						Store32(m.MemoryG1[uint32(I32(6111384)):], uint32(I32(-1)))
+						t120 := int32(Load32(m.MemoryG1[uint32(I32(6111824)):]))
+						Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(t120))
+						Store32(m.MemoryG1[uint32(I32(6111812)):], uint32(I32(0)))
 					l31:
 						{
 							v1 = v0 << 3
 							t121 := v1
-							v5 = v1 + I32(6111408)
-							Store32(m.MemoryG1[int64(uint32(t121))+6111416:], uint32(v5))
-							Store32(m.MemoryG1[int64(uint32(v1))+6111420:], uint32(v5))
+							v5 = v1 + I32(6111392)
+							Store32(m.MemoryG1[int64(uint32(t121))+6111400:], uint32(v5))
+							Store32(m.MemoryG1[int64(uint32(v1))+6111404:], uint32(v5))
 							v0 = v0 + I32(1)
 							if v0 != I32(32) {
 								goto l31
@@ -28354,13 +28289,13 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						t122 := v0
 						v1 = (I32(-8) - v2) & I32(7)
 						v5 = t122 - v1
-						Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v5))
+						Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v5))
 						v1 = v1 + v2
-						Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v1))
+						Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v1))
 						Store32(m.MemoryG1[int64(uint32(v1))+4:], uint32(v5|I32(1)))
 						Store32(m.MemoryG1[int64(uint32(v0+v2))+4:], uint32(I32(40)))
-						t123 := int32(Load32(m.MemoryG1[uint32(I32(6111856)):]))
-						Store32(m.MemoryG1[uint32(I32(6111396)):], uint32(t123))
+						t123 := int32(Load32(m.MemoryG1[uint32(I32(6111840)):]))
+						Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(t123))
 						goto l32
 					}
 				l28:
@@ -28384,15 +28319,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 					t127 := v3
 					v0 = (I32(-8) - v3) & I32(7)
 					v1 = t127 + v0
-					Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v1))
-					t128 := int32(Load32(m.MemoryG1[uint32(I32(6111380)):]))
+					Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v1))
+					t128 := int32(Load32(m.MemoryG1[uint32(I32(6111364)):]))
 					v2 = t128 + v4
 					v0 = v2 - v0
-					Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v0))
+					Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v0))
 					Store32(m.MemoryG1[int64(uint32(v1))+4:], uint32(v0|I32(1)))
 					Store32(m.MemoryG1[int64(uint32(v2+v3))+4:], uint32(I32(40)))
-					t129 := int32(Load32(m.MemoryG1[uint32(I32(6111856)):]))
-					Store32(m.MemoryG1[uint32(I32(6111396)):], uint32(t129))
+					t129 := int32(Load32(m.MemoryG1[uint32(I32(6111840)):]))
+					Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(t129))
 					goto l32
 				}
 			l8:
@@ -28402,12 +28337,12 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				v0 = I32(0)
 				goto l16
 			l30:
-				t130 := int32(Load32(m.MemoryG1[uint32(I32(6111384)):]))
+				t130 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
 				if uint32(t130) > uint32(v2) {
-					Store32(m.MemoryG1[uint32(I32(6111384)):], uint32(v2))
+					Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v2))
 				}
 				v5 = v2 + v4
-				v0 = I32(6111816)
+				v0 = I32(6111800)
 				{
 				l33:
 					{
@@ -28429,7 +28364,7 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 					}
 				}
 			l34:
-				v0 = I32(6111816)
+				v0 = I32(6111800)
 			l37:
 				{
 					t135 := int32(Load32(m.MemoryG1[uint32(v0):]))
@@ -28451,13 +28386,13 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				t139 := v0
 				v1 = (I32(-8) - v2) & I32(7)
 				v7 = t139 - v1
-				Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v7))
+				Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v7))
 				v1 = v1 + v2
-				Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v1))
+				Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v1))
 				Store32(m.MemoryG1[int64(uint32(v1))+4:], uint32(v7|I32(1)))
 				Store32(m.MemoryG1[int64(uint32(v0+v2))+4:], uint32(I32(40)))
-				t140 := int32(Load32(m.MemoryG1[uint32(I32(6111856)):]))
-				Store32(m.MemoryG1[uint32(I32(6111396)):], uint32(t140))
+				t140 := int32(Load32(m.MemoryG1[uint32(I32(6111840)):]))
+				Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(t140))
 				t141 := v3
 				v0 = v5 + (I32(39)-v5)&I32(7) - I32(47)
 				p142 := v0
@@ -28466,14 +28401,14 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				}
 				v1 = p142
 				Store32(m.MemoryG1[int64(uint32(v1))+4:], uint32(I32(27)))
-				t143 := int64(Load64(m.MemoryG1[uint32(I32(6111824)):]))
+				t143 := int64(Load64(m.MemoryG1[uint32(I32(6111808)):]))
 				Store64(m.MemoryG1[int64(uint32(v1))+16:], uint64(t143))
-				t144 := int64(Load64(m.MemoryG1[uint32(I32(6111816)):]))
+				t144 := int64(Load64(m.MemoryG1[uint32(I32(6111800)):]))
 				Store64(m.MemoryG1[int64(uint32(v1))+8:], uint64(t144))
-				Store32(m.MemoryG1[uint32(I32(6111824)):], uint32(v1+I32(8)))
-				Store32(m.MemoryG1[uint32(I32(6111820)):], uint32(v4))
-				Store32(m.MemoryG1[uint32(I32(6111816)):], uint32(v2))
-				Store32(m.MemoryG1[uint32(I32(6111828)):], uint32(I32(0)))
+				Store32(m.MemoryG1[uint32(I32(6111808)):], uint32(v1+I32(8)))
+				Store32(m.MemoryG1[uint32(I32(6111804)):], uint32(v4))
+				Store32(m.MemoryG1[uint32(I32(6111800)):], uint32(v2))
+				Store32(m.MemoryG1[uint32(I32(6111812)):], uint32(I32(0)))
 				v0 = v1 + I32(24)
 			l38:
 				Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(I32(7)))
@@ -28494,15 +28429,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				var p147 int32
 				{
 					if uint32(v2) <= uint32(I32(255)) {
-						v0 = v2&I32(248) + I32(6111408)
+						v0 = v2&I32(248) + I32(6111392)
 						var p148 int32
 						{
-							t149 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
+							t149 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
 							v1 = t149
 							t150 := v1
 							v2 = I32_shl(I32(1), int32(uint32(v2)>>3))
 							if t150&v2 == 0 {
-								Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v1|v2))
+								Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v1|v2))
 								t151 := v0
 								p148 = t151
 								goto l39
@@ -28526,14 +28461,14 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 					}
 					Store32(m.MemoryG1[int64(uint32(v3))+28:], uint32(v0))
 					Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(I64(0)))
-					v1 = v0<<2 + I32(6111672)
+					v1 = v0<<2 + I32(6111656)
 					{
-						t154 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
+						t154 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
 						v5 = t154
 						t155 := v5
 						v4 = I32_shl(I32(1), v0)
 						if t155&v4 == 0 {
-							Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v4|v5))
+							Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v4|v5))
 							Store32(m.MemoryG1[uint32(v1):], uint32(v3))
 							goto l41
 						}
@@ -28585,24 +28520,24 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 				Store32(m.MemoryG1[uint32(v2+v3):], uint32(v0))
 			}
 		l32:
-			t162 := int32(Load32(m.MemoryG1[uint32(I32(6111380)):]))
+			t162 := int32(Load32(m.MemoryG1[uint32(I32(6111364)):]))
 			v0 = t162
 			if uint32(v0) <= uint32(v6) {
 				goto l27
 			}
 			v1 = v0 - v6
-			Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v1))
-			t163 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+			Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v1))
+			t163 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 			v0 = t163
 			v2 = v0 + v6
-			Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v2))
+			Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v2))
 			Store32(m.MemoryG1[int64(uint32(v2))+4:], uint32(v1|I32(1)))
 			Store32(m.MemoryG1[int64(uint32(v0))+4:], uint32(v6|I32(3)))
 			v0 = v0 + I32(8)
 			goto l1
 		}
 	l27:
-		Store32(m.MemoryG1[uint32(I32(6109296)):], uint32(I32(48)))
+		Store32(m.MemoryG1[uint32(I32(6109280)):], uint32(I32(48)))
 		v0 = I32(0)
 		goto l1
 	l35:
@@ -28616,21 +28551,21 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 		v3 = v6 + v8
 		v7 = t165 - v3
 		{
-			t166 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+			t166 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 			if t166 == v4 {
-				Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v3))
-				t167 := int32(Load32(m.MemoryG1[uint32(I32(6111380)):]))
+				Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v3))
+				t167 := int32(Load32(m.MemoryG1[uint32(I32(6111364)):]))
 				v0 = t167 + v7
-				Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v0))
+				Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v0))
 				Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v0|I32(1)))
 				goto l44
 			}
-			t168 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+			t168 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 			if t168 == v4 {
-				Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(v3))
-				t169 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
+				Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v3))
+				t169 := int32(Load32(m.MemoryG1[uint32(I32(6111360)):]))
 				v0 = t169 + v7
-				Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v0))
+				Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v0))
 				Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v0|I32(1)))
 				Store32(m.MemoryG1[uint32(v0+v3):], uint32(v0))
 				goto l44
@@ -28646,8 +28581,8 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						t172 := int32(Load32(m.MemoryG1[int64(uint32(v4))+8:]))
 						v1 = t172
 						if v1 == v2 {
-							t173 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
-							Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(t173&I32_rotl(I32(-2), int32(uint32(v0)>>3))))
+							t173 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
+							Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(t173&I32_rotl(I32(-2), int32(uint32(v0)>>3))))
 							goto l45
 						}
 						Store32(m.MemoryG1[int64(uint32(v1))+12:], uint32(v2))
@@ -28708,14 +28643,14 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 						t181 := int32(Load32(m.MemoryG1[int64(uint32(v4))+28:]))
 						v0 = t181
 						v1 = v0 << 2
-						t182 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111672:]))
+						t182 := int32(Load32(m.MemoryG1[int64(uint32(v1))+6111656:]))
 						if t182 == v4 {
-							Store32(m.MemoryG1[uint32(v1+I32(6111672)):], uint32(v2))
+							Store32(m.MemoryG1[uint32(v1+I32(6111656)):], uint32(v2))
 							if v2 != 0 {
 								goto l49
 							}
-							t183 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
-							Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(t183&I32_rotl(I32(-2), v0)))
+							t183 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
+							Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(t183&I32_rotl(I32(-2), v0)))
 							goto l45
 						}
 						{
@@ -28757,15 +28692,15 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 			Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v7|I32(1)))
 			Store32(m.MemoryG1[uint32(v3+v7):], uint32(v7))
 			if uint32(v7) <= uint32(I32(255)) {
-				v0 = v7&I32(248) + I32(6111408)
+				v0 = v7&I32(248) + I32(6111392)
 				var p188 int32
 				{
-					t189 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
+					t189 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
 					v1 = t189
 					t190 := v1
 					v2 = I32_shl(I32(1), int32(uint32(v7)>>3))
 					if t190&v2 == 0 {
-						Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v1|v2))
+						Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v1|v2))
 						t191 := v0
 						p188 = t191
 						goto l51
@@ -28789,14 +28724,14 @@ func (m *Module) Xmalloc(v0 int32) int32 {
 			}
 			Store32(m.MemoryG1[int64(uint32(v3))+28:], uint32(v2))
 			Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(I64(0)))
-			v0 = v2<<2 + I32(6111672)
+			v0 = v2<<2 + I32(6111656)
 			{
-				t194 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
+				t194 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
 				v1 = t194
 				t195 := v1
 				v5 = I32_shl(I32(1), v2)
 				if t195&v5 == 0 {
-					Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v1|v5))
+					Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v1|v5))
 					Store32(m.MemoryG1[uint32(v0):], uint32(v3))
 					goto l52
 				}
@@ -28853,14 +28788,14 @@ l16:
 			t202 := int32(Load32(m.MemoryG1[int64(uint32(v5))+28:]))
 			v1 = t202
 			v2 = v1 << 2
-			t203 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111672:]))
+			t203 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111656:]))
 			if t203 == v5 {
-				Store32(m.MemoryG1[uint32(v2+I32(6111672)):], uint32(v0))
+				Store32(m.MemoryG1[uint32(v2+I32(6111656)):], uint32(v0))
 				if v0 != 0 {
 					goto l56
 				}
 				v7 = v7 & I32_rotl(I32(-2), v1)
-				Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v7))
+				Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v7))
 				goto l55
 			}
 			{
@@ -28908,15 +28843,15 @@ l55:
 		Store32(m.MemoryG1[int64(uint32(v4))+4:], uint32(v3|I32(1)))
 		Store32(m.MemoryG1[uint32(v3+v4):], uint32(v3))
 		if uint32(v3) <= uint32(I32(255)) {
-			v0 = v3&I32(248) + I32(6111408)
+			v0 = v3&I32(248) + I32(6111392)
 			var p209 int32
 			{
-				t210 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
+				t210 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
 				v1 = t210
 				t211 := v1
 				v2 = I32_shl(I32(1), int32(uint32(v3)>>3))
 				if t211&v2 == 0 {
-					Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v1|v2))
+					Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v1|v2))
 					t212 := v0
 					p209 = t212
 					goto l59
@@ -28940,12 +28875,12 @@ l55:
 		}
 		Store32(m.MemoryG1[int64(uint32(v4))+28:], uint32(v0))
 		Store64(m.MemoryG1[int64(uint32(v4))+16:], uint64(I64(0)))
-		v1 = v0<<2 + I32(6111672)
+		v1 = v0<<2 + I32(6111656)
 		{
 			t215 := v7
 			v2 = I32_shl(I32(1), v0)
 			if t215&v2 == 0 {
-				Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v2|v7))
+				Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v2|v7))
 				Store32(m.MemoryG1[uint32(v1):], uint32(v4))
 				Store32(m.MemoryG1[int64(uint32(v4))+24:], uint32(v1))
 				goto l60
@@ -29002,13 +28937,13 @@ l7:
 			t222 := int32(Load32(m.MemoryG1[int64(uint32(v2))+28:]))
 			v1 = t222
 			v5 = v1 << 2
-			t223 := int32(Load32(m.MemoryG1[int64(uint32(v5))+6111672:]))
+			t223 := int32(Load32(m.MemoryG1[int64(uint32(v5))+6111656:]))
 			if t223 == v2 {
-				Store32(m.MemoryG1[uint32(v5+I32(6111672)):], uint32(v0))
+				Store32(m.MemoryG1[uint32(v5+I32(6111656)):], uint32(v0))
 				if v0 != 0 {
 					goto l64
 				}
-				Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v11&I32_rotl(I32(-2), v1)))
+				Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v11&I32_rotl(I32(-2), v1)))
 				goto l63
 			}
 			{
@@ -29055,14 +28990,14 @@ l63:
 	Store32(m.MemoryG1[int64(uint32(v5))+4:], uint32(v3|I32(1)))
 	Store32(m.MemoryG1[uint32(v3+v5):], uint32(v3))
 	if v8 != 0 {
-		v0 = v8&I32(-8) + I32(6111408)
-		t229 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+		v0 = v8&I32(-8) + I32(6111392)
+		t229 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 		v1 = t229
 		var p230 int32
 		{
 			v7 = I32_shl(I32(1), int32(uint32(v8)>>3))
 			if v7&v4 == 0 {
-				Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v4|v7))
+				Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v4|v7))
 				t231 := v0
 				p230 = t231
 				goto l67
@@ -29077,8 +29012,8 @@ l63:
 		Store32(m.MemoryG1[int64(uint32(v1))+12:], uint32(v0))
 		Store32(m.MemoryG1[int64(uint32(v1))+8:], uint32(v4))
 	}
-	Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(v5))
-	Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v3))
+	Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v5))
+	Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v3))
 l66:
 	v0 = v2 + I32(8)
 l1:
@@ -29108,13 +29043,13 @@ func (m *Module) Xfree(v0 int32) {
 			t3 := v3
 			v4 = t2
 			v3 = t3 - v4
-			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111384)):]))
+			t4 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
 			if uint32(v3) < uint32(t4) {
 				return
 			}
 			v0 = v0 + v4
 			{
-				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+				t5 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 				if t5 != v3 {
 					t6 := int32(Load32(m.MemoryG1[int64(uint32(v3))+12:]))
 					v1 = t6
@@ -29125,8 +29060,8 @@ func (m *Module) Xfree(v0 int32) {
 						if t8 != v2 {
 							goto l2
 						}
-						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
-						Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(t9&I32_rotl(I32(-2), int32(uint32(v4)>>3))))
+						t9 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
+						Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(t9&I32_rotl(I32(-2), int32(uint32(v4)>>3))))
 						goto l1
 					}
 					t10 := int32(Load32(m.MemoryG1[int64(uint32(v3))+24:]))
@@ -29177,7 +29112,7 @@ func (m *Module) Xfree(v0 int32) {
 				if v2&I32(3) != I32(3) {
 					goto l1
 				}
-				Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v0))
+				Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v0))
 				Store32(m.MemoryG1[int64(uint32(v5))+4:], uint32(v2&I32(-2)))
 				Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v0|I32(1)))
 				Store32(m.MemoryG1[uint32(v5):], uint32(v0))
@@ -29197,14 +29132,14 @@ func (m *Module) Xfree(v0 int32) {
 				t18 := int32(Load32(m.MemoryG1[int64(uint32(v3))+28:]))
 				v4 = t18
 				v2 = v4 << 2
-				t19 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111672:]))
+				t19 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111656:]))
 				if t19 == v3 {
-					Store32(m.MemoryG1[uint32(v2+I32(6111672)):], uint32(v1))
+					Store32(m.MemoryG1[uint32(v2+I32(6111656)):], uint32(v1))
 					if v1 != 0 {
 						goto l6
 					}
-					t20 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
-					Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(t20&I32_rotl(I32(-2), v4)))
+					t20 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
+					Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(t20&I32_rotl(I32(-2), v4)))
 					goto l1
 				}
 				{
@@ -29247,28 +29182,28 @@ func (m *Module) Xfree(v0 int32) {
 		}
 		{
 			if v4&I32(2) == 0 {
-				t25 := int32(Load32(m.MemoryG1[uint32(I32(6111392)):]))
+				t25 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
 				if t25 == v5 {
-					Store32(m.MemoryG1[uint32(I32(6111392)):], uint32(v3))
-					t26 := int32(Load32(m.MemoryG1[uint32(I32(6111380)):]))
+					Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v3))
+					t26 := int32(Load32(m.MemoryG1[uint32(I32(6111364)):]))
 					v0 = t26 + v0
-					Store32(m.MemoryG1[uint32(I32(6111380)):], uint32(v0))
+					Store32(m.MemoryG1[uint32(I32(6111364)):], uint32(v0))
 					Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v0|I32(1)))
-					t27 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+					t27 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 					if v3 != t27 {
 						return
 					}
-					Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(I32(0)))
-					Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(I32(0)))
+					Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(I32(0)))
 					return
 				}
-				t28 := int32(Load32(m.MemoryG1[uint32(I32(6111388)):]))
+				t28 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
 				v7 = t28
 				if v7 == v5 {
-					Store32(m.MemoryG1[uint32(I32(6111388)):], uint32(v3))
-					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111376)):]))
+					Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v3))
+					t29 := int32(Load32(m.MemoryG1[uint32(I32(6111360)):]))
 					v0 = t29 + v0
-					Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v0))
+					Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v0))
 					Store32(m.MemoryG1[int64(uint32(v3))+4:], uint32(v0|I32(1)))
 					Store32(m.MemoryG1[uint32(v0+v3):], uint32(v0))
 					return
@@ -29280,8 +29215,8 @@ func (m *Module) Xfree(v0 int32) {
 					t31 := int32(Load32(m.MemoryG1[int64(uint32(v5))+8:]))
 					v2 = t31
 					if v2 == v1 {
-						t32 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
-						Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(t32&I32_rotl(I32(-2), int32(uint32(v4)>>3))))
+						t32 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
+						Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(t32&I32_rotl(I32(-2), int32(uint32(v4)>>3))))
 						goto l8
 					}
 					Store32(m.MemoryG1[int64(uint32(v2))+12:], uint32(v1))
@@ -29345,14 +29280,14 @@ func (m *Module) Xfree(v0 int32) {
 				t40 := int32(Load32(m.MemoryG1[int64(uint32(v5))+28:]))
 				v4 = t40
 				v2 = v4 << 2
-				t41 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111672:]))
+				t41 := int32(Load32(m.MemoryG1[int64(uint32(v2))+6111656:]))
 				if t41 == v5 {
-					Store32(m.MemoryG1[uint32(v2+I32(6111672)):], uint32(v1))
+					Store32(m.MemoryG1[uint32(v2+I32(6111656)):], uint32(v1))
 					if v1 != 0 {
 						goto l13
 					}
-					t42 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
-					Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(t42&I32_rotl(I32(-2), v4)))
+					t42 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
+					Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(t42&I32_rotl(I32(-2), v4)))
 					goto l8
 				}
 				{
@@ -29390,19 +29325,19 @@ func (m *Module) Xfree(v0 int32) {
 		if v3 != v7 {
 			goto l12
 		}
-		Store32(m.MemoryG1[uint32(I32(6111376)):], uint32(v0))
+		Store32(m.MemoryG1[uint32(I32(6111360)):], uint32(v0))
 		return
 	l12:
 		if uint32(v0) <= uint32(I32(255)) {
-			v2 = v0&I32(248) + I32(6111408)
+			v2 = v0&I32(248) + I32(6111392)
 			var p46 int32
 			{
-				t47 := int32(Load32(m.MemoryG1[uint32(I32(6111368)):]))
+				t47 := int32(Load32(m.MemoryG1[uint32(I32(6111352)):]))
 				v4 = t47
 				t48 := v4
 				v0 = I32_shl(I32(1), int32(uint32(v0)>>3))
 				if t48&v0 == 0 {
-					Store32(m.MemoryG1[uint32(I32(6111368)):], uint32(v0|v4))
+					Store32(m.MemoryG1[uint32(I32(6111352)):], uint32(v0|v4))
 					t49 := v2
 					p46 = t49
 					goto l15
@@ -29426,18 +29361,18 @@ func (m *Module) Xfree(v0 int32) {
 		}
 		Store32(m.MemoryG1[int64(uint32(v3))+28:], uint32(v1))
 		Store64(m.MemoryG1[int64(uint32(v3))+16:], uint64(I64(0)))
-		v4 = v1<<2 + I32(6111672)
+		v4 = v1<<2 + I32(6111656)
 		var p52 int32
 		{
 			{
 				var p53 int32
 				{
-					t54 := int32(Load32(m.MemoryG1[uint32(I32(6111372)):]))
+					t54 := int32(Load32(m.MemoryG1[uint32(I32(6111356)):]))
 					v6 = t54
 					t55 := v6
 					v2 = I32_shl(I32(1), v1)
 					if t55&v2 == 0 {
-						Store32(m.MemoryG1[uint32(I32(6111372)):], uint32(v2|v6))
+						Store32(m.MemoryG1[uint32(I32(6111356)):], uint32(v2|v6))
 						Store32(m.MemoryG1[uint32(v4):], uint32(v3))
 						v1 = I32(24)
 						p53 = I32(8)
@@ -29493,16 +29428,16 @@ func (m *Module) Xfree(v0 int32) {
 		Store32(m.MemoryG1[uint32(v1+v3):], uint32(v4))
 		Store32(m.MemoryG1[int64(uint32(v3))+12:], uint32(v2))
 		Store32(m.MemoryG1[uint32(v0+v3):], uint32(v6))
-		t63 := int32(Load32(m.MemoryG1[uint32(I32(6111400)):]))
+		t63 := int32(Load32(m.MemoryG1[uint32(I32(6111384)):]))
 		v0 = t63 - I32(1)
 		p64 := I32(-1)
 		if v0 != 0 {
 			p64 = v0
 		}
-		Store32(m.MemoryG1[uint32(I32(6111400)):], uint32(p64))
+		Store32(m.MemoryG1[uint32(I32(6111384)):], uint32(p64))
 	}
 }
-func Fn41618(v0, v1, v2, v3 int64) int32 {
+func Fn41621(v0, v1, v2, v3 int64) int32 {
 	var v4 int32
 	var v5, v6 int64
 	v4 = I32(1)
@@ -29588,7 +29523,7 @@ func Fn41618(v0, v1, v2, v3 int64) int32 {
 l0:
 	return v4
 }
-func Fn41619(v0, v1, v2, v3 int64) int32 {
+func Fn41622(v0, v1, v2, v3 int64) int32 {
 	var v4 int32
 	var v5, v6 int64
 	v4 = I32(-1)
@@ -29674,7 +29609,7 @@ func Fn41619(v0, v1, v2, v3 int64) int32 {
 l0:
 	return v4
 }
-func Fn41620(v0, v1 int64) int32 {
+func Fn41623(v0, v1 int64) int32 {
 	var p0 int32
 	if v0 != I64(0) {
 		p0 = 1
@@ -29691,61 +29626,61 @@ func Fn41620(v0, v1 int64) int32 {
 	return p1
 }
 func (m *Module) XsetThrew(v0, v1 int32) {
-	T0 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+	T0 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 	if T0 == 0 {
-		Store32(m.MemoryG1[uint32(I32(6111868)):], uint32(v1))
-		Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(v0))
+		Store32(m.MemoryG1[uint32(I32(6111852)):], uint32(v1))
+		Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(v0))
 	}
 }
 func (m *Module) X_emscripten_tempret_set(v0 int32) {
 	m.G1 = v0
 }
-func Fn41729(v0 int32) int32 {
-	return I32(123376)
+func Fn41732(v0 int32) int32 {
+	return I32(123361)
 }
-func Fn41739(v0, v1, v2 int32) int32 {
+func Fn41742(v0, v1, v2 int32) int32 {
 	return v0
 }
-func Fn41744(v0, v1 int32) int32 {
+func Fn41747(v0, v1 int32) int32 {
 	return I32(-1)
 }
-func Fn41797(v0 int32) int32 {
-	return I32(122053)
+func Fn41800(v0 int32) int32 {
+	return I32(122038)
 }
-func Fn41809(v0 int32) int32 {
+func Fn41812(v0 int32) int32 {
 	var p0 int32
 	if v0 != I32(0) {
 		p0 = 1
 	}
 	var p1 int32
-	if v0 != I32(6068296) {
+	if v0 != I32(6068280) {
 		p1 = 1
 	}
 	t2 := p0 & p1
 	var p3 int32
-	if v0 != I32(6068320) {
+	if v0 != I32(6068304) {
 		p3 = 1
 	}
 	t4 := t2 & p3
 	var p5 int32
-	if v0 != I32(6111952) {
+	if v0 != I32(6111936) {
 		p5 = 1
 	}
 	t6 := t4 & p5
 	var p7 int32
-	if v0 != I32(6111976) {
+	if v0 != I32(6111960) {
 		p7 = 1
 	}
 	return t6 & p7
 }
-func Fn41810(v0, v1 int32) int32 {
+func Fn41813(v0, v1 int32) int32 {
 	var p0 int32
 	if uint32(v0-I32(48)) < uint32(I32(10)) {
 		p0 = 1
 	}
 	return p0
 }
-func Fn41814(v0 int32) int32 {
+func Fn41817(v0 int32) int32 {
 	p0 := v0
 	if v0 > I32(0x7ffff893) {
 		p0 = v0 - I32(2000)
@@ -29766,55 +29701,55 @@ func Fn41814(v0 int32) int32 {
 	}
 	return p3
 }
-func Fn41941(v0 int32) int32 {
+func Fn41944(v0 int32) int32 {
 	return I32(127)
 }
-func Fn41944(v0 int32) int32 {
+func Fn41947(v0 int32) int32 {
 	return I32(0x7fffffff)
 }
-func Fn42030(v0, v1 int32) int32 {
+func Fn42033(v0, v1 int32) int32 {
 	p0 := v1 & I32(95)
 	if uint32(v1-I32(123)) < uint32(I32(-26)) {
 		p0 = v1
 	}
 	return p0
 }
-func Fn42032(v0, v1 int32) int32 {
+func Fn42035(v0, v1 int32) int32 {
 	p0 := v1 | I32(32)
 	if uint32(v1-I32(91)) < uint32(I32(-26)) {
 		p0 = v1
 	}
 	return p0
 }
-func Fn42035(v0, v1, v2 int32) int32 {
+func Fn42038(v0, v1, v2 int32) int32 {
 	p0 := v2
 	if uint32(v1) < uint32(I32(128)) {
 		p0 = v1
 	}
 	return int32(int8(p0))
 }
-func Fn42039(v0, v1 int32) int32 {
+func Fn42042(v0, v1 int32) int32 {
 	p0 := v1 & I32(95)
 	if uint32((v1-I32(123))&I32(255)) < uint32(I32(230)) {
 		p0 = v1
 	}
 	return p0
 }
-func Fn42041(v0, v1 int32) int32 {
+func Fn42044(v0, v1 int32) int32 {
 	p0 := v1 | I32(32)
 	if uint32((v1-I32(91))&I32(255)) < uint32(I32(230)) {
 		p0 = v1
 	}
 	return p0
 }
-func Fn42044(v0, v1, v2 int32) int32 {
+func Fn42047(v0, v1, v2 int32) int32 {
 	p0 := v1
 	if v1 < I32(0) {
 		p0 = v2
 	}
 	return p0
 }
-func Fn42048(v0, v1, v2, v3, v4 int32) int32 {
+func Fn42051(v0, v1, v2, v3, v4 int32) int32 {
 	v0 = v3 - v2
 	p0 := v4
 	if uint32(v0) < uint32(v4) {
@@ -29822,14 +29757,14 @@ func Fn42048(v0, v1, v2, v3, v4 int32) int32 {
 	}
 	return p0
 }
-func Fn42063(v0 int32) int32 {
+func Fn42066(v0 int32) int32 {
 	return I32(4)
 }
-func Fn42120(v0 int32) int32 {
+func Fn42123(v0 int32) int32 {
 	return I32(85253)
 }
-func Fn42172(v0 int32) int32 {
-	return I32(209197)
+func Fn42175(v0 int32) int32 {
+	return I32(0x3311e)
 }
 func (m *Module) X__cxa_increment_exception_refcount(v0 int32) {
 	if v0 != 0 {
@@ -29859,16 +29794,16 @@ func (m *Module) X__cxa_decrement_exception_refcount(v0 int32) {
 		t3 := int32(Load32(m.MemoryG1[uint32(v0-I32(16)):]))
 		v1 = t3
 		if v1 != 0 {
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			_ = TBL_Fn8(m, v1, v0)
-			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111864)):]))
+			t5 := int32(Load32(m.MemoryG1[uint32(I32(6111848)):]))
 			v1 = t5
-			Store32(m.MemoryG1[uint32(I32(6111864)):], uint32(I32(0)))
+			Store32(m.MemoryG1[uint32(I32(6111848)):], uint32(I32(0)))
 			if v1 == I32(1) {
 				goto l1
 			}
 		}
-		TBL_Fn42179(m, v0)
+		TBL_Fn42182(m, v0)
 	}
 	return
 l1:
@@ -29902,7 +29837,7 @@ func (m *Module) X__cxa_get_exception_ptr(v0 int32) int32 {
 		if v1 == 0 {
 			goto l0
 		}
-		t1 := TBL_Fn42190(m, v1, I32(6084112), I32(6083204))
+		t1 := TBL_Fn42193(m, v1, I32(6084096), I32(6083188))
 		if t1 == 0 {
 			goto l0
 		}
@@ -29918,16 +29853,16 @@ l0:
 	}
 	return p4
 }
-func Fn42209(v0 int32) int32 {
+func Fn42212(v0 int32) int32 {
 	return I32(102875)
 }
-func Fn42211(v0 int32) int32 {
-	return I32(208950)
+func Fn42214(v0 int32) int32 {
+	return I32(208935)
 }
-func Fn42212(v0 int32) int32 {
-	return I32(129058)
+func Fn42215(v0 int32) int32 {
+	return I32(129043)
 }
-func Fn42218(v0 int32) int32 {
+func Fn42221(v0 int32) int32 {
 	return I32(25206)
 }
 func (m *Module) X_emscripten_stack_restore(v0 int32) {
@@ -29940,7 +29875,7 @@ func (m *Module) Xemscripten_stack_get_current() int32 {
 func (m *Module) Xhtonl(v0 int32) int32 {
 	return I32_rotr(v0, I32(24))&I32(0xff00ff) | I32_rotr(v0&I32(0xff00ff), I32(8))
 }
-func Fn42660(v0, v1 int32) int32 {
+func Fn42663(v0, v1 int32) int32 {
 	var p1 int32
 	if uint32(v0-I32(203)) < uint32(I32(2)) {
 		p1 = 1
@@ -29958,7 +29893,7 @@ func Fn42660(v0, v1 int32) int32 {
 	}
 	return I32(1)
 }
-func Fn42732(v0, v1 int32) int32 {
+func Fn42735(v0, v1 int32) int32 {
 	var v2 int32
 l0:
 	v2 = v2 + I32(1)
@@ -29968,7 +29903,7 @@ l0:
 	}
 	return v2
 }
-func Fn42838(v0, v1 int64) int32 {
+func Fn42841(v0, v1 int64) int32 {
 	var v2 int32
 l0:
 	v2 = v2 + I32(1)
@@ -29978,7 +29913,7 @@ l0:
 	}
 	return v2
 }
-func Fn42957(v0, v1, v2 int64) int64 {
+func Fn42960(v0, v1, v2 int64) int64 {
 	T0 := I64_div_s(v0, v2)
 	t2 := v0
 	p1 := I64(-1)
@@ -30000,7 +29935,7 @@ func Fn42957(v0, v1, v2 int64) int64 {
 	}
 	return p6
 }
-func Fn43490(v0 int64, v1 int32) int64 {
+func Fn43493(v0 int64, v1 int32) int64 {
 	var v2 int32
 	v2 = int32(v0)
 	if v0 > I64(0) {
@@ -30443,8 +30378,8 @@ func (m *Module) Fe0() {
 	e[0] = func(v0, v1 int32) int32 { return TBL_Fn394(m, v0, v1) }
 	e[1] = func(v0, v1 int32) int32 { return TBL_Fn395(m, v0, v1) }
 	e[2] = func(v0, v1, v2 int32)  { TBL_Fn1(m, v0, v1, v2) }
-	e[3] = func(v0 int32) int32 { return TBL_Fn42216(m, v0) }
-	e[4] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42151(m, v0, v1, v2, v3, v4) }
+	e[3] = func(v0 int32) int32 { return TBL_Fn42219(m, v0) }
+	e[4] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42154(m, v0, v1, v2, v3, v4) }
 	e[5] = func(v0, v1 int32)  { TBL_Fn403(m, v0, v1) }
 	e[6] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[7] = func(v0, v1, v2, v3 int32)  { TBL_Fn405(m, v0, v1, v2, v3) }
@@ -30479,7 +30414,7 @@ func (m *Module) Fe0() {
 	e[36] = func(v0, v1 int32)  { TBL_Fn1345(m, v0, v1) }
 	e[37] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn970(m, v0, v1, v2, v3) }
 	e[38] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn436(m, v0, v1, v2, v3) }
-	e[39] = func(v0, v1 int32) int32 { return TBL_Fn42134(m, v0, v1) }
+	e[39] = func(v0, v1 int32) int32 { return TBL_Fn42137(m, v0, v1) }
 	e[40] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn453(m, v0, v1, v2, v3, v4) }
 	e[41] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn454(m, v0, v1, v2, v3, v4, v5) }
 	e[42] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
@@ -30576,7 +30511,7 @@ func (m *Module) Fe0() {
 	e[133] = func(v0, v1 int32)  { TBL_Fn526(m, v0, v1) }
 	e[134] = func(v0, v1, v2 int32)  { TBL_Fn530(m, v0, v1, v2) }
 	e[135] = func(v0, v1, v2 int32) int32 { return TBL_Fn531(m, v0, v1, v2) }
-	e[136] = func(v0, v1, v2 int32)  { TBL_Fn42158(m, v0, v1, v2) }
+	e[136] = func(v0, v1, v2 int32)  { TBL_Fn42161(m, v0, v1, v2) }
 	e[137] = func(v0, v1, v2 int32)  { TBL_Fn534(m, v0, v1, v2) }
 	e[138] = func(v0, v1, v2 int32)  { TBL_Fn535(m, v0, v1, v2) }
 	e[139] = func(v0, v1, v2, v3 int32)  { TBL_Fn536(m, v0, v1, v2, v3) }
@@ -30651,7 +30586,7 @@ func (m *Module) Fe0() {
 	e[208] = func(v0 int32) int64 { return TBL_Fn596(m, v0) }
 	e[209] = func(v0, v1 int32) int32 { return TBL_Fn597(m, v0, v1) }
 	e[210] = func(v0 int32) int32 { return TBL_Fn399(m, v0) }
-	e[211] = func(v0, v1 int32) int32 { return TBL_Fn42142(m, v0, v1) }
+	e[211] = func(v0, v1 int32) int32 { return TBL_Fn42145(m, v0, v1) }
 	e[212] = func(v0 int32) int32 { return TBL_Fn399(m, v0) }
 	e[213] = func(v0, v1, v2 int32)  { TBL_Fn602(m, v0, v1, v2) }
 	e[214] = func(v0, v1 int32)  { TBL_Fn603(m, v0, v1) }
@@ -30887,7 +30822,7 @@ func (m *Module) Fe0() {
 	e[444] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn854(m, v0, v1, v2, v3, v4) }
 	e[445] = func(v0, v1, v2 int32) int32 { return TBL_Fn1388(m, v0, v1, v2) }
 	e[446] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn1393(m, v0, v1, v2, v3, v4) }
-	e[447] = func(v0 int32) int32 { return TBL_Fn42127(m, v0) }
+	e[447] = func(v0 int32) int32 { return TBL_Fn42130(m, v0) }
 	e[448] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn606(m, v0, v1, v2, v3) }
 	e[449] = func(v0, v1, v2 int32) int32 { return TBL_Fn1384(m, v0, v1, v2) }
 	e[450] = func(v0, v1 int32) int32 { return TBL_Fn1378(m, v0, v1) }
@@ -30908,7 +30843,7 @@ func (m *Module) Fe0() {
 	e[465] = func(v0, v1 int32) float64 { return TBL_Fn870(m, v0, v1) }
 	e[466] = func(v0, v1 int32)  { TBL_Fn861(m, v0, v1) }
 	e[467] = func(v0, v1, v2 int32)  { TBL_Fn435(m, v0, v1, v2) }
-	e[468] = func(v0 int32, v1 int64)  { TBL_Fn42168(m, v0, v1) }
+	e[468] = func(v0 int32, v1 int64)  { TBL_Fn42171(m, v0, v1) }
 	e[469] = func(v0, v1 int32) int32 { return TBL_Fn876(m, v0, v1) }
 	e[470] = func(v0, v1, v2, v3 int32)  { TBL_Fn877(m, v0, v1, v2, v3) }
 	e[471] = func(v0, v1, v2 int32)  { TBL_Fn23743(m, v0, v1, v2) }
@@ -31309,19 +31244,19 @@ func (m *Module) Fe0() {
 	e[866] = func(v0 int32) int32 { return TBL_Fn1205(m, v0) }
 	e[867] = func(v0, v1 int32) int32 { return TBL_Fn1208(m, v0, v1) }
 	e[868] = func(v0, v1 int32) int32 { return TBL_Fn1209(m, v0, v1) }
-	e[869] = func(v0 int32, v1 int64) int32 { return TBL_Fn41764(m, v0, v1) }
-	e[870] = func(v0, v1 int32)  { TBL_Fn41780(m, v0, v1) }
+	e[869] = func(v0 int32, v1 int64) int32 { return TBL_Fn41767(m, v0, v1) }
+	e[870] = func(v0, v1 int32)  { TBL_Fn41783(m, v0, v1) }
 	e[871] = func(v0, v1, v2 int32) int32 { return TBL_Fn1211(m, v0, v1, v2) }
-	e[872] = func() int32 { return TBL_Fn42015(m) }
+	e[872] = func() int32 { return TBL_Fn42018(m) }
 	e[873] = func(v0, v1, v2 int32)  { TBL_Fn1212(m, v0, v1, v2) }
 	e[874] = func(v0, v1 int32) int32 { return TBL_Fn1957(m, v0, v1) }
-	e[875] = func(v0, v1, v2 int32)  { TBL_Fn41802(m, v0, v1, v2) }
+	e[875] = func(v0, v1, v2 int32)  { TBL_Fn41805(m, v0, v1, v2) }
 	e[876] = func(v0, v1, v2 int32)  { TBL_Fn23801(m, v0, v1, v2) }
-	e[877] = func(v0, v1 int32) int32 { return TBL_Fn41757(m, v0, v1) }
+	e[877] = func(v0, v1 int32) int32 { return TBL_Fn41760(m, v0, v1) }
 	e[878] = func(v0 int32) int32 { return TBL_Fn23687(m, v0) }
 	e[879] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn23688(m, v0, v1, v2, v3, v4, v5) }
 	e[880] = func(v0, v1 int32)  { TBL_Fn4468(m, v0, v1) }
-	e[881] = func(v0 int32)  { TBL_Fn41806(m, v0) }
+	e[881] = func(v0 int32)  { TBL_Fn41809(m, v0) }
 	e[882] = func(v0, v1, v2 int32) int32 { return TBL_Fn923(m, v0, v1, v2) }
 	e[883] = func(v0, v1 int32)  { TBL_Fn4477(m, v0, v1) }
 	e[884] = func(v0, v1 int32, v2, v3 int64)  { TBL_Fn4471(m, v0, v1, v2, v3) }
@@ -31377,7 +31312,7 @@ func (m *Module) Fe0() {
 	e[934] = func(v0, v1, v2 int32)  { TBL_Fn1308(m, v0, v1, v2) }
 	e[935] = func(v0, v1 int32)  { TBL_Fn2544(m, v0, v1) }
 	e[936] = func(v0, v1, v2 int32) int32 { return TBL_Fn1797(m, v0, v1, v2) }
-	e[937] = func(v0 int32) int32 { return TBL_Fn42124(m, v0) }
+	e[937] = func(v0 int32) int32 { return TBL_Fn42127(m, v0) }
 	e[938] = func(v0, v1 int32) int32 { return TBL_Fn1310(m, v0, v1) }
 	e[939] = func(v0, v1 int32) int32 { return TBL_Fn1311(m, v0, v1) }
 	e[940] = func(v0, v1, v2 int32) int32 { return TBL_Fn822(m, v0, v1, v2) }
@@ -31427,7 +31362,7 @@ func (m *Module) Fe0() {
 	e[984] = func(v0, v1 int32)  { TBL_Fn1354(m, v0, v1) }
 	e[985] = func(v0, v1, v2, v3 int32)  { TBL_Fn1355(m, v0, v1, v2, v3) }
 	e[986] = func(v0, v1 int32)  { TBL_Fn1353(m, v0, v1) }
-	e[987] = func(v0, v1 int32)  { TBL_Fn42145(m, v0, v1) }
+	e[987] = func(v0, v1 int32)  { TBL_Fn42148(m, v0, v1) }
 	e[988] = func(v0, v1, v2 int32)  { TBL_Fn1358(m, v0, v1, v2) }
 	e[989] = func(v0, v1 int32)  { TBL_Fn1364(m, v0, v1) }
 	e[990] = func(v0, v1, v2 int32) int32 { return TBL_Fn1363(m, v0, v1, v2) }
@@ -31966,7 +31901,7 @@ func (m *Module) Fe1() {
 	e[1519] = func(v0, v1 int32, v2, v3 int64, v4 int32)  { TBL_Fn21367(m, v0, v1, v2, v3, v4) }
 	e[1520] = func(v0, v1 int32, v2, v3 int64, v4 int32)  { TBL_Fn21371(m, v0, v1, v2, v3, v4) }
 	e[1521] = func(v0, v1 int32, v2, v3 int64, v4 int32)  { TBL_Fn21372(m, v0, v1, v2, v3, v4) }
-	e[1522] = func(v0, v1 int32) int32 { return TBL_Fn42135(m, v0, v1) }
+	e[1522] = func(v0, v1 int32) int32 { return TBL_Fn42138(m, v0, v1) }
 	e[1523] = func(v0 int32) int32 { return TBL_Fn5784(m, v0) }
 	e[1524] = func(v0 int32) int32 { return TBL_Fn5785(m, v0) }
 	e[1525] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn2683(m, v0, v1, v2, v3, v4) }
@@ -31999,8 +31934,8 @@ func (m *Module) Fe1() {
 	e[1552] = func(v0, v1 int32) int32 { return TBL_Fn1886(m, v0, v1) }
 	e[1553] = func(v0, v1 int32)  { TBL_Fn1831(m, v0, v1) }
 	e[1554] = func(v0 int32)  { TBL_Fn1887(m, v0) }
-	e[1555] = func(v0, v1 int32)  { TBL_Fn42167(m, v0, v1) }
-	e[1556] = func(v0, v1 int32)  { TBL_Fn42165(m, v0, v1) }
+	e[1555] = func(v0, v1 int32)  { TBL_Fn42170(m, v0, v1) }
+	e[1556] = func(v0, v1 int32)  { TBL_Fn42168(m, v0, v1) }
 	e[1557] = func(v0, v1 int32)  { TBL_Fn23974(m, v0, v1) }
 	e[1558] = func(v0, v1 int32)  { TBL_Fn23975(m, v0, v1) }
 	e[1559] = func(v0, v1 int32)  { TBL_Fn22162(m, v0, v1) }
@@ -32026,7 +31961,7 @@ func (m *Module) Fe1() {
 	e[1579] = func(v0, v1, v2 int32)  { TBL_Fn1969(m, v0, v1, v2) }
 	e[1580] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[1581] = func(v0, v1 int32)  { TBL_Fn1970(m, v0, v1) }
-	e[1582] = func(v0, v1 int32)  { TBL_Fn42167(m, v0, v1) }
+	e[1582] = func(v0, v1 int32)  { TBL_Fn42170(m, v0, v1) }
 	e[1583] = func(v0, v1, v2 int32)  { TBL_Fn23977(m, v0, v1, v2) }
 	e[1584] = func(v0, v1, v2 int32) int64 { return TBL_Fn10893(m, v0, v1, v2) }
 	e[1585] = func(v0 int32) int32 { return TBL_Fn12532(m, v0) }
@@ -32061,7 +31996,7 @@ func (m *Module) Fe1() {
 	e[1614] = func(v0, v1 int32) int32 { return TBL_Fn1975(m, v0, v1) }
 	e[1615] = func(v0, v1 int32)  { TBL_Fn697(m, v0, v1) }
 	e[1616] = func(v0, v1 int32)  { TBL_Fn697(m, v0, v1) }
-	e[1617] = func(v0, v1, v2 int32) int64 { return TBL_Fn42164(m, v0, v1, v2) }
+	e[1617] = func(v0, v1, v2 int32) int64 { return TBL_Fn42167(m, v0, v1, v2) }
 	e[1618] = func(v0, v1, v2 int32) int32 { return TBL_Fn1797(m, v0, v1, v2) }
 	e[1619] = func(v0, v1, v2 int32)  { TBL_Fn1982(m, v0, v1, v2) }
 	e[1620] = func(v0 int32) int32 { return TBL_Fn1983(m, v0) }
@@ -32069,7 +32004,7 @@ func (m *Module) Fe1() {
 	e[1622] = func(v0, v1, v2 int32) int32 { return TBL_Fn1985(m, v0, v1, v2) }
 	e[1623] = func(v0, v1 int32) int32 { return TBL_Fn1987(m, v0, v1) }
 	e[1624] = func(v0, v1 int32) int32 { return TBL_Fn1987(m, v0, v1) }
-	e[1625] = func(v0, v1, v2 int32) int32 { return TBL_Fn42159(m, v0, v1, v2) }
+	e[1625] = func(v0, v1, v2 int32) int32 { return TBL_Fn42162(m, v0, v1, v2) }
 	e[1626] = func(v0 int32) int32 { return TBL_Fn1989(m, v0) }
 	e[1627] = func(v0 int32) int32 { return TBL_Fn1988(m, v0) }
 	e[1628] = func(v0, v1 int32) int32 { return TBL_Fn1987(m, v0, v1) }
@@ -32108,7 +32043,7 @@ func (m *Module) Fe1() {
 	e[1661] = func(v0 int32)  { TBL_Fn2020(m, v0) }
 	e[1662] = func(v0, v1 int32) int32 { return TBL_Fn2021(m, v0, v1) }
 	e[1663] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn2024(m, v0, v1, v2, v3, v4) }
-	e[1664] = func(v0, v1, v2 int32)  { TBL_Fn42136(m, v0, v1, v2) }
+	e[1664] = func(v0, v1, v2 int32)  { TBL_Fn42139(m, v0, v1, v2) }
 	e[1665] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[1666] = func(v0, v1 int32)  { TBL_Fn2026(m, v0, v1) }
 	e[1667] = func(v0 int32) int32 { return TBL_Fn1986(m, v0) }
@@ -32141,14 +32076,14 @@ func (m *Module) Fe1() {
 	e[1694] = func(v0, v1 int32)  { TBL_Fn2241(m, v0, v1) }
 	e[1695] = func(v0 int32) int32 { return TBL_Fn1968(m, v0) }
 	e[1696] = func(v0 int32) int32 { return TBL_Fn4482(m, v0) }
-	e[1697] = func(v0 int32, v1 int64)  { TBL_Fn42166(m, v0, v1) }
-	e[1698] = func(v0 int32, v1 float64)  { TBL_Fn42169(m, v0, v1) }
+	e[1697] = func(v0 int32, v1 int64)  { TBL_Fn42169(m, v0, v1) }
+	e[1698] = func(v0 int32, v1 float64)  { TBL_Fn42172(m, v0, v1) }
 	e[1699] = func(v0 int32) int32 { return TBL_Fn4483(m, v0) }
 	e[1700] = func(v0, v1, v2 int32)  { TBL_Fn2054(m, v0, v1, v2) }
 	e[1701] = func(v0, v1, v2 int32) int32 { return TBL_Fn5737(m, v0, v1, v2) }
 	e[1702] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn5277(m, v0, v1, v2, v3) }
-	e[1703] = func(v0, v1 int32) int32 { return TBL_Fn41761(m, v0, v1) }
-	e[1704] = func(v0 int32, v1 int64) int32 { return TBL_Fn41766(m, v0, v1) }
+	e[1703] = func(v0, v1 int32) int32 { return TBL_Fn41764(m, v0, v1) }
+	e[1704] = func(v0 int32, v1 int64) int32 { return TBL_Fn41769(m, v0, v1) }
 	e[1705] = func(v0, v1 int32, v2, v3 int64)  { TBL_Fn2071(m, v0, v1, v2, v3) }
 	e[1706] = func(v0, v1 int32) int32 { return TBL_Fn2074(m, v0, v1) }
 	e[1707] = func(v0, v1, v2 int32)  { TBL_Fn2078(m, v0, v1, v2) }
@@ -32230,7 +32165,7 @@ func (m *Module) Fe1() {
 	e[1783] = func(v0, v1 int32) int32 { return TBL_Fn739(m, v0, v1) }
 	e[1784] = func(v0, v1 int32, v2 int64)  { TBL_Fn2202(m, v0, v1, v2) }
 	e[1785] = func(v0, v1, v2 int32) int32 { return TBL_Fn2213(m, v0, v1, v2) }
-	e[1786] = func(v0, v1 int32)  { TBL_Fn42148(m, v0, v1) }
+	e[1786] = func(v0, v1 int32)  { TBL_Fn42151(m, v0, v1) }
 	e[1787] = func(v0, v1, v2 int32)  { TBL_Fn2159(m, v0, v1, v2) }
 	e[1788] = func(v0, v1, v2 int32, v3 int64, v4 int32)  { TBL_Fn2160(m, v0, v1, v2, v3, v4) }
 	e[1789] = func(v0, v1 int32)  { TBL_Fn2161(m, v0, v1) }
@@ -32239,7 +32174,7 @@ func (m *Module) Fe1() {
 	e[1792] = func(v0 int32) int32 { return TBL_Fn2166(m, v0) }
 	e[1793] = func(v0, v1, v2, v3 int32)  { TBL_Fn2167(m, v0, v1, v2, v3) }
 	e[1794] = func(v0, v1 int32) int32 { return TBL_Fn692(m, v0, v1) }
-	e[1795] = func(v0, v1, v2 int32)  { TBL_Fn42137(m, v0, v1, v2) }
+	e[1795] = func(v0, v1, v2 int32)  { TBL_Fn42140(m, v0, v1, v2) }
 	e[1796] = func(v0, v1 int32) int32 { return TBL_Fn2104(m, v0, v1) }
 	e[1797] = func(v0, v1, v2 int32, v3 int64, v4, v5, v6 int32, v7 int64, v8 int32)  { TBL_Fn2175(m, v0, v1, v2, v3, v4, v5, v6, v7, v8) }
 	e[1798] = func(v0 int32, v1 int64)  { TBL_Fn2108(m, v0, v1) }
@@ -32343,7 +32278,7 @@ func (m *Module) Fe1() {
 	e[1896] = func(v0, v1, v2 int32)  { TBL_Fn21420(m, v0, v1, v2) }
 	e[1897] = func(v0, v1, v2 int32)  { TBL_Fn21421(m, v0, v1, v2) }
 	e[1898] = func(v0, v1, v2 int32)  { TBL_Fn21422(m, v0, v1, v2) }
-	e[1899] = func(v0 int32) int32 { return TBL_Fn42129(m, v0) }
+	e[1899] = func(v0 int32) int32 { return TBL_Fn42132(m, v0) }
 	e[1900] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[1901] = func(v0, v1, v2 int32)  { TBL_Fn2317(m, v0, v1, v2) }
 	e[1902] = func(v0, v1 int32)  { TBL_Fn2318(m, v0, v1) }
@@ -32403,7 +32338,7 @@ func (m *Module) Fe1() {
 	e[1956] = func(v0, v1 int32) int32 { return TBL_Fn24058(m, v0, v1) }
 	e[1957] = func(v0, v1 int32) int32 { return TBL_Fn24059(m, v0, v1) }
 	e[1958] = func(v0, v1 int32) int32 { return TBL_Fn21446(m, v0, v1) }
-	e[1959] = func(v0 int32) int32 { return TBL_Fn42213(m, v0) }
+	e[1959] = func(v0 int32) int32 { return TBL_Fn42216(m, v0) }
 	e[1960] = func(v0, v1, v2 int32)  { TBL_Fn2375(m, v0, v1, v2) }
 	e[1961] = func(v0, v1 int32, v2 int64)  { TBL_Fn2376(m, v0, v1, v2) }
 	e[1962] = func(v0, v1 int32) int32 { return TBL_Fn2377(m, v0, v1) }
@@ -32492,7 +32427,7 @@ func (m *Module) Fe2() {
 	e[2041] = func(v0, v1 int32, v2 int64)  { TBL_Fn2714(m, v0, v1, v2) }
 	e[2042] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn24247(m, v0, v1, v2, v3, v4) }
 	e[2043] = Fn23944
-	e[2044] = func(v0, v1 int32) int32 { return TBL_Fn41508(m, v0, v1) }
+	e[2044] = func(v0, v1 int32) int32 { return TBL_Fn41511(m, v0, v1) }
 	e[2045] = func(v0 int32) int32 { return TBL_Fn399(m, v0) }
 	e[2046] = func(v0, v1 int32)  { TBL_Fn2726(m, v0, v1) }
 	e[2047] = func(v0, v1 int32)  { TBL_Fn2759(m, v0, v1) }
@@ -32501,9 +32436,9 @@ func (m *Module) Fe2() {
 	e[2050] = func(v0, v1 int32) int32 { return TBL_Fn2763(m, v0, v1) }
 	e[2051] = func(v0, v1, v2 int32) int32 { return TBL_Fn2764(m, v0, v1, v2) }
 	e[2052] = func(v0, v1, v2 int32)  { TBL_Fn2765(m, v0, v1, v2) }
-	e[2053] = func(v0, v1 int32) int32 { return TBL_Fn42139(m, v0, v1) }
+	e[2053] = func(v0, v1 int32) int32 { return TBL_Fn42142(m, v0, v1) }
 	e[2054] = func(v0, v1, v2 int32)  { TBL_Fn2767(m, v0, v1, v2) }
-	e[2055] = func(v0, v1, v2 int32) int32 { return TBL_Fn42141(m, v0, v1, v2) }
+	e[2055] = func(v0, v1, v2 int32) int32 { return TBL_Fn42144(m, v0, v1, v2) }
 	e[2056] = func(v0, v1, v2 int32)  { TBL_Fn3820(m, v0, v1, v2) }
 	e[2057] = func(v0, v1, v2 int32)  { TBL_Fn3822(m, v0, v1, v2) }
 	e[2058] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
@@ -32549,7 +32484,7 @@ func (m *Module) Fe2() {
 	e[2098] = func(v0 int32) int64 { return TBL_Fn2871(m, v0) }
 	e[2099] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[2100] = func(v0 int64) int32 { return TBL_Fn2673(m, v0) }
-	e[2101] = func(v0, v1, v2 int32) int32 { return TBL_Fn42143(m, v0, v1, v2) }
+	e[2101] = func(v0, v1, v2 int32) int32 { return TBL_Fn42146(m, v0, v1, v2) }
 	e[2102] = func(v0 int32) int32 { return TBL_Fn2854(m, v0) }
 	e[2103] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn24271(m, v0, v1, v2, v3, v4) }
 	e[2104] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn2873(m, v0, v1, v2, v3) }
@@ -32622,19 +32557,19 @@ func (m *Module) Fe2() {
 	e[2171] = func(v0, v1 int32)  { TBL_Fn3889(m, v0, v1) }
 	e[2172] = func(v0, v1 int32)  { TBL_Fn22162(m, v0, v1) }
 	e[2173] = func(v0, v1 int32)  { TBL_Fn24293(m, v0, v1) }
-	e[2174] = func(v0, v1, v2 int32) int32 { return TBL_Fn41536(m, v0, v1, v2) }
+	e[2174] = func(v0, v1, v2 int32) int32 { return TBL_Fn41539(m, v0, v1, v2) }
 	e[2175] = func(v0, v1, v2 int32) int32 { return TBL_Fn779(m, v0, v1, v2) }
-	e[2176] = func(v0 int32) int32 { return TBL_Fn41566(m, v0) }
+	e[2176] = func(v0 int32) int32 { return TBL_Fn41569(m, v0) }
 	e[2177] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn2973(m, v0, v1, v2, v3, v4) }
 	e[2178] = func(v0, v1, v2 int32)  { TBL_Fn2974(m, v0, v1, v2) }
-	e[2179] = func(v0, v1, v2 int32) int32 { return TBL_Fn41491(m, v0, v1, v2) }
+	e[2179] = func(v0, v1, v2 int32) int32 { return TBL_Fn41494(m, v0, v1, v2) }
 	e[2180] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn2975(m, v0, v1, v2, v3) }
 	e[2181] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[2182] = func(v0 int32) int32 { return TBL_Fn399(m, v0) }
 	e[2183] = func(v0, v1 int32)  { TBL_Fn2809(m, v0, v1) }
 	e[2184] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[2185] = func(v0, v1, v2 int32)  { TBL_Fn2976(m, v0, v1, v2) }
-	e[2186] = func(v0 int32) int32 { return TBL_Fn41474(m, v0) }
+	e[2186] = func(v0 int32) int32 { return TBL_Fn41477(m, v0) }
 	e[2187] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn2977(m, v0, v1, v2, v3, v4) }
 	e[2188] = func(v0, v1, v2 int32) int32 { return TBL_Fn2591(m, v0, v1, v2) }
 	e[2189] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn2973(m, v0, v1, v2, v3, v4) }
@@ -32649,7 +32584,7 @@ func (m *Module) Fe2() {
 	e[2198] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn24302(m, v0, v1, v2, v3, v4, v5) }
 	e[2199] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn2996(m, v0, v1, v2, v3) }
 	e[2200] = func(v0 int32) int32 { return TBL_Fn2997(m, v0) }
-	e[2201] = func(v0 int32) int32 { return TBL_Fn41547(m, v0) }
+	e[2201] = func(v0 int32) int32 { return TBL_Fn41550(m, v0) }
 	e[2202] = func(v0 int32)  { TBL_Fn3002(m, v0) }
 	e[2203] = func(v0 int32) int32 { return TBL_Fn386(m, v0) }
 	e[2204] = func(v0, v1, v2, v3 int32)  { TBL_Fn3003(m, v0, v1, v2, v3) }
@@ -32967,7 +32902,7 @@ func (m *Module) Fe2() {
 	e[2516] = func(v0, v1 int32)  { TBL_Fn24399(m, v0, v1) }
 	e[2517] = func(v0, v1 int32)  { TBL_Fn24396(m, v0, v1) }
 	e[2518] = func(v0, v1, v2 int32)  { TBL_Fn14243(m, v0, v1, v2) }
-	e[2519] = func() int32 { return TBL_Fn41551(m) }
+	e[2519] = func() int32 { return TBL_Fn41554(m) }
 	e[2520] = func(v0, v1 int32) int32 { return TBL_Fn1883(m, v0, v1) }
 	e[2521] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn3349(m, v0, v1, v2, v3) }
 	e[2522] = func(v0, v1 int32) int32 { return TBL_Fn2588(m, v0, v1) }
@@ -33141,15 +33076,15 @@ func (m *Module) Fe2() {
 	e[2690] = func(v0 int32) int32 { return TBL_Fn971(m, v0) }
 	e[2691] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[2692] = func(v0 int32) int32 { return TBL_Fn5194(m, v0) }
-	e[2693] = func(v0, v1 int32) int32 { return TBL_Fn42131(m, v0, v1) }
+	e[2693] = func(v0, v1 int32) int32 { return TBL_Fn42134(m, v0, v1) }
 	e[2694] = func(v0, v1, v2 int32)  { TBL_Fn3937(m, v0, v1, v2) }
 	e[2695] = func(v0, v1 int32)  { TBL_Fn3940(m, v0, v1) }
 	e[2696] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn3942(m, v0, v1, v2, v3, v4, v5, v6) }
 	e[2697] = func(v0, v1 int32)  { TBL_Fn3943(m, v0, v1) }
 	e[2698] = func(v0 int32) int32 { return TBL_Fn2868(m, v0) }
 	e[2699] = func(v0, v1 int32) int32 { return TBL_Fn3944(m, v0, v1) }
-	e[2700] = func(v0, v1 int32) int32 { return TBL_Fn41761(m, v0, v1) }
-	e[2701] = func(v0, v1 int32) int32 { return TBL_Fn41763(m, v0, v1) }
+	e[2700] = func(v0, v1 int32) int32 { return TBL_Fn41764(m, v0, v1) }
+	e[2701] = func(v0, v1 int32) int32 { return TBL_Fn41766(m, v0, v1) }
 	e[2702] = func(v0, v1 int32)  { TBL_Fn24399(m, v0, v1) }
 	e[2703] = func(v0, v1 int32)  { TBL_Fn3916(m, v0, v1) }
 	e[2704] = func(v0 int32)  { TBL_Fn19641(m, v0) }
@@ -35702,7 +35637,7 @@ func (m *Module) Fe5() {
 	e[5239] = func(v0, v1 int32) int32 { return TBL_Fn2307(m, v0, v1) }
 	e[5240] = func(v0, v1 int32)  { TBL_Fn24266(m, v0, v1) }
 	e[5241] = func(v0, v1 int32) int32 { return TBL_Fn2164(m, v0, v1) }
-	e[5242] = func(v0, v1 int32) int32 { return TBL_Fn41759(m, v0, v1) }
+	e[5242] = func(v0, v1 int32) int32 { return TBL_Fn41762(m, v0, v1) }
 	e[5243] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn22201(m, v0, v1, v2, v3, v4) }
 	e[5244] = func(v0 int32) int32 { return TBL_Fn7126(m, v0) }
 	e[5245] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn6984(m, v0, v1, v2, v3, v4) }
@@ -41814,7 +41749,7 @@ func (m *Module) Fe11() {
 	e[11327] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[11328] = func(v0, v1, v2 int32) int32 { return TBL_Fn13028(m, v0, v1, v2) }
 	e[11329] = func(v0, v1 int32)  { TBL_Fn13029(m, v0, v1) }
-	e[11330] = func(v0, v1 int32) int32 { return TBL_Fn41456(m, v0, v1) }
+	e[11330] = func(v0, v1 int32) int32 { return TBL_Fn41459(m, v0, v1) }
 	e[11331] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn10410(m, v0, v1, v2, v3) }
 	e[11332] = func(v0, v1 int32) int32 { return TBL_Fn13030(m, v0, v1) }
 	e[11333] = func(v0 int32)  { TBL_Fn13031(m, v0) }
@@ -41906,7 +41841,7 @@ func (m *Module) Fe11() {
 	e[11419] = func(v0, v1, v2 int32) int32 { return TBL_Fn13000(m, v0, v1, v2) }
 	e[11420] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[11421] = func(v0, v1, v2, v3 int32)  { TBL_Fn12954(m, v0, v1, v2, v3) }
-	e[11422] = func(v0, v1 int32) int32 { return TBL_Fn41456(m, v0, v1) }
+	e[11422] = func(v0, v1 int32) int32 { return TBL_Fn41459(m, v0, v1) }
 	e[11423] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn10410(m, v0, v1, v2, v3) }
 	e[11424] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn10410(m, v0, v1, v2, v3) }
 	e[11425] = func(v0, v1 int32)  { TBL_Fn13017(m, v0, v1) }
@@ -41948,7 +41883,7 @@ func (m *Module) Fe11() {
 	e[11461] = func(v0, v1, v2 int32) int32 { return TBL_Fn13084(m, v0, v1, v2) }
 	e[11462] = func(v0 int32) int32 { return TBL_Fn3842(m, v0) }
 	e[11463] = func(v0 int32) int32 { return TBL_Fn13075(m, v0) }
-	e[11464] = func(v0 int32)  { TBL_Fn41728(m, v0) }
+	e[11464] = func(v0 int32)  { TBL_Fn41731(m, v0) }
 	e[11465] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn13085(m, v0, v1, v2, v3, v4, v5) }
 	e[11466] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn12962(m, v0, v1, v2, v3, v4) }
 	e[11467] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn29237(m, v0, v1, v2, v3, v4) }
@@ -44311,7 +44246,7 @@ func (m *Module) Fe13() {
 	e[13816] = func(v0, v1, v2 int32) int32 { return TBL_Fn15591(m, v0, v1, v2) }
 	e[13817] = func(v0, v1, v2, v3 int32)  { TBL_Fn26935(m, v0, v1, v2, v3) }
 	e[13818] = func(v0 int32) int64 { return TBL_Fn5815(m, v0) }
-	e[13819] = func(v0 int32) int32 { return TBL_Fn41732(m, v0) }
+	e[13819] = func(v0 int32) int32 { return TBL_Fn41735(m, v0) }
 	e[13820] = func(v0, v1 int32) int32 { return TBL_Fn15594(m, v0, v1) }
 	e[13821] = func(v0, v1, v2 int32) int32 { return TBL_Fn9613(m, v0, v1, v2) }
 	e[13822] = func(v0 int32) int32 { return TBL_Fn15596(m, v0) }
@@ -44647,7 +44582,7 @@ func (m *Module) Fe14() {
 	e[14148] = func(v0 int32)  { TBL_Fn16297(m, v0) }
 	e[14149] = func(v0 int32) int32 { return TBL_Fn386(m, v0) }
 	e[14150] = func(v0 int32) int32 { return TBL_Fn2715(m, v0) }
-	e[14151] = func(v0, v1 int32) int32 { return TBL_Fn41530(m, v0, v1) }
+	e[14151] = func(v0, v1 int32) int32 { return TBL_Fn41533(m, v0, v1) }
 	e[14152] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[14153] = func(v0, v1 int32)  { TBL_Fn16305(m, v0, v1) }
 	e[14154] = func(v0 int32) int64 { return TBL_Fn2712(m, v0) }
@@ -44824,7 +44759,7 @@ func (m *Module) Fe14() {
 	e[14325] = func(v0, v1, v2 int32)  { TBL_Fn16521(m, v0, v1, v2) }
 	e[14326] = func(v0 int32) int32 { return TBL_Fn16522(m, v0) }
 	e[14327] = func(v0, v1, v2 int32)  { TBL_Fn1158(m, v0, v1, v2) }
-	e[14328] = func(v0, v1, v2 int32) int64 { return TBL_Fn42163(m, v0, v1, v2) }
+	e[14328] = func(v0, v1, v2 int32) int64 { return TBL_Fn42166(m, v0, v1, v2) }
 	e[14329] = func(v0 int32) int32 { return TBL_Fn11698(m, v0) }
 	e[14330] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
 	e[14331] = func(v0 int32) int32 { return TBL_Fn399(m, v0) }
@@ -44868,7 +44803,7 @@ func (m *Module) Fe14() {
 	e[14369] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn16571(m, v0, v1, v2, v3, v4) }
 	e[14370] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn16572(m, v0, v1, v2, v3, v4) }
 	e[14371] = func(v0, v1 int32) int32 { return TBL_Fn2164(m, v0, v1) }
-	e[14372] = func()  { TBL_Fn41786(m) }
+	e[14372] = func()  { TBL_Fn41789(m) }
 	e[14373] = func(v0, v1 int32)  { TBL_Fn16554(m, v0, v1) }
 	e[14374] = func(v0, v1 int32) int32 { return TBL_Fn2228(m, v0, v1) }
 	e[14375] = func(v0, v1 int32)  { TBL_Fn19269(m, v0, v1) }
@@ -45246,7 +45181,7 @@ func (m *Module) Fe14() {
 	e[14747] = func(v0, v1 int32)  { TBL_Fn16844(m, v0, v1) }
 	e[14748] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn16851(m, v0, v1, v2, v3) }
 	e[14749] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn16853(m, v0, v1, v2, v3) }
-	e[14750] = func(v0, v1 int32) int32 { return TBL_Fn42133(m, v0, v1) }
+	e[14750] = func(v0, v1 int32) int32 { return TBL_Fn42136(m, v0, v1) }
 	e[14751] = func(v0, v1 int32) int32 { return TBL_Fn16865(m, v0, v1) }
 	e[14752] = func(v0, v1, v2 int32) int32 { return TBL_Fn16803(m, v0, v1, v2) }
 	e[14753] = func(v0, v1 int32) int32 { return TBL_Fn16869(m, v0, v1) }
@@ -47429,7 +47364,7 @@ func (m *Module) Fe16() {
 	e[16922] = func(v0 int32)  { TBL_Fn19652(m, v0) }
 	e[16923] = func(v0 int32)  { TBL_Fn19603(m, v0) }
 	e[16924] = Fn653
-	e[16925] = func(v0, v1 int32) int32 { return TBL_Fn41761(m, v0, v1) }
+	e[16925] = func(v0, v1 int32) int32 { return TBL_Fn41764(m, v0, v1) }
 	e[16926] = func(v0, v1 int32)  { TBL_Fn19475(m, v0, v1) }
 	e[16927] = func(v0, v1 int32)  { TBL_Fn5186(m, v0, v1) }
 	e[16928] = func(v0, v1 int32) int32 { return TBL_Fn19478(m, v0, v1) }
@@ -47560,7 +47495,7 @@ func (m *Module) Fe17() {
 	e[17049] = func(v0, v1 int32)  { TBL_Fn22162(m, v0, v1) }
 	e[17050] = func(v0, v1 int32)  { TBL_Fn3916(m, v0, v1) }
 	e[17051] = func(v0, v1 int32) int32 { return TBL_Fn19650(m, v0, v1) }
-	e[17052] = func(v0, v1 int32) int32 { return TBL_Fn41767(m, v0, v1) }
+	e[17052] = func(v0, v1 int32) int32 { return TBL_Fn41770(m, v0, v1) }
 	e[17053] = func(v0, v1 int32) int32 { return TBL_Fn19672(m, v0, v1) }
 	e[17054] = func(v0 int32) int32 { return TBL_Fn19673(m, v0) }
 	e[17055] = func(v0, v1, v2 int32) int32 { return TBL_Fn19958(m, v0, v1, v2) }
@@ -48781,7 +48716,7 @@ func (m *Module) Fe18() {
 	e[18266] = func(v0, v1 int32)  { TBL_Fn22130(m, v0, v1) }
 	e[18267] = func(v0, v1 int32)  { TBL_Fn22131(m, v0, v1) }
 	e[18268] = func(v0, v1, v2 int32)  { TBL_Fn22133(m, v0, v1, v2) }
-	e[18269] = func(v0, v1 int32)  { TBL_Fn41781(m, v0, v1) }
+	e[18269] = func(v0, v1 int32)  { TBL_Fn41784(m, v0, v1) }
 	e[18270] = func(v0, v1, v2 int32)  { TBL_Fn25046(m, v0, v1, v2) }
 	e[18271] = func(v0, v1 int32)  { TBL_Fn25050(m, v0, v1) }
 	e[18272] = func(v0, v1 int32)  { TBL_Fn3916(m, v0, v1) }
@@ -50586,7 +50521,7 @@ func (m *Module) Fe20() {
 	e[20063] = func(v0, v1, v2 int32) int32 { return TBL_Fn3936(m, v0, v1, v2) }
 	e[20064] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn28924(m, v0, v1, v2, v3, v4) }
 	e[20065] = func(v0, v1, v2, v3 int32)  { TBL_Fn28925(m, v0, v1, v2, v3) }
-	e[20066] = func(v0 int32) int32 { return TBL_Fn42126(m, v0) }
+	e[20066] = func(v0 int32) int32 { return TBL_Fn42129(m, v0) }
 	e[20067] = func(v0, v1 int32) int32 { return TBL_Fn28926(m, v0, v1) }
 	e[20068] = func(v0, v1 int32)  { TBL_Fn28928(m, v0, v1) }
 	e[20069] = func(v0, v1 int32)  { TBL_Fn28929(m, v0, v1) }
@@ -50599,11 +50534,11 @@ func (m *Module) Fe20() {
 	e[20076] = func(v0, v1 int32)  { TBL_Fn13489(m, v0, v1) }
 	e[20077] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn28940(m, v0, v1, v2, v3) }
 	e[20078] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn284(m, v0, v1, v2, v3) }
-	e[20079] = func(v0, v1, v2 int32) int32 { return TBL_Fn42222(m, v0, v1, v2) }
+	e[20079] = func(v0, v1, v2 int32) int32 { return TBL_Fn42225(m, v0, v1, v2) }
 	e[20080] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn28942(m, v0, v1, v2, v3) }
 	e[20081] = func(v0, v1 int32) int32 { return TBL_Fn28944(m, v0, v1) }
-	e[20082] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41515(m, v0, v1, v2, v3) }
-	e[20083] = func(v0, v1, v2 int32) int32 { return TBL_Fn42219(m, v0, v1, v2) }
+	e[20082] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41518(m, v0, v1, v2, v3) }
+	e[20083] = func(v0, v1, v2 int32) int32 { return TBL_Fn42222(m, v0, v1, v2) }
 	e[20084] = func(v0, v1, v2 int32)  { TBL_Fn4563(m, v0, v1, v2) }
 	e[20085] = func(v0, v1 int32) int32 { return TBL_Fn28983(m, v0, v1) }
 	e[20086] = func(v0, v1 int32) int32 { return TBL_Fn28987(m, v0, v1) }
@@ -51699,7 +51634,7 @@ func (m *Module) Fe21() {
 	e[21172] = func(v0 int32) int32 { return TBL_Fn383(m, v0) }
 	e[21173] = Fn384
 	e[21174] = Fn648
-	e[21175] = Fn41462
+	e[21175] = Fn41465
 	e[21176] = func(v0, v1, v2 int32)  { TBL_Fn654(m, v0, v1, v2) }
 	e[21177] = Fn655
 	e[21178] = Fn20310
@@ -55535,7 +55470,7 @@ func (m *Module) Fe24() {
 	e[24996] = func() int32 { return TBL_Fn19980(m) }
 	e[24997] = func(v0 int32)  { TBL_Fn19981(m, v0) }
 	e[24998] = func(v0, v1 int32)  { TBL_Fn19982(m, v0, v1) }
-	e[24999] = func(v0, v1, v2 int32) int32 { return TBL_Fn41444(m, v0, v1, v2) }
+	e[24999] = func(v0, v1, v2 int32) int32 { return TBL_Fn41447(m, v0, v1, v2) }
 }
 
 func (m *Module) Fe25() {
@@ -56322,20 +56257,20 @@ func (m *Module) Fe25() {
 	e[25779] = func(v0 int32)  { TBL_Fn21286(m, v0) }
 	e[25780] = func(v0 int32) int32 { return TBL_Fn21287(m, v0) }
 	e[25781] = func(v0 int32)  { TBL_Fn21288(m, v0) }
-	e[25782] = func(v0 int32) int32 { return TBL_Fn41769(m, v0) }
-	e[25783] = func(v0 int32)  { TBL_Fn41772(m, v0) }
-	e[25784] = func(v0 int32) int32 { return TBL_Fn41770(m, v0) }
-	e[25785] = func(v0 int32)  { TBL_Fn41773(m, v0) }
-	e[25786] = func(v0 int32) int32 { return TBL_Fn41771(m, v0) }
-	e[25787] = func(v0 int32)  { TBL_Fn41774(m, v0) }
-	e[25788] = func(v0 int32) int32 { return TBL_Fn41746(m, v0) }
-	e[25789] = func(v0 int32)  { TBL_Fn41748(m, v0) }
-	e[25790] = func(v0 int32) int32 { return TBL_Fn41747(m, v0) }
-	e[25791] = func(v0 int32)  { TBL_Fn41749(m, v0) }
-	e[25792] = func(v0 int32) int32 { return TBL_Fn41753(m, v0) }
-	e[25793] = func(v0 int32)  { TBL_Fn41755(m, v0) }
-	e[25794] = func(v0 int32) int32 { return TBL_Fn41754(m, v0) }
-	e[25795] = func(v0 int32)  { TBL_Fn41756(m, v0) }
+	e[25782] = func(v0 int32) int32 { return TBL_Fn41772(m, v0) }
+	e[25783] = func(v0 int32)  { TBL_Fn41775(m, v0) }
+	e[25784] = func(v0 int32) int32 { return TBL_Fn41773(m, v0) }
+	e[25785] = func(v0 int32)  { TBL_Fn41776(m, v0) }
+	e[25786] = func(v0 int32) int32 { return TBL_Fn41774(m, v0) }
+	e[25787] = func(v0 int32)  { TBL_Fn41777(m, v0) }
+	e[25788] = func(v0 int32) int32 { return TBL_Fn41749(m, v0) }
+	e[25789] = func(v0 int32)  { TBL_Fn41751(m, v0) }
+	e[25790] = func(v0 int32) int32 { return TBL_Fn41750(m, v0) }
+	e[25791] = func(v0 int32)  { TBL_Fn41752(m, v0) }
+	e[25792] = func(v0 int32) int32 { return TBL_Fn41756(m, v0) }
+	e[25793] = func(v0 int32)  { TBL_Fn41758(m, v0) }
+	e[25794] = func(v0 int32) int32 { return TBL_Fn41757(m, v0) }
+	e[25795] = func(v0 int32)  { TBL_Fn41759(m, v0) }
 	e[25796] = func(v0 int32) int32 { return TBL_Fn1401(m, v0) }
 	e[25797] = Fn384
 	e[25798] = func(v0, v1 int32)  { TBL_Fn21316(m, v0, v1) }
@@ -57090,7 +57025,7 @@ func (m *Module) Fe26() {
 	e[26543] = Fn23624
 	e[26544] = Fn21061
 	e[26545] = func(v0 int32)  { TBL_Fn23628(m, v0) }
-	e[26546] = Fn42209
+	e[26546] = Fn42212
 	e[26547] = func(v0 int32)  { TBL_Fn23628(m, v0) }
 	e[26548] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn23657(m, v0, v1, v2, v3, v4, v5, v6, v7) }
 	e[26549] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn23659(m, v0, v1, v2, v3, v4, v5, v6, v7) }
@@ -59099,20 +59034,20 @@ func (m *Module) Fe28() {
 	e[28544] = Fn1085
 	e[28545] = m.Xduckdb_free
 	e[28546] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn29108(m, v0, v1, v2, v3, v4) }
-	e[28547] = func(v0 int32) int32 { return TBL_Fn41736(m, v0) }
+	e[28547] = func(v0 int32) int32 { return TBL_Fn41739(m, v0) }
 	e[28548] = func(v0 int32)  { TBL_Fn29110(m, v0) }
 	e[28549] = Fn655
-	e[28550] = Fn41739
-	e[28551] = func(v0, v1 int32, v2 int64, v3, v4 int32)  { TBL_Fn41740(m, v0, v1, v2, v3, v4) }
-	e[28552] = func(v0, v1, v2, v3 int32)  { TBL_Fn41741(m, v0, v1, v2, v3) }
+	e[28550] = Fn41742
+	e[28551] = func(v0, v1 int32, v2 int64, v3, v4 int32)  { TBL_Fn41743(m, v0, v1, v2, v3, v4) }
+	e[28552] = func(v0, v1, v2, v3 int32)  { TBL_Fn41744(m, v0, v1, v2, v3) }
 	e[28553] = Fn648
 	e[28554] = Fn648
-	e[28555] = func(v0, v1, v2 int32) int32 { return TBL_Fn41742(m, v0, v1, v2) }
+	e[28555] = func(v0, v1, v2 int32) int32 { return TBL_Fn41745(m, v0, v1, v2) }
 	e[28556] = Fn38470
-	e[28557] = func(v0 int32) int32 { return TBL_Fn41743(m, v0) }
-	e[28558] = Fn41744
+	e[28557] = func(v0 int32) int32 { return TBL_Fn41746(m, v0) }
+	e[28558] = Fn41747
 	e[28559] = func(v0, v1, v2 int32) int32 { return TBL_Fn29111(m, v0, v1, v2) }
-	e[28560] = Fn41744
+	e[28560] = Fn41747
 	e[28561] = Fn1085
 	e[28562] = m.Xduckdb_free
 	e[28563] = func(v0 int32) int32 { return TBL_Fn29112(m, v0) }
@@ -69832,7 +69767,7 @@ func (m *Module) Fe39() {
 	e[39233] = func(v0, v1, v2 int32) int32 { return TBL_Fn37959(m, v0, v1, v2) }
 	e[39234] = func(v0 int32)  { TBL_Fn37961(m, v0) }
 	e[39235] = func(v0, v1, v2, v3 int32) float64 { return TBL_Fn40813(m, v0, v1, v2, v3) }
-	e[39236] = func(v0, v1, v2 int32)  { TBL_Fn41482(m, v0, v1, v2) }
+	e[39236] = func(v0, v1, v2 int32)  { TBL_Fn41485(m, v0, v1, v2) }
 	e[39237] = func(v0, v1, v2 int32) int32 { return TBL_Fn38633(m, v0, v1, v2) }
 	e[39238] = func(v0, v1, v2 int32)  { TBL_Fn40595(m, v0, v1, v2) }
 	e[39239] = func(v0, v1 int32)  { TBL_Fn39364(m, v0, v1) }
@@ -71816,574 +71751,583 @@ func (m *Module) Fe41() {
 	e[41209] = func(v0 int32)  { TBL_Fn41390(m, v0) }
 	e[41210] = func(v0 int32) int32 { return TBL_Fn10771(m, v0) }
 	e[41211] = func(v0, v1 int32) int32 { return TBL_Fn12914(m, v0, v1) }
-	e[41212] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
-	e[41213] = func() int32 { return TBL_Fn41392(m) }
-	e[41214] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41395(m, v0, v1, v2, v3) }
-	e[41215] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41426(m, v0, v1, v2, v3, v4) }
-	e[41216] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41395(m, v0, v1, v2, v3) }
-	e[41217] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41397(m, v0, v1, v2, v3, v4) }
-	e[41218] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn341(m, v0, v1, v2, v3) }
-	e[41219] = func(v0, v1, v2 int32)  { TBL_Fn24251(m, v0, v1, v2) }
-	e[41220] = func(v0, v1 int32)  { TBL_Fn21914(m, v0, v1) }
-	e[41221] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41409(m, v0, v1, v2, v3, v4) }
-	e[41222] = func(v0, v1 int32) int32 { return TBL_Fn343(m, v0, v1) }
-	e[41223] = func(v0, v1, v2 int32)  { TBL_Fn41415(m, v0, v1, v2) }
-	e[41224] = func(v0, v1, v2, v3 int32)  { TBL_Fn41416(m, v0, v1, v2, v3) }
-	e[41225] = func(v0, v1 int32) int32 { return TBL_Fn3038(m, v0, v1) }
-	e[41226] = func(v0 int32)  { TBL_Fn3039(m, v0) }
-	e[41227] = func(v0, v1, v2 int32)  { TBL_Fn41417(m, v0, v1, v2) }
-	e[41228] = func(v0, v1, v2 int32)  { TBL_Fn41418(m, v0, v1, v2) }
-	e[41229] = func(v0, v1 int32) int32 { return TBL_Fn41419(m, v0, v1) }
-	e[41230] = func(v0, v1 int32) int32 { return TBL_Fn41420(m, v0, v1) }
-	e[41231] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn2246(m, v0, v1, v2, v3) }
-	e[41232] = func(v0 int32)  { TBL_Fn41428(m, v0) }
-	e[41233] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41430(m, v0, v1, v2, v3, v4, v5) }
-	e[41234] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41431(m, v0, v1, v2, v3, v4, v5) }
-	e[41235] = func(v0, v1, v2, v3 int32)  { TBL_Fn24320(m, v0, v1, v2, v3) }
-	e[41236] = func(v0, v1 int32)  { TBL_Fn21468(m, v0, v1) }
-	e[41237] = func(v0, v1, v2 int32)  { TBL_Fn21471(m, v0, v1, v2) }
-	e[41238] = func(v0 int32)  { TBL_Fn21473(m, v0) }
-	e[41239] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn41432(m, v0, v1, v2, v3, v4) }
-	e[41240] = func(v0, v1, v2 int32) int32 { return TBL_Fn24319(m, v0, v1, v2) }
-	e[41241] = func(v0, v1, v2, v3 int32)  { TBL_Fn21474(m, v0, v1, v2, v3) }
-	e[41242] = func(v0, v1, v2, v3 int32)  { TBL_Fn24320(m, v0, v1, v2, v3) }
-	e[41243] = func(v0, v1, v2, v3 int32)  { TBL_Fn21466(m, v0, v1, v2, v3) }
-	e[41244] = func(v0, v1, v2 int32)  { TBL_Fn41418(m, v0, v1, v2) }
-	e[41245] = func(v0, v1, v2, v3 int32)  { TBL_Fn21466(m, v0, v1, v2, v3) }
-	e[41246] = m.Xduckdb_free
-	e[41247] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41394(m, v0, v1, v2, v3) }
-	e[41248] = func(v0, v1, v2 int32, v3, v4 int64)  { TBL_Fn41396(m, v0, v1, v2, v3, v4) }
-	e[41249] = func(v0, v1, v2 int32, v3, v4 int64)  { TBL_Fn41398(m, v0, v1, v2, v3, v4) }
-	e[41250] = func(v0, v1, v2 int32, v3 int64) int64 { return TBL_Fn41399(m, v0, v1, v2, v3) }
-	e[41251] = func(v0, v1, v2 int32, v3 int64) int64 { return TBL_Fn41400(m, v0, v1, v2, v3) }
-	e[41252] = func(v0, v1 int32) int64 { return TBL_Fn41401(m, v0, v1) }
-	e[41253] = func(v0, v1 int32) int64 { return TBL_Fn41402(m, v0, v1) }
-	e[41254] = Fn3201
-	e[41255] = func(v0, v1 int32, v2 int64)  { TBL_Fn41403(m, v0, v1, v2) }
-	e[41256] = func(v0, v1, v2 int32) int32 { return TBL_Fn41404(m, v0, v1, v2) }
-	e[41257] = func(v0, v1, v2 int32)  { TBL_Fn41405(m, v0, v1, v2) }
-	e[41258] = func(v0, v1, v2 int32)  { TBL_Fn41406(m, v0, v1, v2) }
-	e[41259] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41407(m, v0, v1, v2, v3) }
-	e[41260] = func(v0, v1, v2, v3 int32)  { TBL_Fn41408(m, v0, v1, v2, v3) }
-	e[41261] = func(v0, v1, v2 int32) int32 { return TBL_Fn41410(m, v0, v1, v2) }
-	e[41262] = func(v0, v1, v2 int32)  { TBL_Fn41411(m, v0, v1, v2) }
-	e[41263] = func(v0, v1, v2 int32) int32 { return TBL_Fn41412(m, v0, v1, v2) }
-	e[41264] = func(v0, v1 int32)  { TBL_Fn41413(m, v0, v1) }
-	e[41265] = func(v0, v1, v2, v3 int32)  { TBL_Fn41414(m, v0, v1, v2, v3) }
-	e[41266] = func(v0, v1 int32) int32 { return TBL_Fn41421(m, v0, v1) }
-	e[41267] = func(v0, v1 int32, v2 int64)  { TBL_Fn41422(m, v0, v1, v2) }
-	e[41268] = func(v0, v1 int32)  { TBL_Fn41423(m, v0, v1) }
-	e[41269] = func(v0, v1 int32) int64 { return TBL_Fn41424(m, v0, v1) }
-	e[41270] = Fn1537
-	e[41271] = Fn1537
-	e[41272] = Fn2624
-	e[41273] = Fn1537
-	e[41274] = func(v0, v1 int32)  { TBL_Fn41425(m, v0, v1) }
-	e[41275] = func(v0 int32) int32 { return TBL_Fn41427(m, v0) }
-	e[41276] = func(v0 int32)  { TBL_Fn41429(m, v0) }
-	e[41277] = m.Xduckdb_free
-	e[41278] = func(v0 int32) int32 { return TBL_Fn41433(m, v0) }
-	e[41279] = func(v0, v1 int32)  { TBL_Fn41434(m, v0, v1) }
-	e[41280] = Fn653
-	e[41281] = func(v0 int32)  { TBL_Fn21235(m, v0) }
-	e[41282] = func(v0, v1, v2 int32)  { TBL_Fn41435(m, v0, v1, v2) }
-	e[41283] = func(v0, v1 int32) int32 { return TBL_Fn41436(m, v0, v1) }
-	e[41284] = Fn41437
-	e[41285] = m.Xduckdb_free
-	e[41286] = func(v0 int32) int32 { return TBL_Fn41438(m, v0) }
-	e[41287] = func(v0, v1 int32)  { TBL_Fn41439(m, v0, v1) }
-	e[41288] = Fn653
-	e[41289] = func(v0 int32)  { TBL_Fn21235(m, v0) }
-	e[41290] = func(v0, v1, v2 int32)  { TBL_Fn41440(m, v0, v1, v2) }
-	e[41291] = func(v0, v1 int32) int32 { return TBL_Fn41441(m, v0, v1) }
-	e[41292] = Fn41442
-	e[41293] = func()  { TBL_Fn382(m) }
-	e[41294] = func(v0, v1 int32) int32 { return TBL_Fn41511(m, v0, v1) }
-	e[41295] = func(v0, v1, v2 int32) int32 { return TBL_Fn41546(m, v0, v1, v2) }
-	e[41296] = func(v0 int32) int32 { return TBL_Fn41501(m, v0) }
-	e[41297] = func(v0, v1, v2 int32) int32 { return TBL_Fn41500(m, v0, v1, v2) }
-	e[41298] = func(v0 int32, v1 int64, v2 int32) int64 { return TBL_Fn41499(m, v0, v1, v2) }
-	e[41299] = Fn648
-	e[41300] = Fn41557
-	e[41301] = func(v0 int32, v1 float64, v2, v3, v4, v5 int32) int32 { return TBL_Fn41600(m, v0, v1, v2, v3, v4, v5) }
-	e[41302] = func(v0, v1 int32)  { TBL_Fn41601(m, v0, v1) }
-	e[41303] = func(v0, v1, v2 int32) int32 { return TBL_Fn41603(m, v0, v1, v2) }
-	e[41304] = Fn648
-	e[41305] = Fn648
-	e[41306] = Fn648
-	e[41307] = func(v0, v1 int32) int32 { return TBL_Fn41473(m, v0, v1) }
-	e[41308] = func(v0, v1 int32)  { TBL_Fn42176(m, v0, v1) }
-	e[41309] = Fn648
-	e[41310] = Fn3201
-	e[41311] = Fn648
-	e[41312] = func(v0, v1, v2 int32) int32 { return TBL_Fn41731(m, v0, v1, v2) }
-	e[41313] = m.Xduckdb_free
-	e[41314] = Fn41729
-	e[41315] = func(v0, v1 int32) int32 { return TBL_Fn41733(m, v0, v1) }
-	e[41316] = func(v0, v1 int32)  { TBL_Fn41803(m, v0, v1) }
-	e[41317] = func(v0 int32) int32 { return TBL_Fn41760(m, v0) }
-	e[41318] = Fn1085
-	e[41319] = func(v0 int32)  { TBL_Fn41737(m, v0) }
-	e[41320] = func(v0, v1, v2 int32) int32 { return TBL_Fn41745(m, v0, v1, v2) }
-	e[41321] = func(v0 int32) int32 { return TBL_Fn21292(m, v0) }
-	e[41322] = func(v0 int32)  { TBL_Fn41787(m, v0) }
-	e[41323] = func(v0, v1 int32, v2 int64, v3, v4 int32)  { TBL_Fn41785(m, v0, v1, v2, v3, v4) }
-	e[41324] = func(v0, v1, v2, v3 int32)  { TBL_Fn41788(m, v0, v1, v2, v3) }
-	e[41325] = func(v0 int32) int32 { return TBL_Fn41782(m, v0) }
-	e[41326] = func(v0, v1 int32) int32 { return TBL_Fn41783(m, v0, v1) }
-	e[41327] = func(v0, v1 int32) int32 { return TBL_Fn41784(m, v0, v1) }
-	e[41328] = func(v0 int32) int32 { return TBL_Fn41734(m, v0) }
-	e[41329] = func(v0 int32)  { TBL_Fn41735(m, v0) }
-	e[41330] = func(v0 int32) int32 { return TBL_Fn1630(m, v0) }
-	e[41331] = func(v0 int32)  { TBL_Fn41789(m, v0) }
-	e[41332] = func(v0 int32) int32 { return TBL_Fn41790(m, v0) }
-	e[41333] = func(v0 int32)  { TBL_Fn41791(m, v0) }
-	e[41334] = func(v0, v1 int32)  { TBL_Fn41801(m, v0, v1) }
-	e[41335] = func(v0, v1, v2 int32) int32 { return TBL_Fn41799(m, v0, v1, v2) }
-	e[41336] = func(v0 int32) int32 { return TBL_Fn41800(m, v0) }
-	e[41337] = Fn1085
-	e[41338] = m.Xduckdb_free
-	e[41339] = Fn41797
-	e[41340] = func(v0, v1, v2 int32)  { TBL_Fn41794(m, v0, v1, v2) }
-	e[41341] = func(v0, v1, v2 int32) int32 { return TBL_Fn41795(m, v0, v1, v2) }
-	e[41342] = func(v0, v1, v2 int32) int32 { return TBL_Fn41796(m, v0, v1, v2) }
-	e[41343] = func(v0, v1, v2 int32)  { TBL_Fn41798(m, v0, v1, v2) }
-	e[41344] = func(v0 int32)  { TBL_Fn21070(m, v0) }
-	e[41345] = func(v0 int32) int32 { return TBL_Fn41804(m, v0) }
-	e[41346] = func(v0 int32)  { TBL_Fn41805(m, v0) }
-	e[41347] = func(v0, v1, v2 int32) int32 { return TBL_Fn41817(m, v0, v1, v2) }
-	e[41348] = func(v0 int32) int32 { return TBL_Fn41835(m, v0) }
-	e[41349] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41836(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41350] = m.Xfree
-	e[41351] = func()  { TBL_Fn42130(m) }
-	e[41352] = func(v0, v1 int32) int32 { return TBL_Fn41751(m, v0, v1) }
-	e[41353] = func(v0 int32) int32 { return TBL_Fn41838(m, v0) }
-	e[41354] = func(v0 int32) int32 { return TBL_Fn41839(m, v0) }
-	e[41355] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32 { return TBL_Fn41843(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41356] = func(v0 int32) int32 { return TBL_Fn25035(m, v0) }
-	e[41357] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41844(m, v0, v1, v2, v3) }
-	e[41358] = func(v0, v1, v2, v3 int32)  { TBL_Fn41845(m, v0, v1, v2, v3) }
-	e[41359] = func(v0, v1, v2, v3 int32) int64 { return TBL_Fn41847(m, v0, v1, v2, v3) }
-	e[41360] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41849(m, v0, v1, v2, v3) }
-	e[41361] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41851(m, v0, v1, v2, v3) }
-	e[41362] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41851(m, v0, v1, v2, v3) }
-	e[41363] = func(v0, v1, v2, v3 int32) int64 { return TBL_Fn41854(m, v0, v1, v2, v3) }
-	e[41364] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32 { return TBL_Fn41857(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) }
-	e[41365] = func(v0, v1, v2 int32) float32 { return TBL_Fn41858(m, v0, v1, v2) }
-	e[41366] = func(v0, v1, v2 int32) float64 { return TBL_Fn41860(m, v0, v1, v2) }
-	e[41367] = func(v0, v1, v2, v3 int32)  { TBL_Fn41862(m, v0, v1, v2, v3) }
-	e[41368] = func() int32 { return TBL_Fn41864(m) }
-	e[41369] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41865(m, v0, v1, v2, v3) }
-	e[41370] = func(v0 int32) int32 { return TBL_Fn41775(m, v0) }
-	e[41371] = func(v0 int32) int32 { return TBL_Fn41867(m, v0) }
-	e[41372] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41868(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41373] = func(v0, v1 int32) int32 { return TBL_Fn41776(m, v0, v1) }
-	e[41374] = func(v0 int32) int32 { return TBL_Fn41869(m, v0) }
-	e[41375] = func(v0 int32) int32 { return TBL_Fn41870(m, v0) }
-	e[41376] = func(v0 int32) int32 { return TBL_Fn41777(m, v0) }
-	e[41377] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32 { return TBL_Fn41874(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41378] = func(v0 int32) int32 { return TBL_Fn41778(m, v0) }
-	e[41379] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32 { return TBL_Fn41882(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) }
-	e[41380] = func(v0, v1 int32) int32 { return TBL_Fn41768(m, v0, v1) }
-	e[41381] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41891(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41382] = func(v0, v1 int32)  { TBL_Fn4562(m, v0, v1) }
-	e[41383] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41900(m, v0, v1, v2, v3) }
-	e[41384] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41901(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41385] = func(v0, v1, v2 int32) int32 { return TBL_Fn41825(m, v0, v1, v2) }
-	e[41386] = Fn41519
-	e[41387] = Fn41810
-	e[41388] = func(v0, v1 int32) int32 { return TBL_Fn41779(m, v0, v1) }
-	e[41389] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41906(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41390] = func(v0, v1 int32)  { TBL_Fn14292(m, v0, v1) }
-	e[41391] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41913(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41392] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41907(m, v0, v1, v2, v3, v4, v5) }
-	e[41393] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41821(m, v0, v1, v2, v3) }
-	e[41394] = Fn653
-	e[41395] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32 { return TBL_Fn41947(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) }
-	e[41396] = func(v0 int32)  { TBL_Fn19898(m, v0) }
-	e[41397] = func(v0, v1, v2 int32) int32 { return TBL_Fn14080(m, v0, v1, v2) }
-	e[41398] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41948(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41399] = func(v0, v1, v2 int32)  { TBL_Fn41949(m, v0, v1, v2) }
-	e[41400] = func(v0, v1, v2 int32)  { TBL_Fn41950(m, v0, v1, v2) }
-	e[41401] = func(v0, v1, v2 int32) int32 { return TBL_Fn1600(m, v0, v1, v2) }
-	e[41402] = func(v0, v1, v2 int32) int32 { return TBL_Fn4466(m, v0, v1, v2) }
-	e[41403] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32 { return TBL_Fn41956(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) }
-	e[41404] = func(v0, v1, v2 int32) int32 { return TBL_Fn41886(m, v0, v1, v2) }
-	e[41405] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41957(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41406] = func(v0, v1 int32)  { TBL_Fn42156(m, v0, v1) }
-	e[41407] = func(v0, v1, v2 int32) int32 { return TBL_Fn35107(m, v0, v1, v2) }
-	e[41408] = func(v0, v1, v2 int32)  { TBL_Fn41950(m, v0, v1, v2) }
-	e[41409] = func(v0, v1, v2 int32) int32 { return TBL_Fn41959(m, v0, v1, v2) }
-	e[41410] = func(v0, v1, v2 int32) int32 { return TBL_Fn42154(m, v0, v1, v2) }
-	e[41411] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41965(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41412] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32)  { TBL_Fn41966(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) }
-	e[41413] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41969(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
-	e[41414] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32)  { TBL_Fn41970(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) }
-	e[41415] = func(v0 int32)  { TBL_Fn41819(m, v0) }
-	e[41416] = func(v0, v1 int32) int32 { return TBL_Fn41975(m, v0, v1) }
-	e[41417] = func(v0, v1 int32)  { TBL_Fn41976(m, v0, v1) }
-	e[41418] = func(v0, v1 int32)  { TBL_Fn41977(m, v0, v1) }
-	e[41419] = func(v0, v1 int32)  { TBL_Fn41978(m, v0, v1) }
-	e[41420] = func(v0, v1 int32)  { TBL_Fn41979(m, v0, v1) }
-	e[41421] = func(v0, v1 int32)  { TBL_Fn41980(m, v0, v1) }
-	e[41422] = func(v0, v1 int32) int32 { return TBL_Fn41981(m, v0, v1) }
-	e[41423] = func(v0, v1 int32)  { TBL_Fn41982(m, v0, v1) }
-	e[41424] = func(v0, v1 int32)  { TBL_Fn41983(m, v0, v1) }
-	e[41425] = func(v0, v1 int32)  { TBL_Fn41984(m, v0, v1) }
-	e[41426] = func(v0, v1 int32)  { TBL_Fn41985(m, v0, v1) }
-	e[41427] = func(v0, v1 int32)  { TBL_Fn41986(m, v0, v1) }
-	e[41428] = func(v0, v1 int32)  { TBL_Fn41987(m, v0, v1) }
-	e[41429] = func(v0, v1 int32)  { TBL_Fn41988(m, v0, v1) }
-	e[41430] = func(v0, v1 int32)  { TBL_Fn41989(m, v0, v1) }
-	e[41431] = func(v0, v1 int32)  { TBL_Fn41990(m, v0, v1) }
-	e[41432] = func(v0, v1 int32)  { TBL_Fn41991(m, v0, v1) }
-	e[41433] = func(v0, v1 int32)  { TBL_Fn41992(m, v0, v1) }
-	e[41434] = func(v0, v1 int32)  { TBL_Fn41993(m, v0, v1) }
-	e[41435] = func(v0, v1 int32)  { TBL_Fn41994(m, v0, v1) }
-	e[41436] = func(v0, v1 int32)  { TBL_Fn41995(m, v0, v1) }
-	e[41437] = func(v0, v1 int32)  { TBL_Fn41996(m, v0, v1) }
-	e[41438] = func(v0, v1 int32)  { TBL_Fn41997(m, v0, v1) }
-	e[41439] = func(v0, v1 int32)  { TBL_Fn41998(m, v0, v1) }
-	e[41440] = func(v0, v1 int32)  { TBL_Fn41999(m, v0, v1) }
-	e[41441] = func(v0, v1 int32)  { TBL_Fn42000(m, v0, v1) }
-	e[41442] = func(v0, v1 int32)  { TBL_Fn42001(m, v0, v1) }
-	e[41443] = func(v0, v1 int32)  { TBL_Fn42002(m, v0, v1) }
-	e[41444] = func(v0, v1 int32) int32 { return TBL_Fn42003(m, v0, v1) }
-	e[41445] = func(v0, v1 int32)  { TBL_Fn42004(m, v0, v1) }
-	e[41446] = func(v0, v1 int32) int32 { return TBL_Fn42005(m, v0, v1) }
-	e[41447] = func(v0, v1 int32)  { TBL_Fn42006(m, v0, v1) }
-	e[41448] = func(v0, v1 int32)  { TBL_Fn42007(m, v0, v1) }
-	e[41449] = func(v0, v1 int32)  { TBL_Fn42008(m, v0, v1) }
-	e[41450] = func(v0, v1 int32)  { TBL_Fn42010(m, v0, v1) }
-	e[41451] = func(v0, v1 int32)  { TBL_Fn11875(m, v0, v1) }
-	e[41452] = func(v0 int32)  { TBL_Fn42025(m, v0) }
-	e[41453] = func(v0, v1 int32)  { TBL_Fn42017(m, v0, v1) }
-	e[41454] = func(v0, v1 int32)  { TBL_Fn22162(m, v0, v1) }
-	e[41455] = func(v0, v1 int32)  { TBL_Fn3916(m, v0, v1) }
-	e[41456] = func() int32 { return TBL_Fn42020(m) }
-	e[41457] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41820(m, v0, v1, v2, v3, v4) }
-	e[41458] = func(v0, v1, v2 int32) int32 { return TBL_Fn41607(m, v0, v1, v2) }
-	e[41459] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41822(m, v0, v1, v2, v3, v4) }
-	e[41460] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41808(m, v0, v1, v2, v3) }
-	e[41461] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42056(m, v0, v1, v2, v3) }
-	e[41462] = func(v0 int32) int32 { return TBL_Fn42057(m, v0) }
-	e[41463] = func(v0, v1, v2 int32) int32 { return TBL_Fn41807(m, v0, v1, v2) }
-	e[41464] = func() int32 { return TBL_Fn41823(m) }
-	e[41465] = func(v0, v1, v2 int32) int32 { return TBL_Fn41824(m, v0, v1, v2) }
-	e[41466] = func(v0 int32)  { TBL_Fn42081(m, v0) }
-	e[41467] = func(v0 int32)  { TBL_Fn42083(m, v0) }
-	e[41468] = func(v0 int32)  { TBL_Fn42085(m, v0) }
-	e[41469] = func(v0 int32)  { TBL_Fn42087(m, v0) }
-	e[41470] = func(v0 int32)  { TBL_Fn42089(m, v0) }
-	e[41471] = func(v0 int32)  { TBL_Fn42091(m, v0) }
-	e[41472] = func(v0 int32)  { TBL_Fn42093(m, v0) }
-	e[41473] = func(v0 int32)  { TBL_Fn42095(m, v0) }
-	e[41474] = func(v0 int32)  { TBL_Fn42097(m, v0) }
-	e[41475] = func(v0 int32)  { TBL_Fn42099(m, v0) }
-	e[41476] = func(v0 int32)  { TBL_Fn42101(m, v0) }
-	e[41477] = func(v0 int32)  { TBL_Fn42103(m, v0) }
-	e[41478] = func(v0 int32)  { TBL_Fn42105(m, v0) }
-	e[41479] = func(v0 int32)  { TBL_Fn42107(m, v0) }
-	e[41480] = func(v0 int32) int32 { return TBL_Fn41606(m, v0) }
-	e[41481] = func(v0 int32) int32 { return TBL_Fn42018(m, v0) }
-	e[41482] = func(v0 int32)  { TBL_Fn42019(m, v0) }
-	e[41483] = func(v0 int32)  { TBL_Fn21235(m, v0) }
-	e[41484] = func(v0 int32) int32 { return TBL_Fn42037(m, v0) }
-	e[41485] = func(v0 int32)  { TBL_Fn42038(m, v0) }
-	e[41486] = Fn42039
-	e[41487] = func(v0, v1, v2 int32) int32 { return TBL_Fn42040(m, v0, v1, v2) }
-	e[41488] = Fn42041
-	e[41489] = func(v0, v1, v2 int32) int32 { return TBL_Fn42042(m, v0, v1, v2) }
-	e[41490] = Fn21061
-	e[41491] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42043(m, v0, v1, v2, v3) }
-	e[41492] = Fn42044
-	e[41493] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42045(m, v0, v1, v2, v3, v4) }
-	e[41494] = func(v0 int32) int32 { return TBL_Fn41974(m, v0) }
-	e[41495] = func(v0 int32)  { TBL_Fn42049(m, v0) }
-	e[41496] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41497] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42052(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41498] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42054(m, v0, v1, v2, v3, v4) }
-	e[41499] = func(v0 int32) int32 { return TBL_Fn42055(m, v0) }
-	e[41500] = Fn648
-	e[41501] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42058(m, v0, v1, v2, v3, v4) }
-	e[41502] = func(v0 int32) int32 { return TBL_Fn42059(m, v0) }
-	e[41503] = func(v0 int32) int32 { return TBL_Fn42067(m, v0) }
-	e[41504] = func(v0 int32)  { TBL_Fn42068(m, v0) }
-	e[41505] = func(v0 int32) int32 { return TBL_Fn42071(m, v0) }
-	e[41506] = func(v0 int32) int32 { return TBL_Fn42072(m, v0) }
-	e[41507] = func(v0, v1 int32)  { TBL_Fn42073(m, v0, v1) }
-	e[41508] = func(v0, v1 int32)  { TBL_Fn42075(m, v0, v1) }
-	e[41509] = func(v0, v1 int32)  { TBL_Fn42078(m, v0, v1) }
-	e[41510] = func(v0 int32) int32 { return TBL_Fn42069(m, v0) }
-	e[41511] = func(v0 int32)  { TBL_Fn42070(m, v0) }
-	e[41512] = func(v0 int32) int32 { return TBL_Fn18263(m, v0) }
-	e[41513] = func(v0 int32) int32 { return TBL_Fn39818(m, v0) }
-	e[41514] = func(v0, v1 int32)  { TBL_Fn42074(m, v0, v1) }
-	e[41515] = func(v0, v1 int32)  { TBL_Fn42076(m, v0, v1) }
-	e[41516] = func(v0, v1 int32)  { TBL_Fn42079(m, v0, v1) }
-	e[41517] = Fn1085
-	e[41518] = m.Xduckdb_free
-	e[41519] = m.Xduckdb_free
-	e[41520] = func(v0, v1, v2 int32) int32 { return TBL_Fn42026(m, v0, v1, v2) }
-	e[41521] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42027(m, v0, v1, v2, v3) }
-	e[41522] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42028(m, v0, v1, v2, v3) }
-	e[41523] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42029(m, v0, v1, v2, v3) }
-	e[41524] = Fn42030
-	e[41525] = func(v0, v1, v2 int32) int32 { return TBL_Fn42031(m, v0, v1, v2) }
-	e[41526] = Fn42032
-	e[41527] = func(v0, v1, v2 int32) int32 { return TBL_Fn42033(m, v0, v1, v2) }
-	e[41528] = Fn21061
-	e[41529] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42034(m, v0, v1, v2, v3) }
-	e[41530] = Fn42035
-	e[41531] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42036(m, v0, v1, v2, v3, v4) }
-	e[41532] = m.Xduckdb_free
-	e[41533] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42046(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41534] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42046(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41535] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42047(m, v0, v1, v2, v3, v4) }
-	e[41536] = Fn1537
-	e[41537] = Fn1537
-	e[41538] = Fn42048
-	e[41539] = Fn1537
-	e[41540] = m.Xduckdb_free
-	e[41541] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42060(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41542] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42061(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41543] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42047(m, v0, v1, v2, v3, v4) }
-	e[41544] = Fn648
-	e[41545] = Fn648
-	e[41546] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42062(m, v0, v1, v2, v3, v4) }
-	e[41547] = Fn42063
-	e[41548] = m.Xduckdb_free
-	e[41549] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42060(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41550] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42061(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41551] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42047(m, v0, v1, v2, v3, v4) }
-	e[41552] = Fn648
+	e[41212] = func(v0 int32) int32 { return TBL_Fn41393(m, v0) }
+	e[41213] = func(v0, v1, v2 int32) int64 { return TBL_Fn332(m, v0, v1, v2) }
+	e[41214] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41396(m, v0, v1, v2, v3) }
+	e[41215] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41397(m, v0, v1, v2, v3) }
+	e[41216] = func(v0 int32) int64 { return TBL_Fn333(m, v0) }
+	e[41217] = func(v0 int32) int32 { return TBL_Fn391(m, v0) }
+	e[41218] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41429(m, v0, v1, v2, v3, v4) }
+	e[41219] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41399(m, v0, v1, v2, v3, v4) }
+	e[41220] = func(v0, v1 int32) int32 { return TBL_Fn338(m, v0, v1) }
+	e[41221] = func(v0, v1 int32) int32 { return TBL_Fn339(m, v0, v1) }
+	e[41222] = func(v0, v1 int32) int32 { return TBL_Fn340(m, v0, v1) }
+	e[41223] = func(v0, v1 int32) int32 { return TBL_Fn41410(m, v0, v1) }
+	e[41224] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn341(m, v0, v1, v2, v3) }
+	e[41225] = func(v0, v1, v2 int32)  { TBL_Fn24251(m, v0, v1, v2) }
+	e[41226] = func(v0, v1 int32)  { TBL_Fn21914(m, v0, v1) }
+	e[41227] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn342(m, v0, v1, v2, v3) }
+	e[41228] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41412(m, v0, v1, v2, v3, v4) }
+	e[41229] = func(v0, v1 int32) int32 { return TBL_Fn343(m, v0, v1) }
+	e[41230] = func(v0, v1 int32) int32 { return TBL_Fn344(m, v0, v1) }
+	e[41231] = func(v0, v1, v2 int32)  { TBL_Fn41418(m, v0, v1, v2) }
+	e[41232] = func(v0, v1, v2, v3 int32)  { TBL_Fn41419(m, v0, v1, v2, v3) }
+	e[41233] = func(v0, v1 int32) int32 { return TBL_Fn3038(m, v0, v1) }
+	e[41234] = func(v0 int32)  { TBL_Fn3039(m, v0) }
+	e[41235] = func(v0, v1, v2 int32)  { TBL_Fn41420(m, v0, v1, v2) }
+	e[41236] = func(v0, v1, v2 int32)  { TBL_Fn41421(m, v0, v1, v2) }
+	e[41237] = func(v0, v1 int32) int32 { return TBL_Fn41422(m, v0, v1) }
+	e[41238] = func(v0, v1 int32) int32 { return TBL_Fn41423(m, v0, v1) }
+	e[41239] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn2246(m, v0, v1, v2, v3) }
+	e[41240] = func(v0 int32)  { TBL_Fn41431(m, v0) }
+	e[41241] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41433(m, v0, v1, v2, v3, v4, v5) }
+	e[41242] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41434(m, v0, v1, v2, v3, v4, v5) }
+	e[41243] = func(v0, v1, v2, v3 int32)  { TBL_Fn24320(m, v0, v1, v2, v3) }
+	e[41244] = func(v0, v1 int32)  { TBL_Fn21468(m, v0, v1) }
+	e[41245] = func(v0, v1, v2 int32)  { TBL_Fn21471(m, v0, v1, v2) }
+	e[41246] = func(v0 int32)  { TBL_Fn21473(m, v0) }
+	e[41247] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn41435(m, v0, v1, v2, v3, v4) }
+	e[41248] = func(v0, v1, v2 int32) int32 { return TBL_Fn24319(m, v0, v1, v2) }
+	e[41249] = func(v0, v1, v2, v3 int32)  { TBL_Fn21474(m, v0, v1, v2, v3) }
+	e[41250] = func(v0, v1, v2, v3 int32)  { TBL_Fn24320(m, v0, v1, v2, v3) }
+	e[41251] = func(v0, v1, v2, v3 int32)  { TBL_Fn21466(m, v0, v1, v2, v3) }
+	e[41252] = func(v0, v1, v2 int32)  { TBL_Fn41421(m, v0, v1, v2) }
+	e[41253] = func(v0, v1, v2, v3 int32)  { TBL_Fn21466(m, v0, v1, v2, v3) }
+	e[41254] = m.Xduckdb_free
+	e[41255] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41395(m, v0, v1, v2, v3) }
+	e[41256] = func(v0, v1, v2 int32, v3, v4 int64)  { TBL_Fn41398(m, v0, v1, v2, v3, v4) }
+	e[41257] = func(v0, v1, v2 int32, v3, v4 int64)  { TBL_Fn41400(m, v0, v1, v2, v3, v4) }
+	e[41258] = func(v0, v1, v2 int32, v3 int64) int64 { return TBL_Fn41401(m, v0, v1, v2, v3) }
+	e[41259] = func(v0, v1, v2 int32, v3 int64) int64 { return TBL_Fn41402(m, v0, v1, v2, v3) }
+	e[41260] = func(v0, v1 int32) int64 { return TBL_Fn41403(m, v0, v1) }
+	e[41261] = func(v0, v1 int32) int64 { return TBL_Fn41404(m, v0, v1) }
+	e[41262] = Fn3201
+	e[41263] = func(v0, v1 int32, v2 int64)  { TBL_Fn41405(m, v0, v1, v2) }
+	e[41264] = func(v0, v1, v2 int32) int32 { return TBL_Fn41406(m, v0, v1, v2) }
+	e[41265] = func(v0, v1, v2 int32)  { TBL_Fn41407(m, v0, v1, v2) }
+	e[41266] = func(v0, v1, v2 int32)  { TBL_Fn41408(m, v0, v1, v2) }
+	e[41267] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41409(m, v0, v1, v2, v3) }
+	e[41268] = func(v0, v1, v2, v3 int32)  { TBL_Fn41411(m, v0, v1, v2, v3) }
+	e[41269] = func(v0, v1, v2 int32) int32 { return TBL_Fn41413(m, v0, v1, v2) }
+	e[41270] = func(v0, v1, v2 int32)  { TBL_Fn41414(m, v0, v1, v2) }
+	e[41271] = func(v0, v1, v2 int32) int32 { return TBL_Fn41415(m, v0, v1, v2) }
+	e[41272] = func(v0, v1 int32)  { TBL_Fn41416(m, v0, v1) }
+	e[41273] = func(v0, v1, v2, v3 int32)  { TBL_Fn41417(m, v0, v1, v2, v3) }
+	e[41274] = func(v0, v1 int32) int32 { return TBL_Fn41424(m, v0, v1) }
+	e[41275] = func(v0, v1 int32, v2 int64)  { TBL_Fn41425(m, v0, v1, v2) }
+	e[41276] = func(v0, v1 int32)  { TBL_Fn41426(m, v0, v1) }
+	e[41277] = func(v0, v1 int32) int64 { return TBL_Fn41427(m, v0, v1) }
+	e[41278] = Fn1537
+	e[41279] = Fn1537
+	e[41280] = Fn2624
+	e[41281] = Fn1537
+	e[41282] = func(v0, v1 int32)  { TBL_Fn11447(m, v0, v1) }
+	e[41283] = func(v0, v1, v2, v3 int32)  { TBL_Fn41428(m, v0, v1, v2, v3) }
+	e[41284] = func(v0 int32) int32 { return TBL_Fn41430(m, v0) }
+	e[41285] = func(v0 int32)  { TBL_Fn41432(m, v0) }
+	e[41286] = m.Xduckdb_free
+	e[41287] = func(v0 int32) int32 { return TBL_Fn41436(m, v0) }
+	e[41288] = func(v0, v1 int32)  { TBL_Fn41437(m, v0, v1) }
+	e[41289] = Fn653
+	e[41290] = func(v0 int32)  { TBL_Fn21235(m, v0) }
+	e[41291] = func(v0, v1, v2 int32)  { TBL_Fn41438(m, v0, v1, v2) }
+	e[41292] = func(v0, v1 int32) int32 { return TBL_Fn41439(m, v0, v1) }
+	e[41293] = Fn41440
+	e[41294] = m.Xduckdb_free
+	e[41295] = func(v0 int32) int32 { return TBL_Fn41441(m, v0) }
+	e[41296] = func(v0, v1 int32)  { TBL_Fn41442(m, v0, v1) }
+	e[41297] = Fn653
+	e[41298] = func(v0 int32)  { TBL_Fn21235(m, v0) }
+	e[41299] = func(v0, v1, v2 int32)  { TBL_Fn41443(m, v0, v1, v2) }
+	e[41300] = func(v0, v1 int32) int32 { return TBL_Fn41444(m, v0, v1) }
+	e[41301] = Fn41445
+	e[41302] = func()  { TBL_Fn382(m) }
+	e[41303] = func(v0, v1 int32) int32 { return TBL_Fn41514(m, v0, v1) }
+	e[41304] = func(v0, v1, v2 int32) int32 { return TBL_Fn41549(m, v0, v1, v2) }
+	e[41305] = func(v0 int32) int32 { return TBL_Fn41504(m, v0) }
+	e[41306] = func(v0, v1, v2 int32) int32 { return TBL_Fn41503(m, v0, v1, v2) }
+	e[41307] = func(v0 int32, v1 int64, v2 int32) int64 { return TBL_Fn41502(m, v0, v1, v2) }
+	e[41308] = Fn648
+	e[41309] = Fn41560
+	e[41310] = func(v0 int32, v1 float64, v2, v3, v4, v5 int32) int32 { return TBL_Fn41603(m, v0, v1, v2, v3, v4, v5) }
+	e[41311] = func(v0, v1 int32)  { TBL_Fn41604(m, v0, v1) }
+	e[41312] = func(v0, v1, v2 int32) int32 { return TBL_Fn41606(m, v0, v1, v2) }
+	e[41313] = Fn648
+	e[41314] = Fn648
+	e[41315] = Fn648
+	e[41316] = func(v0, v1 int32) int32 { return TBL_Fn41476(m, v0, v1) }
+	e[41317] = func(v0, v1 int32)  { TBL_Fn42179(m, v0, v1) }
+	e[41318] = Fn648
+	e[41319] = Fn3201
+	e[41320] = Fn648
+	e[41321] = func(v0, v1, v2 int32) int32 { return TBL_Fn41734(m, v0, v1, v2) }
+	e[41322] = m.Xduckdb_free
+	e[41323] = Fn41732
+	e[41324] = func(v0, v1 int32) int32 { return TBL_Fn41736(m, v0, v1) }
+	e[41325] = func(v0, v1 int32)  { TBL_Fn41806(m, v0, v1) }
+	e[41326] = func(v0 int32) int32 { return TBL_Fn41763(m, v0) }
+	e[41327] = Fn1085
+	e[41328] = func(v0 int32)  { TBL_Fn41740(m, v0) }
+	e[41329] = func(v0, v1, v2 int32) int32 { return TBL_Fn41748(m, v0, v1, v2) }
+	e[41330] = func(v0 int32) int32 { return TBL_Fn21292(m, v0) }
+	e[41331] = func(v0 int32)  { TBL_Fn41790(m, v0) }
+	e[41332] = func(v0, v1 int32, v2 int64, v3, v4 int32)  { TBL_Fn41788(m, v0, v1, v2, v3, v4) }
+	e[41333] = func(v0, v1, v2, v3 int32)  { TBL_Fn41791(m, v0, v1, v2, v3) }
+	e[41334] = func(v0 int32) int32 { return TBL_Fn41785(m, v0) }
+	e[41335] = func(v0, v1 int32) int32 { return TBL_Fn41786(m, v0, v1) }
+	e[41336] = func(v0, v1 int32) int32 { return TBL_Fn41787(m, v0, v1) }
+	e[41337] = func(v0 int32) int32 { return TBL_Fn41737(m, v0) }
+	e[41338] = func(v0 int32)  { TBL_Fn41738(m, v0) }
+	e[41339] = func(v0 int32) int32 { return TBL_Fn1630(m, v0) }
+	e[41340] = func(v0 int32)  { TBL_Fn41792(m, v0) }
+	e[41341] = func(v0 int32) int32 { return TBL_Fn41793(m, v0) }
+	e[41342] = func(v0 int32)  { TBL_Fn41794(m, v0) }
+	e[41343] = func(v0, v1 int32)  { TBL_Fn41804(m, v0, v1) }
+	e[41344] = func(v0, v1, v2 int32) int32 { return TBL_Fn41802(m, v0, v1, v2) }
+	e[41345] = func(v0 int32) int32 { return TBL_Fn41803(m, v0) }
+	e[41346] = Fn1085
+	e[41347] = m.Xduckdb_free
+	e[41348] = Fn41800
+	e[41349] = func(v0, v1, v2 int32)  { TBL_Fn41797(m, v0, v1, v2) }
+	e[41350] = func(v0, v1, v2 int32) int32 { return TBL_Fn41798(m, v0, v1, v2) }
+	e[41351] = func(v0, v1, v2 int32) int32 { return TBL_Fn41799(m, v0, v1, v2) }
+	e[41352] = func(v0, v1, v2 int32)  { TBL_Fn41801(m, v0, v1, v2) }
+	e[41353] = func(v0 int32)  { TBL_Fn21070(m, v0) }
+	e[41354] = func(v0 int32) int32 { return TBL_Fn41807(m, v0) }
+	e[41355] = func(v0 int32)  { TBL_Fn41808(m, v0) }
+	e[41356] = func(v0, v1, v2 int32) int32 { return TBL_Fn41820(m, v0, v1, v2) }
+	e[41357] = func(v0 int32) int32 { return TBL_Fn41838(m, v0) }
+	e[41358] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41839(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41359] = m.Xfree
+	e[41360] = func()  { TBL_Fn42133(m) }
+	e[41361] = func(v0, v1 int32) int32 { return TBL_Fn41754(m, v0, v1) }
+	e[41362] = func(v0 int32) int32 { return TBL_Fn41841(m, v0) }
+	e[41363] = func(v0 int32) int32 { return TBL_Fn41842(m, v0) }
+	e[41364] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32 { return TBL_Fn41846(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41365] = func(v0 int32) int32 { return TBL_Fn25035(m, v0) }
+	e[41366] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41847(m, v0, v1, v2, v3) }
+	e[41367] = func(v0, v1, v2, v3 int32)  { TBL_Fn41848(m, v0, v1, v2, v3) }
+	e[41368] = func(v0, v1, v2, v3 int32) int64 { return TBL_Fn41850(m, v0, v1, v2, v3) }
+	e[41369] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41852(m, v0, v1, v2, v3) }
+	e[41370] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41854(m, v0, v1, v2, v3) }
+	e[41371] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41854(m, v0, v1, v2, v3) }
+	e[41372] = func(v0, v1, v2, v3 int32) int64 { return TBL_Fn41857(m, v0, v1, v2, v3) }
+	e[41373] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32 { return TBL_Fn41860(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) }
+	e[41374] = func(v0, v1, v2 int32) float32 { return TBL_Fn41861(m, v0, v1, v2) }
+	e[41375] = func(v0, v1, v2 int32) float64 { return TBL_Fn41863(m, v0, v1, v2) }
+	e[41376] = func(v0, v1, v2, v3 int32)  { TBL_Fn41865(m, v0, v1, v2, v3) }
+	e[41377] = func() int32 { return TBL_Fn41867(m) }
+	e[41378] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41868(m, v0, v1, v2, v3) }
+	e[41379] = func(v0 int32) int32 { return TBL_Fn41778(m, v0) }
+	e[41380] = func(v0 int32) int32 { return TBL_Fn41870(m, v0) }
+	e[41381] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41871(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41382] = func(v0, v1 int32) int32 { return TBL_Fn41779(m, v0, v1) }
+	e[41383] = func(v0 int32) int32 { return TBL_Fn41872(m, v0) }
+	e[41384] = func(v0 int32) int32 { return TBL_Fn41873(m, v0) }
+	e[41385] = func(v0 int32) int32 { return TBL_Fn41780(m, v0) }
+	e[41386] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32 { return TBL_Fn41877(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41387] = func(v0 int32) int32 { return TBL_Fn41781(m, v0) }
+	e[41388] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32 { return TBL_Fn41885(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) }
+	e[41389] = func(v0, v1 int32) int32 { return TBL_Fn41771(m, v0, v1) }
+	e[41390] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41894(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41391] = func(v0, v1 int32)  { TBL_Fn4562(m, v0, v1) }
+	e[41392] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41903(m, v0, v1, v2, v3) }
+	e[41393] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41904(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41394] = func(v0, v1, v2 int32) int32 { return TBL_Fn41828(m, v0, v1, v2) }
+	e[41395] = Fn41522
+	e[41396] = Fn41813
+	e[41397] = func(v0, v1 int32) int32 { return TBL_Fn41782(m, v0, v1) }
+	e[41398] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41909(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41399] = func(v0, v1 int32)  { TBL_Fn14292(m, v0, v1) }
+	e[41400] = func(v0, v1, v2, v3, v4, v5, v6 int32)  { TBL_Fn41916(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41401] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41910(m, v0, v1, v2, v3, v4, v5) }
+	e[41402] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41824(m, v0, v1, v2, v3) }
+	e[41403] = Fn653
+	e[41404] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32 { return TBL_Fn41950(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) }
+	e[41405] = func(v0 int32)  { TBL_Fn19898(m, v0) }
+	e[41406] = func(v0, v1, v2 int32) int32 { return TBL_Fn14080(m, v0, v1, v2) }
+	e[41407] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41951(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41408] = func(v0, v1, v2 int32)  { TBL_Fn41952(m, v0, v1, v2) }
+	e[41409] = func(v0, v1, v2 int32)  { TBL_Fn41953(m, v0, v1, v2) }
+	e[41410] = func(v0, v1, v2 int32) int32 { return TBL_Fn1600(m, v0, v1, v2) }
+	e[41411] = func(v0, v1, v2 int32) int32 { return TBL_Fn4466(m, v0, v1, v2) }
+	e[41412] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32 { return TBL_Fn41959(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) }
+	e[41413] = func(v0, v1, v2 int32) int32 { return TBL_Fn41889(m, v0, v1, v2) }
+	e[41414] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41960(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41415] = func(v0, v1 int32)  { TBL_Fn42159(m, v0, v1) }
+	e[41416] = func(v0, v1, v2 int32) int32 { return TBL_Fn35107(m, v0, v1, v2) }
+	e[41417] = func(v0, v1, v2 int32)  { TBL_Fn41953(m, v0, v1, v2) }
+	e[41418] = func(v0, v1, v2 int32) int32 { return TBL_Fn41962(m, v0, v1, v2) }
+	e[41419] = func(v0, v1, v2 int32) int32 { return TBL_Fn42157(m, v0, v1, v2) }
+	e[41420] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41968(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41421] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32)  { TBL_Fn41969(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) }
+	e[41422] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32)  { TBL_Fn41972(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) }
+	e[41423] = func(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32)  { TBL_Fn41973(m, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) }
+	e[41424] = func(v0 int32)  { TBL_Fn41822(m, v0) }
+	e[41425] = func(v0, v1 int32) int32 { return TBL_Fn41978(m, v0, v1) }
+	e[41426] = func(v0, v1 int32)  { TBL_Fn41979(m, v0, v1) }
+	e[41427] = func(v0, v1 int32)  { TBL_Fn41980(m, v0, v1) }
+	e[41428] = func(v0, v1 int32)  { TBL_Fn41981(m, v0, v1) }
+	e[41429] = func(v0, v1 int32)  { TBL_Fn41982(m, v0, v1) }
+	e[41430] = func(v0, v1 int32)  { TBL_Fn41983(m, v0, v1) }
+	e[41431] = func(v0, v1 int32) int32 { return TBL_Fn41984(m, v0, v1) }
+	e[41432] = func(v0, v1 int32)  { TBL_Fn41985(m, v0, v1) }
+	e[41433] = func(v0, v1 int32)  { TBL_Fn41986(m, v0, v1) }
+	e[41434] = func(v0, v1 int32)  { TBL_Fn41987(m, v0, v1) }
+	e[41435] = func(v0, v1 int32)  { TBL_Fn41988(m, v0, v1) }
+	e[41436] = func(v0, v1 int32)  { TBL_Fn41989(m, v0, v1) }
+	e[41437] = func(v0, v1 int32)  { TBL_Fn41990(m, v0, v1) }
+	e[41438] = func(v0, v1 int32)  { TBL_Fn41991(m, v0, v1) }
+	e[41439] = func(v0, v1 int32)  { TBL_Fn41992(m, v0, v1) }
+	e[41440] = func(v0, v1 int32)  { TBL_Fn41993(m, v0, v1) }
+	e[41441] = func(v0, v1 int32)  { TBL_Fn41994(m, v0, v1) }
+	e[41442] = func(v0, v1 int32)  { TBL_Fn41995(m, v0, v1) }
+	e[41443] = func(v0, v1 int32)  { TBL_Fn41996(m, v0, v1) }
+	e[41444] = func(v0, v1 int32)  { TBL_Fn41997(m, v0, v1) }
+	e[41445] = func(v0, v1 int32)  { TBL_Fn41998(m, v0, v1) }
+	e[41446] = func(v0, v1 int32)  { TBL_Fn41999(m, v0, v1) }
+	e[41447] = func(v0, v1 int32)  { TBL_Fn42000(m, v0, v1) }
+	e[41448] = func(v0, v1 int32)  { TBL_Fn42001(m, v0, v1) }
+	e[41449] = func(v0, v1 int32)  { TBL_Fn42002(m, v0, v1) }
+	e[41450] = func(v0, v1 int32)  { TBL_Fn42003(m, v0, v1) }
+	e[41451] = func(v0, v1 int32)  { TBL_Fn42004(m, v0, v1) }
+	e[41452] = func(v0, v1 int32)  { TBL_Fn42005(m, v0, v1) }
+	e[41453] = func(v0, v1 int32) int32 { return TBL_Fn42006(m, v0, v1) }
+	e[41454] = func(v0, v1 int32)  { TBL_Fn42007(m, v0, v1) }
+	e[41455] = func(v0, v1 int32) int32 { return TBL_Fn42008(m, v0, v1) }
+	e[41456] = func(v0, v1 int32)  { TBL_Fn42009(m, v0, v1) }
+	e[41457] = func(v0, v1 int32)  { TBL_Fn42010(m, v0, v1) }
+	e[41458] = func(v0, v1 int32)  { TBL_Fn42011(m, v0, v1) }
+	e[41459] = func(v0, v1 int32)  { TBL_Fn42013(m, v0, v1) }
+	e[41460] = func(v0, v1 int32)  { TBL_Fn11875(m, v0, v1) }
+	e[41461] = func(v0 int32)  { TBL_Fn42028(m, v0) }
+	e[41462] = func(v0, v1 int32)  { TBL_Fn42020(m, v0, v1) }
+	e[41463] = func(v0, v1 int32)  { TBL_Fn22162(m, v0, v1) }
+	e[41464] = func(v0, v1 int32)  { TBL_Fn3916(m, v0, v1) }
+	e[41465] = func() int32 { return TBL_Fn42023(m) }
+	e[41466] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41823(m, v0, v1, v2, v3, v4) }
+	e[41467] = func(v0, v1, v2 int32) int32 { return TBL_Fn41610(m, v0, v1, v2) }
+	e[41468] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41825(m, v0, v1, v2, v3, v4) }
+	e[41469] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn41811(m, v0, v1, v2, v3) }
+	e[41470] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42059(m, v0, v1, v2, v3) }
+	e[41471] = func(v0 int32) int32 { return TBL_Fn42060(m, v0) }
+	e[41472] = func(v0, v1, v2 int32) int32 { return TBL_Fn41810(m, v0, v1, v2) }
+	e[41473] = func() int32 { return TBL_Fn41826(m) }
+	e[41474] = func(v0, v1, v2 int32) int32 { return TBL_Fn41827(m, v0, v1, v2) }
+	e[41475] = func(v0 int32)  { TBL_Fn42084(m, v0) }
+	e[41476] = func(v0 int32)  { TBL_Fn42086(m, v0) }
+	e[41477] = func(v0 int32)  { TBL_Fn42088(m, v0) }
+	e[41478] = func(v0 int32)  { TBL_Fn42090(m, v0) }
+	e[41479] = func(v0 int32)  { TBL_Fn42092(m, v0) }
+	e[41480] = func(v0 int32)  { TBL_Fn42094(m, v0) }
+	e[41481] = func(v0 int32)  { TBL_Fn42096(m, v0) }
+	e[41482] = func(v0 int32)  { TBL_Fn42098(m, v0) }
+	e[41483] = func(v0 int32)  { TBL_Fn42100(m, v0) }
+	e[41484] = func(v0 int32)  { TBL_Fn42102(m, v0) }
+	e[41485] = func(v0 int32)  { TBL_Fn42104(m, v0) }
+	e[41486] = func(v0 int32)  { TBL_Fn42106(m, v0) }
+	e[41487] = func(v0 int32)  { TBL_Fn42108(m, v0) }
+	e[41488] = func(v0 int32)  { TBL_Fn42110(m, v0) }
+	e[41489] = func(v0 int32) int32 { return TBL_Fn41609(m, v0) }
+	e[41490] = func(v0 int32) int32 { return TBL_Fn42021(m, v0) }
+	e[41491] = func(v0 int32)  { TBL_Fn42022(m, v0) }
+	e[41492] = func(v0 int32)  { TBL_Fn21235(m, v0) }
+	e[41493] = func(v0 int32) int32 { return TBL_Fn42040(m, v0) }
+	e[41494] = func(v0 int32)  { TBL_Fn42041(m, v0) }
+	e[41495] = Fn42042
+	e[41496] = func(v0, v1, v2 int32) int32 { return TBL_Fn42043(m, v0, v1, v2) }
+	e[41497] = Fn42044
+	e[41498] = func(v0, v1, v2 int32) int32 { return TBL_Fn42045(m, v0, v1, v2) }
+	e[41499] = Fn21061
+	e[41500] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42046(m, v0, v1, v2, v3) }
+	e[41501] = Fn42047
+	e[41502] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42048(m, v0, v1, v2, v3, v4) }
+	e[41503] = func(v0 int32) int32 { return TBL_Fn41977(m, v0) }
+	e[41504] = func(v0 int32)  { TBL_Fn42052(m, v0) }
+	e[41505] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42053(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41506] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42055(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41507] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42057(m, v0, v1, v2, v3, v4) }
+	e[41508] = func(v0 int32) int32 { return TBL_Fn42058(m, v0) }
+	e[41509] = Fn648
+	e[41510] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42061(m, v0, v1, v2, v3, v4) }
+	e[41511] = func(v0 int32) int32 { return TBL_Fn42062(m, v0) }
+	e[41512] = func(v0 int32) int32 { return TBL_Fn42070(m, v0) }
+	e[41513] = func(v0 int32)  { TBL_Fn42071(m, v0) }
+	e[41514] = func(v0 int32) int32 { return TBL_Fn42074(m, v0) }
+	e[41515] = func(v0 int32) int32 { return TBL_Fn42075(m, v0) }
+	e[41516] = func(v0, v1 int32)  { TBL_Fn42076(m, v0, v1) }
+	e[41517] = func(v0, v1 int32)  { TBL_Fn42078(m, v0, v1) }
+	e[41518] = func(v0, v1 int32)  { TBL_Fn42081(m, v0, v1) }
+	e[41519] = func(v0 int32) int32 { return TBL_Fn42072(m, v0) }
+	e[41520] = func(v0 int32)  { TBL_Fn42073(m, v0) }
+	e[41521] = func(v0 int32) int32 { return TBL_Fn18263(m, v0) }
+	e[41522] = func(v0 int32) int32 { return TBL_Fn39818(m, v0) }
+	e[41523] = func(v0, v1 int32)  { TBL_Fn42077(m, v0, v1) }
+	e[41524] = func(v0, v1 int32)  { TBL_Fn42079(m, v0, v1) }
+	e[41525] = func(v0, v1 int32)  { TBL_Fn42082(m, v0, v1) }
+	e[41526] = Fn1085
+	e[41527] = m.Xduckdb_free
+	e[41528] = m.Xduckdb_free
+	e[41529] = func(v0, v1, v2 int32) int32 { return TBL_Fn42029(m, v0, v1, v2) }
+	e[41530] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42030(m, v0, v1, v2, v3) }
+	e[41531] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42031(m, v0, v1, v2, v3) }
+	e[41532] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42032(m, v0, v1, v2, v3) }
+	e[41533] = Fn42033
+	e[41534] = func(v0, v1, v2 int32) int32 { return TBL_Fn42034(m, v0, v1, v2) }
+	e[41535] = Fn42035
+	e[41536] = func(v0, v1, v2 int32) int32 { return TBL_Fn42036(m, v0, v1, v2) }
+	e[41537] = Fn21061
+	e[41538] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42037(m, v0, v1, v2, v3) }
+	e[41539] = Fn42038
+	e[41540] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42039(m, v0, v1, v2, v3, v4) }
+	e[41541] = m.Xduckdb_free
+	e[41542] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42049(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41543] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42049(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41544] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4) }
+	e[41545] = Fn1537
+	e[41546] = Fn1537
+	e[41547] = Fn42051
+	e[41548] = Fn1537
+	e[41549] = m.Xduckdb_free
+	e[41550] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42063(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41551] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42064(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41552] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4) }
 	e[41553] = Fn648
-	e[41554] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42062(m, v0, v1, v2, v3, v4) }
-	e[41555] = Fn42063
-	e[41556] = m.Xduckdb_free
-	e[41557] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42064(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41558] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42065(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41559] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42047(m, v0, v1, v2, v3, v4) }
-	e[41560] = Fn648
+	e[41554] = Fn648
+	e[41555] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42065(m, v0, v1, v2, v3, v4) }
+	e[41556] = Fn42066
+	e[41557] = m.Xduckdb_free
+	e[41558] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42063(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41559] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42064(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41560] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4) }
 	e[41561] = Fn648
-	e[41562] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42066(m, v0, v1, v2, v3, v4) }
-	e[41563] = Fn42063
-	e[41564] = m.Xduckdb_free
-	e[41565] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42064(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41566] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42065(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41567] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42047(m, v0, v1, v2, v3, v4) }
-	e[41568] = Fn648
+	e[41562] = Fn648
+	e[41563] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42065(m, v0, v1, v2, v3, v4) }
+	e[41564] = Fn42066
+	e[41565] = m.Xduckdb_free
+	e[41566] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42067(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41567] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42068(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41568] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4) }
 	e[41569] = Fn648
-	e[41570] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42066(m, v0, v1, v2, v3, v4) }
-	e[41571] = Fn42063
-	e[41572] = Fn1085
+	e[41570] = Fn648
+	e[41571] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42069(m, v0, v1, v2, v3, v4) }
+	e[41572] = Fn42066
 	e[41573] = m.Xduckdb_free
-	e[41574] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41826(m, v0, v1, v2, v3, v4) }
-	e[41575] = func(v0, v1, v2, v3 int32)  { TBL_Fn41827(m, v0, v1, v2, v3) }
-	e[41576] = func(v0, v1, v2 int32) int32 { return TBL_Fn41828(m, v0, v1, v2) }
-	e[41577] = Fn1085
-	e[41578] = m.Xduckdb_free
-	e[41579] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41829(m, v0, v1, v2, v3, v4) }
-	e[41580] = func(v0, v1, v2, v3 int32)  { TBL_Fn41830(m, v0, v1, v2, v3) }
-	e[41581] = func(v0, v1, v2 int32) int32 { return TBL_Fn41832(m, v0, v1, v2) }
+	e[41574] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42067(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41575] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn42068(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41576] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42050(m, v0, v1, v2, v3, v4) }
+	e[41577] = Fn648
+	e[41578] = Fn648
+	e[41579] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn42069(m, v0, v1, v2, v3, v4) }
+	e[41580] = Fn42066
+	e[41581] = Fn1085
 	e[41582] = m.Xduckdb_free
-	e[41583] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41833(m, v0, v1, v2, v3, v4, v5) }
-	e[41584] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41840(m, v0, v1, v2, v3, v4, v5) }
-	e[41585] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41846(m, v0, v1, v2, v3, v4, v5) }
-	e[41586] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41848(m, v0, v1, v2, v3, v4, v5) }
-	e[41587] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41850(m, v0, v1, v2, v3, v4, v5) }
-	e[41588] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41852(m, v0, v1, v2, v3, v4, v5) }
-	e[41589] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41853(m, v0, v1, v2, v3, v4, v5) }
-	e[41590] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41855(m, v0, v1, v2, v3, v4, v5) }
-	e[41591] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41859(m, v0, v1, v2, v3, v4, v5) }
-	e[41592] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41861(m, v0, v1, v2, v3, v4, v5) }
-	e[41593] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41863(m, v0, v1, v2, v3, v4, v5) }
-	e[41594] = m.Xduckdb_free
-	e[41595] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41866(m, v0, v1, v2, v3, v4, v5) }
-	e[41596] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41871(m, v0, v1, v2, v3, v4, v5) }
-	e[41597] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41875(m, v0, v1, v2, v3, v4, v5) }
-	e[41598] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41876(m, v0, v1, v2, v3, v4, v5) }
-	e[41599] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41877(m, v0, v1, v2, v3, v4, v5) }
-	e[41600] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41878(m, v0, v1, v2, v3, v4, v5) }
-	e[41601] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41879(m, v0, v1, v2, v3, v4, v5) }
-	e[41602] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41880(m, v0, v1, v2, v3, v4, v5) }
-	e[41603] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41883(m, v0, v1, v2, v3, v4, v5) }
-	e[41604] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41884(m, v0, v1, v2, v3, v4, v5) }
-	e[41605] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41885(m, v0, v1, v2, v3, v4, v5) }
-	e[41606] = m.Xduckdb_free
-	e[41607] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41887(m, v0, v1, v2, v3, v4) }
-	e[41608] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41888(m, v0, v1, v2, v3, v4) }
-	e[41609] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41892(m, v0, v1, v2, v3, v4) }
-	e[41610] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41894(m, v0, v1, v2, v3, v4) }
-	e[41611] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41896(m, v0, v1, v2, v3, v4) }
-	e[41612] = func(v0, v1, v2, v3 int32, v4 float64) int32 { return TBL_Fn41897(m, v0, v1, v2, v3, v4) }
-	e[41613] = func(v0, v1, v2, v3 int32, v4, v5 int64) int32 { return TBL_Fn41902(m, v0, v1, v2, v3, v4, v5) }
-	e[41614] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41903(m, v0, v1, v2, v3, v4) }
+	e[41583] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41829(m, v0, v1, v2, v3, v4) }
+	e[41584] = func(v0, v1, v2, v3 int32)  { TBL_Fn41830(m, v0, v1, v2, v3) }
+	e[41585] = func(v0, v1, v2 int32) int32 { return TBL_Fn41831(m, v0, v1, v2) }
+	e[41586] = Fn1085
+	e[41587] = m.Xduckdb_free
+	e[41588] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41832(m, v0, v1, v2, v3, v4) }
+	e[41589] = func(v0, v1, v2, v3 int32)  { TBL_Fn41833(m, v0, v1, v2, v3) }
+	e[41590] = func(v0, v1, v2 int32) int32 { return TBL_Fn41835(m, v0, v1, v2) }
+	e[41591] = m.Xduckdb_free
+	e[41592] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41836(m, v0, v1, v2, v3, v4, v5) }
+	e[41593] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41843(m, v0, v1, v2, v3, v4, v5) }
+	e[41594] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41849(m, v0, v1, v2, v3, v4, v5) }
+	e[41595] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41851(m, v0, v1, v2, v3, v4, v5) }
+	e[41596] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41853(m, v0, v1, v2, v3, v4, v5) }
+	e[41597] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41855(m, v0, v1, v2, v3, v4, v5) }
+	e[41598] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41856(m, v0, v1, v2, v3, v4, v5) }
+	e[41599] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41858(m, v0, v1, v2, v3, v4, v5) }
+	e[41600] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41862(m, v0, v1, v2, v3, v4, v5) }
+	e[41601] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41864(m, v0, v1, v2, v3, v4, v5) }
+	e[41602] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41866(m, v0, v1, v2, v3, v4, v5) }
+	e[41603] = m.Xduckdb_free
+	e[41604] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41869(m, v0, v1, v2, v3, v4, v5) }
+	e[41605] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41874(m, v0, v1, v2, v3, v4, v5) }
+	e[41606] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41878(m, v0, v1, v2, v3, v4, v5) }
+	e[41607] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41879(m, v0, v1, v2, v3, v4, v5) }
+	e[41608] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41880(m, v0, v1, v2, v3, v4, v5) }
+	e[41609] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41881(m, v0, v1, v2, v3, v4, v5) }
+	e[41610] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41882(m, v0, v1, v2, v3, v4, v5) }
+	e[41611] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41883(m, v0, v1, v2, v3, v4, v5) }
+	e[41612] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41886(m, v0, v1, v2, v3, v4, v5) }
+	e[41613] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41887(m, v0, v1, v2, v3, v4, v5) }
+	e[41614] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41888(m, v0, v1, v2, v3, v4, v5) }
 	e[41615] = m.Xduckdb_free
-	e[41616] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41904(m, v0, v1, v2, v3, v4) }
-	e[41617] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41905(m, v0, v1, v2, v3, v4) }
-	e[41618] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41908(m, v0, v1, v2, v3, v4) }
-	e[41619] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41909(m, v0, v1, v2, v3, v4) }
-	e[41620] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41911(m, v0, v1, v2, v3, v4) }
-	e[41621] = func(v0, v1, v2, v3 int32, v4 float64) int32 { return TBL_Fn41912(m, v0, v1, v2, v3, v4) }
-	e[41622] = func(v0, v1, v2, v3 int32, v4, v5 int64) int32 { return TBL_Fn41914(m, v0, v1, v2, v3, v4, v5) }
-	e[41623] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41915(m, v0, v1, v2, v3, v4) }
-	e[41624] = Fn1085
-	e[41625] = m.Xduckdb_free
-	e[41626] = Fn7527
-	e[41627] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41917(m, v0, v1, v2, v3, v4, v5) }
-	e[41628] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41918(m, v0, v1, v2, v3, v4, v5) }
-	e[41629] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41919(m, v0, v1, v2, v3, v4, v5) }
-	e[41630] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41921(m, v0, v1, v2, v3, v4, v5) }
-	e[41631] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41923(m, v0, v1, v2, v3, v4, v5) }
-	e[41632] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn41926(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41633] = func(v0 int32) int32 { return TBL_Fn42080(m, v0) }
-	e[41634] = func(v0 int32) int32 { return TBL_Fn42084(m, v0) }
-	e[41635] = func(v0 int32) int32 { return TBL_Fn42088(m, v0) }
-	e[41636] = func(v0 int32) int32 { return TBL_Fn42100(m, v0) }
-	e[41637] = func(v0 int32) int32 { return TBL_Fn42104(m, v0) }
-	e[41638] = func(v0 int32) int32 { return TBL_Fn42092(m, v0) }
-	e[41639] = func(v0 int32) int32 { return TBL_Fn42096(m, v0) }
-	e[41640] = Fn1085
-	e[41641] = m.Xduckdb_free
-	e[41642] = Fn7527
-	e[41643] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41928(m, v0, v1, v2, v3, v4, v5) }
-	e[41644] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41929(m, v0, v1, v2, v3, v4, v5) }
-	e[41645] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41930(m, v0, v1, v2, v3, v4, v5) }
-	e[41646] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41932(m, v0, v1, v2, v3, v4, v5) }
-	e[41647] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41934(m, v0, v1, v2, v3, v4, v5) }
-	e[41648] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn41937(m, v0, v1, v2, v3, v4, v5, v6, v7) }
-	e[41649] = func(v0 int32) int32 { return TBL_Fn42082(m, v0) }
-	e[41650] = func(v0 int32) int32 { return TBL_Fn42086(m, v0) }
-	e[41651] = func(v0 int32) int32 { return TBL_Fn42090(m, v0) }
-	e[41652] = func(v0 int32) int32 { return TBL_Fn42102(m, v0) }
-	e[41653] = func(v0 int32) int32 { return TBL_Fn42106(m, v0) }
-	e[41654] = func(v0 int32) int32 { return TBL_Fn42094(m, v0) }
-	e[41655] = func(v0 int32) int32 { return TBL_Fn42098(m, v0) }
-	e[41656] = func(v0 int32) int32 { return TBL_Fn42109(m, v0) }
-	e[41657] = func(v0 int32)  { TBL_Fn42108(m, v0) }
-	e[41658] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41938(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41659] = func(v0 int32) int32 { return TBL_Fn42109(m, v0) }
-	e[41660] = func(v0 int32)  { TBL_Fn42108(m, v0) }
-	e[41661] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41940(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41662] = m.Xduckdb_free
-	e[41663] = Fn41941
-	e[41664] = Fn41941
-	e[41665] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41666] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41667] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41668] = func(v0, v1 int32)  { TBL_Fn41942(m, v0, v1) }
-	e[41669] = Fn648
-	e[41670] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41671] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41672] = m.Xduckdb_free
-	e[41673] = Fn41941
-	e[41674] = Fn41941
+	e[41616] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41890(m, v0, v1, v2, v3, v4) }
+	e[41617] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41891(m, v0, v1, v2, v3, v4) }
+	e[41618] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41895(m, v0, v1, v2, v3, v4) }
+	e[41619] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41897(m, v0, v1, v2, v3, v4) }
+	e[41620] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41899(m, v0, v1, v2, v3, v4) }
+	e[41621] = func(v0, v1, v2, v3 int32, v4 float64) int32 { return TBL_Fn41900(m, v0, v1, v2, v3, v4) }
+	e[41622] = func(v0, v1, v2, v3 int32, v4, v5 int64) int32 { return TBL_Fn41905(m, v0, v1, v2, v3, v4, v5) }
+	e[41623] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41906(m, v0, v1, v2, v3, v4) }
+	e[41624] = m.Xduckdb_free
+	e[41625] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41907(m, v0, v1, v2, v3, v4) }
+	e[41626] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41908(m, v0, v1, v2, v3, v4) }
+	e[41627] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41911(m, v0, v1, v2, v3, v4) }
+	e[41628] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41912(m, v0, v1, v2, v3, v4) }
+	e[41629] = func(v0, v1, v2, v3 int32, v4 int64) int32 { return TBL_Fn41914(m, v0, v1, v2, v3, v4) }
+	e[41630] = func(v0, v1, v2, v3 int32, v4 float64) int32 { return TBL_Fn41915(m, v0, v1, v2, v3, v4) }
+	e[41631] = func(v0, v1, v2, v3 int32, v4, v5 int64) int32 { return TBL_Fn41917(m, v0, v1, v2, v3, v4, v5) }
+	e[41632] = func(v0, v1, v2, v3, v4 int32) int32 { return TBL_Fn41918(m, v0, v1, v2, v3, v4) }
+	e[41633] = Fn1085
+	e[41634] = m.Xduckdb_free
+	e[41635] = Fn7527
+	e[41636] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41920(m, v0, v1, v2, v3, v4, v5) }
+	e[41637] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41921(m, v0, v1, v2, v3, v4, v5) }
+	e[41638] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41922(m, v0, v1, v2, v3, v4, v5) }
+	e[41639] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41924(m, v0, v1, v2, v3, v4, v5) }
+	e[41640] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41926(m, v0, v1, v2, v3, v4, v5) }
+	e[41641] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn41929(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41642] = func(v0 int32) int32 { return TBL_Fn42083(m, v0) }
+	e[41643] = func(v0 int32) int32 { return TBL_Fn42087(m, v0) }
+	e[41644] = func(v0 int32) int32 { return TBL_Fn42091(m, v0) }
+	e[41645] = func(v0 int32) int32 { return TBL_Fn42103(m, v0) }
+	e[41646] = func(v0 int32) int32 { return TBL_Fn42107(m, v0) }
+	e[41647] = func(v0 int32) int32 { return TBL_Fn42095(m, v0) }
+	e[41648] = func(v0 int32) int32 { return TBL_Fn42099(m, v0) }
+	e[41649] = Fn1085
+	e[41650] = m.Xduckdb_free
+	e[41651] = Fn7527
+	e[41652] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41931(m, v0, v1, v2, v3, v4, v5) }
+	e[41653] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41932(m, v0, v1, v2, v3, v4, v5) }
+	e[41654] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41933(m, v0, v1, v2, v3, v4, v5) }
+	e[41655] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41935(m, v0, v1, v2, v3, v4, v5) }
+	e[41656] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41937(m, v0, v1, v2, v3, v4, v5) }
+	e[41657] = func(v0, v1, v2, v3, v4, v5, v6, v7 int32) int32 { return TBL_Fn41940(m, v0, v1, v2, v3, v4, v5, v6, v7) }
+	e[41658] = func(v0 int32) int32 { return TBL_Fn42085(m, v0) }
+	e[41659] = func(v0 int32) int32 { return TBL_Fn42089(m, v0) }
+	e[41660] = func(v0 int32) int32 { return TBL_Fn42093(m, v0) }
+	e[41661] = func(v0 int32) int32 { return TBL_Fn42105(m, v0) }
+	e[41662] = func(v0 int32) int32 { return TBL_Fn42109(m, v0) }
+	e[41663] = func(v0 int32) int32 { return TBL_Fn42097(m, v0) }
+	e[41664] = func(v0 int32) int32 { return TBL_Fn42101(m, v0) }
+	e[41665] = func(v0 int32) int32 { return TBL_Fn42112(m, v0) }
+	e[41666] = func(v0 int32)  { TBL_Fn42111(m, v0) }
+	e[41667] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41941(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41668] = func(v0 int32) int32 { return TBL_Fn42112(m, v0) }
+	e[41669] = func(v0 int32)  { TBL_Fn42111(m, v0) }
+	e[41670] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41943(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41671] = m.Xduckdb_free
+	e[41672] = Fn41944
+	e[41673] = Fn41944
+	e[41674] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41675] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41676] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41677] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41678] = func(v0, v1 int32)  { TBL_Fn41942(m, v0, v1) }
-	e[41679] = Fn648
-	e[41680] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41681] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41682] = m.Xduckdb_free
+	e[41677] = func(v0, v1 int32)  { TBL_Fn41945(m, v0, v1) }
+	e[41678] = Fn648
+	e[41679] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41680] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41681] = m.Xduckdb_free
+	e[41682] = Fn41944
 	e[41683] = Fn41944
-	e[41684] = Fn41944
+	e[41684] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41685] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41686] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41687] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41688] = func(v0, v1 int32)  { TBL_Fn41945(m, v0, v1) }
-	e[41689] = Fn648
-	e[41690] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41691] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41692] = m.Xduckdb_free
-	e[41693] = Fn41944
-	e[41694] = Fn41944
+	e[41687] = func(v0, v1 int32)  { TBL_Fn41945(m, v0, v1) }
+	e[41688] = Fn648
+	e[41689] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41690] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41691] = m.Xduckdb_free
+	e[41692] = Fn41947
+	e[41693] = Fn41947
+	e[41694] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41695] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
 	e[41696] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41697] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
-	e[41698] = func(v0, v1 int32)  { TBL_Fn41945(m, v0, v1) }
-	e[41699] = Fn648
-	e[41700] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41701] = func(v0, v1 int32)  { TBL_Fn41943(m, v0, v1) }
-	e[41702] = m.Xduckdb_free
-	e[41703] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41946(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41704] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41951(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41705] = m.Xduckdb_free
-	e[41706] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41955(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41707] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41958(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41708] = m.Xduckdb_free
-	e[41709] = func(v0, v1, v2, v3, v4 int32, v5, v6 int64) int32 { return TBL_Fn41964(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41710] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41967(m, v0, v1, v2, v3, v4, v5) }
+	e[41697] = func(v0, v1 int32)  { TBL_Fn41948(m, v0, v1) }
+	e[41698] = Fn648
+	e[41699] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41700] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41701] = m.Xduckdb_free
+	e[41702] = Fn41947
+	e[41703] = Fn41947
+	e[41704] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
+	e[41705] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
+	e[41706] = func(v0, v1 int32)  { TBL_Fn13181(m, v0, v1) }
+	e[41707] = func(v0, v1 int32)  { TBL_Fn41948(m, v0, v1) }
+	e[41708] = Fn648
+	e[41709] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
+	e[41710] = func(v0, v1 int32)  { TBL_Fn41946(m, v0, v1) }
 	e[41711] = m.Xduckdb_free
-	e[41712] = func(v0, v1, v2, v3, v4 int32, v5, v6 int64) int32 { return TBL_Fn41968(m, v0, v1, v2, v3, v4, v5, v6) }
-	e[41713] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41971(m, v0, v1, v2, v3, v4, v5) }
+	e[41712] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41949(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41713] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41954(m, v0, v1, v2, v3, v4, v5, v6) }
 	e[41714] = m.Xduckdb_free
-	e[41715] = Fn38764
-	e[41716] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41972(m, v0, v1, v2, v3, v4, v5) }
-	e[41717] = Fn655
-	e[41718] = m.Xduckdb_free
-	e[41719] = Fn38764
-	e[41720] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41973(m, v0, v1, v2, v3, v4, v5) }
-	e[41721] = Fn655
-	e[41722] = m.Xduckdb_free
-	e[41723] = Fn42120
-	e[41724] = Fn1537
-	e[41725] = Fn648
-	e[41726] = func(v0, v1 int32) int32 { return TBL_Fn42132(m, v0, v1) }
-	e[41727] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42160(m, v0, v1, v2, v3) }
-	e[41728] = func(v0 int32)  { TBL_Fn2372(m, v0) }
-	e[41729] = func(v0 int32)  { TBL_Fn42170(m, v0) }
-	e[41730] = func(v0 int32)  { TBL_Fn42161(m, v0) }
-	e[41731] = func(v0 int32)  { TBL_Fn42162(m, v0) }
-	e[41732] = func(v0, v1, v2 int32)  { TBL_Fn42174(m, v0, v1, v2) }
-	e[41733] = func(v0, v1, v2 int32) int32 { return TBL_Fn42175(m, v0, v1, v2) }
-	e[41734] = func(v0 int32) int32 { return TBL_Fn41800(m, v0) }
-	e[41735] = m.Xduckdb_free
-	e[41736] = Fn42172
-	e[41737] = func(v0, v1, v2 int32)  { TBL_Fn42173(m, v0, v1, v2) }
-	e[41738] = func(v0 int32)  { TBL_Fn21070(m, v0) }
-	e[41739] = func(v0 int32) int32 { return TBL_Fn42186(m, v0) }
-	e[41740] = func(v0 int32)  { TBL_Fn42187(m, v0) }
-	e[41741] = Fn41462
-	e[41742] = Fn39287
-	e[41743] = func(v0, v1 int32) int32 { return TBL_Fn41520(m, v0, v1) }
-	e[41744] = func(v0 int32)  { TBL_Fn42184(m, v0) }
-	e[41745] = func(v0 int32)  { TBL_Fn42185(m, v0) }
-	e[41746] = func(v0, v1 int32) int32 { return TBL_Fn41521(m, v0, v1) }
-	e[41747] = Fn1085
-	e[41748] = m.Xduckdb_free
-	e[41749] = Fn653
-	e[41750] = Fn653
-	e[41751] = Fn2775
-	e[41752] = m.Xduckdb_free
-	e[41753] = func(v0, v1, v2 int32) int32 { return TBL_Fn42189(m, v0, v1, v2) }
-	e[41754] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42206(m, v0, v1, v2, v3, v4, v5) }
-	e[41755] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42203(m, v0, v1, v2, v3, v4) }
-	e[41756] = func(v0, v1, v2, v3 int32)  { TBL_Fn42192(m, v0, v1, v2, v3) }
+	e[41715] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41958(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41716] = func(v0, v1, v2, v3, v4, v5, v6 int32) int32 { return TBL_Fn41961(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41717] = m.Xduckdb_free
+	e[41718] = func(v0, v1, v2, v3, v4 int32, v5, v6 int64) int32 { return TBL_Fn41967(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41719] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41970(m, v0, v1, v2, v3, v4, v5) }
+	e[41720] = m.Xduckdb_free
+	e[41721] = func(v0, v1, v2, v3, v4 int32, v5, v6 int64) int32 { return TBL_Fn41971(m, v0, v1, v2, v3, v4, v5, v6) }
+	e[41722] = func(v0, v1, v2, v3, v4, v5 int32) int32 { return TBL_Fn41974(m, v0, v1, v2, v3, v4, v5) }
+	e[41723] = m.Xduckdb_free
+	e[41724] = Fn38764
+	e[41725] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41975(m, v0, v1, v2, v3, v4, v5) }
+	e[41726] = Fn655
+	e[41727] = m.Xduckdb_free
+	e[41728] = Fn38764
+	e[41729] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn41976(m, v0, v1, v2, v3, v4, v5) }
+	e[41730] = Fn655
+	e[41731] = m.Xduckdb_free
+	e[41732] = Fn42123
+	e[41733] = Fn1537
+	e[41734] = Fn648
+	e[41735] = func(v0, v1 int32) int32 { return TBL_Fn42135(m, v0, v1) }
+	e[41736] = func(v0, v1, v2, v3 int32) int32 { return TBL_Fn42163(m, v0, v1, v2, v3) }
+	e[41737] = func(v0 int32)  { TBL_Fn2372(m, v0) }
+	e[41738] = func(v0 int32)  { TBL_Fn42173(m, v0) }
+	e[41739] = func(v0 int32)  { TBL_Fn42164(m, v0) }
+	e[41740] = func(v0 int32)  { TBL_Fn42165(m, v0) }
+	e[41741] = func(v0, v1, v2 int32)  { TBL_Fn42177(m, v0, v1, v2) }
+	e[41742] = func(v0, v1, v2 int32) int32 { return TBL_Fn42178(m, v0, v1, v2) }
+	e[41743] = func(v0 int32) int32 { return TBL_Fn41803(m, v0) }
+	e[41744] = m.Xduckdb_free
+	e[41745] = Fn42175
+	e[41746] = func(v0, v1, v2 int32)  { TBL_Fn42176(m, v0, v1, v2) }
+	e[41747] = func(v0 int32)  { TBL_Fn21070(m, v0) }
+	e[41748] = func(v0 int32) int32 { return TBL_Fn42189(m, v0) }
+	e[41749] = func(v0 int32)  { TBL_Fn42190(m, v0) }
+	e[41750] = Fn41465
+	e[41751] = Fn39287
+	e[41752] = func(v0, v1 int32) int32 { return TBL_Fn41523(m, v0, v1) }
+	e[41753] = func(v0 int32)  { TBL_Fn42187(m, v0) }
+	e[41754] = func(v0 int32)  { TBL_Fn42188(m, v0) }
+	e[41755] = func(v0, v1 int32) int32 { return TBL_Fn41524(m, v0, v1) }
+	e[41756] = Fn1085
 	e[41757] = m.Xduckdb_free
-	e[41758] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42205(m, v0, v1, v2, v3, v4, v5) }
-	e[41759] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42202(m, v0, v1, v2, v3, v4) }
-	e[41760] = func(v0, v1, v2, v3 int32)  { TBL_Fn42193(m, v0, v1, v2, v3) }
+	e[41758] = Fn653
+	e[41759] = Fn653
+	e[41760] = Fn2775
 	e[41761] = m.Xduckdb_free
-	e[41762] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42204(m, v0, v1, v2, v3, v4, v5) }
-	e[41763] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42199(m, v0, v1, v2, v3, v4) }
-	e[41764] = func(v0, v1, v2, v3 int32)  { TBL_Fn42195(m, v0, v1, v2, v3) }
-	e[41765] = m.Xduckdb_free
-	e[41766] = func(v0, v1, v2 int32) int32 { return TBL_Fn42196(m, v0, v1, v2) }
-	e[41767] = m.Xduckdb_free
-	e[41768] = Fn42211
-	e[41769] = m.Xduckdb_free
-	e[41770] = Fn42212
-	e[41771] = func(v0 int32)  { TBL_Fn42215(m, v0) }
-	e[41772] = func(v0 int32) int32 { return TBL_Fn20716(m, v0) }
-	e[41773] = func(v0 int32)  { TBL_Fn42217(m, v0) }
-	e[41774] = func(v0 int32)  { TBL_Fn42215(m, v0) }
-	e[41775] = func(v0 int32)  { TBL_Fn42215(m, v0) }
-	e[41776] = func(v0 int32)  { TBL_Fn42215(m, v0) }
-	e[41777] = func(v0 int32)  { TBL_Fn42217(m, v0) }
+	e[41762] = func(v0, v1, v2 int32) int32 { return TBL_Fn42192(m, v0, v1, v2) }
+	e[41763] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42209(m, v0, v1, v2, v3, v4, v5) }
+	e[41764] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42206(m, v0, v1, v2, v3, v4) }
+	e[41765] = func(v0, v1, v2, v3 int32)  { TBL_Fn42195(m, v0, v1, v2, v3) }
+	e[41766] = m.Xduckdb_free
+	e[41767] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42208(m, v0, v1, v2, v3, v4, v5) }
+	e[41768] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42205(m, v0, v1, v2, v3, v4) }
+	e[41769] = func(v0, v1, v2, v3 int32)  { TBL_Fn42196(m, v0, v1, v2, v3) }
+	e[41770] = m.Xduckdb_free
+	e[41771] = func(v0, v1, v2, v3, v4, v5 int32)  { TBL_Fn42207(m, v0, v1, v2, v3, v4, v5) }
+	e[41772] = func(v0, v1, v2, v3, v4 int32)  { TBL_Fn42202(m, v0, v1, v2, v3, v4) }
+	e[41773] = func(v0, v1, v2, v3 int32)  { TBL_Fn42198(m, v0, v1, v2, v3) }
+	e[41774] = m.Xduckdb_free
+	e[41775] = func(v0, v1, v2 int32) int32 { return TBL_Fn42199(m, v0, v1, v2) }
+	e[41776] = m.Xduckdb_free
+	e[41777] = Fn42214
 	e[41778] = m.Xduckdb_free
-	e[41779] = Fn42218
+	e[41779] = Fn42215
+	e[41780] = func(v0 int32)  { TBL_Fn42218(m, v0) }
+	e[41781] = func(v0 int32) int32 { return TBL_Fn20716(m, v0) }
+	e[41782] = func(v0 int32)  { TBL_Fn42220(m, v0) }
+	e[41783] = func(v0 int32)  { TBL_Fn42218(m, v0) }
+	e[41784] = func(v0 int32)  { TBL_Fn42218(m, v0) }
+	e[41785] = func(v0 int32)  { TBL_Fn42218(m, v0) }
+	e[41786] = func(v0 int32)  { TBL_Fn42220(m, v0) }
+	e[41787] = m.Xduckdb_free
+	e[41788] = Fn42221
 }
 
 var TBL_Fn0 func(m *Module, v0, v1, v2 int32) int32
@@ -72719,9 +72663,9 @@ var TBL_Fn329 func(m *Module, v0, v1 int32, v2 float64, v3, v4, v5, v6 int32) in
 var TBL_Fn330 func(m *Module, v0, v1 int32, v2 float64, v3, v4, v5 int32) int32
 var TBL_Fn331 func(m *Module, v0, v1, v2, v3 int32, v4 float64, v5, v6, v7, v8 int32, v9 float64) float64
 var TBL_Fn332 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn333 func(m *Module, v0, v1 int32, v2, v3 int64) int64
+var TBL_Fn333 func(m *Module, v0 int32) int64
 var TBL_Fn334 func(m *Module, v0, v1 int32, v2, v3 int64) int64
-var TBL_Fn335 func(m *Module, v0 int32) int64
+var TBL_Fn335 func(m *Module, v0, v1 int32, v2, v3 int64) int64
 var TBL_Fn336 func(m *Module, v0 int32) int64
 var TBL_Fn337 func(m *Module, v0 int32, v1 int64) int32
 var TBL_Fn338 func(m *Module, v0, v1 int32) int32
@@ -112777,547 +112721,547 @@ var TBL_Fn41388 func(m *Module, v0 int32)
 var TBL_Fn41389 func(m *Module, v0 int32) 
 var TBL_Fn41390 func(m *Module, v0 int32) 
 var TBL_Fn41392 func(m *Module) int32
-var TBL_Fn41394 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41393 func(m *Module, v0 int32) int32
 var TBL_Fn41395 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41396 func(m *Module, v0, v1, v2 int32, v3, v4 int64) 
-var TBL_Fn41397 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41396 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41397 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn41398 func(m *Module, v0, v1, v2 int32, v3, v4 int64) 
-var TBL_Fn41399 func(m *Module, v0, v1, v2 int32, v3 int64) int64
-var TBL_Fn41400 func(m *Module, v0, v1, v2 int32, v3 int64) int64
-var TBL_Fn41401 func(m *Module, v0, v1 int32) int64
-var TBL_Fn41402 func(m *Module, v0, v1 int32) int64
-var TBL_Fn41403 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn41404 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41405 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41406 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41407 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41408 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41409 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41410 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41411 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41412 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41413 func(m *Module, v0, v1 int32) 
-var TBL_Fn41414 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41415 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41416 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41417 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41399 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41400 func(m *Module, v0, v1, v2 int32, v3, v4 int64) 
+var TBL_Fn41401 func(m *Module, v0, v1, v2 int32, v3 int64) int64
+var TBL_Fn41402 func(m *Module, v0, v1, v2 int32, v3 int64) int64
+var TBL_Fn41403 func(m *Module, v0, v1 int32) int64
+var TBL_Fn41404 func(m *Module, v0, v1 int32) int64
+var TBL_Fn41405 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn41406 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41407 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41408 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41409 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41410 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41411 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41412 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41413 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41414 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41415 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41416 func(m *Module, v0, v1 int32) 
+var TBL_Fn41417 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41418 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41419 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41420 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41421 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41422 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn41423 func(m *Module, v0, v1 int32) 
-var TBL_Fn41424 func(m *Module, v0, v1 int32) int64
-var TBL_Fn41425 func(m *Module, v0, v1 int32) 
-var TBL_Fn41426 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41427 func(m *Module, v0 int32) int32
-var TBL_Fn41428 func(m *Module, v0 int32) 
-var TBL_Fn41429 func(m *Module, v0 int32) 
-var TBL_Fn41430 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41431 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41432 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41433 func(m *Module, v0 int32) int32
-var TBL_Fn41434 func(m *Module, v0, v1 int32) 
-var TBL_Fn41435 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41436 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41438 func(m *Module, v0 int32) int32
-var TBL_Fn41439 func(m *Module, v0, v1 int32) 
-var TBL_Fn41440 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41441 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41444 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41419 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41420 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41421 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41422 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41423 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41424 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41425 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn41426 func(m *Module, v0, v1 int32) 
+var TBL_Fn41427 func(m *Module, v0, v1 int32) int64
+var TBL_Fn41428 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41429 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41430 func(m *Module, v0 int32) int32
+var TBL_Fn41431 func(m *Module, v0 int32) 
+var TBL_Fn41432 func(m *Module, v0 int32) 
+var TBL_Fn41433 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41434 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41435 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41436 func(m *Module, v0 int32) int32
+var TBL_Fn41437 func(m *Module, v0, v1 int32) 
+var TBL_Fn41438 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41439 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41441 func(m *Module, v0 int32) int32
+var TBL_Fn41442 func(m *Module, v0, v1 int32) 
+var TBL_Fn41443 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41444 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41447 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41448 func(m *Module, v0, v1 float64) float64
-var TBL_Fn41449 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41450 func(m *Module) 
-var TBL_Fn41451 func(m *Module, v0, v1 int32) int64
-var TBL_Fn41452 func(m *Module, v0, v1 int32) 
-var TBL_Fn41453 func(m *Module, v0 int32) int32
-var TBL_Fn41454 func(m *Module, v0, v1 int32) 
-var TBL_Fn41455 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41456 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41457 func(m *Module, v0 int32) int32
-var TBL_Fn41458 func(m *Module) float64
-var TBL_Fn41459 func(m *Module, v0 int32) int32
-var TBL_Fn41460 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41461 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn41463 func(m *Module, v0 int32) int32
-var TBL_Fn41465 func(m *Module, v0 float64) float64
-var TBL_Fn41467 func(m *Module, v0 float64) float64
+var TBL_Fn41450 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41451 func(m *Module, v0, v1 float64) float64
+var TBL_Fn41452 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41453 func(m *Module) 
+var TBL_Fn41454 func(m *Module, v0, v1 int32) int64
+var TBL_Fn41455 func(m *Module, v0, v1 int32) 
+var TBL_Fn41456 func(m *Module, v0 int32) int32
+var TBL_Fn41457 func(m *Module, v0, v1 int32) 
+var TBL_Fn41458 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41459 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41460 func(m *Module, v0 int32) int32
+var TBL_Fn41461 func(m *Module) float64
+var TBL_Fn41462 func(m *Module, v0 int32) int32
+var TBL_Fn41463 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41464 func(m *Module, v0 int64, v1 int32) int64
+var TBL_Fn41466 func(m *Module, v0 int32) int32
 var TBL_Fn41468 func(m *Module, v0 float64) float64
-var TBL_Fn41469 func(m *Module, v0, v1 float64) float64
-var TBL_Fn41470 func(m *Module, v0 int32) int32
-var TBL_Fn41473 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41474 func(m *Module, v0 int32) int32
-var TBL_Fn41475 func(m *Module, v0 int32) 
-var TBL_Fn41477 func(m *Module, v0 float64, v1 int32) int32
-var TBL_Fn41479 func(m *Module, v0 float64) float64
-var TBL_Fn41480 func(m *Module, v0, v1 float64) float64
-var TBL_Fn41481 func(m *Module, v0 float64) float64
-var TBL_Fn41482 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41483 func(m *Module) 
-var TBL_Fn41484 func(m *Module) int32
-var TBL_Fn41485 func(m *Module, v0 float64) float64
-var TBL_Fn41486 func(m *Module, v0 float64) float64
-var TBL_Fn41488 func(m *Module) float64
-var TBL_Fn41489 func(m *Module, v0 float64) 
-var TBL_Fn41491 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41492 func(m *Module, v0 int32) int32
-var TBL_Fn41493 func(m *Module, v0 int32) int32
-var TBL_Fn41494 func(m *Module, v0, v1, v2 float64) float64
-var TBL_Fn41495 func(m *Module, v0 int32, v1 float64) 
-var TBL_Fn41498 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41499 func(m *Module, v0 int32, v1 int64, v2 int32) int64
-var TBL_Fn41500 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41501 func(m *Module, v0 int32) int32
-var TBL_Fn41502 func(m *Module, v0 int32) int32
-var TBL_Fn41503 func(m *Module, v0 int32) int32
-var TBL_Fn41504 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41470 func(m *Module, v0 float64) float64
+var TBL_Fn41471 func(m *Module, v0 float64) float64
+var TBL_Fn41472 func(m *Module, v0, v1 float64) float64
+var TBL_Fn41473 func(m *Module, v0 int32) int32
+var TBL_Fn41476 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41477 func(m *Module, v0 int32) int32
+var TBL_Fn41478 func(m *Module, v0 int32) 
+var TBL_Fn41480 func(m *Module, v0 float64, v1 int32) int32
+var TBL_Fn41482 func(m *Module, v0 float64) float64
+var TBL_Fn41483 func(m *Module, v0, v1 float64) float64
+var TBL_Fn41484 func(m *Module, v0 float64) float64
+var TBL_Fn41485 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41486 func(m *Module) 
+var TBL_Fn41487 func(m *Module) int32
+var TBL_Fn41488 func(m *Module, v0 float64) float64
+var TBL_Fn41489 func(m *Module, v0 float64) float64
+var TBL_Fn41491 func(m *Module) float64
+var TBL_Fn41492 func(m *Module, v0 float64) 
+var TBL_Fn41494 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41495 func(m *Module, v0 int32) int32
+var TBL_Fn41496 func(m *Module, v0 int32) int32
+var TBL_Fn41497 func(m *Module, v0, v1, v2 float64) float64
+var TBL_Fn41498 func(m *Module, v0 int32, v1 float64) 
+var TBL_Fn41501 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41502 func(m *Module, v0 int32, v1 int64, v2 int32) int64
+var TBL_Fn41503 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41504 func(m *Module, v0 int32) int32
 var TBL_Fn41505 func(m *Module, v0 int32) int32
-var TBL_Fn41506 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41507 func(m *Module, v0 int32) int32
-var TBL_Fn41508 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41509 func(m *Module, v0 int32) int32
-var TBL_Fn41510 func(m *Module, v0 int32) 
+var TBL_Fn41506 func(m *Module, v0 int32) int32
+var TBL_Fn41507 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41508 func(m *Module, v0 int32) int32
+var TBL_Fn41509 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41510 func(m *Module, v0 int32) int32
 var TBL_Fn41511 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41512 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41513 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41514 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41515 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41520 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41521 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41522 func(m *Module, v0 float64) int64
-var TBL_Fn41523 func(m *Module, v0, v1 int64) int64
-var TBL_Fn41525 func(m *Module, v0 int32, v1 int64, v2 int32) int64
-var TBL_Fn41526 func(m *Module, v0 int32) int32
-var TBL_Fn41527 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41528 func(m *Module, v0, v1 int32) 
-var TBL_Fn41529 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41530 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41531 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41536 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41537 func(m *Module, v0 int32) int32
-var TBL_Fn41538 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41539 func(m *Module, v0, v1 int32) 
-var TBL_Fn41540 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41541 func(m *Module, v0, v1 int32) 
-var TBL_Fn41542 func(m *Module, v0 int32) int32
-var TBL_Fn41543 func(m *Module, v0, v1 int32) 
-var TBL_Fn41545 func(m *Module, v0, v1 int32) 
-var TBL_Fn41546 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41547 func(m *Module, v0 int32) int32
-var TBL_Fn41551 func(m *Module) int32
-var TBL_Fn41552 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41553 func(m *Module, v0 float64) float64
-var TBL_Fn41554 func(m *Module, v0 float64) float64
-var TBL_Fn41555 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41556 func(m *Module, v0 int32) int32
-var TBL_Fn41558 func(m *Module, v0 int32) int32
-var TBL_Fn41559 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41560 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41561 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41512 func(m *Module, v0 int32) int32
+var TBL_Fn41513 func(m *Module, v0 int32) 
+var TBL_Fn41514 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41515 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41516 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41517 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41518 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41523 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41524 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41525 func(m *Module, v0 float64) int64
+var TBL_Fn41526 func(m *Module, v0, v1 int64) int64
+var TBL_Fn41528 func(m *Module, v0 int32, v1 int64, v2 int32) int64
+var TBL_Fn41529 func(m *Module, v0 int32) int32
+var TBL_Fn41530 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41531 func(m *Module, v0, v1 int32) 
+var TBL_Fn41532 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41533 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41534 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41539 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41540 func(m *Module, v0 int32) int32
+var TBL_Fn41541 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41542 func(m *Module, v0, v1 int32) 
+var TBL_Fn41543 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41544 func(m *Module, v0, v1 int32) 
+var TBL_Fn41545 func(m *Module, v0 int32) int32
+var TBL_Fn41546 func(m *Module, v0, v1 int32) 
+var TBL_Fn41548 func(m *Module, v0, v1 int32) 
+var TBL_Fn41549 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41550 func(m *Module, v0 int32) int32
+var TBL_Fn41554 func(m *Module) int32
+var TBL_Fn41555 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41556 func(m *Module, v0 float64) float64
+var TBL_Fn41557 func(m *Module, v0 float64) float64
+var TBL_Fn41558 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41559 func(m *Module, v0 int32) int32
+var TBL_Fn41561 func(m *Module, v0 int32) int32
 var TBL_Fn41562 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41563 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41564 func(m *Module, v0 int32) int32
-var TBL_Fn41565 func(m *Module, v0 int32) int32
-var TBL_Fn41566 func(m *Module, v0 int32) int32
+var TBL_Fn41564 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41565 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41566 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41567 func(m *Module, v0 int32) int32
-var TBL_Fn41568 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41569 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41570 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41571 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41572 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41573 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn41574 func(m *Module, v0 int32) int32
-var TBL_Fn41575 func(m *Module, v0 int32, v1, v2, v3 int64) 
-var TBL_Fn41576 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
-var TBL_Fn41577 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41578 func(m *Module, v0, v1 int32) int64
-var TBL_Fn41579 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41580 func(m *Module, v0, v1 int32) float64
-var TBL_Fn41581 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn41582 func(m *Module, v0, v1, v2 int32, v3 int64) int64
-var TBL_Fn41583 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn41584 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41585 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41586 func(m *Module, v0 int32) int32
-var TBL_Fn41587 func(m *Module, v0 int32) int32
-var TBL_Fn41589 func(m *Module, v0 float64) float64
-var TBL_Fn41593 func(m *Module, v0 float64, v1 int32) float64
-var TBL_Fn41594 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41595 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41596 func(m *Module, v0 int32) int32
-var TBL_Fn41597 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41598 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn41599 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41600 func(m *Module, v0 int32, v1 float64, v2, v3, v4, v5 int32) int32
-var TBL_Fn41601 func(m *Module, v0, v1 int32) 
-var TBL_Fn41602 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41603 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41604 func(m *Module, v0 int32) int32
-var TBL_Fn41605 func(m *Module, v0 int32) int32
-var TBL_Fn41606 func(m *Module, v0 int32) int32
-var TBL_Fn41607 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41608 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41568 func(m *Module, v0 int32) int32
+var TBL_Fn41569 func(m *Module, v0 int32) int32
+var TBL_Fn41570 func(m *Module, v0 int32) int32
+var TBL_Fn41571 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41572 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41573 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41574 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41575 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41576 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn41577 func(m *Module, v0 int32) int32
+var TBL_Fn41578 func(m *Module, v0 int32, v1, v2, v3 int64) 
+var TBL_Fn41579 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
+var TBL_Fn41580 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41581 func(m *Module, v0, v1 int32) int64
+var TBL_Fn41582 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41583 func(m *Module, v0, v1 int32) float64
+var TBL_Fn41584 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn41585 func(m *Module, v0, v1, v2 int32, v3 int64) int64
+var TBL_Fn41586 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn41587 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41588 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41589 func(m *Module, v0 int32) int32
+var TBL_Fn41590 func(m *Module, v0 int32) int32
+var TBL_Fn41592 func(m *Module, v0 float64) float64
+var TBL_Fn41596 func(m *Module, v0 float64, v1 int32) float64
+var TBL_Fn41597 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41598 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41599 func(m *Module, v0 int32) int32
+var TBL_Fn41600 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41601 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn41602 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41603 func(m *Module, v0 int32, v1 float64, v2, v3, v4, v5 int32) int32
+var TBL_Fn41604 func(m *Module, v0, v1 int32) 
+var TBL_Fn41605 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41606 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41607 func(m *Module, v0 int32) int32
+var TBL_Fn41608 func(m *Module, v0 int32) int32
+var TBL_Fn41609 func(m *Module, v0 int32) int32
+var TBL_Fn41610 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn41611 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41612 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41613 func(m *Module, v0, v1 int32) 
 var TBL_Fn41614 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41615 func(m *Module, v0 int32) int32
-var TBL_Fn41616 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41617 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
-var TBL_Fn41621 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41624 func(m *Module, v0 int32, v1 float64) 
-var TBL_Fn41625 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn41626 func(m *Module, v0, v1 int32) 
-var TBL_Fn41627 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn41628 func(m *Module, v0, v1 int32) 
-var TBL_Fn41629 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
-var TBL_Fn41630 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41631 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41632 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
-var TBL_Fn41633 func(m *Module, v0, v1 int64) float64
-var TBL_Fn41634 func(m *Module, v0, v1 int64) float32
-var TBL_Fn41635 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41636 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41637 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41638 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41639 func(m *Module, v0, v1 int32) 
-var TBL_Fn41640 func(m *Module, v0, v1 int32) 
-var TBL_Fn41641 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41642 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41643 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41644 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41645 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41646 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41647 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41615 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41616 func(m *Module, v0, v1 int32) 
+var TBL_Fn41617 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41618 func(m *Module, v0 int32) int32
+var TBL_Fn41619 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41620 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
+var TBL_Fn41624 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41627 func(m *Module, v0 int32, v1 float64) 
+var TBL_Fn41628 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn41629 func(m *Module, v0, v1 int32) 
+var TBL_Fn41630 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn41631 func(m *Module, v0, v1 int32) 
+var TBL_Fn41632 func(m *Module, v0 int32, v1, v2 int64, v3 int32) 
+var TBL_Fn41633 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41634 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41635 func(m *Module, v0 int32, v1, v2, v3, v4 int64) 
+var TBL_Fn41636 func(m *Module, v0, v1 int64) float64
+var TBL_Fn41637 func(m *Module, v0, v1 int64) float32
+var TBL_Fn41638 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41639 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41640 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41641 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41642 func(m *Module, v0, v1 int32) 
+var TBL_Fn41643 func(m *Module, v0, v1 int32) 
+var TBL_Fn41644 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41645 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41646 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41647 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41648 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41649 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41650 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41649 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41650 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41651 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41652 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41653 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41654 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41655 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41652 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41653 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41654 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41655 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41656 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41657 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41658 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41659 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41660 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41657 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41658 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41659 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41660 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41661 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41662 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41663 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41664 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41665 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41662 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41663 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41664 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41665 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41666 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41667 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41668 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41669 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41670 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41667 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41668 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41669 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41670 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41671 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41672 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41673 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41674 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41675 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41672 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41673 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41674 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41675 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41676 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41677 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41678 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41679 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41680 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41677 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41678 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41679 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41680 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41681 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41682 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41683 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41684 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41685 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41682 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41683 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41684 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41685 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41686 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41687 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41688 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41689 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41690 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41691 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41692 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41693 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41687 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41688 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41689 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41690 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41691 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41692 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41693 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41694 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41695 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41696 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41695 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41696 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41697 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41698 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41699 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41698 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41699 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41700 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41701 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41702 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41701 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41702 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41703 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41704 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41705 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41704 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41705 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41706 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41707 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41708 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41707 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41708 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41709 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41710 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41711 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41712 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41713 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41714 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41714 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41715 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41716 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41717 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41718 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41719 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41720 func(m *Module, v0 int32) 
-var TBL_Fn41721 func(m *Module) int64
-var TBL_Fn41722 func(m *Module) int64
+var TBL_Fn41720 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41721 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41722 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn41723 func(m *Module, v0 int32) 
-var TBL_Fn41724 func(m *Module, v0, v1 int32) 
-var TBL_Fn41725 func(m *Module, v0 int32) 
-var TBL_Fn41726 func(m *Module, v0, v1 int32) 
-var TBL_Fn41727 func(m *Module, v0 int32) 
+var TBL_Fn41724 func(m *Module) int64
+var TBL_Fn41725 func(m *Module) int64
+var TBL_Fn41726 func(m *Module, v0 int32) 
+var TBL_Fn41727 func(m *Module, v0, v1 int32) 
 var TBL_Fn41728 func(m *Module, v0 int32) 
-var TBL_Fn41730 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41731 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41732 func(m *Module, v0 int32) int32
+var TBL_Fn41729 func(m *Module, v0, v1 int32) 
+var TBL_Fn41730 func(m *Module, v0 int32) 
+var TBL_Fn41731 func(m *Module, v0 int32) 
 var TBL_Fn41733 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41734 func(m *Module, v0 int32) int32
-var TBL_Fn41735 func(m *Module, v0 int32) 
-var TBL_Fn41736 func(m *Module, v0 int32) int32
-var TBL_Fn41737 func(m *Module, v0 int32) 
-var TBL_Fn41738 func(m *Module, v0 int32) int32
-var TBL_Fn41740 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
-var TBL_Fn41741 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41742 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41743 func(m *Module, v0 int32) int32
+var TBL_Fn41734 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41735 func(m *Module, v0 int32) int32
+var TBL_Fn41736 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41737 func(m *Module, v0 int32) int32
+var TBL_Fn41738 func(m *Module, v0 int32) 
+var TBL_Fn41739 func(m *Module, v0 int32) int32
+var TBL_Fn41740 func(m *Module, v0 int32) 
+var TBL_Fn41741 func(m *Module, v0 int32) int32
+var TBL_Fn41743 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
+var TBL_Fn41744 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41745 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn41746 func(m *Module, v0 int32) int32
-var TBL_Fn41747 func(m *Module, v0 int32) int32
-var TBL_Fn41748 func(m *Module, v0 int32) 
-var TBL_Fn41749 func(m *Module, v0 int32) 
-var TBL_Fn41750 func(m *Module, v0 int32) 
-var TBL_Fn41751 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41752 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41753 func(m *Module, v0 int32) int32
-var TBL_Fn41754 func(m *Module, v0 int32) int32
-var TBL_Fn41755 func(m *Module, v0 int32) 
-var TBL_Fn41756 func(m *Module, v0 int32) 
-var TBL_Fn41757 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41748 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41749 func(m *Module, v0 int32) int32
+var TBL_Fn41750 func(m *Module, v0 int32) int32
+var TBL_Fn41751 func(m *Module, v0 int32) 
+var TBL_Fn41752 func(m *Module, v0 int32) 
+var TBL_Fn41753 func(m *Module, v0 int32) 
+var TBL_Fn41754 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41755 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41756 func(m *Module, v0 int32) int32
+var TBL_Fn41757 func(m *Module, v0 int32) int32
 var TBL_Fn41758 func(m *Module, v0 int32) 
-var TBL_Fn41759 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41760 func(m *Module, v0 int32) int32
-var TBL_Fn41761 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41759 func(m *Module, v0 int32) 
+var TBL_Fn41760 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41761 func(m *Module, v0 int32) 
 var TBL_Fn41762 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41763 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41764 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn41765 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn41766 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn41767 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41768 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41769 func(m *Module, v0 int32) int32
-var TBL_Fn41770 func(m *Module, v0 int32) int32
-var TBL_Fn41771 func(m *Module, v0 int32) int32
-var TBL_Fn41772 func(m *Module, v0 int32) 
-var TBL_Fn41773 func(m *Module, v0 int32) 
-var TBL_Fn41774 func(m *Module, v0 int32) 
-var TBL_Fn41775 func(m *Module, v0 int32) int32
-var TBL_Fn41776 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41777 func(m *Module, v0 int32) int32
+var TBL_Fn41763 func(m *Module, v0 int32) int32
+var TBL_Fn41764 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41765 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41766 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41767 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn41768 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn41769 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn41770 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41771 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41772 func(m *Module, v0 int32) int32
+var TBL_Fn41773 func(m *Module, v0 int32) int32
+var TBL_Fn41774 func(m *Module, v0 int32) int32
+var TBL_Fn41775 func(m *Module, v0 int32) 
+var TBL_Fn41776 func(m *Module, v0 int32) 
+var TBL_Fn41777 func(m *Module, v0 int32) 
 var TBL_Fn41778 func(m *Module, v0 int32) int32
 var TBL_Fn41779 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41780 func(m *Module, v0, v1 int32) 
-var TBL_Fn41781 func(m *Module, v0, v1 int32) 
-var TBL_Fn41782 func(m *Module, v0 int32) int32
-var TBL_Fn41783 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41784 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41785 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
-var TBL_Fn41786 func(m *Module) 
-var TBL_Fn41787 func(m *Module, v0 int32) 
-var TBL_Fn41788 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41789 func(m *Module, v0 int32) 
-var TBL_Fn41790 func(m *Module, v0 int32) int32
-var TBL_Fn41791 func(m *Module, v0 int32) 
-var TBL_Fn41792 func(m *Module, v0 int32) int32
+var TBL_Fn41780 func(m *Module, v0 int32) int32
+var TBL_Fn41781 func(m *Module, v0 int32) int32
+var TBL_Fn41782 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41783 func(m *Module, v0, v1 int32) 
+var TBL_Fn41784 func(m *Module, v0, v1 int32) 
+var TBL_Fn41785 func(m *Module, v0 int32) int32
+var TBL_Fn41786 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41787 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41788 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
+var TBL_Fn41789 func(m *Module) 
+var TBL_Fn41790 func(m *Module, v0 int32) 
+var TBL_Fn41791 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41792 func(m *Module, v0 int32) 
 var TBL_Fn41793 func(m *Module, v0 int32) int32
-var TBL_Fn41794 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41795 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41796 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41798 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41794 func(m *Module, v0 int32) 
+var TBL_Fn41795 func(m *Module, v0 int32) int32
+var TBL_Fn41796 func(m *Module, v0 int32) int32
+var TBL_Fn41797 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41798 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn41799 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41800 func(m *Module, v0 int32) int32
-var TBL_Fn41801 func(m *Module, v0, v1 int32) 
-var TBL_Fn41802 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41803 func(m *Module, v0, v1 int32) 
-var TBL_Fn41804 func(m *Module, v0 int32) int32
-var TBL_Fn41805 func(m *Module, v0 int32) 
-var TBL_Fn41806 func(m *Module, v0 int32) 
-var TBL_Fn41807 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41808 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41811 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41812 func(m *Module, v0 int32) int32
-var TBL_Fn41813 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41815 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn41816 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41817 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41818 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41819 func(m *Module, v0 int32) 
-var TBL_Fn41820 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41821 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41822 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41823 func(m *Module) int32
-var TBL_Fn41824 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41825 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41826 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41827 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41801 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41802 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41803 func(m *Module, v0 int32) int32
+var TBL_Fn41804 func(m *Module, v0, v1 int32) 
+var TBL_Fn41805 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41806 func(m *Module, v0, v1 int32) 
+var TBL_Fn41807 func(m *Module, v0 int32) int32
+var TBL_Fn41808 func(m *Module, v0 int32) 
+var TBL_Fn41809 func(m *Module, v0 int32) 
+var TBL_Fn41810 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41811 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41814 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41815 func(m *Module, v0 int32) int32
+var TBL_Fn41816 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41818 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn41819 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41820 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41821 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41822 func(m *Module, v0 int32) 
+var TBL_Fn41823 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41824 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41825 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41826 func(m *Module) int32
+var TBL_Fn41827 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn41828 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn41829 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn41830 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41831 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41832 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41833 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41834 func(m *Module, v0 int32) 
-var TBL_Fn41835 func(m *Module, v0 int32) int32
-var TBL_Fn41836 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41837 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41831 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41832 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41833 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41834 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41835 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41836 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41837 func(m *Module, v0 int32) 
 var TBL_Fn41838 func(m *Module, v0 int32) int32
-var TBL_Fn41839 func(m *Module, v0 int32) int32
-var TBL_Fn41840 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41839 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41840 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41841 func(m *Module, v0 int32) int32
-var TBL_Fn41842 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41843 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
-var TBL_Fn41844 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41845 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41846 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41847 func(m *Module, v0, v1, v2, v3 int32) int64
-var TBL_Fn41848 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41849 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41850 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41851 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41852 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41842 func(m *Module, v0 int32) int32
+var TBL_Fn41843 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41844 func(m *Module, v0 int32) int32
+var TBL_Fn41845 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41846 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn41847 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41848 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn41849 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41850 func(m *Module, v0, v1, v2, v3 int32) int64
+var TBL_Fn41851 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41852 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn41853 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41854 func(m *Module, v0, v1, v2, v3 int32) int64
+var TBL_Fn41854 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn41855 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41856 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41857 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
-var TBL_Fn41858 func(m *Module, v0, v1, v2 int32) float32
-var TBL_Fn41859 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41860 func(m *Module, v0, v1, v2 int32) float64
-var TBL_Fn41861 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41862 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn41863 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41864 func(m *Module) int32
-var TBL_Fn41865 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41856 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41857 func(m *Module, v0, v1, v2, v3 int32) int64
+var TBL_Fn41858 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41859 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41860 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn41861 func(m *Module, v0, v1, v2 int32) float32
+var TBL_Fn41862 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41863 func(m *Module, v0, v1, v2 int32) float64
+var TBL_Fn41864 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41865 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn41866 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41867 func(m *Module, v0 int32) int32
-var TBL_Fn41868 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41869 func(m *Module, v0 int32) int32
+var TBL_Fn41867 func(m *Module) int32
+var TBL_Fn41868 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41869 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41870 func(m *Module, v0 int32) int32
-var TBL_Fn41871 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41872 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41873 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41874 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
-var TBL_Fn41875 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41876 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41877 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41871 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41872 func(m *Module, v0 int32) int32
+var TBL_Fn41873 func(m *Module, v0 int32) int32
+var TBL_Fn41874 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41875 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41876 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41877 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
 var TBL_Fn41878 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41879 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41880 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41881 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41882 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn41881 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41882 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41883 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41884 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41885 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41886 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41887 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41888 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41889 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41890 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41891 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn41892 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn41893 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
-var TBL_Fn41894 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41895 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41896 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn41897 func(m *Module, v0, v1, v2, v3 int32, v4 float64) int32
-var TBL_Fn41898 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41899 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41900 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn41901 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn41902 func(m *Module, v0, v1, v2, v3 int32, v4, v5 int64) int32
-var TBL_Fn41903 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41904 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41905 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41906 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn41907 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41908 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn41909 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41910 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41884 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41885 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn41886 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41887 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41888 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41889 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41890 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41891 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41892 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41893 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41894 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn41895 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn41896 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn41897 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41898 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41899 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn41900 func(m *Module, v0, v1, v2, v3 int32, v4 float64) int32
+var TBL_Fn41901 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41902 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41903 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41904 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn41905 func(m *Module, v0, v1, v2, v3 int32, v4, v5 int64) int32
+var TBL_Fn41906 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41907 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41908 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41909 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn41910 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41911 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn41912 func(m *Module, v0, v1, v2, v3 int32, v4 float64) int32
-var TBL_Fn41913 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn41914 func(m *Module, v0, v1, v2, v3 int32, v4, v5 int64) int32
-var TBL_Fn41915 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41916 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn41917 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41918 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41919 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41920 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41912 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41913 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn41914 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn41915 func(m *Module, v0, v1, v2, v3 int32, v4 float64) int32
+var TBL_Fn41916 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn41917 func(m *Module, v0, v1, v2, v3 int32, v4, v5 int64) int32
+var TBL_Fn41918 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41919 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn41920 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41921 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41922 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41923 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41924 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41925 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41926 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn41927 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn41928 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41929 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41930 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41931 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41922 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41923 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41924 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41925 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41926 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41927 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41928 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41929 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn41930 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn41931 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn41932 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41933 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41934 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41935 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41936 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn41937 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn41938 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41939 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41940 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41942 func(m *Module, v0, v1 int32) 
-var TBL_Fn41943 func(m *Module, v0, v1 int32) 
+var TBL_Fn41933 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41934 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41935 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41936 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41937 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41938 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41939 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn41940 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn41941 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41942 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41943 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
 var TBL_Fn41945 func(m *Module, v0, v1 int32) 
-var TBL_Fn41946 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41947 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
-var TBL_Fn41948 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn41949 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41950 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn41951 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41952 func(m *Module, v0 int32) int32
-var TBL_Fn41953 func(m *Module, v0 int32) int32
-var TBL_Fn41954 func(m *Module, v0, v1 int32) 
-var TBL_Fn41955 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41956 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
-var TBL_Fn41957 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn41946 func(m *Module, v0, v1 int32) 
+var TBL_Fn41948 func(m *Module, v0, v1 int32) 
+var TBL_Fn41949 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41950 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
+var TBL_Fn41951 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn41952 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41953 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn41954 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41955 func(m *Module, v0 int32) int32
+var TBL_Fn41956 func(m *Module, v0 int32) int32
+var TBL_Fn41957 func(m *Module, v0, v1 int32) 
 var TBL_Fn41958 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn41959 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn41960 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn41961 func(m *Module, v0 int32) int32
-var TBL_Fn41962 func(m *Module, v0, v1 int32) 
-var TBL_Fn41963 func(m *Module, v0 int32) int32
-var TBL_Fn41964 func(m *Module, v0, v1, v2, v3, v4 int32, v5, v6 int64) int32
-var TBL_Fn41965 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn41966 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
-var TBL_Fn41967 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41968 func(m *Module, v0, v1, v2, v3, v4 int32, v5, v6 int64) int32
-var TBL_Fn41969 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn41970 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
-var TBL_Fn41971 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn41972 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41973 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn41974 func(m *Module, v0 int32) int32
-var TBL_Fn41975 func(m *Module, v0, v1 int32) int32
-var TBL_Fn41976 func(m *Module, v0, v1 int32) 
-var TBL_Fn41977 func(m *Module, v0, v1 int32) 
-var TBL_Fn41978 func(m *Module, v0, v1 int32) 
+var TBL_Fn41959 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
+var TBL_Fn41960 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn41961 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn41962 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn41963 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn41964 func(m *Module, v0 int32) int32
+var TBL_Fn41965 func(m *Module, v0, v1 int32) 
+var TBL_Fn41966 func(m *Module, v0 int32) int32
+var TBL_Fn41967 func(m *Module, v0, v1, v2, v3, v4 int32, v5, v6 int64) int32
+var TBL_Fn41968 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn41969 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
+var TBL_Fn41970 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41971 func(m *Module, v0, v1, v2, v3, v4 int32, v5, v6 int64) int32
+var TBL_Fn41972 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn41973 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
+var TBL_Fn41974 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn41975 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41976 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn41977 func(m *Module, v0 int32) int32
+var TBL_Fn41978 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41979 func(m *Module, v0, v1 int32) 
 var TBL_Fn41980 func(m *Module, v0, v1 int32) 
-var TBL_Fn41981 func(m *Module, v0, v1 int32) int32
+var TBL_Fn41981 func(m *Module, v0, v1 int32) 
 var TBL_Fn41982 func(m *Module, v0, v1 int32) 
 var TBL_Fn41983 func(m *Module, v0, v1 int32) 
-var TBL_Fn41984 func(m *Module, v0, v1 int32) 
+var TBL_Fn41984 func(m *Module, v0, v1 int32) int32
 var TBL_Fn41985 func(m *Module, v0, v1 int32) 
 var TBL_Fn41986 func(m *Module, v0, v1 int32) 
 var TBL_Fn41987 func(m *Module, v0, v1 int32) 
@@ -113336,736 +113280,736 @@ var TBL_Fn41999 func(m *Module, v0, v1 int32)
 var TBL_Fn42000 func(m *Module, v0, v1 int32) 
 var TBL_Fn42001 func(m *Module, v0, v1 int32) 
 var TBL_Fn42002 func(m *Module, v0, v1 int32) 
-var TBL_Fn42003 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42003 func(m *Module, v0, v1 int32) 
 var TBL_Fn42004 func(m *Module, v0, v1 int32) 
-var TBL_Fn42005 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42006 func(m *Module, v0, v1 int32) 
+var TBL_Fn42005 func(m *Module, v0, v1 int32) 
+var TBL_Fn42006 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42007 func(m *Module, v0, v1 int32) 
-var TBL_Fn42008 func(m *Module, v0, v1 int32) 
-var TBL_Fn42009 func(m *Module, v0 int32) 
+var TBL_Fn42008 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42009 func(m *Module, v0, v1 int32) 
 var TBL_Fn42010 func(m *Module, v0, v1 int32) 
-var TBL_Fn42011 func(m *Module, v0 int32) 
-var TBL_Fn42012 func(m *Module, v0 int32) int32
-var TBL_Fn42013 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42011 func(m *Module, v0, v1 int32) 
+var TBL_Fn42012 func(m *Module, v0 int32) 
+var TBL_Fn42013 func(m *Module, v0, v1 int32) 
 var TBL_Fn42014 func(m *Module, v0 int32) 
-var TBL_Fn42015 func(m *Module) int32
-var TBL_Fn42016 func(m *Module, v0 int32) 
-var TBL_Fn42017 func(m *Module, v0, v1 int32) 
-var TBL_Fn42018 func(m *Module, v0 int32) int32
+var TBL_Fn42015 func(m *Module, v0 int32) int32
+var TBL_Fn42016 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42017 func(m *Module, v0 int32) 
+var TBL_Fn42018 func(m *Module) int32
 var TBL_Fn42019 func(m *Module, v0 int32) 
-var TBL_Fn42020 func(m *Module) int32
-var TBL_Fn42021 func(m *Module, v0 int32) 
-var TBL_Fn42022 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42023 func(m *Module, v0 int32) 
-var TBL_Fn42024 func(m *Module, v0, v1 int32) 
-var TBL_Fn42025 func(m *Module, v0 int32) 
-var TBL_Fn42026 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42027 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42028 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42029 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42031 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42033 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42034 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42036 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42037 func(m *Module, v0 int32) int32
-var TBL_Fn42038 func(m *Module, v0 int32) 
-var TBL_Fn42040 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42042 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42043 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42045 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42046 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42047 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42049 func(m *Module, v0 int32) 
-var TBL_Fn42050 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42051 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42052 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42053 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42054 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42055 func(m *Module, v0 int32) int32
-var TBL_Fn42056 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42057 func(m *Module, v0 int32) int32
-var TBL_Fn42058 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42059 func(m *Module, v0 int32) int32
-var TBL_Fn42060 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42061 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42062 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42020 func(m *Module, v0, v1 int32) 
+var TBL_Fn42021 func(m *Module, v0 int32) int32
+var TBL_Fn42022 func(m *Module, v0 int32) 
+var TBL_Fn42023 func(m *Module) int32
+var TBL_Fn42024 func(m *Module, v0 int32) 
+var TBL_Fn42025 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42026 func(m *Module, v0 int32) 
+var TBL_Fn42027 func(m *Module, v0, v1 int32) 
+var TBL_Fn42028 func(m *Module, v0 int32) 
+var TBL_Fn42029 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42030 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42031 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42032 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42034 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42036 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42037 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42039 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42040 func(m *Module, v0 int32) int32
+var TBL_Fn42041 func(m *Module, v0 int32) 
+var TBL_Fn42043 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42045 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42046 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42048 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42049 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42050 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42052 func(m *Module, v0 int32) 
+var TBL_Fn42053 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42054 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42055 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42056 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42057 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42058 func(m *Module, v0 int32) int32
+var TBL_Fn42059 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42060 func(m *Module, v0 int32) int32
+var TBL_Fn42061 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42062 func(m *Module, v0 int32) int32
+var TBL_Fn42063 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
 var TBL_Fn42064 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42065 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42066 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42067 func(m *Module, v0 int32) int32
-var TBL_Fn42068 func(m *Module, v0 int32) 
-var TBL_Fn42069 func(m *Module, v0 int32) int32
-var TBL_Fn42070 func(m *Module, v0 int32) 
-var TBL_Fn42071 func(m *Module, v0 int32) int32
+var TBL_Fn42065 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42067 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42068 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42069 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42070 func(m *Module, v0 int32) int32
+var TBL_Fn42071 func(m *Module, v0 int32) 
 var TBL_Fn42072 func(m *Module, v0 int32) int32
-var TBL_Fn42073 func(m *Module, v0, v1 int32) 
-var TBL_Fn42074 func(m *Module, v0, v1 int32) 
-var TBL_Fn42075 func(m *Module, v0, v1 int32) 
+var TBL_Fn42073 func(m *Module, v0 int32) 
+var TBL_Fn42074 func(m *Module, v0 int32) int32
+var TBL_Fn42075 func(m *Module, v0 int32) int32
 var TBL_Fn42076 func(m *Module, v0, v1 int32) 
 var TBL_Fn42077 func(m *Module, v0, v1 int32) 
 var TBL_Fn42078 func(m *Module, v0, v1 int32) 
 var TBL_Fn42079 func(m *Module, v0, v1 int32) 
-var TBL_Fn42080 func(m *Module, v0 int32) int32
-var TBL_Fn42081 func(m *Module, v0 int32) 
-var TBL_Fn42082 func(m *Module, v0 int32) int32
-var TBL_Fn42083 func(m *Module, v0 int32) 
-var TBL_Fn42084 func(m *Module, v0 int32) int32
-var TBL_Fn42085 func(m *Module, v0 int32) 
-var TBL_Fn42086 func(m *Module, v0 int32) int32
-var TBL_Fn42087 func(m *Module, v0 int32) 
-var TBL_Fn42088 func(m *Module, v0 int32) int32
-var TBL_Fn42089 func(m *Module, v0 int32) 
-var TBL_Fn42090 func(m *Module, v0 int32) int32
-var TBL_Fn42091 func(m *Module, v0 int32) 
-var TBL_Fn42092 func(m *Module, v0 int32) int32
-var TBL_Fn42093 func(m *Module, v0 int32) 
-var TBL_Fn42094 func(m *Module, v0 int32) int32
-var TBL_Fn42095 func(m *Module, v0 int32) 
-var TBL_Fn42096 func(m *Module, v0 int32) int32
-var TBL_Fn42097 func(m *Module, v0 int32) 
-var TBL_Fn42098 func(m *Module, v0 int32) int32
-var TBL_Fn42099 func(m *Module, v0 int32) 
-var TBL_Fn42100 func(m *Module, v0 int32) int32
-var TBL_Fn42101 func(m *Module, v0 int32) 
-var TBL_Fn42102 func(m *Module, v0 int32) int32
-var TBL_Fn42103 func(m *Module, v0 int32) 
-var TBL_Fn42104 func(m *Module, v0 int32) int32
-var TBL_Fn42105 func(m *Module, v0 int32) 
-var TBL_Fn42106 func(m *Module, v0 int32) int32
-var TBL_Fn42107 func(m *Module, v0 int32) 
+var TBL_Fn42080 func(m *Module, v0, v1 int32) 
+var TBL_Fn42081 func(m *Module, v0, v1 int32) 
+var TBL_Fn42082 func(m *Module, v0, v1 int32) 
+var TBL_Fn42083 func(m *Module, v0 int32) int32
+var TBL_Fn42084 func(m *Module, v0 int32) 
+var TBL_Fn42085 func(m *Module, v0 int32) int32
+var TBL_Fn42086 func(m *Module, v0 int32) 
+var TBL_Fn42087 func(m *Module, v0 int32) int32
+var TBL_Fn42088 func(m *Module, v0 int32) 
+var TBL_Fn42089 func(m *Module, v0 int32) int32
+var TBL_Fn42090 func(m *Module, v0 int32) 
+var TBL_Fn42091 func(m *Module, v0 int32) int32
+var TBL_Fn42092 func(m *Module, v0 int32) 
+var TBL_Fn42093 func(m *Module, v0 int32) int32
+var TBL_Fn42094 func(m *Module, v0 int32) 
+var TBL_Fn42095 func(m *Module, v0 int32) int32
+var TBL_Fn42096 func(m *Module, v0 int32) 
+var TBL_Fn42097 func(m *Module, v0 int32) int32
+var TBL_Fn42098 func(m *Module, v0 int32) 
+var TBL_Fn42099 func(m *Module, v0 int32) int32
+var TBL_Fn42100 func(m *Module, v0 int32) 
+var TBL_Fn42101 func(m *Module, v0 int32) int32
+var TBL_Fn42102 func(m *Module, v0 int32) 
+var TBL_Fn42103 func(m *Module, v0 int32) int32
+var TBL_Fn42104 func(m *Module, v0 int32) 
+var TBL_Fn42105 func(m *Module, v0 int32) int32
+var TBL_Fn42106 func(m *Module, v0 int32) 
+var TBL_Fn42107 func(m *Module, v0 int32) int32
 var TBL_Fn42108 func(m *Module, v0 int32) 
 var TBL_Fn42109 func(m *Module, v0 int32) int32
-var TBL_Fn42110 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42111 func(m *Module, v0, v1 int32) 
-var TBL_Fn42112 func(m *Module, v0 int32) 
-var TBL_Fn42113 func(m *Module, v0 int32) 
-var TBL_Fn42114 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42115 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42116 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42117 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42110 func(m *Module, v0 int32) 
+var TBL_Fn42111 func(m *Module, v0 int32) 
+var TBL_Fn42112 func(m *Module, v0 int32) int32
+var TBL_Fn42113 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42114 func(m *Module, v0, v1 int32) 
+var TBL_Fn42115 func(m *Module, v0 int32) 
+var TBL_Fn42116 func(m *Module, v0 int32) 
+var TBL_Fn42117 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42118 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42119 func(m *Module, v0, v1, v2 int32, v3 int64) 
-var TBL_Fn42121 func(m *Module, v0 int32) 
-var TBL_Fn42122 func(m *Module, v0 int32) int32
-var TBL_Fn42123 func(m *Module, v0 int32) 
-var TBL_Fn42124 func(m *Module, v0 int32) int32
+var TBL_Fn42119 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42120 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42121 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42122 func(m *Module, v0, v1, v2 int32, v3 int64) 
+var TBL_Fn42124 func(m *Module, v0 int32) 
 var TBL_Fn42125 func(m *Module, v0 int32) int32
-var TBL_Fn42126 func(m *Module, v0 int32) int32
+var TBL_Fn42126 func(m *Module, v0 int32) 
 var TBL_Fn42127 func(m *Module, v0 int32) int32
 var TBL_Fn42128 func(m *Module, v0 int32) int32
 var TBL_Fn42129 func(m *Module, v0 int32) int32
-var TBL_Fn42130 func(m *Module) 
-var TBL_Fn42131 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42132 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42133 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42130 func(m *Module, v0 int32) int32
+var TBL_Fn42131 func(m *Module, v0 int32) int32
+var TBL_Fn42132 func(m *Module, v0 int32) int32
+var TBL_Fn42133 func(m *Module) 
 var TBL_Fn42134 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42135 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42136 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42137 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42138 func(m *Module, v0 int32) int32
-var TBL_Fn42139 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42140 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42141 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42136 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42137 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42138 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42139 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42140 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42141 func(m *Module, v0 int32) int32
 var TBL_Fn42142 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42143 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42144 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn42145 func(m *Module, v0, v1 int32) 
-var TBL_Fn42146 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42147 func(m *Module, v0, v1 int32) 
+var TBL_Fn42144 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42145 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42146 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42147 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
 var TBL_Fn42148 func(m *Module, v0, v1 int32) 
-var TBL_Fn42149 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42150 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42151 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42152 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42153 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42154 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42155 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn42156 func(m *Module, v0, v1 int32) 
-var TBL_Fn42157 func(m *Module, v0, v1 int32) 
-var TBL_Fn42158 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42159 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42160 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42161 func(m *Module, v0 int32) 
-var TBL_Fn42162 func(m *Module, v0 int32) 
-var TBL_Fn42163 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn42164 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn42165 func(m *Module, v0, v1 int32) 
-var TBL_Fn42166 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn42167 func(m *Module, v0, v1 int32) 
-var TBL_Fn42168 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn42169 func(m *Module, v0 int32, v1 float64) 
-var TBL_Fn42170 func(m *Module, v0 int32) 
-var TBL_Fn42171 func(m *Module, v0, v1 int32) 
-var TBL_Fn42173 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42174 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42175 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42176 func(m *Module, v0, v1 int32) 
-var TBL_Fn42177 func(m *Module, v0 int32) 
-var TBL_Fn42178 func(m *Module, v0 int32) int32
-var TBL_Fn42179 func(m *Module, v0 int32) 
-var TBL_Fn42182 func(m *Module) 
-var TBL_Fn42183 func(m *Module, v0 int32) 
-var TBL_Fn42184 func(m *Module, v0 int32) 
-var TBL_Fn42185 func(m *Module, v0 int32) 
-var TBL_Fn42186 func(m *Module, v0 int32) int32
+var TBL_Fn42149 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42150 func(m *Module, v0, v1 int32) 
+var TBL_Fn42151 func(m *Module, v0, v1 int32) 
+var TBL_Fn42152 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42153 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42154 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42155 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42156 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42157 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42158 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn42159 func(m *Module, v0, v1 int32) 
+var TBL_Fn42160 func(m *Module, v0, v1 int32) 
+var TBL_Fn42161 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42162 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42163 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42164 func(m *Module, v0 int32) 
+var TBL_Fn42165 func(m *Module, v0 int32) 
+var TBL_Fn42166 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn42167 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn42168 func(m *Module, v0, v1 int32) 
+var TBL_Fn42169 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn42170 func(m *Module, v0, v1 int32) 
+var TBL_Fn42171 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn42172 func(m *Module, v0 int32, v1 float64) 
+var TBL_Fn42173 func(m *Module, v0 int32) 
+var TBL_Fn42174 func(m *Module, v0, v1 int32) 
+var TBL_Fn42176 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42177 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42178 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42179 func(m *Module, v0, v1 int32) 
+var TBL_Fn42180 func(m *Module, v0 int32) 
+var TBL_Fn42181 func(m *Module, v0 int32) int32
+var TBL_Fn42182 func(m *Module, v0 int32) 
+var TBL_Fn42185 func(m *Module) 
+var TBL_Fn42186 func(m *Module, v0 int32) 
 var TBL_Fn42187 func(m *Module, v0 int32) 
-var TBL_Fn42188 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42189 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42190 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42191 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42192 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42193 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42194 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42188 func(m *Module, v0 int32) 
+var TBL_Fn42189 func(m *Module, v0 int32) int32
+var TBL_Fn42190 func(m *Module, v0 int32) 
+var TBL_Fn42191 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42192 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42193 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42194 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42195 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42196 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42197 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42196 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42197 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42198 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42199 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42200 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42201 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42199 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42200 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42201 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42202 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42203 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42204 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42205 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42206 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42210 func(m *Module, v0 int32) int32
+var TBL_Fn42203 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42204 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42205 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42206 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42207 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42208 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42209 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn42213 func(m *Module, v0 int32) int32
-var TBL_Fn42214 func(m *Module, v0 int32) 
-var TBL_Fn42215 func(m *Module, v0 int32) 
 var TBL_Fn42216 func(m *Module, v0 int32) int32
 var TBL_Fn42217 func(m *Module, v0 int32) 
-var TBL_Fn42219 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42220 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42221 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42218 func(m *Module, v0 int32) 
+var TBL_Fn42219 func(m *Module, v0 int32) int32
+var TBL_Fn42220 func(m *Module, v0 int32) 
 var TBL_Fn42222 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42226 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42227 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42228 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42229 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42230 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42231 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42232 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42233 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42234 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42223 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42224 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42225 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42229 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42230 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42231 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42232 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42233 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42234 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42235 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42236 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42237 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42238 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42236 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42237 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42238 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42239 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42240 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42241 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42240 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42241 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42242 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42243 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42244 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42245 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42246 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42247 func(m *Module, v0, v1 int32) 
-var TBL_Fn42248 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42249 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42250 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42251 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42244 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42245 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42246 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42247 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42248 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42249 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42250 func(m *Module, v0, v1 int32) 
+var TBL_Fn42251 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42252 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42253 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42254 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42255 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42256 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42257 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42258 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42253 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42254 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42255 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42256 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42257 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42258 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42259 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42260 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42261 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
-var TBL_Fn42262 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42263 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42264 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42265 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42266 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42267 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42268 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42269 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42270 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42260 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42261 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42262 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42263 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42264 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
+var TBL_Fn42265 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42266 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42267 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42268 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42269 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42270 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42271 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42272 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42273 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42272 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42273 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42274 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42275 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42276 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
+var TBL_Fn42275 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42276 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42277 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42278 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42279 func(m *Module, v0, v1 int32) 
-var TBL_Fn42280 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42281 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42282 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42283 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42284 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42285 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42286 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42287 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42288 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42289 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42278 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42279 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
+var TBL_Fn42280 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42281 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42282 func(m *Module, v0, v1 int32) 
+var TBL_Fn42283 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42284 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42285 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42286 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42287 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42288 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42289 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42290 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42291 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32, v7 int64, v8 int32) int32
-var TBL_Fn42292 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42293 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42294 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42295 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42296 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42297 func(m *Module, v0, v1 int32) 
-var TBL_Fn42298 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42299 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42300 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42301 func(m *Module, v0, v1 int32) 
-var TBL_Fn42302 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42303 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42304 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42305 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42306 func(m *Module, v0, v1 int32) 
+var TBL_Fn42291 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42292 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42293 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42294 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32, v7 int64, v8 int32) int32
+var TBL_Fn42295 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42296 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42297 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42298 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42299 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42300 func(m *Module, v0, v1 int32) 
+var TBL_Fn42301 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42302 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42303 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42304 func(m *Module, v0, v1 int32) 
+var TBL_Fn42305 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42306 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42307 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42308 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42309 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42310 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42311 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42312 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42313 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
-var TBL_Fn42314 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42315 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42316 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42317 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42318 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42319 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21 int32) int32
-var TBL_Fn42320 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42321 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
-var TBL_Fn42322 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42323 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int64
-var TBL_Fn42324 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64) int32
-var TBL_Fn42325 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90 int32) 
-var TBL_Fn42326 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42327 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn42328 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42329 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42330 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42331 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42332 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42333 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn42334 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn42335 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn42308 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42309 func(m *Module, v0, v1 int32) 
+var TBL_Fn42310 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42311 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42312 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42313 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42314 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42315 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42316 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
+var TBL_Fn42317 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42318 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42319 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42320 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42321 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42322 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21 int32) int32
+var TBL_Fn42323 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42324 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn42325 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42326 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int64
+var TBL_Fn42327 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64) int32
+var TBL_Fn42328 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90 int32) 
+var TBL_Fn42329 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42330 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn42331 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42332 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42333 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42334 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42335 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42336 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn42337 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn42338 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42339 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42340 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42341 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42342 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75 int32) int32
-var TBL_Fn42343 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42344 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38 int32) int32
-var TBL_Fn42345 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42346 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42347 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42348 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42349 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42350 func(m *Module, v0, v1 int32) 
-var TBL_Fn42351 func(m *Module, v0 int32) int32
-var TBL_Fn42352 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42353 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42354 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
+var TBL_Fn42338 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn42339 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn42340 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn42341 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42342 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42343 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42344 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42345 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75 int32) int32
+var TBL_Fn42346 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42347 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38 int32) int32
+var TBL_Fn42348 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42349 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42350 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42351 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42352 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42353 func(m *Module, v0, v1 int32) 
+var TBL_Fn42354 func(m *Module, v0 int32) int32
 var TBL_Fn42355 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42356 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42357 func(m *Module, v0 int32) int32
-var TBL_Fn42358 func(m *Module, v0, v1 int64, v2 int32) 
-var TBL_Fn42359 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn42360 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42361 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42362 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42363 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42364 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
-var TBL_Fn42365 func(m *Module, v0, v1 int32) int64
-var TBL_Fn42366 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42367 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42368 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42369 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn42357 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
+var TBL_Fn42358 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42359 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42360 func(m *Module, v0 int32) int32
+var TBL_Fn42361 func(m *Module, v0, v1 int64, v2 int32) 
+var TBL_Fn42362 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn42363 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42364 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42365 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42366 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42367 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
+var TBL_Fn42368 func(m *Module, v0, v1 int32) int64
+var TBL_Fn42369 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42370 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42371 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42372 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42373 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42374 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42371 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42372 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn42373 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42374 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42375 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42376 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42377 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42378 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42379 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn42380 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int64
-var TBL_Fn42381 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42382 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42383 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42377 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42378 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42379 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42380 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42381 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42382 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn42383 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int64
 var TBL_Fn42384 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42385 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42386 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn42387 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42388 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42389 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42390 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42391 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42392 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42393 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 int32) 
-var TBL_Fn42394 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
-var TBL_Fn42395 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 int32) 
+var TBL_Fn42385 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42386 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42387 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42388 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42389 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn42390 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42391 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42392 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42393 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42394 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42395 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42396 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 int32) 
-var TBL_Fn42397 func(m *Module, v0 int32, v1 int64, v2, v3, v4 int32) 
-var TBL_Fn42398 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
-var TBL_Fn42399 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42400 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn42401 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn42402 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42403 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42404 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42405 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42406 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42407 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42397 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
+var TBL_Fn42398 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 int32) 
+var TBL_Fn42399 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 int32) 
+var TBL_Fn42400 func(m *Module, v0 int32, v1 int64, v2, v3, v4 int32) 
+var TBL_Fn42401 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
+var TBL_Fn42402 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42403 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn42404 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn42405 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42406 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42407 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42408 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42409 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42410 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42411 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42412 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42413 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42414 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42415 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42416 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
-var TBL_Fn42417 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42418 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42419 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42409 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42410 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42411 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42412 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42413 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42414 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42415 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42416 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42417 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42418 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42419 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
 var TBL_Fn42420 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42421 func(m *Module, v0, v1 int32) 
+var TBL_Fn42421 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42422 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42423 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42424 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42424 func(m *Module, v0, v1 int32) 
 var TBL_Fn42425 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42426 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42427 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42428 func(m *Module, v0, v1 int32, v2, v3, v4, v5, v6 int64, v7 int32) 
+var TBL_Fn42427 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42428 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42429 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42430 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) int32
-var TBL_Fn42431 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42432 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42433 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42434 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42435 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42436 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42437 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42438 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42439 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42440 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42441 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42442 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42443 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42444 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42445 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42446 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42447 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) int32
-var TBL_Fn42448 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42449 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42450 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) int32
-var TBL_Fn42451 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42452 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42453 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42454 func(m *Module, v0, v1 int32, v2 int64) int64
-var TBL_Fn42455 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) int32
-var TBL_Fn42456 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42457 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
-var TBL_Fn42458 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42430 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42431 func(m *Module, v0, v1 int32, v2, v3, v4, v5, v6 int64, v7 int32) 
+var TBL_Fn42432 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42433 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) int32
+var TBL_Fn42434 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42435 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42436 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42437 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42438 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42439 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42440 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42441 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42442 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42443 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42444 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42445 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42446 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42447 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42448 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42449 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42450 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) int32
+var TBL_Fn42451 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42452 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42453 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) int32
+var TBL_Fn42454 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42455 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42456 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42457 func(m *Module, v0, v1 int32, v2 int64) int64
+var TBL_Fn42458 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) int32
 var TBL_Fn42459 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42460 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42461 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42462 func(m *Module, v0 int64, v1 int32, v2, v3 int64) int64
-var TBL_Fn42463 func(m *Module, v0 int32, v1, v2 int64) 
-var TBL_Fn42464 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42465 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42466 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42467 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42468 func(m *Module, v0, v1 int32) 
-var TBL_Fn42469 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42470 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42471 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42472 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn42473 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42474 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42475 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42476 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42477 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42478 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42460 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
+var TBL_Fn42461 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42462 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42463 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42464 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42465 func(m *Module, v0 int64, v1 int32, v2, v3 int64) int64
+var TBL_Fn42466 func(m *Module, v0 int32, v1, v2 int64) 
+var TBL_Fn42467 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42468 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42469 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42470 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42471 func(m *Module, v0, v1 int32) 
+var TBL_Fn42472 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42473 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42474 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42475 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn42476 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42477 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42478 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42479 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42480 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42481 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42482 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42483 func(m *Module, v0 int32, v1 int64, v2 int32) int32
-var TBL_Fn42484 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42485 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42486 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42487 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42488 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42489 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn42490 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42480 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42481 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42482 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42483 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42484 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42485 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42486 func(m *Module, v0 int32, v1 int64, v2 int32) int32
+var TBL_Fn42487 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42488 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42489 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42490 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42491 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42492 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42493 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn42494 func(m *Module, v0 int32, v1 int64, v2 int32) int32
-var TBL_Fn42495 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
-var TBL_Fn42496 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42497 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42498 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42492 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn42493 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42494 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42495 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
+var TBL_Fn42496 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn42497 func(m *Module, v0 int32, v1 int64, v2 int32) int32
+var TBL_Fn42498 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
 var TBL_Fn42499 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42500 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42501 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42502 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42503 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42500 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
+var TBL_Fn42501 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42502 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
+var TBL_Fn42503 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42504 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42505 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42506 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42507 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42508 func(m *Module, v0 int32, v1, v2 int64, v3 int32, v4 int64) int32
-var TBL_Fn42509 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) 
-var TBL_Fn42510 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42511 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
-var TBL_Fn42512 func(m *Module, v0, v1 int32, v2, v3 int64) 
-var TBL_Fn42513 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42514 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42515 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42516 func(m *Module, v0, v1 int32, v2, v3, v4 int64) 
-var TBL_Fn42517 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42518 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42519 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42507 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42508 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42509 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42510 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
+var TBL_Fn42511 func(m *Module, v0 int32, v1, v2 int64, v3 int32, v4 int64) int32
+var TBL_Fn42512 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) 
+var TBL_Fn42513 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42514 func(m *Module, v0, v1 int32, v2, v3, v4 int64, v5 int32) 
+var TBL_Fn42515 func(m *Module, v0, v1 int32, v2, v3 int64) 
+var TBL_Fn42516 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42517 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42518 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42519 func(m *Module, v0, v1 int32, v2, v3, v4 int64) 
 var TBL_Fn42520 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42521 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42522 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42523 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42524 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42525 func(m *Module, v0, v1 int32) 
-var TBL_Fn42526 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42527 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42528 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42529 func(m *Module, v0, v1 int32) 
-var TBL_Fn42530 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42531 func(m *Module, v0 int64, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn42532 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42521 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42522 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42523 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42524 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42525 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42526 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42527 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42528 func(m *Module, v0, v1 int32) 
+var TBL_Fn42529 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42530 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42531 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42532 func(m *Module, v0, v1 int32) 
 var TBL_Fn42533 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42534 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42535 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42536 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42537 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42538 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42539 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42540 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42541 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42534 func(m *Module, v0 int64, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42535 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42536 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42537 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42538 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42539 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42540 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42541 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42542 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42543 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42544 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42544 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42545 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42546 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42547 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
-var TBL_Fn42548 func(m *Module, v0, v1 int32) 
-var TBL_Fn42549 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42550 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5 int32) int32
-var TBL_Fn42551 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42546 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42547 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42548 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42549 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42550 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn42551 func(m *Module, v0, v1 int32) 
 var TBL_Fn42552 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42553 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42554 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42555 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42553 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5 int32) int32
+var TBL_Fn42554 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42555 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42556 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42557 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42558 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42557 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42558 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42559 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42560 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42561 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42562 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42563 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42564 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42565 func(m *Module, v0 int32, v1 int64, v2, v3 int32) 
-var TBL_Fn42566 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42567 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42568 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42569 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42570 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42571 func(m *Module, v0, v1 int32) 
+var TBL_Fn42561 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42562 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42563 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42564 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42565 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42566 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42567 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42568 func(m *Module, v0 int32, v1 int64, v2, v3 int32) 
+var TBL_Fn42569 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42570 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42571 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42572 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42573 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42574 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42573 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42574 func(m *Module, v0, v1 int32) 
 var TBL_Fn42575 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42576 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42577 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42578 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42579 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42580 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42581 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42582 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn42583 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42584 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42585 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42586 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42587 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42588 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42589 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42576 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42577 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42578 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42579 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42580 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42581 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42582 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42583 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42584 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42585 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn42586 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42587 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42588 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42589 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42590 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42591 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42591 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42592 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42593 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42594 func(m *Module, v0 int32, v1 int64, v2 int32) int32
-var TBL_Fn42595 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42596 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42597 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42598 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42599 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42600 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42593 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42594 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42595 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42596 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42597 func(m *Module, v0 int32, v1 int64, v2 int32) int32
+var TBL_Fn42598 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42599 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42600 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42601 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42602 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42603 func(m *Module, v0, v1 int32) 
-var TBL_Fn42604 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42605 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42606 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) int64
+var TBL_Fn42602 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42603 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42604 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42605 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42606 func(m *Module, v0, v1 int32) 
 var TBL_Fn42607 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42608 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42609 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42610 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42611 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42612 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42613 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42614 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42615 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42616 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42608 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42609 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) int64
+var TBL_Fn42610 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42611 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42612 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42613 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42614 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42615 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42616 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42617 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42618 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn42619 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42620 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42621 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42622 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42623 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42624 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn42625 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42626 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
-var TBL_Fn42627 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42628 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42629 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42630 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42631 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42632 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42633 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42634 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42635 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42636 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42618 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42619 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42620 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42621 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn42622 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42623 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42624 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42625 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42626 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42627 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn42628 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42629 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
+var TBL_Fn42630 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42631 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42632 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42633 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42634 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42635 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42636 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn42637 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42638 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42639 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42640 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42638 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42639 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42640 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42641 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42642 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42643 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn42644 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42645 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn42646 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42642 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42643 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42644 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42645 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42646 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
 var TBL_Fn42647 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42648 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42649 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42650 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn42651 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42652 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25 int32) 
-var TBL_Fn42653 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42654 func(m *Module, v0 int64, v1, v2 int32) int32
-var TBL_Fn42655 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42656 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
-var TBL_Fn42657 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
-var TBL_Fn42658 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
-var TBL_Fn42659 func(m *Module, v0, v1 int32) int64
-var TBL_Fn42661 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42662 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
-var TBL_Fn42663 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
-var TBL_Fn42664 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42665 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42666 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42667 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42668 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42669 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42670 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn42671 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
-var TBL_Fn42672 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42673 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
-var TBL_Fn42674 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42675 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
+var TBL_Fn42648 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn42649 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42650 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42651 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42652 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42653 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn42654 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42655 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25 int32) 
+var TBL_Fn42656 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42657 func(m *Module, v0 int64, v1, v2 int32) int32
+var TBL_Fn42658 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42659 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
+var TBL_Fn42660 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
+var TBL_Fn42661 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
+var TBL_Fn42662 func(m *Module, v0, v1 int32) int64
+var TBL_Fn42664 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42665 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
+var TBL_Fn42666 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn42667 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42668 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42669 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42670 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42671 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42672 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42673 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn42674 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) 
+var TBL_Fn42675 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42676 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
 var TBL_Fn42677 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42678 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
-var TBL_Fn42679 func(m *Module, v0, v1, v2 int32, v3 int64) int32
-var TBL_Fn42680 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
-var TBL_Fn42681 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42682 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42683 func(m *Module, v0 int32, v1 int64, v2 int32) int32
-var TBL_Fn42684 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn42685 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42686 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42687 func(m *Module, v0, v1 int32) 
-var TBL_Fn42688 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
-var TBL_Fn42689 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42690 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42691 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn42692 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
-var TBL_Fn42693 func(m *Module, v0 int32, v1 int64, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42694 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42695 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42696 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42697 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16 int32) int32
+var TBL_Fn42679 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
+var TBL_Fn42680 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42681 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
+var TBL_Fn42682 func(m *Module, v0, v1, v2 int32, v3 int64) int32
+var TBL_Fn42683 func(m *Module, v0, v1 int32, v2 int64, v3 int32) int32
+var TBL_Fn42684 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42685 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42686 func(m *Module, v0 int32, v1 int64, v2 int32) int32
+var TBL_Fn42687 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn42688 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42689 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42690 func(m *Module, v0, v1 int32) 
+var TBL_Fn42691 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn42692 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42693 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42694 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn42695 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
+var TBL_Fn42696 func(m *Module, v0 int32, v1 int64, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42697 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn42698 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42699 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42700 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42701 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42702 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15 int32) int32
-var TBL_Fn42703 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) 
-var TBL_Fn42704 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn42705 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn42706 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn42707 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42708 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42709 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
-var TBL_Fn42710 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42699 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42700 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16 int32) int32
+var TBL_Fn42701 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42702 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42703 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42704 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42705 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15 int32) int32
+var TBL_Fn42706 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) 
+var TBL_Fn42707 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn42708 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn42709 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn42710 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42711 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42712 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42713 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42714 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn42712 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn42713 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42714 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42715 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42716 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) int64
-var TBL_Fn42717 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6, v7 int64, v8, v9, v10 int32) 
-var TBL_Fn42718 func(m *Module, v0, v1, v2, v3, v4, v5 int32, v6, v7, v8 int64, v9, v10, v11 int32) 
-var TBL_Fn42719 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42720 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42721 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42722 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42723 func(m *Module, v0, v1 int32) 
-var TBL_Fn42724 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5, v6, v7 int32) 
-var TBL_Fn42725 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn42726 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42727 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42728 func(m *Module, v0 int32, v1 int64, v2, v3, v4 int32) int32
-var TBL_Fn42729 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42730 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42731 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42733 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42734 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42735 func(m *Module, v0, v1 int32) 
+var TBL_Fn42716 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42717 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn42718 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42719 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) int64
+var TBL_Fn42720 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6, v7 int64, v8, v9, v10 int32) 
+var TBL_Fn42721 func(m *Module, v0, v1, v2, v3, v4, v5 int32, v6, v7, v8 int64, v9, v10, v11 int32) 
+var TBL_Fn42722 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42723 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42724 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42725 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42726 func(m *Module, v0, v1 int32) 
+var TBL_Fn42727 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5, v6, v7 int32) 
+var TBL_Fn42728 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn42729 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42730 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42731 func(m *Module, v0 int32, v1 int64, v2, v3, v4 int32) int32
+var TBL_Fn42732 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42733 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42734 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn42736 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42737 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42738 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42739 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42740 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42741 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42742 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42743 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42744 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42745 func(m *Module, v0 int32) 
-var TBL_Fn42746 func(m *Module, v0, v1 int32, v2 int64) int32
-var TBL_Fn42747 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42748 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42749 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn42750 func(m *Module, v0 int64, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn42751 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn42752 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42753 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42738 func(m *Module, v0, v1 int32) 
+var TBL_Fn42739 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42740 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42741 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42742 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42743 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42744 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42745 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42746 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42747 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42748 func(m *Module, v0 int32) 
+var TBL_Fn42749 func(m *Module, v0, v1 int32, v2 int64) int32
+var TBL_Fn42750 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42751 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42752 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn42753 func(m *Module, v0 int64, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42754 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn42755 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42755 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn42756 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42757 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42758 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
@@ -114078,501 +114022,501 @@ var TBL_Fn42764 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42765 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42766 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
 var TBL_Fn42767 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
-var TBL_Fn42768 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42769 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42770 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42771 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42772 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42773 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42774 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5 int32) 
-var TBL_Fn42775 func(m *Module, v0, v1, v2 int32) int64
-var TBL_Fn42776 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn42777 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42778 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42779 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42780 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42781 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42782 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42783 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42784 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42785 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42786 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42787 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42788 func(m *Module, v0, v1 int32) 
-var TBL_Fn42789 func(m *Module, v0, v1 int32) 
-var TBL_Fn42790 func(m *Module, v0, v1 int32) 
-var TBL_Fn42791 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42792 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42793 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42794 func(m *Module, v0, v1 int32) 
-var TBL_Fn42795 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42796 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42797 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42798 func(m *Module, v0, v1, v2, v3 int32) int64
-var TBL_Fn42799 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42800 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42801 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42802 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42803 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42804 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42805 func(m *Module, v0, v1 int32) 
-var TBL_Fn42806 func(m *Module, v0, v1 int32) 
-var TBL_Fn42807 func(m *Module, v0, v1 int32) 
-var TBL_Fn42808 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42809 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42810 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42811 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42812 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42813 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42814 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42815 func(m *Module, v0, v1 int32) 
-var TBL_Fn42816 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42817 func(m *Module, v0, v1 int32) 
+var TBL_Fn42768 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42769 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42770 func(m *Module, v0, v1, v2, v3 int32, v4 int64) int32
+var TBL_Fn42771 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42772 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42773 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42774 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42775 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42776 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42777 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5 int32) 
+var TBL_Fn42778 func(m *Module, v0, v1, v2 int32) int64
+var TBL_Fn42779 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn42780 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42781 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42782 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42783 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42784 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42785 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42786 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42787 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42788 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42789 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42790 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42791 func(m *Module, v0, v1 int32) 
+var TBL_Fn42792 func(m *Module, v0, v1 int32) 
+var TBL_Fn42793 func(m *Module, v0, v1 int32) 
+var TBL_Fn42794 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42795 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42796 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42797 func(m *Module, v0, v1 int32) 
+var TBL_Fn42798 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42799 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42800 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42801 func(m *Module, v0, v1, v2, v3 int32) int64
+var TBL_Fn42802 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42803 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42804 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42805 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42806 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42807 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42808 func(m *Module, v0, v1 int32) 
+var TBL_Fn42809 func(m *Module, v0, v1 int32) 
+var TBL_Fn42810 func(m *Module, v0, v1 int32) 
+var TBL_Fn42811 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42812 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42813 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42814 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42815 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42816 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42817 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42818 func(m *Module, v0, v1 int32) 
-var TBL_Fn42819 func(m *Module, v0, v1 int32) 
-var TBL_Fn42820 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42821 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42822 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42823 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42824 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42825 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42826 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42827 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42828 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42819 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42820 func(m *Module, v0, v1 int32) 
+var TBL_Fn42821 func(m *Module, v0, v1 int32) 
+var TBL_Fn42822 func(m *Module, v0, v1 int32) 
+var TBL_Fn42823 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42824 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42825 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42826 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42827 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42828 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42829 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42830 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42831 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42832 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn42833 func(m *Module, v0, v1 int32) 
-var TBL_Fn42834 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42835 func(m *Module, v0, v1 int32) 
-var TBL_Fn42836 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42837 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42839 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64, v4 int32) int32
-var TBL_Fn42840 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42841 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) int32
-var TBL_Fn42842 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42843 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42844 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42845 func(m *Module, v0, v1 int32) 
-var TBL_Fn42846 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42831 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42832 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42833 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42834 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42835 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn42836 func(m *Module, v0, v1 int32) 
+var TBL_Fn42837 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42838 func(m *Module, v0, v1 int32) 
+var TBL_Fn42839 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42840 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42842 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64, v4 int32) int32
+var TBL_Fn42843 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42844 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) int32
+var TBL_Fn42845 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42846 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42847 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42848 func(m *Module, v0 int32) int64
-var TBL_Fn42849 func(m *Module, v0 int64, v1 int32, v2 int64) int64
+var TBL_Fn42848 func(m *Module, v0, v1 int32) 
+var TBL_Fn42849 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn42850 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42851 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42852 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42853 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42854 func(m *Module, v0, v1 int32) 
-var TBL_Fn42855 func(m *Module, v0, v1 int32) 
-var TBL_Fn42856 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42857 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42858 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42859 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42860 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn42861 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42862 func(m *Module, v0, v1 int32) 
-var TBL_Fn42863 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42864 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42865 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42866 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42867 func(m *Module, v0, v1 int32) 
-var TBL_Fn42868 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42869 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42870 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42871 func(m *Module, v0, v1 int32) 
-var TBL_Fn42872 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42851 func(m *Module, v0 int32) int64
+var TBL_Fn42852 func(m *Module, v0 int64, v1 int32, v2 int64) int64
+var TBL_Fn42853 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42854 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42855 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42856 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42857 func(m *Module, v0, v1 int32) 
+var TBL_Fn42858 func(m *Module, v0, v1 int32) 
+var TBL_Fn42859 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42860 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42861 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42862 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42863 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn42864 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42865 func(m *Module, v0, v1 int32) 
+var TBL_Fn42866 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42867 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42868 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42869 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42870 func(m *Module, v0, v1 int32) 
+var TBL_Fn42871 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42872 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42873 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42874 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42875 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42876 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42877 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
-var TBL_Fn42878 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
-var TBL_Fn42879 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
+var TBL_Fn42874 func(m *Module, v0, v1 int32) 
+var TBL_Fn42875 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42876 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42877 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42878 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42879 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42880 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
-var TBL_Fn42881 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42882 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42883 func(m *Module, v0, v1 float32, v2 int32) float32
-var TBL_Fn42884 func(m *Module, v0, v1 float64, v2 int32) float64
-var TBL_Fn42885 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42886 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42887 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42888 func(m *Module, v0, v1 int64, v2 int32) int64
-var TBL_Fn42889 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42881 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
+var TBL_Fn42882 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
+var TBL_Fn42883 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6 int32) 
+var TBL_Fn42884 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42885 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42886 func(m *Module, v0, v1 float32, v2 int32) float32
+var TBL_Fn42887 func(m *Module, v0, v1 float64, v2 int32) float64
+var TBL_Fn42888 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42889 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42890 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42891 func(m *Module, v0, v1 int32) 
-var TBL_Fn42892 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42893 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42894 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42895 func(m *Module, v0, v1 int32) 
-var TBL_Fn42896 func(m *Module, v0, v1 int32) 
-var TBL_Fn42897 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42898 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42899 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42900 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42891 func(m *Module, v0, v1 int64, v2 int32) int64
+var TBL_Fn42892 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42893 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42894 func(m *Module, v0, v1 int32) 
+var TBL_Fn42895 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42896 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42897 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42898 func(m *Module, v0, v1 int32) 
+var TBL_Fn42899 func(m *Module, v0, v1 int32) 
+var TBL_Fn42900 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42901 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42902 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42903 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42904 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
-var TBL_Fn42905 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42906 func(m *Module, v0, v1 int32) 
-var TBL_Fn42907 func(m *Module, v0, v1 int32) 
-var TBL_Fn42908 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42903 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42904 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42905 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42906 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42907 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn42908 func(m *Module, v0, v1 int32) int32
 var TBL_Fn42909 func(m *Module, v0, v1 int32) 
-var TBL_Fn42910 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42911 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42910 func(m *Module, v0, v1 int32) 
+var TBL_Fn42911 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn42912 func(m *Module, v0, v1 int32) 
-var TBL_Fn42913 func(m *Module, v0, v1 int32) int32
-var TBL_Fn42914 func(m *Module, v0, v1 int32) 
-var TBL_Fn42915 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42916 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42917 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42913 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42914 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42915 func(m *Module, v0, v1 int32) 
+var TBL_Fn42916 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42917 func(m *Module, v0, v1 int32) 
 var TBL_Fn42918 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42919 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42920 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42921 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42922 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
-var TBL_Fn42923 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
-var TBL_Fn42924 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
-var TBL_Fn42925 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42926 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42927 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42928 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
-var TBL_Fn42929 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42930 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42931 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42932 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42933 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn42934 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42935 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42936 func(m *Module, v0, v1 int32) 
+var TBL_Fn42919 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42920 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42921 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42922 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42923 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42924 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42925 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
+var TBL_Fn42926 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
+var TBL_Fn42927 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32, v8 int64, v9 int32) int32
+var TBL_Fn42928 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42929 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42930 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42931 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn42932 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn42933 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42934 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42935 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42936 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42937 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42938 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42939 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn42940 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42941 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42942 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42938 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42939 func(m *Module, v0, v1 int32) 
+var TBL_Fn42940 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42941 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42942 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
 var TBL_Fn42943 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42944 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42945 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42946 func(m *Module, v0, v1 int32) 
-var TBL_Fn42947 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42948 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42949 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42950 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42951 func(m *Module, v0, v1 int32, v2, v3 int64) int32
-var TBL_Fn42952 func(m *Module, v0 int32, v1 int64) int32
-var TBL_Fn42953 func(m *Module, v0, v1 int32, v2 int64) int32
-var TBL_Fn42954 func(m *Module, v0 int32, v1 float32, v2 int32) 
-var TBL_Fn42955 func(m *Module, v0 int32, v1 float64, v2 int32) 
-var TBL_Fn42956 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32, v6, v7 int64) int64
-var TBL_Fn42958 func(m *Module, v0 int32, v1, v2 int64, v3 int32, v4 int64) int32
-var TBL_Fn42959 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6, v7 int32, v8, v9 int64) 
-var TBL_Fn42960 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42961 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6 int64, v7, v8, v9, v10 int32) int64
-var TBL_Fn42962 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6 int64, v7, v8, v9, v10 int32) int64
-var TBL_Fn42963 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42964 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42965 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42966 func(m *Module, v0 int32, v1 int64) 
-var TBL_Fn42967 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42968 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42969 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42944 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42945 func(m *Module, v0, v1 int32) int32
+var TBL_Fn42946 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42947 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42948 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42949 func(m *Module, v0, v1 int32) 
+var TBL_Fn42950 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42951 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42952 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42953 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42954 func(m *Module, v0, v1 int32, v2, v3 int64) int32
+var TBL_Fn42955 func(m *Module, v0 int32, v1 int64) int32
+var TBL_Fn42956 func(m *Module, v0, v1 int32, v2 int64) int32
+var TBL_Fn42957 func(m *Module, v0 int32, v1 float32, v2 int32) 
+var TBL_Fn42958 func(m *Module, v0 int32, v1 float64, v2 int32) 
+var TBL_Fn42959 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32, v6, v7 int64) int64
+var TBL_Fn42961 func(m *Module, v0 int32, v1, v2 int64, v3 int32, v4 int64) int32
+var TBL_Fn42962 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6, v7 int32, v8, v9 int64) 
+var TBL_Fn42963 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42964 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6 int64, v7, v8, v9, v10 int32) int64
+var TBL_Fn42965 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32, v6 int64, v7, v8, v9, v10 int32) int64
+var TBL_Fn42966 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42967 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42968 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42969 func(m *Module, v0 int32, v1 int64) 
 var TBL_Fn42970 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42971 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42972 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42971 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42972 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn42973 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42974 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42975 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn42976 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42974 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42975 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn42976 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn42977 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42978 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42979 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42980 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42981 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42978 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn42979 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42980 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42981 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn42982 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42983 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64) int32
-var TBL_Fn42984 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn42985 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn42986 func(m *Module, v0 int64, v1, v2, v3, v4 int32) int32
-var TBL_Fn42987 func(m *Module, v0 float32, v1, v2, v3 int32) int32
-var TBL_Fn42988 func(m *Module, v0 float64, v1, v2, v3 int32) int32
-var TBL_Fn42989 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42990 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn42991 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42983 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42984 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42985 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn42986 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64) int32
+var TBL_Fn42987 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn42988 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn42989 func(m *Module, v0 int64, v1, v2, v3, v4 int32) int32
+var TBL_Fn42990 func(m *Module, v0 float32, v1, v2, v3 int32) int32
+var TBL_Fn42991 func(m *Module, v0 float64, v1, v2, v3 int32) int32
 var TBL_Fn42992 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn42993 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn42994 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn42995 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42996 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn42997 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn42993 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn42994 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn42995 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn42996 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn42997 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn42998 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn42999 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43000 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43001 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43002 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43003 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43004 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43005 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43006 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43007 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn43008 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43009 func(m *Module, v0, v1 int32) 
-var TBL_Fn43010 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
-var TBL_Fn43011 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43012 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) int32
-var TBL_Fn43013 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43014 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43015 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43016 func(m *Module, v0, v1 int32) 
-var TBL_Fn43017 func(m *Module, v0, v1 int32) 
-var TBL_Fn43018 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43019 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn43020 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43021 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43022 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43023 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43024 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43025 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43026 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43027 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43028 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43029 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43030 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43031 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43032 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) 
-var TBL_Fn43033 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43034 func(m *Module, v0, v1 int32) 
-var TBL_Fn43035 func(m *Module, v0, v1 int32) 
-var TBL_Fn43036 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32, v6, v7 int64) int32
-var TBL_Fn43037 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43038 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43039 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43040 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn43041 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
-var TBL_Fn43042 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43043 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43044 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43045 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43046 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) int64
+var TBL_Fn42999 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43000 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43001 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43002 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43003 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43004 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43005 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43006 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43007 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43008 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43009 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43010 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn43011 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43012 func(m *Module, v0, v1 int32) 
+var TBL_Fn43013 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn43014 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43015 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) int32
+var TBL_Fn43016 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43017 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43018 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43019 func(m *Module, v0, v1 int32) 
+var TBL_Fn43020 func(m *Module, v0, v1 int32) 
+var TBL_Fn43021 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43022 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn43023 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43024 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43025 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43026 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43027 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43028 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43029 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43030 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43031 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43032 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43033 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43034 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43035 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) 
+var TBL_Fn43036 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43037 func(m *Module, v0, v1 int32) 
+var TBL_Fn43038 func(m *Module, v0, v1 int32) 
+var TBL_Fn43039 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32, v6, v7 int64) int32
+var TBL_Fn43040 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43041 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43042 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43043 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn43044 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) int32
+var TBL_Fn43045 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43046 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn43047 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43048 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
-var TBL_Fn43049 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43048 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43049 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64) int64
 var TBL_Fn43050 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43051 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43052 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43053 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43054 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43055 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43056 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn43057 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43058 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43059 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43060 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43061 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43051 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) int32
+var TBL_Fn43052 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43053 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43054 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43055 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43056 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43057 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43058 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43059 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn43060 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43061 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn43062 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43063 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43064 func(m *Module, v0 int64, v1, v2, v3 int32) int32
-var TBL_Fn43065 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43066 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43067 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43068 func(m *Module, v0 int64, v1, v2 int32) int32
+var TBL_Fn43063 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43064 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43065 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43066 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43067 func(m *Module, v0 int64, v1, v2, v3 int32) int32
+var TBL_Fn43068 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn43069 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43070 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43071 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43072 func(m *Module, v0, v1 int32) 
-var TBL_Fn43073 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
-var TBL_Fn43074 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43070 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43071 func(m *Module, v0 int64, v1, v2 int32) int32
+var TBL_Fn43072 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43073 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43074 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn43075 func(m *Module, v0, v1 int32) 
-var TBL_Fn43076 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43077 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43078 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43079 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43080 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43081 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43076 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) int32
+var TBL_Fn43077 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43078 func(m *Module, v0, v1 int32) 
+var TBL_Fn43079 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43080 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43081 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn43082 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43083 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43084 func(m *Module, v0 int64, v1 int32) 
-var TBL_Fn43085 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43086 func(m *Module, v0, v1 int32) 
-var TBL_Fn43087 func(m *Module, v0, v1 int32) 
-var TBL_Fn43088 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43089 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43090 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43091 func(m *Module, v0, v1 int32) 
-var TBL_Fn43092 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43093 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43094 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43095 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43096 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43097 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43098 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43099 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43100 func(m *Module, v0, v1 int32) 
-var TBL_Fn43101 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43102 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43103 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43083 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43084 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43085 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43086 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43087 func(m *Module, v0 int64, v1 int32) 
+var TBL_Fn43088 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43089 func(m *Module, v0, v1 int32) 
+var TBL_Fn43090 func(m *Module, v0, v1 int32) 
+var TBL_Fn43091 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43092 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43093 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43094 func(m *Module, v0, v1 int32) 
+var TBL_Fn43095 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43096 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43097 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43098 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43099 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43100 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43101 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43102 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43103 func(m *Module, v0, v1 int32) 
 var TBL_Fn43104 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43105 func(m *Module, v0 int32, v1 int64) 
+var TBL_Fn43105 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43106 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43107 func(m *Module, v0 int32, v1, v2 int64) 
-var TBL_Fn43108 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43107 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43108 func(m *Module, v0 int32, v1 int64) 
 var TBL_Fn43109 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43110 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn43111 func(m *Module, v0 int32, v1, v2 int64, v3 int32) int32
-var TBL_Fn43112 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43113 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43114 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43115 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) int32
-var TBL_Fn43116 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43117 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43118 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43119 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn43120 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43121 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43122 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43110 func(m *Module, v0 int32, v1, v2 int64) 
+var TBL_Fn43111 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43112 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43113 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn43114 func(m *Module, v0 int32, v1, v2 int64, v3 int32) int32
+var TBL_Fn43115 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43116 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43117 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43118 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) int32
+var TBL_Fn43119 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43120 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43121 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43122 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
 var TBL_Fn43123 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43124 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
-var TBL_Fn43125 func(m *Module, v0, v1 int32, v2 int64) int64
-var TBL_Fn43126 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43127 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43128 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
-var TBL_Fn43129 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43130 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
-var TBL_Fn43131 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43132 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43133 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43134 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43135 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43136 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43124 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43125 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43126 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43127 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int32
+var TBL_Fn43128 func(m *Module, v0, v1 int32, v2 int64) int64
+var TBL_Fn43129 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43130 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43131 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn43132 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43133 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn43134 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43135 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43136 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43137 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43138 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43139 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) 
+var TBL_Fn43138 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43139 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43140 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43141 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43142 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43143 func(m *Module, v0 int64, v1 int32, v2, v3 int64) int32
-var TBL_Fn43144 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43141 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43142 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) 
+var TBL_Fn43143 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43144 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43145 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43146 func(m *Module, v0, v1, v2 int32, v3, v4 int64) int32
-var TBL_Fn43147 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43146 func(m *Module, v0 int64, v1 int32, v2, v3 int64) int32
+var TBL_Fn43147 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn43148 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43149 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43150 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
-var TBL_Fn43151 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn43152 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
-var TBL_Fn43153 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn43154 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn43155 func(m *Module, v0, v1, v2 int32, v3 int64) 
-var TBL_Fn43156 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43157 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43158 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
-var TBL_Fn43159 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43160 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
-var TBL_Fn43161 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43162 func(m *Module, v0 int32, v1 int64, v2 int32) int32
-var TBL_Fn43163 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43164 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43165 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43166 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn43167 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43168 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43169 func(m *Module, v0, v1, v2, v3 int32, v4 float64, v5 float32, v6 int64) 
-var TBL_Fn43170 func(m *Module, v0 int64, v1, v2 int32, v3 int64, v4 int32, v5 int64) 
-var TBL_Fn43171 func(m *Module, v0, v1 int32) 
-var TBL_Fn43172 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43173 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43174 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43175 func(m *Module, v0, v1 int32, v2, v3 int64) int32
-var TBL_Fn43176 func(m *Module, v0, v1 int32, v2 int64) int32
-var TBL_Fn43177 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43178 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43179 func(m *Module, v0 int64, v1 int32, v2 int64) int32
+var TBL_Fn43149 func(m *Module, v0, v1, v2 int32, v3, v4 int64) int32
+var TBL_Fn43150 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43151 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43152 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43153 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
+var TBL_Fn43154 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn43155 func(m *Module, v0, v1 int32, v2 int64, v3 int32) 
+var TBL_Fn43156 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn43157 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn43158 func(m *Module, v0, v1, v2 int32, v3 int64) 
+var TBL_Fn43159 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43160 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43161 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
+var TBL_Fn43162 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43163 func(m *Module, v0, v1 int32, v2, v3 int64, v4 int32) 
+var TBL_Fn43164 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43165 func(m *Module, v0 int32, v1 int64, v2 int32) int32
+var TBL_Fn43166 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43167 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43168 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43169 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn43170 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43171 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43172 func(m *Module, v0, v1, v2, v3 int32, v4 float64, v5 float32, v6 int64) 
+var TBL_Fn43173 func(m *Module, v0 int64, v1, v2 int32, v3 int64, v4 int32, v5 int64) 
+var TBL_Fn43174 func(m *Module, v0, v1 int32) 
+var TBL_Fn43175 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43176 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43177 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43178 func(m *Module, v0, v1 int32, v2, v3 int64) int32
+var TBL_Fn43179 func(m *Module, v0, v1 int32, v2 int64) int32
 var TBL_Fn43180 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43181 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43182 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
-var TBL_Fn43183 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43184 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43185 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43186 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43181 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43182 func(m *Module, v0 int64, v1 int32, v2 int64) int32
+var TBL_Fn43183 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43184 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43185 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
+var TBL_Fn43186 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn43187 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43188 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43189 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43190 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43191 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43192 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43193 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43194 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43195 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43196 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43197 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn43198 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43199 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn43200 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43201 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43202 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43203 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn43204 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43205 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43206 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43207 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43208 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43209 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43210 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43211 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43212 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43213 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43214 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43215 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43216 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43217 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43218 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43219 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43188 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43189 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43190 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43191 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43192 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43193 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43194 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43195 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43196 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43197 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43198 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43199 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43200 func(m *Module, v0 int64, v1 int32) int64
+var TBL_Fn43201 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43202 func(m *Module, v0 int64, v1 int32) int64
+var TBL_Fn43203 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43204 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43205 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43206 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn43207 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43208 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43209 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43210 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43211 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43212 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43213 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43214 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43215 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43216 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43217 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43218 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43219 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43220 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43221 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43222 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43222 func(m *Module, v0 int64, v1 int32) int32
 var TBL_Fn43223 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43224 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43225 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43225 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43226 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43227 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43228 func(m *Module, v0, v1 int32) int64
-var TBL_Fn43229 func(m *Module, v0, v1 int32) int64
-var TBL_Fn43230 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn43231 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43232 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn43233 func(m *Module, v0, v1, v2 int32) float64
-var TBL_Fn43234 func(m *Module, v0 int64, v1 int32) float32
-var TBL_Fn43235 func(m *Module, v0 int64, v1 int32) float64
-var TBL_Fn43236 func(m *Module, v0 int64, v1 int32) int32
-var TBL_Fn43237 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn43238 func(m *Module, v0, v1 int32) int64
-var TBL_Fn43239 func(m *Module, v0 int64, v1 int32) int64
-var TBL_Fn43240 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43241 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43242 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43228 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43229 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43230 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43231 func(m *Module, v0, v1 int32) int64
+var TBL_Fn43232 func(m *Module, v0, v1 int32) int64
+var TBL_Fn43233 func(m *Module, v0 int64, v1 int32) int64
+var TBL_Fn43234 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43235 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn43236 func(m *Module, v0, v1, v2 int32) float64
+var TBL_Fn43237 func(m *Module, v0 int64, v1 int32) float32
+var TBL_Fn43238 func(m *Module, v0 int64, v1 int32) float64
+var TBL_Fn43239 func(m *Module, v0 int64, v1 int32) int32
+var TBL_Fn43240 func(m *Module, v0 int64, v1 int32) int64
+var TBL_Fn43241 func(m *Module, v0, v1 int32) int64
+var TBL_Fn43242 func(m *Module, v0 int64, v1 int32) int64
 var TBL_Fn43243 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43244 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43245 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43246 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
+var TBL_Fn43246 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43247 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43248 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43249 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43249 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) 
 var TBL_Fn43250 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43251 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43252 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43253 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43254 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43255 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn43256 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43257 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43258 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43255 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43256 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43257 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43258 func(m *Module, v0 int32, v1 int64, v2 int32) 
 var TBL_Fn43259 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43260 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43261 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43262 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43263 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43264 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43260 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43261 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43262 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43263 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43264 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43265 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43266 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43267 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
@@ -114586,10 +114530,10 @@ var TBL_Fn43274 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 i
 var TBL_Fn43275 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43276 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43277 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43278 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43278 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43279 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43280 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43281 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43281 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43282 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43283 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43284 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
@@ -114605,65 +114549,65 @@ var TBL_Fn43293 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 i
 var TBL_Fn43294 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43295 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
 var TBL_Fn43296 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43297 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43298 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43299 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43300 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43301 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43302 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43303 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102, v103, v104, v105, v106, v107 int32) 
-var TBL_Fn43304 func(m *Module, v0 int32, v1 int64, v2 int32) 
-var TBL_Fn43305 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41 int32) 
-var TBL_Fn43306 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43307 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43308 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43309 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40 int32) 
-var TBL_Fn43310 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43311 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
-var TBL_Fn43312 func(m *Module, v0, v1 int32) 
-var TBL_Fn43313 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43314 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43315 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43316 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43317 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43318 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43319 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43297 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43298 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43299 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43300 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43301 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43302 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43303 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43304 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43305 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43306 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102, v103, v104, v105, v106, v107 int32) 
+var TBL_Fn43307 func(m *Module, v0 int32, v1 int64, v2 int32) 
+var TBL_Fn43308 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41 int32) 
+var TBL_Fn43309 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43310 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43311 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43312 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40 int32) 
+var TBL_Fn43313 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43314 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5 int32) 
+var TBL_Fn43315 func(m *Module, v0, v1 int32) 
+var TBL_Fn43316 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43317 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43318 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43319 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7, v8, v9 int32) 
 var TBL_Fn43320 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43321 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43321 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6, v7, v8, v9 int32) 
 var TBL_Fn43322 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43323 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43323 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43324 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43325 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43326 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43327 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43328 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43325 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43326 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43327 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43328 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43329 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43330 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43330 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43331 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43332 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43333 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn43332 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43333 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43334 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43335 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43336 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43336 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
 var TBL_Fn43337 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43338 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43338 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43339 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43340 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43341 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43341 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43342 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43343 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43344 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43345 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43346 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43343 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43344 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43345 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43346 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43347 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43348 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43348 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43349 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43350 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43350 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43351 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43352 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43353 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43352 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43353 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43354 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43355 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43355 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43356 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43357 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43358 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
@@ -114672,46 +114616,46 @@ var TBL_Fn43360 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, 
 var TBL_Fn43361 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43362 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43363 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43364 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn43365 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43366 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43367 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43368 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn43369 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43364 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43365 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43366 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43367 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn43368 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43369 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn43370 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43371 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43372 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43371 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn43372 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43373 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43374 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43375 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43376 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43377 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43378 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43379 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43380 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43381 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43376 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43377 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43378 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43379 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43380 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43381 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn43382 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43383 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43384 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43385 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43383 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
+var TBL_Fn43384 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43385 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43386 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43387 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43387 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43388 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43389 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
+var TBL_Fn43389 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43390 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43391 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43392 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43392 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
 var TBL_Fn43393 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43394 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43395 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43394 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43395 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43396 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43397 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43398 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43399 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43400 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43397 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43398 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43399 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43400 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43401 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43402 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43403 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43402 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43403 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
 var TBL_Fn43404 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43405 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43406 func(m *Module, v0, v1, v2, v3, v4 int32) 
@@ -114722,235 +114666,240 @@ var TBL_Fn43410 func(m *Module, v0, v1, v2, v3, v4 int32)
 var TBL_Fn43411 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43412 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43413 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43414 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43415 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48 int32) 
+var TBL_Fn43414 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43415 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43416 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43417 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43418 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43419 func(m *Module, v0, v1 int32) 
-var TBL_Fn43420 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43421 func(m *Module, v0, v1 int32) 
-var TBL_Fn43422 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43423 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43424 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16 int32) 
-var TBL_Fn43425 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43426 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43427 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43428 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43418 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48 int32) 
+var TBL_Fn43419 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43420 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43421 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43422 func(m *Module, v0, v1 int32) 
+var TBL_Fn43423 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43424 func(m *Module, v0, v1 int32) 
+var TBL_Fn43425 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43426 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43427 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16 int32) 
+var TBL_Fn43428 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43429 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43430 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43431 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43432 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76 int32) int32
-var TBL_Fn43433 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
-var TBL_Fn43434 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43435 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
-var TBL_Fn43436 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43430 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43431 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43432 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43433 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43434 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43435 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76 int32) int32
+var TBL_Fn43436 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8 int32) 
 var TBL_Fn43437 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43438 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43439 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43440 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43438 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7, v8, v9 int32) 
+var TBL_Fn43439 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43440 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
 var TBL_Fn43441 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43442 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43443 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43442 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43443 func(m *Module, v0, v1 int32, v2 int64, v3 int32, v4 int64, v5, v6, v7 int32) 
 var TBL_Fn43444 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
-var TBL_Fn43445 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43446 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn43447 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43448 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43449 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
-var TBL_Fn43450 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43451 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43452 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43453 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43454 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43455 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43456 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) 
-var TBL_Fn43457 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43458 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43459 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64) 
-var TBL_Fn43460 func(m *Module, v0 int32, v1 float64, v2 int32, v3 int64) 
+var TBL_Fn43445 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43446 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43447 func(m *Module, v0, v1, v2 int32, v3, v4 int64, v5, v6 int32) 
+var TBL_Fn43448 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43449 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn43450 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43451 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43452 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
+var TBL_Fn43453 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43454 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43455 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43456 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43457 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43458 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43459 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) 
+var TBL_Fn43460 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn43461 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43462 func(m *Module, v0 int32, v1 int64, v2, v3 int32) 
-var TBL_Fn43463 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43464 func(m *Module, v0, v1 int32, v2 int64) 
-var TBL_Fn43465 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43466 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43467 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43468 func(m *Module, v0, v1 int32, v2, v3 int64) int32
-var TBL_Fn43469 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43470 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43471 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43472 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43473 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
-var TBL_Fn43474 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
+var TBL_Fn43462 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64) 
+var TBL_Fn43463 func(m *Module, v0 int32, v1 float64, v2 int32, v3 int64) 
+var TBL_Fn43464 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43465 func(m *Module, v0 int32, v1 int64, v2, v3 int32) 
+var TBL_Fn43466 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43467 func(m *Module, v0, v1 int32, v2 int64) 
+var TBL_Fn43468 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43469 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43470 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43471 func(m *Module, v0, v1 int32, v2, v3 int64) int32
+var TBL_Fn43472 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43473 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43474 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn43475 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43476 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43477 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43478 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn43476 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12 int32) 
+var TBL_Fn43477 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14 int32) 
+var TBL_Fn43478 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43479 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43480 func(m *Module, v0, v1, v2 int32, v3 int64) 
-var TBL_Fn43481 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43482 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43483 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn43480 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43481 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn43482 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43483 func(m *Module, v0, v1, v2 int32, v3 int64) 
 var TBL_Fn43484 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43485 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43486 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43487 func(m *Module, v0, v1, v2, v3 int32, v4 int64) 
-var TBL_Fn43488 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
-var TBL_Fn43489 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43491 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43492 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43493 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43494 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43495 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43496 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43486 func(m *Module, v0, v1, v2 int32, v3 int64, v4 int32) 
+var TBL_Fn43487 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43488 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43489 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43490 func(m *Module, v0, v1, v2, v3 int32, v4 int64) 
+var TBL_Fn43491 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) 
+var TBL_Fn43492 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43494 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43495 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43496 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43497 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43498 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43499 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43500 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43501 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
-var TBL_Fn43502 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43501 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43502 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43503 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43504 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43505 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
-var TBL_Fn43506 func(m *Module, v0, v1, v2 int32, v3 int64) int32
-var TBL_Fn43507 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43508 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43509 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43510 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43511 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43512 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43513 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43514 func(m *Module, v0, v1 int32) 
-var TBL_Fn43515 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43516 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43504 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) 
+var TBL_Fn43505 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43506 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43507 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43508 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10 int32) int32
+var TBL_Fn43509 func(m *Module, v0, v1, v2 int32, v3 int64) int32
+var TBL_Fn43510 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43511 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43512 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43513 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43514 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43515 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43516 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
 var TBL_Fn43517 func(m *Module, v0, v1 int32) 
-var TBL_Fn43518 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43519 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43518 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43519 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43520 func(m *Module, v0, v1 int32) 
-var TBL_Fn43521 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
-var TBL_Fn43522 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43523 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43524 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43525 func(m *Module, v0, v1 int32) 
-var TBL_Fn43526 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43527 func(m *Module, v0, v1 int32) 
-var TBL_Fn43528 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43529 func(m *Module, v0, v1 int32) 
-var TBL_Fn43530 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43531 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43532 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64) 
-var TBL_Fn43533 func(m *Module, v0, v1 int32) 
-var TBL_Fn43534 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43535 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43536 func(m *Module, v0 int32, v1, v2 int64) 
-var TBL_Fn43537 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6, v7 int32) int32
+var TBL_Fn43521 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43522 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43523 func(m *Module, v0, v1 int32) 
+var TBL_Fn43524 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11 int32) int32
+var TBL_Fn43525 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43526 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43527 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43528 func(m *Module, v0, v1 int32) 
+var TBL_Fn43529 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43530 func(m *Module, v0, v1 int32) 
+var TBL_Fn43531 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43532 func(m *Module, v0, v1 int32) 
+var TBL_Fn43533 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43534 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43535 func(m *Module, v0 int32, v1 int64, v2 int32, v3 int64) 
+var TBL_Fn43536 func(m *Module, v0, v1 int32) 
+var TBL_Fn43537 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
 var TBL_Fn43538 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43539 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43540 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43541 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43542 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43543 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn43544 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn43545 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43546 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43547 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43548 func(m *Module, v0, v1 int32, v2 int64) int32
-var TBL_Fn43549 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43550 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43551 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43552 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) int64
-var TBL_Fn43553 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43539 func(m *Module, v0 int32, v1, v2 int64) 
+var TBL_Fn43540 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6, v7 int32) int32
+var TBL_Fn43541 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43542 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43543 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43544 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43545 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43546 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn43547 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn43548 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43549 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43550 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43551 func(m *Module, v0, v1 int32, v2 int64) int32
+var TBL_Fn43552 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43553 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn43554 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43555 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43555 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6, v7 int32) int64
 var TBL_Fn43556 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43557 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43558 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43559 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43557 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43558 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43559 func(m *Module, v0, v1, v2 int32) 
 var TBL_Fn43560 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43561 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int64
-var TBL_Fn43562 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) 
-var TBL_Fn43563 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43564 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43565 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
-var TBL_Fn43566 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43567 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43568 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43569 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43570 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
-var TBL_Fn43571 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
-var TBL_Fn43572 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
-var TBL_Fn43573 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43574 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43575 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43576 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43577 func(m *Module, v0, v1 int32) 
-var TBL_Fn43578 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43579 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
-var TBL_Fn43580 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43581 func(m *Module, v0, v1 int32) 
-var TBL_Fn43582 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43583 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43584 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43585 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43586 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43587 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43588 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43589 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43590 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
-var TBL_Fn43591 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43592 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43593 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43594 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43595 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43596 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43561 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43562 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43563 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43564 func(m *Module, v0 int32, v1 int64, v2, v3 int32) int64
+var TBL_Fn43565 func(m *Module, v0, v1, v2 int32, v3 int64, v4, v5 int32) 
+var TBL_Fn43566 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43567 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43568 func(m *Module, v0, v1, v2, v3 int32, v4 int64, v5, v6 int32) 
+var TBL_Fn43569 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43570 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43571 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43572 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43573 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
+var TBL_Fn43574 func(m *Module, v0, v1 int32, v2 int64, v3, v4, v5 int32) 
+var TBL_Fn43575 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
+var TBL_Fn43576 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43577 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43578 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43579 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43580 func(m *Module, v0, v1 int32) 
+var TBL_Fn43581 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43582 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7 int32) int32
+var TBL_Fn43583 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43584 func(m *Module, v0, v1 int32) 
+var TBL_Fn43585 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43586 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43587 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43588 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43589 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43590 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43591 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43592 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43593 func(m *Module, v0, v1, v2, v3, v4, v5 int32) int32
+var TBL_Fn43594 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43595 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43596 func(m *Module, v0, v1, v2, v3 int32) int32
 var TBL_Fn43597 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43598 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43599 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43600 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43598 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43599 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43600 func(m *Module, v0, v1 int32) int32
 var TBL_Fn43601 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43602 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43602 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
 var TBL_Fn43603 func(m *Module, v0, v1, v2, v3, v4 int32) 
 var TBL_Fn43604 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43605 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43606 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43607 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43608 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43609 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43610 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43605 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43606 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43607 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43608 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43609 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43610 func(m *Module, v0, v1, v2 int32) int32
 var TBL_Fn43611 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43612 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43613 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43614 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43615 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43616 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43617 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43618 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43619 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43620 func(m *Module, v0, v1, v2, v3 int32) int32
-var TBL_Fn43621 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
-var TBL_Fn43622 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43623 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43624 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43625 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43626 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43627 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43628 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43629 func(m *Module, v0 int32, v1, v2 int64) int64
-var TBL_Fn43630 func(m *Module, v0, v1, v2, v3, v4 int32) 
-var TBL_Fn43631 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) 
-var TBL_Fn43632 func(m *Module, v0, v1 int32) int32
-var TBL_Fn43633 func(m *Module, v0, v1, v2, v3 int32) 
-var TBL_Fn43634 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
-var TBL_Fn43635 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43636 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43637 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43638 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
-var TBL_Fn43639 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43640 func(m *Module, v0, v1, v2, v3, v4 int32) int32
-var TBL_Fn43641 func(m *Module, v0, v1, v2 int32) int32
-var TBL_Fn43642 func(m *Module, v0, v1, v2 int32) 
-var TBL_Fn43643 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
-var TBL_Fn43644 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
-var TBL_Fn43645 func(m *Module, v0, v1 int32, v2, v3 int64, v4, v5, v6 int32) 
-var TBL_Fn43646 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43612 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43613 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43614 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43615 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43616 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43617 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43618 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43619 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43620 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43621 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43622 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43623 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43624 func(m *Module, v0, v1 int32, v2 int64, v3, v4 int32) int32
+var TBL_Fn43625 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43626 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43627 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43628 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43629 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43630 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43631 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43632 func(m *Module, v0 int32, v1, v2 int64) int64
+var TBL_Fn43633 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43634 func(m *Module, v0, v1, v2, v3, v4 int32, v5 int64, v6 int32) 
+var TBL_Fn43635 func(m *Module, v0, v1, v2, v3 int32) int32
+var TBL_Fn43636 func(m *Module, v0, v1, v2, v3, v4 int32) 
+var TBL_Fn43637 func(m *Module, v0, v1 int32) int32
+var TBL_Fn43638 func(m *Module, v0, v1, v2, v3 int32) 
+var TBL_Fn43639 func(m *Module, v0, v1, v2, v3, v4, v5, v6, v7, v8 int32) int32
+var TBL_Fn43640 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43641 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43642 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43643 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) int32
+var TBL_Fn43644 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43645 func(m *Module, v0, v1, v2, v3, v4 int32) int32
+var TBL_Fn43646 func(m *Module, v0, v1, v2 int32) int32
+var TBL_Fn43647 func(m *Module, v0, v1, v2 int32) 
+var TBL_Fn43648 func(m *Module, v0, v1, v2, v3, v4, v5, v6 int32) 
+var TBL_Fn43649 func(m *Module, v0, v1, v2, v3, v4, v5 int32) 
+var TBL_Fn43650 func(m *Module, v0, v1 int32, v2, v3 int64, v4, v5, v6 int32) 
+var TBL_Fn43651 func(m *Module, v0, v1, v2, v3 int32) 

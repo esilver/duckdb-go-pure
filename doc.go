@@ -28,7 +28,6 @@
 //
 //	CGO_ENABLED=0 go build ./...
 
-//
 // All other packages, including this driver and your application, compile with
 // default flags. go test additionally needs -vet=off. Since v0.3.0 the module
 // also builds for GOOS=js GOARCH=wasm (browser/Node).
