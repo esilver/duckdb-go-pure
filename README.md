@@ -24,18 +24,20 @@ v0.3.0 every oversized transpiled function is split into part-functions
 (the PoC repo's `scripts/split_giant_fns.py`), so the Go optimizer compiles
 the whole engine **fully optimized, inlining included** — queries run
 2.3–2.9× faster than v0.2.x, which had to disable inlining (`-l`) on the
-shards to keep the compile under control. Consumers add a single `-gcflags`
-argument to their own builds:
+shards to keep the compile under control. **No build flags are required**:
 
 ```sh
-CGO_ENABLED=0 go build \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
+CGO_ENABLED=0 go build ./...
 ```
 
-- `-c=1` (serial function compilation) keeps per-package compiler memory
-  bounded (0.4–3.4GB peak per package); the engine is cached by the Go build
-  cache after the first build. Add `-p 1` for the first build if you are
-  tight on RAM (it serializes package compiles).
+- Measured cold build: ~30s, ~3GB worst single compile process (16 cores);
+  the engine is cached by the Go build cache after the first build. Add
+  `-p 1` only if you are tight on RAM (it serializes package compiles).
+- Optional **PGO**: `default.pgo` (a representative query/storage profile)
+  ships in this module; building your main package with
+  `-pgo=$(go list -m -f '{{.Dir}}' github.com/esilver/duckdb-go-pure)/default.pgo`
+  measured a further 1.3–1.8× on aggregates, strings, and storage
+  round-trips.
 - Everything else (your code, this driver) builds with default flags.
 - `go test` additionally needs `-vet=off` (vet cannot chew the generated
   packages).

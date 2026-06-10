@@ -20,16 +20,16 @@
 // database, or a filesystem path for a persistent database backed by the host
 // filesystem.
 //
-// # Build flags (required)
+// # Build flags (none required)
 //
 // The transpiled engine (internal/duckdbcore) is sharded into ~30 packages
 // (and its oversized functions split) so the Go optimizer can compile it
-// fully optimized, inlining included. The only required flag is '-c=1'
-// (serial function compilation), which keeps per-package compiler memory
-// bounded. Any build that links this module needs:
+// fully optimized, inlining included. No build flags are required:
 //
-//	CGO_ENABLED=0 go build \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
+//	CGO_ENABLED=0 go build ./...
+//
+// Optional PGO: default.pgo in this module measured a further 1.3-1.8x
+// when passed to your main-package build via -pgo.
 //
 // All other packages, including this driver and your application, compile with
 // default flags. go test additionally needs -vet=off. Since v0.3.0 the module
