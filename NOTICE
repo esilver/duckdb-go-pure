@@ -1,0 +1,18 @@
+duckdb-go-pure
+==============
+
+This module is a pure-Go build of DuckDB. Credits:
+
+- DuckDB (https://github.com/duckdb/duckdb), Copyright 2018-2025 Stichting
+  DuckDB Foundation, MIT license. The engine embedded in
+  internal/duckdbcore is DuckDB v1.5.3 with the core_functions, json and icu
+  extensions statically linked, compiled to WebAssembly with Emscripten.
+- ICU (https://icu.unicode.org/), Copyright 1991-2020 Unicode, Inc., ICU
+  license — bundled via DuckDB's icu extension. See LICENSE.
+- wasm2go (https://github.com/ncruces/wasm2go) by Nuno Cruces — the
+  WebAssembly-to-Go transpiler that produced internal/duckdbcore, and
+  https://github.com/ncruces/go-sqlite3 for pioneering the approach this
+  module follows.
+- duckdb-wasm2go-poc (https://github.com/esilver/duckdb-wasm2go-poc) — the
+  proof-of-concept repository this module was extracted from; it contains the
+  full wasm build pipeline used to regenerate the engine.
