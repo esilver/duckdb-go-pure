@@ -18,6 +18,9 @@ Extracted from the working proof of concept at
 
 ## Build (no flags required)
 
+Release checklist includes `make jsgate` (GOOS=js compile check — the
+wasm backend has a per-function block cap that native builds do not).
+
 The transpiled engine is very large Go code. Since v0.2.0 it ships sharded
 into ~30 packages (`internal/duckdbcore/{core,shardNN,all}`), and since
 v0.3.0 every oversized transpiled function is split into part-functions

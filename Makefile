@@ -19,3 +19,10 @@ test:
 example:
 	CGO_ENABLED=0 go build -o /tmp/duckdb-go-pure-basic ./examples/basic
 	/tmp/duckdb-go-pure-basic
+
+# Release gate: the engine must keep compiling for the Go wasm backend
+# (GOOS=js). A function exceeding the compiler's 65536-SSA-block cap
+# passes native builds but bricks browser/wasip1 targets — this catches
+# it before a tag does. (~7 min cold; no artifact kept.)
+jsgate:
+	CGO_ENABLED=0 GOOS=js GOARCH=wasm go build -o /dev/null .
