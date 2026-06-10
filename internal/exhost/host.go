@@ -555,7 +555,7 @@ func (h *Host) X__cxa_rethrow_primary_exception(excPtr int32) {
 
 // ---- tempRet0 register (imports, for builds that use them) ----------------
 
-func (h *Host) XgetTempRet0() int32     { return h.tempRet0 }
-func (h *Host) XsetTempRet0(v int32)    { h.tempRet0 = v }
-func (h *Host) Xg_getTempRet0() int32   { return h.tempRet0 } // alt name some toolchains emit
-func (h *Host) Xg_setTempRet0(v int32)  { h.tempRet0 = v }
+func (h *Host) XgetTempRet0() int32    { return h.tempRet0 }
+func (h *Host) XsetTempRet0(v int32)   { h.tempRet0 = v }
+func (h *Host) Xg_getTempRet0() int32  { return h.tempRet0 } // alt name some toolchains emit
+func (h *Host) Xg_setTempRet0(v int32) { h.tempRet0 = v }

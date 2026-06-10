@@ -22,20 +22,25 @@
 //
 // # Build flags (required)
 //
-// The transpiled engine package is too large for the Go compiler's optimizing
-// backend (it OOMs at ~50GB RSS). Any build that links this module must
-// disable optimization for the engine package only:
+// The transpiled engine (internal/duckdbcore) is sharded into ~30 packages so
+// the Go optimizer can compile it fully optimized; the shards must compile
+// with inlining disabled ('-l' — default inlining re-expands the generated IR
+// and the compile OOMs at ~50GB RSS) and serial function compilation ('-c=1').
+// Any build that links this module needs:
 //
-//	CGO_ENABLED=0 go build -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore=-N -l -c=16' ./...
+//	CGO_ENABLED=0 go build \
+//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-l -c=1' \
+//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/core=-c=1' ./...
 //
 // All other packages, including this driver and your application, compile with
-// full optimization.
+// default (fully optimized) flags. go test additionally needs -vet=off.
 //
 // # Beyond database/sql
 //
 // The package also exposes DuckDB-specific extension points on a per-connection
 // basis: scalar UDFs (RegisterScalarConn), band-merge aggregate UDFs
-// (RegisterAggregateBandConn, AggregateOptions), plus the JSONValue and Decimal
-// value types used to round-trip DuckDB JSON and DECIMAL values through UDFs
-// and result scans.
+// (RegisterAggregateBandConn, AggregateOptions), an Appender for bulk loading
+// (DuckDB's native appender, ~100x faster than per-row INSERT), plus the
+// JSONValue and Decimal value types used to round-trip DuckDB JSON and DECIMAL
+// values through UDFs and result scans.
 package duckdb

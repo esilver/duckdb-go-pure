@@ -90,9 +90,9 @@ func TestCatalogErrorHasCaretContext(t *testing.T) {
 // convert-and-rethrow paths).
 func TestErrorMessageNeverEmpty(t *testing.T) {
 	for _, sql := range []string{
-		"SELECT CAST(s AS INT) FROM strs",            // runtime conversion
+		"SELECT CAST(s AS INT) FROM strs",             // runtime conversion
 		"SELECT * FROM read_csv('/no/such/file.csv')", // CSV reader IO error
-		"SELECT nonexistent_col FROM strs",           // binder
+		"SELECT nonexistent_col FROM strs",            // binder
 	} {
 		msg := execErr(t, sql)
 		// Find "<word> Error: " and require a non-empty remainder.

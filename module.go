@@ -1,8 +1,8 @@
+// Package duckdb is a pure-Go (CGO_ENABLED=0) database/sql driver for DuckDB,
+// driving the wasm2go-transpiled engine (package duckdbcore) through its C API.
 // This file is the shared foundation: module/connection lifecycle, the exception
 // host + WASI shim wiring, and low-level wasm-memory marshalling helpers that
 // driver.go (the database/sql surface) and result.go (chunk/type reading) build on.
-// (Package documentation lives in doc.go.)
-
 package duckdb
 
 import (
@@ -15,15 +15,13 @@ import (
 	"strings"
 	"sync"
 
-	core "github.com/esilver/duckdb-go-pure/internal/duckdbcore"
-
 	"github.com/esilver/duckdb-go-pure/internal/exhost"
 	"github.com/esilver/duckdb-go-pure/internal/wasishim"
 )
 
-// ---- env wiring: generated *core.Module -> exhost/wasishim (mirrors main.go) ----
+// ---- env wiring: generated *engineModule -> exhost/wasishim (mirrors main.go) ----
 
-type modABI struct{ m *core.Module }
+type modABI struct{ m *engineModule }
 
 func (a modABI) SetThrew(threw, value int32) { a.m.XsetThrew(threw, value) }
 func (a modABI) TempretSet(v int32)          { a.m.X_emscripten_tempret_set(v) }
@@ -46,8 +44,8 @@ func (a modABI) IncrementExceptionRefcount(exc int32) {
 func (a modABI) DecrementExceptionRefcount(exc int32) {
 	a.m.X__cxa_decrement_exception_refcount(exc)
 }
-func (a modABI) Malloc(n int32) int32                                  { return a.m.Xmalloc(n) }
-func (a modABI) Free(ptr int32)                                        { a.m.Xfree(ptr) }
+func (a modABI) Malloc(n int32) int32 { return a.m.Xmalloc(n) }
+func (a modABI) Free(ptr int32)       { a.m.Xfree(ptr) }
 func (a modABI) ReadU32(ptr int32) int32 {
 	mem := *a.m.Xmemory().Slice()
 	return int32(binary.LittleEndian.Uint32(mem[ptr:]))
@@ -57,7 +55,7 @@ func (a modABI) WriteU32(ptr, v int32) {
 	binary.LittleEndian.PutUint32(mem[ptr:], uint32(v))
 }
 
-type memABI struct{ m *core.Module }
+type memABI struct{ m *engineModule }
 
 func (a memABI) Mem() []byte { return *a.m.Xmemory().Slice() }
 func (a memABI) Grow(deltaPages int32) int32 {
@@ -67,17 +65,17 @@ func (a memABI) Grow(deltaPages int32) int32 {
 type env struct {
 	*exhost.Host
 	*wasishim.Shim
-	mod *core.Module
+	mod *engineModule
 }
 
 func (e *env) Init(m any) {
-	e.mod = m.(*core.Module)
+	e.mod = m.(*engineModule)
 	e.Host.Init(m)
 	e.Shim.SetMem(memABI{m: e.mod})
 }
 
 func newEnv() *env {
-	host := exhost.New(func(mod any) exhost.ModuleABI { return modABI{m: mod.(*core.Module)} })
+	host := exhost.New(func(mod any) exhost.ModuleABI { return modABI{m: mod.(*engineModule)} })
 	shim := wasishim.New(nil, os.Stdout, os.Stderr)
 	// Preopen the host root so DuckDB can open file-backed databases and read data
 	// files by absolute path (Tier 2 persistence) through the WASI filesystem shim.
@@ -90,7 +88,7 @@ func newEnv() *env {
 // module is one instantiated DuckDB engine (one wasm linear memory). It is NOT
 // safe for concurrent use; the driver serializes access per connection.
 type module struct {
-	m *core.Module
+	m *engineModule
 	e *env
 	// mu serializes engine access for a standalone (raw Driver.Open) conn; the
 	// pooled/connector path shares the connector's mutex instead. The wasm engine
@@ -105,7 +103,7 @@ type module struct {
 
 func newModule() *module {
 	e := newEnv()
-	m := core.New(e, e.Shim)
+	m := engineNew(e, e.Shim)
 	m.X_initialize()
 	relocateShadowStack(m)
 	mod := &module{m: m, e: e}
@@ -137,7 +135,7 @@ const shadowStackSize = 32 << 20
 // region); the block comes from the module's own dlmalloc heap, so the heap
 // never collides with it; and it is pinned for the module's lifetime (never
 // freed). The stack pointer must stay 16-byte aligned per the wasm C ABI.
-func relocateShadowStack(m *core.Module) {
+func relocateShadowStack(m *engineModule) {
 	base := m.Xmalloc(shadowStackSize)
 	if base == 0 {
 		panic("duckdb: cannot allocate shadow stack")
