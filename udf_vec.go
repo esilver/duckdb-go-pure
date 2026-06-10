@@ -16,23 +16,26 @@
 //     recurse. (The googlesqlite STRING_AGG lowering — array_agg into
 //     googlesqlite_array_to_string(LIST, sep) — needs exactly this; without it
 //     the LIST arg decoded to nil and the UDF body nil-dereferenced.)
-//   - STRUCT decoding (recursive): a STRUCT cell decodes to a map[string]any of
-//     decoded child cells — the shape duckdb-go scans STRUCT into. Struct child
+//   - STRUCT decoding (recursive): a STRUCT cell decodes to a Struct carrier
+//     (nested.go) of decoded child cells in DECLARED field order (duckdb-go
+//     scans to map[string]any; the duckdbcompat layer converts). Struct child
 //     vectors are PARALLEL arrays (no per-row offsets): row r of the struct is
 //     row r of each child vector, reached via duckdb_struct_vector_get_child;
 //     field names come from the logical type. LIST-of-STRUCT / STRUCT-with-LIST
 //     nest for free through the recursion.
 //   - MAP decoding: a MAP vector is physically a LIST whose child is a
-//     STRUCT{key, value} vector, so a MAP cell decodes to a map[any]any by
-//     walking the list entries and pairing the struct's key/value children
-//     (duckdb-go's Map shape). Non-comparable keys (e.g. LIST keys) are not
-//     supported and decode the cell to nil.
-//
-// UNION arguments remain undecoded (nil) — nothing in the googlesqlite surface
-// passes them natively yet.
+//     STRUCT{key, value} vector, so a MAP cell decodes to a MapValue carrier
+//     (nested.go) by walking the list entries and pairing the struct's
+//     key/value children in engine order (DuckDB preserves map entry order).
+//     The carrier admits unhashable keys (LIST/STRUCT keys), which a Go
+//     map[any]any cannot; duckdbcompat converts to map[any]any (duckdb-go's
+//     Map shape) when the keys are hashable.
+//   - UNION decoding: physically a STRUCT vector whose child 0 is the UTINYINT
+//     tag and children 1..N the member vectors; a cell decodes to the ACTIVE
+//     member's value (duckdb-go scan semantics).
+//   - ARRAY decoding (fixed-size list): the child vector holds arraySize
+//     elements per row with no entry headers; a cell decodes to []any.
 package duckdb
-
-import "reflect"
 
 // Nested duckdb_type ids (logical-only; the flat codec can't decode them,
 // vecDecoder handles them structurally).
@@ -40,6 +43,8 @@ const (
 	dtList   = 24
 	dtStruct = 25
 	dtMap    = 26
+	dtUnion  = 28
+	dtArray  = 33
 )
 
 type vecDecoder struct {
@@ -52,12 +57,20 @@ type vecDecoder struct {
 	internal int32     // DECIMAL backing integer type id
 	isJSON   bool      // VARCHAR with the JSON alias
 	enum     *enumInfo // ENUM only: backing index type + dictionary strings
-	// child is the shared child-vector decoder for LIST, and for MAP (where the
-	// child is the {key, value} STRUCT vector backing the map's list layout).
+	// child is the shared child-vector decoder for LIST, for MAP (where the
+	// child is the {key, value} STRUCT vector backing the map's list layout),
+	// and for ARRAY (fixed arraySize elements per row, no entry headers).
 	child *vecDecoder
 	// fields are the named child decoders for STRUCT (parallel arrays, same row
 	// index as the struct vector itself).
 	fields []structFieldDec
+	// arraySize is ARRAY's fixed per-row element count (from the logical type).
+	arraySize int64
+	// tag/members are UNION's decoders: physically a struct vector whose child 0
+	// is the UTINYINT tag and children 1..N the members (vector.cpp UnionVector:
+	// GetTags = entries[0], GetMember(i) = entries[i+1]).
+	tag     *vecDecoder
+	members []*vecDecoder
 }
 
 type structFieldDec struct {
@@ -111,6 +124,22 @@ func (mod *module) newVecDecoder(vec int32) *vecDecoder {
 		// accessor reaches the struct vector, whose own column type recurses
 		// into a STRUCT decoder with key/value fields.
 		d.child = mod.newVecDecoder(m.Xduckdb_list_vector_get_child(vec))
+	case dtUnion:
+		// UNION is physically a STRUCT vector: child 0 is the UTINYINT tag,
+		// children 1..N are the member vectors (duckdb_union_type_member_count
+		// == struct child count - 1; member i == struct child i+1).
+		n := m.Xduckdb_union_type_member_count(lt)
+		d.tag = mod.newVecDecoder(m.Xduckdb_struct_vector_get_child(vec, 0))
+		d.members = make([]*vecDecoder, n)
+		for i := int64(0); i < n; i++ {
+			d.members[i] = mod.newVecDecoder(m.Xduckdb_struct_vector_get_child(vec, i+1))
+		}
+	case dtArray:
+		// ARRAY is a fixed-size LIST without entry headers: the child vector
+		// holds arraySize elements per row, row r occupying child rows
+		// [r*arraySize, (r+1)*arraySize).
+		d.arraySize = m.Xduckdb_array_type_array_size(lt)
+		d.child = mod.newVecDecoder(m.Xduckdb_array_vector_get_child(vec))
 	}
 	destroyLogicalType(mod, lt)
 	return d
@@ -136,9 +165,35 @@ func (d *vecDecoder) cell(row int64) any {
 			return nil
 		}
 		// Child vectors are parallel arrays: row of the struct = row of each child.
-		out := make(map[string]any, len(d.fields))
-		for _, f := range d.fields {
-			out[f.name] = f.dec.cell(row)
+		out := Struct{
+			Names:  make([]string, len(d.fields)),
+			Values: make([]any, len(d.fields)),
+		}
+		for i, f := range d.fields {
+			out.Names[i] = f.name
+			out.Values[i] = f.dec.cell(row)
+		}
+		return out
+	}
+	if d.typeID == dtUnion {
+		if !d.mod.readValid(d.validPtr, row) {
+			return nil
+		}
+		// Deliver the ACTIVE member's decoded value (duckdb-go scan semantics:
+		// union_value(num := 1) scans as 1). The tag child is UTINYINT -> int64.
+		t, ok := d.tag.cell(row).(int64)
+		if !ok || t < 0 || t >= int64(len(d.members)) {
+			return nil
+		}
+		return d.members[t].cell(row)
+	}
+	if d.typeID == dtArray {
+		if !d.mod.readValid(d.validPtr, row) {
+			return nil
+		}
+		out := make([]any, d.arraySize)
+		for i := int64(0); i < d.arraySize; i++ {
+			out[i] = d.child.cell(row*d.arraySize + i)
 		}
 		return out
 	}
@@ -154,13 +209,10 @@ func (d *vecDecoder) cell(row int64) any {
 			return nil // malformed map child; never expected
 		}
 		kd, vd := d.child.fields[0].dec, d.child.fields[1].dec
-		out := make(map[any]any, n)
+		out := MapValue{Keys: make([]any, n), Values: make([]any, n)}
 		for i := int64(0); i < n; i++ {
-			k := kd.cell(off + i)
-			if !comparableKey(k) {
-				return nil // non-hashable key type (e.g. LIST key): unsupported
-			}
-			out[k] = vd.cell(off + i)
+			out.Keys[i] = kd.cell(off + i)
+			out.Values[i] = vd.cell(off + i)
 		}
 		return out
 	}
@@ -189,13 +241,4 @@ func (d *vecDecoder) cell(row int64) any {
 		}
 	}
 	return v
-}
-
-// comparableKey reports whether a decoded MAP key can be used as a Go map key
-// (decoded LIST/STRUCT/BLOB keys are slices/maps and would panic on insert).
-func comparableKey(k any) bool {
-	if k == nil {
-		return true
-	}
-	return reflect.TypeOf(k).Comparable()
 }

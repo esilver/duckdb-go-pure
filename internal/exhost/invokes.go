@@ -3924,3 +3924,4 @@ func (h *Host) Xinvoke_vjjijij(index int32, a0 int64, a1 int64, a2 int32, a3 int
 		f(a0, a1, a2, a3, a4, a5)
 	})
 }
+

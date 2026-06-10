@@ -7,9 +7,12 @@ package duckdb
 
 import (
 	"encoding/binary"
+	"errors"
 	"fmt"
 	"math"
+	"net/url"
 	"os"
+	"strings"
 	"sync"
 
 	core "github.com/esilver/duckdb-go-pure/internal/duckdbcore"
@@ -32,6 +35,17 @@ func (a modABI) GetExceptionPtr(excHeader int32) int32 {
 	return a.m.X__cxa_get_exception_ptr(excHeader)
 }
 func (a modABI) DynamicCast(obj, srcType, dstType, offset int32) int32 { return 0 }
+
+// IncrementExceptionRefcount / DecrementExceptionRefcount implement
+// exhost.ExceptionRefcounter by forwarding to the module's NATIVE refcount
+// helpers, so a caught exception object is destroyed+freed (not leaked) when
+// its last reference (catch scope or std::exception_ptr) is released.
+func (a modABI) IncrementExceptionRefcount(exc int32) {
+	a.m.X__cxa_increment_exception_refcount(exc)
+}
+func (a modABI) DecrementExceptionRefcount(exc int32) {
+	a.m.X__cxa_decrement_exception_refcount(exc)
+}
 func (a modABI) Malloc(n int32) int32                                  { return a.m.Xmalloc(n) }
 func (a modABI) Free(ptr int32)                                        { a.m.Xfree(ptr) }
 func (a modABI) ReadU32(ptr int32) int32 {
@@ -150,6 +164,19 @@ func (mod *module) inject(fn any) int32 {
 // host). Returns "" if none.
 func (mod *module) lastError() string { return mod.e.Host.LastThrowMessage() }
 
+// resultError returns the error text of a failed duckdb_result — the SAME
+// formatted message native DuckDB surfaces ("<Type> Error: <message>" plus the
+// "LINE n: ... ^" query context appended by ClientContext::ProcessError) —
+// falling back to the host's last-thrown exception message when the result
+// carries none.
+func (mod *module) resultError(resPtr int32) string {
+	msg := mod.goString(mod.m.Xduckdb_result_error(resPtr))
+	if msg == "" {
+		msg = mod.lastError()
+	}
+	return msg
+}
+
 // ---- low-level wasm-memory marshalling (shared by driver.go + result.go) -----
 
 func (mod *module) mem() []byte { return *mod.m.Xmemory().Slice() }
@@ -207,10 +234,44 @@ func (mod *module) writeU32(ptr int32, v uint32) {
 // dependent; 256 is a safe upper bound — we read fields via C-API accessors).
 const sizeofDuckdbResult = 256
 
-// open opens a database at path (":memory:" for in-memory) and connects,
-// registering the statically-linked core_functions extension first.
+// defaultMaxMemory is the engine memory limit applied on open. The wasm build
+// self-detects only ~17.5MB (emscripten reports the initial linear-memory size,
+// not host RAM), which makes even modest queries spill/abort. 1GiB matches what
+// a native DuckDB on a small host would pick. Overridable per database with a
+// `?max_memory=...` (alias `?memory_limit=...`) DSN query parameter, e.g.
+// "file.db?max_memory=4GB" or ":memory:?max_memory=256MB".
+const defaultMaxMemory = "1GiB"
+
+// parseDSN splits a DSN into the database path and the memory limit to apply.
+// Query parameters follow the path after '?'; only max_memory/memory_limit are
+// recognized (unknown parameters are ignored). "" means ":memory:".
+func parseDSN(dsn string) (path, maxMemory string) {
+	path, maxMemory = dsn, defaultMaxMemory
+	if i := strings.IndexByte(dsn, '?'); i >= 0 {
+		path = dsn[:i]
+		if vals, err := url.ParseQuery(dsn[i+1:]); err == nil {
+			if v := vals.Get("max_memory"); v != "" {
+				maxMemory = v
+			} else if v := vals.Get("memory_limit"); v != "" {
+				maxMemory = v
+			}
+		}
+	}
+	if path == "" {
+		path = ":memory:"
+	}
+	return path, maxMemory
+}
+
+// open opens a database at the DSN's path (":memory:" for in-memory) and
+// connects, registering the statically-linked core_functions extension first.
 // Returns the connection handle (duckdb_connection) and the db handle.
-func (mod *module) open(path string) (con int32, db int32, err error) {
+// The dsn may carry query parameters (see parseDSN); the memory limit is set
+// via SET max_memory right after connecting (the C API's duckdb_set_config is
+// not among the wasm exports, but max_memory is a runtime-settable GLOBAL
+// option, so SQL on the first connection configures the whole database).
+func (mod *module) open(dsn string) (con int32, db int32, err error) {
+	path, maxMemory := parseDSN(dsn)
 	// Install the Tier-2 host filesystem on a DBConfig BEFORE open (the database
 	// file is opened DURING duckdb_open_ext using config.file_system; a post-open
 	// hook is too late). Without this, the instance falls back to DuckDB's local
@@ -255,7 +316,35 @@ func (mod *module) open(path string) (con int32, db int32, err error) {
 	mod.free(pathPtr)
 	mod.free(dbSlot)
 	mod.free(conSlot)
+
+	// Apply the memory limit (global option; see defaultMaxMemory). A bad
+	// user-supplied value must surface, not be swallowed.
+	setSQL := "SET max_memory='" + strings.ReplaceAll(maxMemory, "'", "''") + "'"
+	if _, err := mod.queryRaw(con, setSQL); err != nil {
+		return 0, 0, fmt.Errorf("duckdb open: setting max_memory=%q: %w", maxMemory, err)
+	}
 	return con, db, nil
+}
+
+// queryRaw runs sql on con through duckdb_query — the direct (non-prepared)
+// C API entry point, which accepts MULTI-STATEMENT text (all statements run;
+// the result is the last one's). Returns the rows-changed count of that final
+// result. Used for statements that cannot go through duckdb_prepare (multi-
+// statement Exec fallback), for transaction recovery (ROLLBACK that must not
+// recurse into the prepare path), and for open-time SET. Caller must hold the
+// engine lock (or be in single-threaded setup code).
+func (mod *module) queryRaw(con int32, sql string) (rowsChanged int64, err error) {
+	sqlPtr := mod.cstring(sql)
+	defer mod.free(sqlPtr)
+	resPtr := mod.allocOut(sizeofDuckdbResult)
+	defer func() {
+		mod.m.Xduckdb_destroy_result(resPtr)
+		mod.free(resPtr)
+	}()
+	if rc := mod.m.Xduckdb_query(con, sqlPtr, resPtr); rc != 0 {
+		return 0, engineErr("query", mod.resultError(resPtr))
+	}
+	return mod.m.Xduckdb_rows_changed(resPtr), nil
 }
 
 // connect opens an additional duckdb_connection against an already-open database
@@ -276,4 +365,17 @@ func orUnknown(s string) string {
 		return "unknown error"
 	}
 	return s
+}
+
+// engineErr wraps an engine error message as a driver error. The message is
+// surfaced VERBATIM — native DuckDB error text such as
+// "Binder Error: ...\nLINE 1: ...\n         ^" — so callers and test harnesses
+// match against exactly what native DuckDB produces (its own sqllogictest
+// anchors regexes at the start of that text). op is only used when the engine
+// produced no message at all.
+func engineErr(op, msg string) error {
+	if msg == "" {
+		return fmt.Errorf("duckdb %s: unknown error", op)
+	}
+	return errors.New(msg)
 }

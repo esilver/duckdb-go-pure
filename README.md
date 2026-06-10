@@ -47,14 +47,15 @@ eventually exhaust memory.
 | Aggregate UDFs | Working (`RegisterAggregateConn`, `RegisterAggregateBandConn` + `AggregateOptions`) |
 | Value types | `JSONValue`, `Decimal`, dates/times/timestamps, lists, structs, enums, UUID, blobs |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`) |
-| Proven downstream | Drives a pure-Go `googlesqlite` stack passing 986/994 BigQuery-dialect conformance tests, and a pure-Go bigquery-emulator |
-| Performance | Engine is compiled **unoptimized** (see above) — expect a significant slowdown vs. native DuckDB. Optimizing the engine build is a roadmap item. |
+| DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,309 files PASS; 99.49% of 43,789 executed records** (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
+| Proven downstream | Drives a pure-Go `googlesqlite` stack passing **986/994 BigQuery-dialect conformance tests with zero failures** (exceeds the cgo baseline of 972), and a pure-Go bigquery-emulator that is acceptance-tested with the real `bq` CLI |
+| Performance | Engine is compiled **unoptimized** (see above) — expect a significant slowdown vs. native DuckDB. A multi-package transform that lets the engine compile fully optimized is prototyped and in validation. |
 | Platforms | Pure Go: anywhere Go runs (64-bit recommended; the engine wants multi-GB compile-time and runtime memory) |
 
 ## Quickstart
 
 ```sh
-go get github.com/esilver/duckdb-go-pure
+go get github.com/esilver/duckdb-go-pure   # current release line: v0.1.x
 ```
 
 ```go

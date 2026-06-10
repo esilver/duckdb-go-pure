@@ -1099,15 +1099,10 @@ func (s *Shim) Xfd_readdir(fd, buf, bufLen int32, cookie int64, bufUsedPtr int32
 
 // ---- stat identity helpers ------------------------------------------------
 
-// statIdentity extracts (dev, ino, nlink) from an os.FileInfo. On unix it reads
-// the underlying *syscall.Stat_t; elsewhere it returns zeros (DuckDB does not
-// depend on these for reading data files).
-func statIdentity(fi os.FileInfo) (dev, ino, nlink uint64) {
-	if st, ok := fi.Sys().(*syscall.Stat_t); ok && st != nil {
-		return uint64(st.Dev), uint64(st.Ino), uint64(st.Nlink)
-	}
-	return 0, 0, 0
-}
+// statIdentity (per-platform, see stat_unix.go / stat_other.go) extracts
+// (dev, ino, nlink) from an os.FileInfo. On unix it reads the underlying
+// *syscall.Stat_t; elsewhere it returns zeros (DuckDB does not depend on
+// these for reading data files).
 
 // dirIno best-effort returns the inode of the directory itself (".") or its
 // parent (".."). Failures yield 0, which is acceptable for readdir consumers.
