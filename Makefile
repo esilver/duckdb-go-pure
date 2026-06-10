@@ -1,28 +1,27 @@
 # The engine (internal/duckdbcore) is wasm2go-transpiled DuckDB, sharded into
-# ~30 packages (core + shardNN + all) so the Go optimizer can compile it fully
-# optimized package-by-package (the old monolithic layout OOMed the compiler at
-# ~50GB RSS and had to ship -N -l). Two flags are load-bearing:
-#   - shards need '-l' (no inlining): default inlining re-expands the generated
-#     IR and the compile OOMs at ~50GB again.
+# ~30 packages (core + shardNN + all) and with every oversized transpiled
+# function split into part-functions (the PoC repo's split_giant_fns.py), so
+# the Go optimizer compiles it fully optimized — inlining included. One flag
+# is load-bearing:
 #   - '-c=1' (serial function compilation) keeps per-package compiler memory
-#     flat; the whole engine compiles in ~2 minutes / <3GB peak.
-# core compiles WITHOUT '-l' (intra-package inlining of the memory helpers is a
-# real win); the more specific pattern wins, so list it after the catch-all.
-# '-p 1' serializes package compiles for the first (uncached) build; drop it if
-# you have RAM to spare. Everything outside internal/duckdbcore builds with
+#     bounded (0.4-3.4GB peak per package, worst shard6).
+# Since v0.3.0 no '-l' is needed anywhere: the function split is what keeps
+# the inliner's IR bounded (pre-split, default inlining OOMed at ~50GB and
+# the shards had to compile -l). Parallel package compiles are fine on a
+# 64GB-class machine; add '-p 1' if you are tight on RAM (it serializes
+# package compiles). Everything outside internal/duckdbcore builds with
 # default flags.
-ENGINE      := github.com/esilver/duckdb-go-pure/internal/duckdbcore
-GCFLAGS_ALL := $(ENGINE)/...=-l -c=1
-GCFLAGS_CORE:= $(ENGINE)/core=-c=1
+ENGINE  := github.com/esilver/duckdb-go-pure/internal/duckdbcore
+GCFLAGS := $(ENGINE)/...=-c=1
 
 .PHONY: build test example
 
 build:
-	CGO_ENABLED=0 go build -p 1 -gcflags='$(GCFLAGS_ALL)' -gcflags='$(GCFLAGS_CORE)' ./...
+	CGO_ENABLED=0 go build -gcflags='$(GCFLAGS)' ./...
 
 test:
-	CGO_ENABLED=0 go test -vet=off -p 1 -gcflags='$(GCFLAGS_ALL)' -gcflags='$(GCFLAGS_CORE)' ./...
+	CGO_ENABLED=0 go test -vet=off -gcflags='$(GCFLAGS)' ./...
 
 example:
-	CGO_ENABLED=0 go build -p 1 -gcflags='$(GCFLAGS_ALL)' -gcflags='$(GCFLAGS_CORE)' -o /tmp/duckdb-go-pure-basic ./examples/basic
+	CGO_ENABLED=0 go build -gcflags='$(GCFLAGS)' -o /tmp/duckdb-go-pure-basic ./examples/basic
 	/tmp/duckdb-go-pure-basic

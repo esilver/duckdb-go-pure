@@ -19,33 +19,30 @@ Extracted from the working proof of concept at
 ## Required build flags (read this first)
 
 The transpiled engine is very large Go code. Since v0.2.0 it ships sharded
-into ~30 packages (`internal/duckdbcore/{core,shardNN,all}`) so the Go
-optimizer can compile it **fully optimized** package-by-package — queries run
-2.0–2.6× faster than the v0.1.x engine, which had to ship a single monolithic
-package compiled `-N -l` (full optimization OOMed the compiler at ~50GB RSS).
-Consumers must add two `-gcflags` arguments to their own builds:
+into ~30 packages (`internal/duckdbcore/{core,shardNN,all}`), and since
+v0.3.0 every oversized transpiled function is split into part-functions
+(the PoC repo's `scripts/split_giant_fns.py`), so the Go optimizer compiles
+the whole engine **fully optimized, inlining included** — queries run
+2.3–2.9× faster than v0.2.x, which had to disable inlining (`-l`) on the
+shards to keep the compile under control. Consumers add a single `-gcflags`
+argument to their own builds:
 
 ```sh
 CGO_ENABLED=0 go build \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-l -c=1' \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/core=-c=1' ./...
+  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
 ```
 
-- `-l` (no inlining) on the shards is **mandatory**: default inlining
-  re-expands the generated IR and the compile OOMs at ~50GB. `core` compiles
-  without `-l` (the more specific pattern wins) — intra-package inlining of
-  the wasm memory helpers is a real win there.
-- `-c=1` (serial function compilation) keeps per-package compiler memory flat;
-  the whole engine compiles in ~2 minutes / <3GB peak and is cached by the Go
-  build cache afterwards. Add `-p 1` for the first build if you are tight on
-  RAM (it serializes package compiles).
-- Everything else (your code, this driver) still builds fully optimized with
-  default flags.
+- `-c=1` (serial function compilation) keeps per-package compiler memory
+  bounded (0.4–3.4GB peak per package); the engine is cached by the Go build
+  cache after the first build. Add `-p 1` for the first build if you are
+  tight on RAM (it serializes package compiles).
+- Everything else (your code, this driver) builds with default flags.
 - `go test` additionally needs `-vet=off` (vet cannot chew the generated
   packages).
-
-Without the shard `-l` flag, `go build` will appear to hang on an engine
-shard and eventually exhaust memory.
+- Since v0.3.0 the module also builds for `GOOS=js GOARCH=wasm` and runs
+  under Node/V8 via Go's `wasm_exec.js` — the function split is what brought
+  the largest engine function under the Go compiler's 65536-SSA-block hard
+  cap that previously bricked every js/wasm build.
 
 ## Status
 
@@ -62,13 +59,13 @@ shard and eventually exhaust memory.
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
 | DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,379 files PASS; 99.7% of 44,651 executed records** (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
 | Proven downstream | Drives a pure-Go `googlesqlite` stack passing **986/994 BigQuery-dialect conformance tests with zero failures** (exceeds the cgo baseline of 972), and a pure-Go bigquery-emulator that is acceptance-tested with the real `bq` CLI |
-| Performance | Engine compiles **fully optimized** since v0.2.0 (see above): roughly **2–11× slower than native DuckDB** (widest on SIMD-friendly scan/aggregate — wasm2go has no SIMD — narrower on join/hash/string-heavy work); 2.0–2.6× faster than v0.1.x |
-| Platforms | Pure Go: anywhere Go runs (64-bit recommended; the engine wants multi-GB compile-time and runtime memory) |
+| Performance | Engine compiles **fully optimized + inlined** since v0.3.0 (see above): 2.3–2.9× faster than v0.2.x, which was 2.0–2.6× faster than the v0.1.x monolith; still slower than native DuckDB (wasm2go has no SIMD), widest on SIMD-friendly scan/aggregate |
+| Platforms | Pure Go: anywhere Go runs, **including `GOOS=js GOARCH=wasm`** since v0.3.0 (64-bit recommended; the engine wants multi-GB compile-time and runtime memory) |
 
 ## Quickstart
 
 ```sh
-go get github.com/esilver/duckdb-go-pure   # current release line: v0.2.x
+go get github.com/esilver/duckdb-go-pure   # current release line: v0.3.x
 ```
 
 ```go
@@ -101,8 +98,7 @@ Build it (the flags consumers need, verbatim):
 
 ```sh
 CGO_ENABLED=0 go build \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-l -c=1' \
-  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/core=-c=1' .
+  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' .
 ```
 
 ## Scalar UDFs
@@ -146,8 +142,8 @@ way through `RegisterAggregateConn` / `RegisterAggregateBandConn` (see
 ## Building and testing this repo
 
 ```sh
-make build   # CGO_ENABLED=0 go build -p 1 -gcflags='.../duckdbcore/...=-l -c=1' -gcflags='.../duckdbcore/core=-c=1' ./...
-make test    # CGO_ENABLED=0 go test -vet=off -p 1 -gcflags='...same...' ./...
+make build   # CGO_ENABLED=0 go build -gcflags='.../duckdbcore/...=-c=1' ./...
+make test    # CGO_ENABLED=0 go test -vet=off -gcflags='...same...' ./...
 make example # build + run examples/basic
 ```
 
@@ -158,7 +154,12 @@ make example # build + run examples/basic
   `Module` type, memory helpers, dispatch) + ~29 `shardNN` packages (the
   42.5k generated functions; cross-shard calls go through `TBL_FnN` func-vars
   that each shard's `init()` registers) + `all` (blank-imports every shard),
-  so the Go optimizer's per-package memory stays bounded. The 6MB `gen.dat`
+  so the Go optimizer's per-package memory stays bounded. Since v0.3.0 the
+  PoC repo's `scripts/split_giant_fns.py` additionally splits every
+  oversized transpiled function (up to 36.5k lines) into semantically
+  identical part-functions, which is what lets the shards compile with
+  inlining enabled and fit under the compiler's SSA-block hard cap
+  (`GOOS=js`). The 6MB `gen.dat`
   data segment is `//go:embed`-ed in `core`. Linear wasm memory is a
   `[]byte`; the indirect function table is a `[]any` of Go funcs — which is
   exactly what makes Go-closure UDF callbacks possible.

@@ -3,17 +3,18 @@ package duckdb
 // The engine seam: engineModule/engineNew bind the driver (module.go) to the
 // generated engine. This repo ships the optimized multi-package engine —
 // internal/duckdbcore/{core,shardNN,all}, produced by the PoC repo's
-// scripts/transform_genopt.py — whose ~30 small packages the Go optimizer can
-// compile fully optimized (per-package compiler memory; the old monolithic
-// layout OOMed the optimizer at ~50GB and had to ship -N -l). Build flags are
+// scripts/transform_genopt.py (per-package sharding) and
+// scripts/split_giant_fns.py (oversized-function splitting) — whose ~30 small
+// packages the Go optimizer can compile fully optimized WITH inlining (the
+// pre-split layout needed '-l' on the shards; the pre-shard monolith OOMed
+// the optimizer at ~50GB and had to ship -N -l). Build flags are
 // load-bearing; see doc.go "Build flags (required)":
 //
 //	CGO_ENABLED=0 go build \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-l -c=1' \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/core=-c=1' ./...
+//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
 //
-// '-l' on the shards is MANDATORY: default inlining re-expands the generated
-// IR and the compile OOMs at ~50GB.
+// '-c=1' (serial function compilation) keeps per-package compiler memory
+// bounded (0.4-3.4GB peaks); since v0.3.0 no '-l' is needed anywhere.
 
 import (
 	engine "github.com/esilver/duckdb-go-pure/internal/duckdbcore/core"

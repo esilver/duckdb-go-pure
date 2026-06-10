@@ -22,18 +22,18 @@
 //
 // # Build flags (required)
 //
-// The transpiled engine (internal/duckdbcore) is sharded into ~30 packages so
-// the Go optimizer can compile it fully optimized; the shards must compile
-// with inlining disabled ('-l' — default inlining re-expands the generated IR
-// and the compile OOMs at ~50GB RSS) and serial function compilation ('-c=1').
-// Any build that links this module needs:
+// The transpiled engine (internal/duckdbcore) is sharded into ~30 packages
+// (and its oversized functions split) so the Go optimizer can compile it
+// fully optimized, inlining included. The only required flag is '-c=1'
+// (serial function compilation), which keeps per-package compiler memory
+// bounded. Any build that links this module needs:
 //
 //	CGO_ENABLED=0 go build \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-l -c=1' \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/core=-c=1' ./...
+//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore/...=-c=1' ./...
 //
 // All other packages, including this driver and your application, compile with
-// default (fully optimized) flags. go test additionally needs -vet=off.
+// default flags. go test additionally needs -vet=off. Since v0.3.0 the module
+// also builds for GOOS=js GOARCH=wasm (browser/Node).
 //
 // # Beyond database/sql
 //
