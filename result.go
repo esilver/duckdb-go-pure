@@ -24,6 +24,7 @@ import (
 	"math"
 	"math/big"
 	"strconv"
+	"sync"
 	"time"
 )
 
@@ -59,7 +60,10 @@ const (
 	dtTimeTz      = 30 // uint64: micros-since-midnight << 24 | encoded offset
 	dtTimestampTz = 31 // micros since epoch
 	dtUhugeint    = 32
+	dtBignum      = 35 // varint blob, physical VARCHAR (decodes via bignumString)
 	dtTimeNs      = 39 // nanos since midnight
+	dtGeometry    = 40 // WKB blob, physical VARCHAR (decodes via geometryString)
+	dtVariant     = 41 // physical STRUCT carrier (decodes via variantDec)
 )
 
 // DuckDB date/timestamp ±infinity sentinels (duckdb-src/src/include/duckdb/common/
@@ -86,11 +90,24 @@ var epoch = time.Date(1970, 1, 1, 0, 0, 0, 0, time.UTC)
 // freeing the resPtr buffer (mod.free). driver.go must NOT free resPtr itself once
 // newRows has succeeded.
 type rows struct {
-	mod    *module
+	mod *module
+	// mu is the conn's engine mutex (shared by every pooled conn on this
+	// engine). database/sql only reserves the rows' OWN conn while rows are
+	// open — a sibling pooled conn can Exec concurrently — and the wasm engine
+	// is single-threaded with ONE shadow-stack pointer global, so Next/Close
+	// MUST take this lock around every engine call. (Unlocked rows iteration
+	// racing a sibling conn's bind/exec corrupted the engine heap: the
+	// "bind_varchar runaway" spinning in a cycled libc++ hash-bucket chain.)
+	mu     *sync.Mutex
 	resPtr int32 // duckdb_result* (the by-value struct buffer in module memory)
 
 	names   []string
 	typeIDs []int32 // duckdb_type id per column
+	// typeNames[col] is the column's full DuckDB type name (recursive for
+	// nested types, see typename.go), surfaced through database/sql's
+	// ColumnType.DatabaseTypeName — the only channel the runner has to learn a
+	// temporal column's face (TIME vs DATE vs TIMESTAMP all decode to time.Time).
+	typeNames []string
 	// colJSON[col] marks a VARCHAR-backed column whose logical type carries the
 	// "JSON" alias; its cells scan as the PARSED native Go value (duckdb-go
 	// semantics, see DecodeJSONNative) rather than the raw JSON text.
@@ -168,14 +185,19 @@ func (info enumInfo) value(mod *module, dataPtr int32, row int) driver.Value {
 }
 
 // newRows reads the result's column metadata and returns a streaming driver.Rows.
-// It takes ownership of resPtr (see rows ownership comment).
-func newRows(mod *module, resPtr int32) (driver.Rows, error) {
+// It takes ownership of resPtr (see rows ownership comment). mu is the conn's
+// engine mutex; callers hold it already (newRows itself makes engine calls),
+// and the returned rows re-takes it in Next/Close, which database/sql invokes
+// AFTER the locked query call has returned.
+func newRows(mod *module, mu *sync.Mutex, resPtr int32) (driver.Rows, error) {
 	n := int(mod.m.Xduckdb_column_count(resPtr)) // by-value result -> resPtr directly
 	r := &rows{
 		mod:         mod,
+		mu:          mu,
 		resPtr:      resPtr,
 		names:       make([]string, n),
 		typeIDs:     make([]int32, n),
+		typeNames:   make([]string, n),
 		colJSON:     make([]bool, n),
 		decimalMeta: map[int]decimalInfo{},
 		enumMeta:    map[int]enumInfo{},
@@ -190,6 +212,7 @@ func newRows(mod *module, resPtr int32) (driver.Rows, error) {
 		lt := mod.m.Xduckdb_column_logical_type(resPtr, int64(col))
 		tid := mod.m.Xduckdb_get_type_id(lt)
 		r.typeIDs[col] = tid
+		r.typeNames[col] = typeName(mod, lt)
 		if tid == dtDecimal {
 			r.decimalMeta[col] = decimalInfo{
 				width:    uint8(mod.m.Xduckdb_decimal_width(lt)),
@@ -220,9 +243,18 @@ func newRows(mod *module, resPtr int32) (driver.Rows, error) {
 // Columns returns the column names in result order.
 func (r *rows) Columns() []string { return r.names }
 
+// ColumnTypeDatabaseTypeName implements driver.RowsColumnTypeDatabaseTypeName
+// (the same metadata hook duckdb-go provides): the column's DuckDB type name,
+// recursive for nested types — e.g. "TIME[]", "MAP(TIMESTAMP, BIGINT)",
+// `STRUCT("a" DATE)`. See typename.go.
+func (r *rows) ColumnTypeDatabaseTypeName(index int) string { return r.typeNames[index] }
+
 // Close releases the current chunk (if any), destroys the engine-side result, and
-// frees the resPtr buffer. Safe to call more than once.
+// frees the resPtr buffer. Safe to call more than once. Takes the engine lock:
+// a sibling pooled conn may be mid-statement on the shared engine.
 func (r *rows) Close() error {
+	r.mu.Lock()
+	defer r.mu.Unlock()
 	if r.closed {
 		return nil
 	}
@@ -254,7 +286,11 @@ func (r *rows) releaseChunk() {
 }
 
 // Next decodes the next row into dest. Returns io.EOF when the result is drained.
+// Takes the engine lock for the duration: fetch_chunk/vector reads enter the
+// single-threaded engine, and sibling pooled conns run concurrently.
 func (r *rows) Next(dest []driver.Value) (err error) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
 	defer guardEnginePanic(&err)
 	mod := r.mod
 	// Advance to a chunk that still has rows.
@@ -296,7 +332,7 @@ func (r *rows) Next(dest []driver.Value) (err error) {
 			continue
 		}
 		switch r.typeIDs[col] {
-		case dtList, dtStruct, dtMap, dtUnion, dtArray:
+		case dtList, dtStruct, dtMap, dtUnion, dtArray, dtVariant:
 			// Nested result column (LIST/STRUCT/MAP/UNION/ARRAY, incl. arbitrary
 			// nesting): decode recursively via vecDecoder — LIST/ARRAY -> []any,
 			// STRUCT -> Struct (declared field order), MAP -> MapValue (entry
@@ -421,9 +457,21 @@ func (r *rows) decode(col int, dataPtr int32, row int) driver.Value {
 		return decimalValue(mod, r.decimalMeta[col], dataPtr, row)
 
 	case dtUuid:
-		// UUID is stored as a hugeint (16 bytes). Surface as its decimal-ish string
-		// form via the big.Int path; callers needing canonical UUID can reparse.
-		return hugeintValue(mod, dataPtr, row, true)
+		// UUID is stored as a hugeint (16 bytes) with the upper word's MSB
+		// flipped; render the canonical 8-4-4-4-12 form (BaseUUID::ToString).
+		return uuidString(mod, dataPtr, row)
+
+	case dtBignum:
+		// BIGNUM (varint) is VARCHAR-physical: a 3-byte-header big-endian
+		// magnitude blob; deliver the exact decimal string.
+		_, b := readStringT(mod, dataPtr+int32(row*16))
+		return bignumString(b)
+
+	case dtGeometry:
+		// GEOMETRY is VARCHAR-physical WKB; deliver the WKT text
+		// (Geometry::ToString).
+		_, b := readStringT(mod, dataPtr+int32(row*16))
+		return geometryString(b)
 
 	case dtInvalid:
 		return nil

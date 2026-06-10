@@ -55,7 +55,9 @@ shard and eventually exhaust memory.
 | `database/sql` driver | Working (driver name `"duckdb"`; `:memory:` and file DSNs) |
 | Scalar UDFs | Working (`RegisterScalarConn`: fixed args, varargs, NULL handling, volatile) |
 | Aggregate UDFs | Working (`RegisterAggregateConn`, `RegisterAggregateBandConn` + `AggregateOptions`) |
-| Value types | `JSONValue`, `Decimal`, dates/times/timestamps, lists, structs, maps, enums, unions, intervals, UUID, blobs, HUGEINT, BIT, TIMETZ |
+| Value types | `JSONValue`, `Decimal`, dates/times/timestamps, lists, structs, maps, enums, unions, intervals, UUID, blobs, HUGEINT, BIT, TIMETZ, BIGNUM, GEOMETRY (WKT), VARIANT |
+| Column metadata | `ColumnType.DatabaseTypeName` returns the full DuckDB type name, recursive for nested types (duckdb-go parity) |
+| Connection pooling | Safe: `rows.Next`/`Close` take the shared engine lock (since v0.2.1), so pooled `database/sql` connections can interleave freely |
 | Bulk loading | `Appender` (DuckDB's native bulk-load path, ~100× faster than per-row `INSERT`) |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
 | DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,379 files PASS; 99.7% of 44,651 executed records** (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
