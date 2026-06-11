@@ -2137,6 +2137,12 @@ func (m *Module) Xduckdb_destroy_logical_type(v0 int32) {
 		Store32(m.MemoryG1[uint32(v0):], uint32(I32(0)))
 	}
 }
+func (m *Module) Xduckdb_interrupt(v0 int32) {
+	if v0 != 0 {
+		T0 := TBL_Fn386(m, v0)
+		m.MemoryG1[int64(uint32(T0))+16] = byte(I32(1))
+	}
+}
 func (m *Module) Xduckdb_library_version() int32 {
 	return I32(266156)
 }
@@ -41721,7 +41727,7 @@ func (m *Module) Fe11() {
 	e[11299] = m.Xduckdb_library_version
 	e[11300] = m.Xduckdb_disconnect
 	e[11301] = m.Xduckdb_query_progress
-	e[11302] = func(v0 int32)  { TBL_Fn1605(m, v0) }
+	e[11302] = m.Xduckdb_interrupt
 	e[11303] = m.Xduckdb_connect
 	e[11304] = m.Xduckdb_close
 	e[11305] = m.Xduckdb_open_ext
@@ -73905,7 +73911,6 @@ var TBL_Fn1601 func(m *Module, v0, v1, v2, v3, v4 int32) int32
 var TBL_Fn1602 func(m *Module, v0 int32) int32
 var TBL_Fn1603 func(m *Module, v0 int32) 
 var TBL_Fn1604 func(m *Module, v0, v1 int32) int32
-var TBL_Fn1605 func(m *Module, v0 int32) 
 var TBL_Fn1606 func(m *Module, v0, v1, v2, v3 int32) 
 var TBL_Fn1608 func(m *Module, v0, v1 int32) int32
 var TBL_Fn1613 func(m *Module, v0, v1 int32) int32
