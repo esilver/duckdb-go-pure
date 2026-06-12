@@ -2,11 +2,10 @@
 // driver: open an in-memory database, create/insert/select, and register a Go
 // scalar UDF that DuckDB calls back during query execution.
 //
-// Build it with the engine-package gcflags (see the repository README):
+// Build it with the normal Go toolchain; no cgo or engine-specific flags are
+// required:
 //
-//	CGO_ENABLED=0 go build \
-//	  -gcflags='github.com/esilver/duckdb-go-pure/internal/duckdbcore=-N -l -c=16' \
-//	  ./examples/basic
+//	CGO_ENABLED=0 go build ./examples/basic
 package main
 
 import (

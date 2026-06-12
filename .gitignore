@@ -1,0 +1,15 @@
+# Local Go/tool caches
+.gocache/
+.gomodcache/
+.golangci-cache/
+
+# Test and coverage artifacts
+*.test
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# Local Go workspace files
+go.work
+go.work.sum
