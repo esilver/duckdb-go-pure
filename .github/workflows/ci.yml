@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    env:
+      CGO_ENABLED: "0"
+      GOMAXPROCS: "2"
+      GOMEMLIMIT: 4GiB
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - name: Cache Go build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/Library/Caches/go-build
+          key: go-build-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            go-build-${{ runner.os }}-
+
+      - name: Test
+        run: go test -vet=off -p 1 ./...
+
+  jsgate:
+    name: JS/Wasm compile gate
+    runs-on: ubuntu-latest
+    env:
+      CGO_ENABLED: "0"
+      GOMAXPROCS: "2"
+      GOMEMLIMIT: 4GiB
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - name: Cache Go build cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/go-build
+          key: go-build-jsgate-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            go-build-jsgate-${{ runner.os }}-
+
+      - name: Compile JS/Wasm target
+        run: GOOS=js GOARCH=wasm go build -p 1 -o /dev/null .
