@@ -60,7 +60,7 @@ CGO_ENABLED=0 go build ./...
 | Column metadata | `ColumnType.DatabaseTypeName` returns the full DuckDB type name, recursive for nested types (duckdb-go parity) |
 | Connection pooling | Safe: `rows.Next`/`Close` take the shared engine lock (since v0.2.1), so pooled `database/sql` connections can interleave freely |
 | Statement cancellation | Context cancellation **interrupts a RUNNING statement** (since v0.3.5, via DuckDB's own interrupt flag): a runaway query on a cancelled/expired context returns a native `INTERRUPT Error` joined with the context error within milliseconds, and the engine stays healthy — watchdogs no longer have a single-statement gap |
-| Bulk loading | `Appender` (DuckDB's native bulk-load path, ~100× faster than per-row `INSERT`) |
+| Bulk loading | `Appender`-shaped bulk path backed by a table-function feed and batched `INSERT ... SELECT`, avoiding per-row `INSERT` round trips while the wasm build lacks DuckDB's appender lifecycle exports |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
 | DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,522 files PASS / 9 FAIL / 791 SKIP** (2026-06-11, engine repo @ 790272e, runner `converge/cmd/sqllogic`; every remaining failure a documented permanent exclusion — canonical history in the engine repo's KNOWN-LIMITS.md) (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
 | Proven downstream | Drives a pure-Go `googlesqlite` stack with a named CI spec conformance gate covering 707 spec files and 1,177 asserted cases (697 implemented, 7 partial, 3 unsupported), plus a pure-Go bigquery-emulator acceptance-tested with real clients including the `bq` CLI |
