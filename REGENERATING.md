@@ -4,7 +4,7 @@ The DuckDB engine under `internal/duckdbcore/` is generated, not hand-written:
 DuckDB v1.5.3 compiled to WebAssembly and transpiled to Go with
 [ncruces/wasm2go](https://github.com/ncruces/wasm2go). The generator pipeline
 lives in the PoC repo, [esilver/duckdb-wasm2go-poc](https://github.com/esilver/duckdb-wasm2go-poc),
-not here. `PROVENANCE` records the engine source commit and the gen.dat hash.
+not here. `PROVENANCE` records the gen.dat hash now, and `scripts/import_engine.sh` fills in the engine source commit on the next import.
 
 ## Regenerate / bump the engine
 
