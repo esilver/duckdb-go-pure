@@ -20,6 +20,10 @@
 // database, or a filesystem path for a persistent database backed by the host
 // filesystem.
 //
+// This package registers the "duckdb" driver name so it can be a drop-in swap
+// for the official cgo driver (github.com/duckdb/duckdb-go). A single binary
+// must not blank-import both, since both register the same name.
+//
 // # Build flags (none required)
 //
 // The transpiled engine (internal/duckdbcore) is sharded into ~30 packages
@@ -36,8 +40,9 @@
 //
 // The package also exposes DuckDB-specific extension points on a per-connection
 // basis: scalar UDFs (RegisterScalarConn), band-merge aggregate UDFs
-// (RegisterAggregateBandConn, AggregateOptions), an Appender for bulk loading
-// (DuckDB's native appender, ~100x faster than per-row INSERT), plus the
-// JSONValue and Decimal value types used to round-trip DuckDB JSON and DECIMAL
-// values through UDFs and result scans.
+// (RegisterAggregateBandConn, AggregateOptions), an Appender-shaped bulk path
+// backed by a table-function feed and batched INSERT ... SELECT (avoiding
+// per-row INSERT round trips while the wasm build lacks DuckDB's appender
+// lifecycle exports), plus the JSONValue and Decimal value types used to
+// round-trip DuckDB JSON and DECIMAL values through UDFs and result scans.
 package duckdb
