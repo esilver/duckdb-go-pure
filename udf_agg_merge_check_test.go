@@ -25,8 +25,8 @@ import (
 // duckdb_add_aggregate_function_to_set + duckdb_register_aggregate_function_set,
 // which registers ALL arities in ONE CreateFunction call and therefore never hits
 // the conflict path) is unusable: duckdb_add_aggregate_function_to_set was
-// dead-code-eliminated from the wasm build (absent from /tmp/exports_arg.txt and
-// from genpkg/gen.go; create/register/destroy set ARE exported).
+// dead-code-eliminated from the wasm build (absent from the exports_arg.txt
+// export list and from the generated engine; create/register/destroy set ARE exported).
 //
 // Fix: add _duckdb_add_aggregate_function_to_set to the export list and rebuild/
 // retranspile, then implement multi-arity bands via the function-set path.

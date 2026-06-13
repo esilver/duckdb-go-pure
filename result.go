@@ -8,12 +8,13 @@
 // buffer plus an optional validity bitmask. rows.Next walks rows within the
 // current chunk, fetching the next chunk when the cursor exhausts it.
 //
-// ABI notes (see harness/PLUGIN.md):
+// ABI notes (the engine wiring these calls go through is module.go's modABI/memABI):
 //   - Several accessors (duckdb_column_count/name/logical_type, duckdb_fetch_chunk,
 //     duckdb_destroy_result, ...) take a duckdb_result BY VALUE. Emscripten lowers a
 //     by-value struct argument to a POINTER to the struct, so the generated method
-//     takes the result POINTER (resPtr) directly — exactly as main.go calls
-//     Xduckdb_column_count(resPtr)/Xduckdb_row_count(resPtr). We follow that pattern.
+//     takes the result POINTER (resPtr) directly - which is why newRows/Next/Close
+//     below call Xduckdb_column_count(resPtr)/Xduckdb_fetch_chunk(resPtr) with the
+//     pointer, never a by-value struct.
 //   - idx_t is int64 in the generated ABI; handles/pointers are int32 offsets into
 //     module linear memory; column data is read out of mod.mem().
 package duckdb

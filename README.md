@@ -77,7 +77,7 @@ CGO_ENABLED=0 go build ./...
 | Engine | DuckDB v1.5.3 + `core_functions` + `json` + `icu`, wasm2go-transpiled, pure Go |
 | `database/sql` driver | Working (driver name `"duckdb"`; `:memory:` and file DSNs) |
 | Scalar UDFs | Working (`RegisterScalarConn`: fixed args, varargs, NULL handling, volatile) |
-| Aggregate UDFs | Working (`RegisterAggregateConn`, `RegisterAggregateBandConn` + `AggregateOptions`) |
+| Aggregate UDFs | Working (`RegisterAggregateBandConn` + `AggregateOptions`) |
 | Value types | `JSONValue`, `Decimal`, dates/times/timestamps, lists, structs, maps, enums, unions, intervals, UUID, blobs, HUGEINT, BIT, TIMETZ, BIGNUM, GEOMETRY (WKT), VARIANT |
 | Column metadata | `ColumnType.DatabaseTypeName` returns the full DuckDB type name, recursive for nested types (duckdb-go parity) |
 | Connection pooling | Safe: `rows.Next`/`Close` take the shared engine lock (since v0.2.1), so pooled `database/sql` connections can interleave freely |
@@ -161,8 +161,8 @@ db.QueryRow(`SELECT my_add_one(41)`).Scan(&out) // 42
 
 Registration is catalog-scoped: register on one connection and every
 connection of that `*sql.DB` sees the function. Aggregate UDFs work the same
-way through `RegisterAggregateConn` / `RegisterAggregateBandConn` (see
-`udf_agg_band.go` and the tests). A complete runnable example is in
+way through `RegisterAggregateBandConn` (see `udf_agg_band.go` and the tests).
+A complete runnable example is in
 [`examples/basic`](examples/basic/main.go) (`make example`).
 
 ## Building and testing this repo

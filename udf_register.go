@@ -60,16 +60,6 @@ func RegisterScalarConn(c *sql.Conn, name string, paramTypeIDs []int32, retTypeI
 	})
 }
 
-// RegisterAggregateConn registers a Go aggregate function under `name` on the engine
-// behind c. paramTypeIDs / retTypeID are duckdb_type ids; impl supplies the
-// NewState/Update/Combine/Finalize behavior. Registration is catalog-scoped (visible
-// to all connections sharing c's database).
-func RegisterAggregateConn(c *sql.Conn, name string, paramTypeIDs []int32, retTypeID int32, impl AggregateImpl) error {
-	return withConn(c, func(co *conn) error {
-		return co.mod.RegisterAggregateUDF(co.con, name, paramTypeIDs, retTypeID, impl)
-	})
-}
-
 // RegisterAggregateBandConn registers a Go aggregate function under `name` for every
 // arity in opts' [MinArgs, MaxArgs] band, parameters typed ANY (see AggregateOptions
 // and registerAggregateBand for the full conventions: runtime-typed decode, DECIMAL

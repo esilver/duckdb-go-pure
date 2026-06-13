@@ -19,7 +19,7 @@ import (
 	"github.com/esilver/duckdb-go-pure/internal/wasishim"
 )
 
-// ---- env wiring: generated *engineModule -> exhost/wasishim (mirrors main.go) ----
+// ---- env wiring: generated *engineModule -> exhost/wasishim (the modABI/memABI adapters below) ----
 
 type modABI struct{ m *engineModule }
 

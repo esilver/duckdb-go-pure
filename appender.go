@@ -2,10 +2,10 @@
 //
 // WHY NOT duckdb_appender_create: this wasm build's export list (exports_arg.txt)
 // carries the duckdb_append_* VALUE family (append_int64/double/varchar/...) but
-// NONE of the appender lifecycle symbols — duckdb_appender_create / _end_row /
+// NONE of the appender lifecycle symbols - duckdb_appender_create / _end_row /
 // _flush / _close / _destroy / _error are absent from the generated engine, so a
-// handle can never be obtained and the value family is unreachable. (Verified:
-// `grep -c appender converge/genpkg/gen.go` == 0.)
+// handle can never be obtained and the value family is unreachable (no Xduckdb_appender_*
+// method exists on the generated engine module).
 //
 // INSTEAD the Appender is backed by a registered Go TABLE FUNCTION (that C-API
 // family IS fully exported and uses the same proven inject/call_indirect
