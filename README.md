@@ -1,5 +1,7 @@
 # duckdb-go-pure
 
+[![CI](https://github.com/esilver/duckdb-go-pure/actions/workflows/ci.yml/badge.svg)](https://github.com/esilver/duckdb-go-pure/actions/workflows/ci.yml)
+
 **DuckDB as a pure-Go `database/sql` driver. `CGO_ENABLED=0`. No libduckdb, no
 cgo, no shared libraries.**
 
@@ -15,6 +17,26 @@ back during query execution).
 
 Extracted from the working proof of concept at
 [esilver/duckdb-wasm2go-poc](https://github.com/esilver/duckdb-wasm2go-poc).
+
+## The stack
+
+This driver is the engine layer of a pure-Go, DuckDB-backed BigQuery emulator.
+Top to bottom:
+
+- [esilver/bigquery-emulator](https://github.com/esilver/bigquery-emulator) is
+  the BigQuery REST API server (a fork of goccy/bigquery-emulator).
+- [esilver/googlesqlite](https://github.com/esilver/googlesqlite) is the
+  GoogleSQL engine: it lowers analyzed BigQuery SQL to DuckDB SQL and registers
+  BigQuery builtins as DuckDB UDFs (a fork of goccy/googlesqlite, retargeted
+  from a SQLite backend to DuckDB).
+- [esilver/go-googlesql](https://github.com/esilver/go-googlesql) is the ZetaSQL
+  analyzer bridge (a fork of goccy/go-googlesql).
+- **duckdb-go-pure** (this repo) is DuckDB itself, as a pure-Go `database/sql`
+  driver.
+
+The whole stack runs `CGO_ENABLED=0` with no native libraries. This repo is a
+showcase of pure-Go DuckDB, offered for interest rather than as a contribution
+to the official cgo driver (see Related).
 
 ## Build (no flags required)
 
@@ -196,6 +218,7 @@ make test
 - [ncruces/wasm2go](https://github.com/ncruces/wasm2go) — the wasm-to-Go transpiler
 - [ncruces/go-sqlite3](https://github.com/ncruces/go-sqlite3) — the pattern this module follows, for SQLite
 - [duckdb/duckdb](https://github.com/duckdb/duckdb) — DuckDB itself
+- [duckdb/duckdb-go](https://github.com/duckdb/duckdb-go) (formerly marcboeker/go-duckdb), the official cgo-based DuckDB Go driver. This repo is an independent, from-scratch reimplementation over a wasm2go-transpiled engine and shares no code with it. It deliberately registers the same `database/sql` driver name (`duckdb`) to be a drop-in swap, so a single binary must not blank-import both.
 
 ## License
 
