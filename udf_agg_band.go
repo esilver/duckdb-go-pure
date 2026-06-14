@@ -24,11 +24,6 @@ import (
 	"fmt"
 )
 
-// dtAny is DUCKDB_TYPE_ANY — valid for PARAMETERS (binder matches any input
-// without casting); the C API rejects it as a RETURN type. Lives here rather
-// than result.go's enum block because no result column ever carries it.
-const dtAny = 34
-
 // JSONValue wraps a cell from a column whose logical type carries the "JSON"
 // alias. DuckDB's JSON type is VARCHAR-backed, so the type id alone cannot
 // distinguish a JSON column (whose scalars arrive JSON-encoded, e.g. a quoted

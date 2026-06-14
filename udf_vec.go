@@ -37,16 +37,6 @@
 //     elements per row with no entry headers; a cell decodes to []any.
 package duckdb
 
-// Nested duckdb_type ids (logical-only; the flat codec can't decode them,
-// vecDecoder handles them structurally).
-const (
-	dtList   = 24
-	dtStruct = 25
-	dtMap    = 26
-	dtUnion  = 28
-	dtArray  = 33
-)
-
 type vecDecoder struct {
 	mod      *module
 	dataPtr  int32

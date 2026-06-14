@@ -29,8 +29,15 @@ import (
 	"time"
 )
 
-// duckdb_type enum values we decode (from amalg/duckdb.h). Kept local so result.go
-// does not depend on any generated constant table.
+// dt* are the duckdb_type enum ids (from amalg/duckdb.h), the single
+// source of truth for every duckdb_type id this package uses. Kept local so the
+// package does not depend on any generated constant table. The ids cover three
+// consumers: the flat result decoder (result.go), the nested vecDecoder
+// (udf_vec.go), and the aggregate-band registrar's ANY parameter (udf_agg_band.go).
+// Ordered by numeric value, gaps included.
+//
+// Distinct from the vt* (variant) enum (variant.go), which is DuckDB's separate
+// VariantLogicalType tag space and must stay separate.
 const (
 	dtInvalid     = 0
 	dtBoolean     = 1
@@ -56,15 +63,26 @@ const (
 	dtTimestampMs = 21 // millis since epoch
 	dtTimestampNs = 22 // nanos since epoch
 	dtEnum        = 23
+	// dtList..dtArray are the nested/logical-only ids: the flat codec can't
+	// decode them, vecDecoder (udf_vec.go) handles them structurally.
+	dtList        = 24
+	dtStruct      = 25
+	dtMap         = 26
 	dtUuid        = 27
+	dtUnion       = 28
 	dtBit         = 29 // bitstring backed by a blob (first byte = padding bit count)
 	dtTimeTz      = 30 // uint64: micros-since-midnight << 24 | encoded offset
 	dtTimestampTz = 31 // micros since epoch
 	dtUhugeint    = 32
-	dtBignum      = 35 // varint blob, physical VARCHAR (decodes via bignumString)
-	dtTimeNs      = 39 // nanos since midnight
-	dtGeometry    = 40 // WKB blob, physical VARCHAR (decodes via geometryString)
-	dtVariant     = 41 // physical STRUCT carrier (decodes via variantDec)
+	dtArray       = 33
+	// dtAny is DUCKDB_TYPE_ANY: valid for PARAMETERS (the binder matches any input
+	// without casting, used by the aggregate band in udf_agg_band.go), and rejected
+	// by the C API as a RETURN type. No result column ever carries it.
+	dtAny      = 34
+	dtBignum   = 35 // varint blob, physical VARCHAR (decodes via bignumString)
+	dtTimeNs   = 39 // nanos since midnight
+	dtGeometry = 40 // WKB blob, physical VARCHAR (decodes via geometryString)
+	dtVariant  = 41 // physical STRUCT carrier (decodes via variantDec)
 )
 
 // DuckDB date/timestamp ±infinity sentinels (duckdb-src/src/include/duckdb/common/
