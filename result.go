@@ -830,7 +830,9 @@ func dateValue(days int32) driver.Value {
 	return epoch.AddDate(0, 0, int(days))
 }
 
-// formatDecimal renders unscaled / 10^scale as an exact decimal string.
+// formatDecimal renders unscaled / 10^scale as an exact decimal string. This is
+// the single canonical decimal formatter, also reached via Decimal.String()
+// (decimal.go), which guards nil before delegating here. unscaled must be non-nil.
 func formatDecimal(unscaled *big.Int, scale uint8) string {
 	if scale == 0 {
 		return unscaled.String()

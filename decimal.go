@@ -13,7 +13,6 @@ package duckdb
 
 import (
 	"math/big"
-	"strings"
 )
 
 // Decimal is an exact DECIMAL value: the represented number is Value / 10^Scale.
@@ -37,24 +36,7 @@ func (d Decimal) String() string {
 	if d.Value == nil {
 		return "0"
 	}
-	if d.Scale == 0 {
-		return d.Value.String()
-	}
-	neg := d.Value.Sign() < 0
-	digits := new(big.Int).Abs(d.Value).String()
-	// Pad so there is at least one integer digit before the point.
-	for len(digits) <= int(d.Scale) {
-		digits = "0" + digits
-	}
-	cut := len(digits) - int(d.Scale)
-	var b strings.Builder
-	if neg {
-		b.WriteByte('-')
-	}
-	b.WriteString(digits[:cut])
-	b.WriteByte('.')
-	b.WriteString(digits[cut:])
-	return b.String()
+	return formatDecimal(d.Value, d.Scale)
 }
 
 // Float64 returns the decimal as a float64 (Value / 10^Scale), evaluated as a
