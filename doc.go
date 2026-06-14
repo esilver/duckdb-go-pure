@@ -1,12 +1,11 @@
 // Package duckdb provides a pure-Go (CGO_ENABLED=0) database/sql driver for
-// DuckDB. No libduckdb, no cgo: the DuckDB engine (v1.5.3, with the
-// core_functions, json and icu extensions statically linked) is compiled to
-// WebAssembly with Emscripten and transpiled to Go with wasm2go
-// (github.com/ncruces/wasm2go) — the same approach github.com/ncruces/go-sqlite3
-// uses for SQLite. The driver talks to the transpiled engine through DuckDB's
-// C API surface.
+// DuckDB. No libduckdb, no cgo: the DuckDB engine (v1.5.3, with core_functions,
+// json and icu statically linked) is compiled to WebAssembly with Emscripten
+// and transpiled to Go with wasm2go (github.com/ncruces/wasm2go) — the approach
+// github.com/ncruces/go-sqlite3 uses for SQLite. The driver talks to the
+// transpiled engine through DuckDB's C API surface.
 //
-// Registering the driver is a side effect of importing the package:
+// Importing the package registers the "duckdb" driver:
 //
 //	import (
 //		"database/sql"
@@ -16,29 +15,31 @@
 //
 //	db, err := sql.Open("duckdb", ":memory:")
 //
-// The data source name is either ":memory:" (or empty) for an in-memory
-// database, or a filesystem path for a persistent database backed by the host
-// filesystem.
+// The data source name is ":memory:" (or empty) for an in-memory database, or a
+// filesystem path for a host-filesystem-backed persistent database.
 //
-// This package registers the "duckdb" driver name so it can be a drop-in swap
-// for the official cgo driver (github.com/duckdb/duckdb-go). A single binary
-// must not blank-import both, since both register the same name.
+// The registered "duckdb" name makes this a drop-in swap for the official cgo
+// driver (github.com/duckdb/duckdb-go). A single binary must not blank-import
+// both, since both register that name.
 //
 // # Build flags (none required)
 //
 //	CGO_ENABLED=0 go build ./...
 //
 // go test additionally needs -vet=off. The README "How it works" section
-// explains why the transpiled engine still compiles fully optimized with no
-// special flags.
+// explains why the transpiled engine compiles fully optimized with no special
+// flags.
 //
 // # Beyond database/sql
 //
-// The package also exposes DuckDB-specific extension points on a per-connection
-// basis: scalar UDFs (RegisterScalarConn), band-merge aggregate UDFs
-// (RegisterAggregateBandConn, AggregateOptions), an Appender-shaped bulk path
-// backed by a table-function feed and batched INSERT ... SELECT (one statement
-// per flush, so bulk loads skip per-row INSERT round trips), plus the JSONValue
-// and Decimal value types used to
-// round-trip DuckDB JSON and DECIMAL values through UDFs and result scans.
+// Per-connection DuckDB extension points beyond the standard interface:
+//
+//   - Scalar UDFs (RegisterScalarConn, ScalarOptions) and band-merge aggregate
+//     UDFs (RegisterAggregateBandConn, AggregateOptions), as Go closures the
+//     engine calls back during query execution.
+//   - An Appender-shaped bulk path over a table-function feed and batched
+//     INSERT ... SELECT (one statement per flush, so bulk loads skip per-row
+//     INSERT round trips).
+//   - The JSONValue and Decimal value types that round-trip DuckDB JSON and
+//     DECIMAL through UDFs and result scans.
 package duckdb
