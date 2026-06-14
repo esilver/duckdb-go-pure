@@ -265,6 +265,7 @@ func leU8(p []byte) byte {
 	return p[0]
 }
 
+// These leU* readers exist because variant.go decodes a copied data blob rather than module memory.
 func leU16(p []byte) uint16 {
 	if len(p) < 2 {
 		return 0
@@ -339,7 +340,7 @@ func varintBytes(p []byte) []byte {
 // quoting backslash-escapes ' and \.
 func quoteNestedDuckDB(s string) string {
 	needs := s == ""
-	if !needs && (isSpaceByteDD(s[0]) || (len(s) >= 2 && isSpaceByteDD(s[len(s)-1]))) {
+	if !needs && (isASCIISpace(s[0]) || (len(s) >= 2 && isASCIISpace(s[len(s)-1]))) {
 		needs = true
 	}
 	if !needs && strings.EqualFold(s, "null") {
@@ -364,4 +365,4 @@ func quoteNestedDuckDB(s string) string {
 	return sb.String()
 }
 
-func isSpaceByteDD(c byte) bool { return c == ' ' || c == '\t' || c == '\n' || c == '\r' }
+func isASCIISpace(c byte) bool { return c == ' ' || c == '\t' || c == '\n' || c == '\r' }
