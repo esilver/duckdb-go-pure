@@ -87,10 +87,16 @@ shards to keep the compile under control.
 | Statement cancellation | Context cancellation **interrupts a RUNNING statement** (since v0.3.5, via DuckDB's own interrupt flag): a runaway query on a cancelled/expired context returns a native `INTERRUPT Error` joined with the context error within milliseconds, and the engine stays healthy, so context cancellation reliably stops a running query instead of only taking effect at the next statement boundary |
 | Bulk loading | `Appender`-shaped bulk path backed by a table-function feed and batched `INSERT ... SELECT`: one statement per flush and one trampoline call per 2048 rows, so bulk loads skip per-row `INSERT` round trips |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
-| DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,522 files PASS / 9 FAIL / 791 SKIP** (2026-06-11, engine repo @ 790272e, runner `converge/cmd/sqllogic`; every remaining failure a documented permanent exclusion — canonical history in the engine repo's KNOWN-LIMITS.md) (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
+| DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,522 PASS / 9 FAIL / 791 SKIP**[^slt] |
 | Proven downstream | Drives a pure-Go `googlesqlite` stack with a named CI spec conformance gate covering 707 spec files and 1,177 asserted cases (697 implemented, 7 partial, 3 unsupported), plus a pure-Go bigquery-emulator acceptance-tested with real clients including the `bq` CLI |
 | Performance | Engine compiles **fully optimized + inlined** since v0.3.0 (see above): 2.3–2.9× faster than v0.2.x, which was 2.0–2.6× faster than the v0.1.x monolith; still slower than native DuckDB (wasm2go has no SIMD), widest on SIMD-friendly scan/aggregate |
 | Platforms | Pure Go: anywhere Go runs, **including `GOOS=js GOARCH=wasm`** since v0.3.0 (64-bit recommended; the engine wants multi-GB compile-time and runtime memory) |
+
+[^slt]: Run 2026-06-11 against engine repo @ `790272e` with the
+`converge/cmd/sqllogic` runner, committed in the
+[PoC repo](https://github.com/esilver/duckdb-wasm2go-poc). Each remaining
+failure is a documented permanent exclusion, with the canonical history in the
+engine repo's `KNOWN-LIMITS.md`.
 
 ## Quickstart
 

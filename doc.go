@@ -26,15 +26,11 @@
 //
 // # Build flags (none required)
 //
-// The transpiled engine (internal/duckdbcore) is sharded into ~30 packages
-// (and its oversized functions split) so the Go optimizer can compile it
-// fully optimized, inlining included. No build flags are required:
-//
 //	CGO_ENABLED=0 go build ./...
 //
-// All other packages, including this driver and your application, compile with
-// default flags. go test additionally needs -vet=off. Since v0.3.0 the module
-// also builds for GOOS=js GOARCH=wasm (browser/Node).
+// go test additionally needs -vet=off. The README "How it works" section
+// explains why the transpiled engine still compiles fully optimized with no
+// special flags.
 //
 // # Beyond database/sql
 //

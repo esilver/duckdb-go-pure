@@ -1,25 +1,20 @@
-// exotic.go — decode + DuckDB-exact VARCHAR rendering for the "exotic" scalar
-// types the flat codec previously dropped to NULL, plus the VARIANT container:
+// exotic.go — decode + DuckDB-exact VARCHAR rendering for the wide/structured
+// scalar types the flat fast-path codec does not cover. Each decodes from its
+// physical storage to the exact text DuckDB's own VARCHAR cast produces:
 //
-//   - BIGNUM (duckdb_type 35, physical VARCHAR): a varint blob — 3-byte header
+//   - BIGNUM (duckdb_type 35, physical VARCHAR): a varint blob, 3-byte header
 //     (sign bit + data-byte count) followed by big-endian magnitude bytes, all
 //     bytes complemented for negatives (bignum.cpp Bignum::GetByteArray).
 //     Decodes to the exact decimal string.
-//   - GEOMETRY (40, physical VARCHAR): a little-endian WKB blob (geometry.cpp);
-//     decodes to its WKT text exactly like Geometry::ToString — including
+//   - GEOMETRY (40, physical VARCHAR): a little-endian WKB blob (geometry.cpp),
+//     decodes to its WKT text exactly like Geometry::ToString, including
 //     " Z "/" M "/" ZM " flags, EMPTY parts, and fmt-style coordinate
 //     rendering with the trailing ".0" stripped.
 //   - UUID (27, physical INT128): stored as a hugeint whose upper word has the
-//     MSB flipped to preserve ordering (uuid.cpp BaseUUID::ToString); decodes
+//     MSB flipped to preserve ordering (uuid.cpp BaseUUID::ToString), decodes
 //     to the canonical lowercase 8-4-4-4-12 form.
-//   - VARIANT (41, physical STRUCT(keys VARCHAR[], children STRUCT(keys_index
-//     UINTEGER, values_index UINTEGER)[], values STRUCT(type_id UTINYINT,
-//     byte_offset UINTEGER)[], data BLOB)): decoded straight out of the binary
-//     encoding (variant.hpp VariantLogicalType + variant_utils.cpp) and
-//     rendered to the exact string the upstream sqllogictest harness gets from
-//     Value::CastAs(VARCHAR): scalars render as their VARCHAR casts, ARRAY
-//     items render RAW (children are VARIANT-typed, the nested cast never
-//     quotes them), OBJECT values quote-if-needed like any nested child.
+//
+// VARIANT lives in variant.go.
 package duckdb
 
 import (

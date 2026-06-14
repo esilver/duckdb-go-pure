@@ -1,6 +1,7 @@
 // hostfs.go implements the Tier-2 "Path B" host filesystem surface: the small
 // set of env.host_* functions that the custom DuckDB FileSystem compiled into
-// duckdb_fs.wasm (see ../../host_fs.cpp) calls to reach the REAL host disk.
+// duckdb_fs.wasm calls to reach the REAL host disk. The C++ side, host_fs.cpp,
+// lives in the PoC repo (github.com/esilver/duckdb-wasm2go-poc), not here.
 //
 // Unlike fs.go (which emulates the full WASI snapshot-preview1 seam), this layer
 // is deliberately tiny: the wasm side already translated DuckDB's FileSystem
