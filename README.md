@@ -35,13 +35,21 @@ Top to bottom:
   driver.
 
 The whole stack runs `CGO_ENABLED=0` with no native libraries. This repo is a
-showcase of pure-Go DuckDB, offered for interest rather than as a contribution
-to the official cgo driver (see Related).
+showcase of pure-Go DuckDB, shared for interest and experimentation. The
+official cgo driver remains the recommended driver for production use (see
+Related).
 
 ## Build (no flags required)
 
-Release checklist includes `make jsgate` (GOOS=js compile check — the
-wasm backend has a per-function block cap that native builds do not).
+Build with the standard Go toolchain, no cgo and no special flags:
+
+```sh
+CGO_ENABLED=0 go build ./...
+```
+
+(Maintainers: `make jsgate` adds a GOOS=js compile check before tagging a
+release, because the wasm backend enforces a per-function block cap that native
+builds do not.)
 
 The transpiled engine is very large Go code. Since v0.2.0 it ships sharded
 into ~30 packages (`internal/duckdbcore/{core,shardNN,all}`), and since
@@ -49,26 +57,21 @@ v0.3.0 every oversized transpiled function is split into part-functions
 (the PoC repo's `scripts/split_giant_fns.py`), so the Go optimizer compiles
 the whole engine **fully optimized, inlining included** — queries run
 2.3–2.9× faster than v0.2.x, which had to disable inlining (`-l`) on the
-shards to keep the compile under control. **No build flags are required**:
-
-```sh
-CGO_ENABLED=0 go build ./...
-```
+shards to keep the compile under control.
 
 - Measured cold build: ~30s, ~3GB worst single compile process (16 cores);
   the engine is cached by the Go build cache after the first build. Add
   `-p 1` only if you are tight on RAM (it serializes package compiles).
 - PGO: measured no effect on the fully-inlined v0.3.x engine (interleaved
   A/B on a quiet machine, 0.97-1.01x across aggregate/string/join/storage
-  shapes at 100k-2M rows) — no profile ships. An earlier 1.3-1.8x claim was
-  a measurement artifact (contended machine) and is retracted; see issue #2.
+  shapes at 100k-2M rows), so no PGO profile ships.
 - Everything else (your code, this driver) builds with default flags.
-- `go test` additionally needs `-vet=off` (vet cannot chew the generated
-  packages).
+- `go test` additionally needs `-vet=off`, because `go vet` cannot analyze the
+  very large generated engine packages.
 - Since v0.3.0 the module also builds for `GOOS=js GOARCH=wasm` and runs
   under Node/V8 via Go's `wasm_exec.js` — the function split is what brought
   the largest engine function under the Go compiler's 65536-SSA-block hard
-  cap that previously bricked every js/wasm build.
+  cap, which previously blocked every js/wasm build from compiling.
 
 ## Status
 
@@ -81,8 +84,8 @@ CGO_ENABLED=0 go build ./...
 | Value types | `JSONValue`, `Decimal`, dates/times/timestamps, lists, structs, maps, enums, unions, intervals, UUID, blobs, HUGEINT, BIT, TIMETZ, BIGNUM, GEOMETRY (WKT), VARIANT |
 | Column metadata | `ColumnType.DatabaseTypeName` returns the full DuckDB type name, recursive for nested types (duckdb-go parity) |
 | Connection pooling | Safe: `rows.Next`/`Close` take the shared engine lock (since v0.2.1), so pooled `database/sql` connections can interleave freely |
-| Statement cancellation | Context cancellation **interrupts a RUNNING statement** (since v0.3.5, via DuckDB's own interrupt flag): a runaway query on a cancelled/expired context returns a native `INTERRUPT Error` joined with the context error within milliseconds, and the engine stays healthy — watchdogs no longer have a single-statement gap |
-| Bulk loading | `Appender`-shaped bulk path backed by a table-function feed and batched `INSERT ... SELECT`, avoiding per-row `INSERT` round trips while the wasm build lacks DuckDB's appender lifecycle exports |
+| Statement cancellation | Context cancellation **interrupts a RUNNING statement** (since v0.3.5, via DuckDB's own interrupt flag): a runaway query on a cancelled/expired context returns a native `INTERRUPT Error` joined with the context error within milliseconds, and the engine stays healthy, so context cancellation reliably stops a running query instead of only taking effect at the next statement boundary |
+| Bulk loading | `Appender`-shaped bulk path backed by a table-function feed and batched `INSERT ... SELECT`: one statement per flush and one trampoline call per 2048 rows, so bulk loads skip per-row `INSERT` round trips |
 | Persistence | Host-filesystem databases (open a path instead of `:memory:`), host-FS glob (`read_csv('data/*.csv')`) |
 | DuckDB's own test corpus | sqllogictest (`test/sql/**`, 3,322 files): **2,522 files PASS / 9 FAIL / 791 SKIP** (2026-06-11, engine repo @ 790272e, runner `converge/cmd/sqllogic`; every remaining failure a documented permanent exclusion — canonical history in the engine repo's KNOWN-LIMITS.md) (runner committed in the [PoC repo](https://github.com/esilver/duckdb-wasm2go-poc)) |
 | Proven downstream | Drives a pure-Go `googlesqlite` stack with a named CI spec conformance gate covering 707 spec files and 1,177 asserted cases (697 implemented, 7 partial, 3 unsupported), plus a pure-Go bigquery-emulator acceptance-tested with real clients including the `bq` CLI |

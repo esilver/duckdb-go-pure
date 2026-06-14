@@ -41,8 +41,8 @@
 // The package also exposes DuckDB-specific extension points on a per-connection
 // basis: scalar UDFs (RegisterScalarConn), band-merge aggregate UDFs
 // (RegisterAggregateBandConn, AggregateOptions), an Appender-shaped bulk path
-// backed by a table-function feed and batched INSERT ... SELECT (avoiding
-// per-row INSERT round trips while the wasm build lacks DuckDB's appender
-// lifecycle exports), plus the JSONValue and Decimal value types used to
+// backed by a table-function feed and batched INSERT ... SELECT (one statement
+// per flush, so bulk loads skip per-row INSERT round trips), plus the JSONValue
+// and Decimal value types used to
 // round-trip DuckDB JSON and DECIMAL values through UDFs and result scans.
 package duckdb
