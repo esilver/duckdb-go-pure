@@ -28,6 +28,8 @@ import "fmt"
 // This is the fixed-arity, no-frills entry point: no varargs, no special NULL
 // handling, not volatile. It delegates to registerScalarEx, which carries the full
 // feature set the compat layer needs.
+//
+// Test-only scaffolding: the production scalar path is registerScalarEx (via RegisterScalarConn).
 func (mod *module) RegisterScalarUDF(con int32, name string, paramTypeIDs []int32, retTypeID int32, fn func(args []any) (any, error)) error {
 	return mod.registerScalarEx(con, name, paramTypeIDs, retTypeID, -1, false, false, fn)
 }

@@ -27,23 +27,33 @@ import (
 	"fmt"
 )
 
+// ScalarOptions configures one RegisterScalarConn registration. It mirrors
+// AggregateOptions on the aggregate side, carrying the registration metadata that
+// would otherwise be trailing positional arguments.
+type ScalarOptions struct {
+	// VarargsTypeID >= 0 makes the function variadic over that trailing type
+	// (e.g. DUCKDB_TYPE_ANY = 34). VarargsTypeID < 0 means non-variadic.
+	VarargsTypeID int32
+	// SpecialNull requests special NULL handling: the function is invoked for NULL
+	// args instead of being short-circuited.
+	SpecialNull bool
+	// Volatile marks the result non-deterministic so it is never constant-folded.
+	Volatile bool
+}
+
 // RegisterScalarConn registers a Go scalar function under `name` on the engine behind
 // c, visible to every connection sharing c's database (registration is catalog-scoped).
 //
 //   - paramTypeIDs are the fixed (leading) parameter duckdb_type ids, in order.
 //   - retTypeID is the result duckdb_type id.
-//   - varargsTypeID >= 0 makes the function variadic over that trailing type
-//     (e.g. DUCKDB_TYPE_ANY = 34); varargsTypeID < 0 means non-variadic.
-//   - specialNull requests special NULL handling (the function is invoked for NULL
-//     args instead of being short-circuited).
-//   - volatile marks the result non-deterministic (never constant-folded).
+//   - opts carries the variadic, NULL-handling, and volatility knobs (see ScalarOptions).
 //   - fn receives one decoded argument per ACTUAL call argument (fixed params followed
 //     by the expanded variadic tail) as a []driver.Value, and returns the result value
-//     (or nil for SQL NULL) plus an optional error; a non-nil error aborts the query.
+//     (or nil for SQL NULL) plus an optional error. A non-nil error aborts the query.
 //
 // fn's parameter is []driver.Value to match the emulator's ScalarFuncExecutor.RowExecutor
-// signature; []driver.Value is assignable to the []any the engine callback passes.
-func RegisterScalarConn(c *sql.Conn, name string, paramTypeIDs []int32, retTypeID int32, varargsTypeID int32, specialNull, volatile bool, fn func(args []driver.Value) (any, error)) error {
+// signature. []driver.Value is assignable to the []any the engine callback passes.
+func RegisterScalarConn(c *sql.Conn, name string, paramTypeIDs []int32, retTypeID int32, opts ScalarOptions, fn func(args []driver.Value) (any, error)) error {
 	// Adapt fn(args []driver.Value) to the engine's fn(args []any). []any and
 	// []driver.Value are DISTINCT slice types in Go (driver.Value is a defined type,
 	// not an alias for any), so the slice must be rebuilt element-wise (each any is
@@ -56,7 +66,7 @@ func RegisterScalarConn(c *sql.Conn, name string, paramTypeIDs []int32, retTypeI
 		return fn(dv)
 	}
 	return withConn(c, func(co *conn) error {
-		return co.mod.registerScalarEx(co.con, name, paramTypeIDs, retTypeID, varargsTypeID, specialNull, volatile, wrapped)
+		return co.mod.registerScalarEx(co.con, name, paramTypeIDs, retTypeID, opts.VarargsTypeID, opts.SpecialNull, opts.Volatile, wrapped)
 	})
 }
 

@@ -65,9 +65,11 @@ func main() {
 	defer conn.Close()
 	err = duckdb.RegisterScalarConn(conn, "my_add_one",
 		[]int32{duckdbTypeBigint}, duckdbTypeBigint,
-		-1,    // not variadic
-		false, // default NULL handling
-		false, // deterministic
+		duckdb.ScalarOptions{
+			VarargsTypeID: -1,    // not variadic
+			SpecialNull:   false, // default NULL handling
+			Volatile:      false, // deterministic
+		},
 		func(args []driver.Value) (any, error) {
 			return args[0].(int64) + 1, nil
 		})

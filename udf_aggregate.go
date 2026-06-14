@@ -120,6 +120,8 @@ func (mod *module) dropAgg(h int64) { mod.aggTableFor().drop(h) }
 // table, injects each into the engine's indirect-function table (mod.inject), and
 // wires them to a duckdb_aggregate_function. Returns an error if DuckDB rejects the
 // registration (e.g. a duplicate name), with the recovered engine error message.
+//
+// Test-only scaffolding: the production aggregate path is registerAggregateBand (via RegisterAggregateBandConn).
 func (mod *module) RegisterAggregateUDF(con int32, name string, paramTypeIDs []int32, retTypeID int32, impl AggregateImpl) error {
 	m := mod.m
 
@@ -251,8 +253,11 @@ func (mod *module) RegisterAggregateUDF(con int32, name string, paramTypeIDs []i
 //
 //	impl := SumInt64Agg{}
 //	err := mod.RegisterAggregateUDF(con, "my_sum", []int32{dtBigint}, dtBigint, impl)
+//
+// Test-only scaffolding: the production aggregate path is registerAggregateBand (via RegisterAggregateBandConn).
 type SumInt64Agg struct{}
 
+// Test-only scaffolding: backs SumInt64Agg; the production aggregate path is registerAggregateBand.
 type sumState struct {
 	sum int64
 	any bool // true once at least one non-NULL value has been folded in
