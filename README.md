@@ -50,7 +50,7 @@ This driver is the engine layer of a pure-Go, DuckDB-backed BigQuery emulator,
 each repo a fork retargeted to this engine. Top to bottom:
 
 - [esilver/bigquery-emulator](https://github.com/esilver/bigquery-emulator) — the BigQuery REST API server (forks goccy/bigquery-emulator).
-- [esilver/googlesqlite](https://github.com/esilver/googlesqlite) — the GoogleSQL engine: lowers analyzed BigQuery SQL to DuckDB SQL and registers BigQuery builtins as DuckDB UDFs (forks goccy/googlesqlite, retargeted from SQLite to DuckDB).
+- [esilver/googlesql-duckdb](https://github.com/esilver/googlesql-duckdb) — the GoogleSQL engine: lowers analyzed BigQuery SQL to DuckDB SQL and registers BigQuery builtins as DuckDB UDFs (forks goccy/googlesqlite, retargeted from SQLite to DuckDB).
 - [esilver/go-googlesql](https://github.com/esilver/go-googlesql) — the ZetaSQL analyzer bridge (forks goccy/go-googlesql).
 - **duckdb-go-pure** (this repo) — DuckDB itself, as a pure-Go `database/sql` driver.
 
